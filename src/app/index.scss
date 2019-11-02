@@ -1,7 +1,8 @@
 @charset "UTF-8";
-@import "library/config";
-@import "component/Header/index";
 
-.App {
-  text-align: center;
-}
+@import "library/config";
+@import "library/dimension";
+@import "library/mixin";
+
+@import "component/Header/index";
+@import "component/Nav/index";
