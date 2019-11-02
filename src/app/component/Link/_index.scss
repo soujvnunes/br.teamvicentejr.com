@@ -1,0 +1,8 @@
+.link {
+  text-decoration: none;
+  color: $secondary-color;
+
+  &:hover {
+    color: $secondary-color-light;
+  }
+}
