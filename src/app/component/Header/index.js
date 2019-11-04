@@ -21,11 +21,7 @@ export default (props) => (
 				className="mark-wrapper"
 				title="Página inicial de Vicente Júnior"
 			>
-				<Icon
-					name="logo"
-					size="large"
-					className="mark"
-				/>
+				<Icon name="logo"/>
 			</a>
 		}
 	</header>

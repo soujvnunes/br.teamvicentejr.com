@@ -3,17 +3,11 @@ import Icon from '../../asset/icon.svg';
 
 export default (props) => (
 	<svg
-		className={[
-			`icon icon-${props.name}`,
-			props.className,
-			!props.width & !props.height && props.size === 'small' ? 'small' : null,
-			!props.width & !props.height && props.size === 'normal' ? 'normal' : null,
-			!props.width & !props.height && props.size === 'large' ? 'large' : null,
-		].join(' ')}
 		viewBox='0 0 20 20'
-		width={!props.size && props.width}
-		height={!props.size && props.height}
+		width={props.size ? (props.size ? props.size : 20) : null}
+		height={props.size ? (props.size ? props.size : 20) : null}
 		fill={props.fill}
+		className={`icon icon-${props.name}`}
 	>
 		<use xlinkHref={`${Icon}#${props.name}`}/>
 	</svg>
