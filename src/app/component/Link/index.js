@@ -1,11 +1,13 @@
 import React from 'react';
 
 export default (props) => (
-	<a className={[
+	<a
+		className={[
 			props.className,
 			"link"
 		].join(' ')}
-	   href={props.href}
+		href={props.href}
+		title={props.title}
 	>
 		{props.children}
 	</a>

@@ -1,4 +1,11 @@
-$primary-color: #F44336;
-$primary-color-light: transparentize($primary-color, .25);
-$secondary-color: #212121;
-$secondary-color-light: transparentize($secondary-color, .25);
+// source https://flatuicolors.com/palette/tr
+
+$primary-color: #ff3838;
+$secondary-color: #3d3d3d;
+
+$primary-color--light: transparentize($primary-color, .25);
+$secondary-color--light: transparentize($secondary-color, .25);
+
+$common-color--white: #f5f6fa;
+$common-color--black: $secondary-color;
+$common-color--white-alt: #ffffff;

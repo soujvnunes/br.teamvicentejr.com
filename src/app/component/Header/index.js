@@ -1,10 +1,32 @@
 import React from 'react';
-import logo from "../../asset/logo.png";
-import {Nav} from '../../component'
+import {Link, Icon} from '../../component';
 
 export default (props) => (
 	<header className="header">
-		<Nav />
-		<img src={logo} alt="app logo" className="logo"/>
+		<nav className="nav">
+			{['Professores', 'Sobre', 'Eventos'].map((text) => (
+				<Link
+					className="nav-link"
+					href="/"
+					key={text}
+					title={text}
+				>
+					{text}
+				</Link>
+			))}
+		</nav>
+		{props.mark &&
+			<a
+				href="/"
+				className="mark-wrapper"
+				title="Página inicial de Vicente Júnior"
+			>
+				<Icon
+					name="logo"
+					size="large"
+					className="mark"
+				/>
+			</a>
+		}
 	</header>
 )
