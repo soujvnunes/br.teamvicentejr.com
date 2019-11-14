@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link, Icon} from '../../component';
+import Link from '../Link';
+import Icon from '../Icon';
 
 export default (props) => (
 	<header className="header">

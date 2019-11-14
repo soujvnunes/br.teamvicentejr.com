@@ -1,1 +1,9 @@
-.icon {}
+.icon {
+
+  .primary-color {
+    fill: $primary-color
+  }
+  .secondary-color {
+    fill: $secondary-color
+  }
+}
