@@ -3,8 +3,8 @@
 $primary-color: #ff3838;
 $secondary-color: #3d3d3d;
 
-$primary-color--light: transparentize($primary-color, .25);
-$secondary-color--light: transparentize($secondary-color, .25);
+$primary-color--light: transparentize($primary-color, 0.25);
+$secondary-color--light: transparentize($secondary-color, 0.25);
 
 $common-color--white: #f5f6fa;
 $common-color--black: $secondary-color;
