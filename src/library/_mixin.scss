@@ -1,0 +1,21 @@
+@mixin viewport($class) {
+  @if $class == phone {
+    @media (max-width: $small) {
+      @content;
+    }
+  } @else if $class == tablet {
+    @media (max-width: $medium) {
+      @content;
+    }
+  } @else if $class == desktop {
+    @media (min-width: $large) {
+      @content;
+    }
+  } @else if $class == tv {
+    @media (min-width: $x-large) {
+      @content;
+    }
+  } @else {
+    @warn "Viewport mixin supports: phone, tablet, desktop and tv.";
+  }
+}
