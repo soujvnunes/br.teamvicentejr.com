@@ -1,7 +1,7 @@
-.ah-nav {
+.Nav {
   @extend %align-center;
 
-  .ah-logo-wrapper {
+  &-logo {
     margin-right: $spacing * 4;
     .icon-logo {
       width: $spacing * 8.5;
@@ -9,10 +9,11 @@
       stroke: $primary-color;
     }
   }
-  .ah-n-link {
+
+  &-link {
     margin-right: $spacing * 2;
 
-    .icon {
+    .Icon {
       stroke: $common-color--grey2;
       @include transition(fill, stroke);
 

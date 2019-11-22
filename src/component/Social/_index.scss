@@ -1,11 +1,4 @@
-.ah-social {
+.Social {
   display: flex;
   flex-direction: row;
-
-  .ah-s-link-wrapper {
-    @extend %align-center;
-    justify-content: flex-end;
-    min-width: $spacing * 22;
-    padding: 0 $spacing * 1;
-  }
 }

@@ -1,23 +1,22 @@
 import React from "react";
 import Icon from "../Icon";
-import Typography from "../Typography";
 
 export default props => (
-  <nav className={"ah-nav"}>
-    <a href={"/"} className={"ah-logo-wrapper"}>
+  <nav className={"Nav"}>
+    <a href={"/"} className={"Nav-logo"}>
       <Icon name={"logo"} />
     </a>
-    <Typography link href={"/"} className={"ah-n-link"}>
+    <a href={"/"} className={"Nav-link"}>
       <Icon name={"home"} />
-    </Typography>
-    <Typography link href={"/"} className={"ah-n-link"}>
+    </a>
+    <a href={"/"} className={"Nav-link"}>
       <Icon name={"people"} />
-    </Typography>
-    <Typography link href={"/"} className={"ah-n-link"}>
+    </a>
+    <a href={"/"} className={"Nav-link"}>
       <Icon name={"local"} />
-    </Typography>
-    <Typography link href={"/"} className={"ah-n-link"}>
+    </a>
+    <a href={"/"} className={"Nav-link"}>
       <Icon name={"user"} />
-    </Typography>
+    </a>
   </nav>
 );

@@ -1,0 +1,24 @@
+.Description {
+  width: 50%;
+  margin-top: calc(50vh - #{$Header-y});
+  padding: $spacing * 4;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  &-title {
+    @extend %text-align-center;
+  }
+
+  &-subject {
+    @extend %text-align-center;
+  }
+
+  &-paragraph {
+    @extend %text-align-center;
+    margin: 0 $spacing;
+    line-height: 1.5;
+  }
+}

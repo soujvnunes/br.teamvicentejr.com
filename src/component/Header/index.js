@@ -3,7 +3,7 @@ import Nav from "../Nav";
 import Social from "../Social";
 
 export default props => (
-  <header className={"a-header"}>
+  <header className={"Header"}>
     <Nav />
     <Social />
   </header>

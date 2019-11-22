@@ -1,4 +1,26 @@
-// source https://flatuicolors.com/palette/tr
+// transition
+$transition-duration: 0.16s;
+$transition-timing-function: ease;
+
+// general spaces
+
+$spacing: 8px;
+$spacing-unit: 8;
+
+// breakpoints
+
+$x-small: 0px;
+$small: 600px;
+$medium: 960px;
+$large: 1280px;
+$x-large: 1920px;
+
+// dimensions
+
+$icon-xy: 24px;
+$Header-y: 136px;
+
+// theme / source https://flatuicolors.com/palette/tr
 
 $common-color--white: #fff;
 $common-color--black: #000;

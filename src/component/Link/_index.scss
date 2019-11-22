@@ -1,64 +1,78 @@
-.c-link {
+.Link {
   @extend %link;
+  margin-left: $spacing * 2;
 
-  .c-l-label {
+  &-label {
+    color: $common-color--grey2-light;
     @extend %align-center;
+    @include transition(color);
 
-    .icon {
-      fill: $common-color--grey2;
+    .Icon {
+      fill: $common-color--grey2-light;
       margin-right: $spacing;
       opacity: 1;
-      @include transition(opacity, margin-right);
+      @include transition(opacity, margin-right, fill);
     }
   }
 
-  .c-l-adornment {
+  &-adornment {
     margin-top: $spacing;
+    margin-bottom: 0;
     @extend %align-center;
+    @include transition(margin-bottom);
 
-    .c-l-a-bar {
-      width: $spacing * 20;
-      height: $spacing / 2;
+    &-bar {
+      width: $spacing * 18;
+      height: $spacing / 3;
       background-color: $common-color--grey2-light;
-      border-radius: $spacing / 4;
+      border-radius: $spacing / 4 0 0 $spacing / 4;
       @include transition(background-color, width);
     }
 
-    .c-l-a-ring {
+    &-ring {
       width: $spacing * 2;
       height: $spacing * 2;
-      border: $spacing / 2 solid $common-color--grey2-light;
+      border: $spacing / 4 solid $common-color--grey2-light;
       box-sizing: border-box;
       border-radius: $spacing;
       @include transition(border-color, width, height, top, right);
     }
   }
 
-  /*  &:hover {
-      .c-l-bar {
-        background-color: $common-color--grey2;
-        &:before {
-          border-color: $common-color--grey2;
-        }
-      }
-    }*/
-
   &:hover {
-    .c-l-label {
-      .icon {
+    .Link-label {
+      color: $common-color--grey2;
+      .Icon {
+        fill: $common-color--grey2;
+      }
+    }
+    .Link-adornment {
+      &-bar {
+        background-color: $common-color--grey2;
+      }
+      &-ring {
+        border-color: $common-color--grey2;
+      }
+    }
+  }
+
+  &--condensed {
+    .Link-label {
+      .Icon {
         margin-right: -$spacing * 3;
         opacity: 0;
       }
     }
 
-    .c-l-adornment {
-      .c-l-a-bar {
+    .Link-adornment {
+      margin-bottom: $spacing / 2;
+
+      &-bar {
         width: $spacing * 16;
       }
-
-      .c-l-a-ring {
-        width: $spacing;
-        height: $spacing;
+      &-ring {
+        width: $spacing / 2;
+        height: $spacing / 2;
       }
     }
   }

@@ -1,8 +1,22 @@
-.c-typography-a {
-  @extend %transition;
-  @extend %link;
+.Typography {
+  font-size: $spacing-unit + em;
+  line-height: 1;
 
-  .c-t-a-label {
-    line-height: 16px;
+  &-title {
+    font-size: 6rem;
+    color: $primary-color;
+    @extend %font-family--uber;
+  }
+
+  &-subject {
+    font-size: 1rem;
+    letter-spacing: $spacing;
+    color: $common-color--grey2;
+    @extend %font-family--uber;
+  }
+
+  &-paragraph {
+    font-size: 1rem;
+    color: $common-color--grey1;
   }
 }

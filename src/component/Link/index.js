@@ -1,14 +1,16 @@
 import React from "react";
 
 export default props => (
-  <a className={["c-link", "condensed"].join(" ")} href={"/"}>
-    <span className={"c-l-label"}>
-      {props.icon}
-      {props.label}
-    </span>
-    <div className={"c-l-adornment"}>
-      <div className={"c-l-a-bar"} />
-      <div className={"c-l-a-ring"} />
+  <a className={["Link", props.className].join(" ")} href={"/"}>
+    <div className={"Link-wrap"}>
+      <span className={"Link-label"}>
+        {props.icon}
+        {props.label}
+      </span>
+      <div className={"Link-adornment"}>
+        <div className={"Link-adornment-bar"} />
+        <div className={"Link-adornment-ring"} />
+      </div>
     </div>
   </a>
 );
