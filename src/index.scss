@@ -4,8 +4,15 @@
 @import "library/config";
 @import "library/dimension";
 @import "library/mixin";
+@import "library/reset";
 @import "library/theme";
+@import "library/placeholder";
 
 // components
 @import "component/App/index";
 @import "component/Icon/index";
+@import "component/Header/index";
+@import "component/Nav/index";
+@import "component/Typography/index";
+@import "component/Link/index";
+@import "component/Social/index";

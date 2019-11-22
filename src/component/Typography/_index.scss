@@ -1,0 +1,8 @@
+.c-typography-a {
+  @extend %transition;
+  @extend %link;
+
+  .c-t-a-label {
+    line-height: 16px;
+  }
+}

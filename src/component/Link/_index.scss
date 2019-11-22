@@ -1,0 +1,65 @@
+.c-link {
+  @extend %link;
+
+  .c-l-label {
+    @extend %align-center;
+
+    .icon {
+      fill: $common-color--grey2;
+      margin-right: $spacing;
+      opacity: 1;
+      @include transition(opacity, margin-right);
+    }
+  }
+
+  .c-l-adornment {
+    margin-top: $spacing;
+    @extend %align-center;
+
+    .c-l-a-bar {
+      width: $spacing * 20;
+      height: $spacing / 2;
+      background-color: $common-color--grey2-light;
+      border-radius: $spacing / 4;
+      @include transition(background-color, width);
+    }
+
+    .c-l-a-ring {
+      width: $spacing * 2;
+      height: $spacing * 2;
+      border: $spacing / 2 solid $common-color--grey2-light;
+      box-sizing: border-box;
+      border-radius: $spacing;
+      @include transition(border-color, width, height, top, right);
+    }
+  }
+
+  /*  &:hover {
+      .c-l-bar {
+        background-color: $common-color--grey2;
+        &:before {
+          border-color: $common-color--grey2;
+        }
+      }
+    }*/
+
+  &:hover {
+    .c-l-label {
+      .icon {
+        margin-right: -$spacing * 3;
+        opacity: 0;
+      }
+    }
+
+    .c-l-adornment {
+      .c-l-a-bar {
+        width: $spacing * 16;
+      }
+
+      .c-l-a-ring {
+        width: $spacing;
+        height: $spacing;
+      }
+    }
+  }
+}

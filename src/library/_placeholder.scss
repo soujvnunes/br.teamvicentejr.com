@@ -1,0 +1,15 @@
+%transition {
+  transition-duration: $transition-duration;
+  transition-timing-function: $transition-timing-function;
+}
+
+%link {
+  text-decoration: none;
+  color: $secondary-color--contrast;
+  font-weight: 600;
+}
+
+%align-center {
+  display: flex;
+  align-items: center;
+}

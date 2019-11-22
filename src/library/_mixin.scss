@@ -19,3 +19,8 @@
     @warn "Viewport mixin supports: phone, tablet, desktop and tv.";
   }
 }
+
+@mixin transition($properties...) {
+  @extend %transition;
+  transition-property: $properties;
+}

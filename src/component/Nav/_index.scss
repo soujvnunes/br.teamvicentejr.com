@@ -1,0 +1,25 @@
+.ah-nav {
+  @extend %align-center;
+
+  .ah-logo-wrapper {
+    margin-right: $spacing * 4;
+    .icon-logo {
+      width: $spacing * 8.5;
+      height: $spacing * 8.5;
+      stroke: $primary-color;
+    }
+  }
+  .ah-n-link {
+    margin-right: $spacing * 2;
+
+    .icon {
+      stroke: $common-color--grey2;
+      @include transition(fill, stroke);
+
+      &:hover {
+        fill: $primary-color;
+        stroke: $primary-color;
+      }
+    }
+  }
+}
