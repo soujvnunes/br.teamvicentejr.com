@@ -1,7 +1,6 @@
 import React from "react";
 import Typography from "../Typography";
 import Button from "../Button";
-import Icon from "../Icon";
 
 export default props => (
   <section className={"Description"}>
@@ -20,7 +19,7 @@ export default props => (
       id={"events"}
       className={"Description-button"}
       label={"Eventos"}
-      icon={<Icon name={"chevron"} rotate={90} />}
+      icon={"chevron"}
     />
   </section>
 );

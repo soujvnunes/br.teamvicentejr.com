@@ -34,9 +34,9 @@ export default props => (
       />
     </Nav>
     <Nav className={"Header-social"}>
-      <Link label={"Facebook"} icon={<Icon name={"facebook"} />} />
-      <Link label={"Instagram"} icon={<Icon name={"instagram"} />} />
-      <Link label={"Youtube"} icon={<Icon name={"youtube"} />} />
+      <Link label={"Facebook"} icon={"facebook"} />
+      <Link label={"Instagram"} icon={"instagram"} />
+      <Link label={"Youtube"} icon={"youtube"} />
     </Nav>
   </header>
 );

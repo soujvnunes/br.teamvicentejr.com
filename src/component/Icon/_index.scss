@@ -1,5 +1,12 @@
 .Icon {
+  @include transition(fill, stroke);
   @include area($icon--xy);
+  stroke: $tertiary-color;
+
+  &:hover {
+    fill: $primary-color;
+    stroke: $primary-color;
+  }
 
   &-rotate-90 {
     transform: rotate(90deg);

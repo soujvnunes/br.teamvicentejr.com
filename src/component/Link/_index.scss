@@ -6,7 +6,8 @@
     @extend %align-center;
     @include transition(color);
 
-    .Icon {
+    &-icon {
+      stroke: transparent;
       fill: $tertiary-color;
       margin-right: $spacing;
       opacity: 1;
@@ -37,7 +38,7 @@
 
   &:hover {
     .Link-label {
-      .Icon {
+      &-icon {
         fill: $tertiary-color--light;
       }
     }
@@ -53,7 +54,7 @@
 
   &--condensed {
     .Link-label {
-      .Icon {
+      &-icon {
         margin-right: -$spacing * 3;
         opacity: 0;
       }

@@ -17,8 +17,7 @@
       @extend %ring-border;
       @include transition(border-color);
 
-      .Icon {
-        margin-top: $spacing / 2.5;
+      &-icon {
         stroke: $primary-color;
       }
     }
