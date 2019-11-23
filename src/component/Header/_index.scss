@@ -2,4 +2,29 @@
   padding: $spacing * 4;
   @extend %align-center;
   justify-content: space-between;
+  @extend %z-index;
+
+  &-nav {
+    &-logo {
+      margin-right: $spacing * 4;
+      .icon-logo {
+        @include area($spacing * 8.5);
+        stroke: $tertiary-color;
+      }
+    }
+
+    &-link {
+      margin-right: $spacing * 2;
+
+      .Icon {
+        stroke: $tertiary-color;
+        @include transition(fill, stroke);
+
+        &:hover {
+          fill: $primary-color;
+          stroke: $primary-color;
+        }
+      }
+    }
+  }
 }

@@ -1,14 +1,13 @@
 .Link {
-  @extend %link;
   margin-left: $spacing * 2;
 
   &-label {
-    color: $common-color--grey2-light;
+    color: $tertiary-color;
     @extend %align-center;
     @include transition(color);
 
     .Icon {
-      fill: $common-color--grey2-light;
+      fill: $tertiary-color;
       margin-right: $spacing;
       opacity: 1;
       @include transition(opacity, margin-right, fill);
@@ -16,42 +15,38 @@
   }
 
   &-adornment {
-    margin-top: $spacing;
     margin-bottom: 0;
     @extend %align-center;
     @include transition(margin-bottom);
 
     &-bar {
       width: $spacing * 18;
-      height: $spacing / 3;
-      background-color: $common-color--grey2-light;
       border-radius: $spacing / 4 0 0 $spacing / 4;
       @include transition(background-color, width);
+      @extend %bar-border;
     }
 
     &-ring {
-      width: $spacing * 2;
-      height: $spacing * 2;
-      border: $spacing / 4 solid $common-color--grey2-light;
+      @include area($spacing * 2);
       box-sizing: border-box;
       border-radius: $spacing;
+      @extend %ring-border;
       @include transition(border-color, width, height, top, right);
     }
   }
 
   &:hover {
     .Link-label {
-      color: $common-color--grey2;
       .Icon {
-        fill: $common-color--grey2;
+        fill: $tertiary-color--light;
       }
     }
     .Link-adornment {
       &-bar {
-        background-color: $common-color--grey2;
+        background-color: $tertiary-color--light;
       }
       &-ring {
-        border-color: $common-color--grey2;
+        border-color: $tertiary-color--light;
       }
     }
   }

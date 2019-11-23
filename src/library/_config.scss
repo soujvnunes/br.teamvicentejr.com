@@ -1,8 +1,42 @@
 body {
-  margin: 0;
+  @extend %reset;
   font-family: azo-sans-web, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  line-height: 0;
+}
+
+label {
+  @extend %cursor-pointer;
+}
+
+button {
+  @extend %cursor-pointer;
+  @extend %reset;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+figure {
+  @extend %reset;
+}
+
+h1 {
+  @extend %reset;
+  @extend %font-family--uber;
+  @extend %text-align-center;
+}
+
+h6 {
+  @extend %reset;
+  @extend %text-align-center;
 }

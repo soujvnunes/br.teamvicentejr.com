@@ -17,22 +17,20 @@ $x-large: 1920px;
 
 // dimensions
 
-$icon-xy: 24px;
-$Header-y: 136px;
+$Header--y: 136px;
+$Footer--y: 64px;
+$icon--xy: 24px;
+$button-adornment--xy: $spacing * 4;
 
 // theme / source https://flatuicolors.com/palette/tr
 
 $common-color--white: #fff;
 $common-color--black: #000;
-$common-color--grey1: #9e9e9e;
-$common-color--grey2: #dfe6e9;
-
-$common-color--white-light: transparentize($common-color--white, 0.25);
-$common-color--grey2-light: transparentize($common-color--grey2, 0.25);
 
 $primary-color: #f44336;
-$primary-color--light: transparentize($primary-color, 0.25);
-
 $secondary-color: #212121;
-$secondary-color--light: transparentize($secondary-color, 0.25);
-$secondary-color--contrast: $common-color--grey2;
+$tertiary-color: #9e9e9e;
+
+$primary-color--light: transparentize($primary-color, 0.5);
+$secondary-color--light: transparentize($secondary-color, 0.5);
+$tertiary-color--light: #dfe6e9;

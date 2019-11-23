@@ -1,0 +1,12 @@
+.Person {
+  display: flex;
+  justify-content: center;
+
+  &-image {
+    width: 150%;
+  }
+
+  &-caption {
+    visibility: hidden;
+  }
+}

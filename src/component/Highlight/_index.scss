@@ -1,0 +1,7 @@
+.Highlight {
+  position: absolute;
+  overflow: hidden;
+  height: calc(100% - #{$Header--y});
+  z-index: 0;
+  padding: $Header--y 0 0 50%;
+}

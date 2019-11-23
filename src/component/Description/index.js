@@ -1,6 +1,7 @@
 import React from "react";
 import Typography from "../Typography";
 import Button from "../Button";
+import Icon from "../Icon";
 
 export default props => (
   <section className={"Description"}>
@@ -10,16 +11,16 @@ export default props => (
       className={"Description-subject"}
     />
     <Typography
-      paragraph={[...new Array(1)]
-        .map(
-          () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-        )
+      paragraph={[...new Array(4)]
+        .map(() => `Cras mattis consectetur purus sit amet fermentum.`)
         .join("\n")}
       className={"Description-paragraph"}
     />
-    <Button label={"Conheça"} />
+    <Button
+      id={"events"}
+      className={"Description-button"}
+      label={"Eventos"}
+      icon={<Icon name={"chevron"} rotate={90} />}
+    />
   </section>
 );

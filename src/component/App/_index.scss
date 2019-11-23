@@ -1,4 +1,6 @@
 .App {
   background-color: $common-color--black;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

@@ -3,15 +3,14 @@
   transition-timing-function: $transition-timing-function;
 }
 
-%link {
-  text-decoration: none;
-  color: $secondary-color--contrast;
-  font-weight: 600;
-}
-
 %align-center {
   display: flex;
   align-items: center;
+}
+
+%direction-row {
+  display: flex;
+  flex-direction: row;
 }
 
 %text-align-center {
@@ -22,4 +21,35 @@
   font-family: azo-sans-uber, sans-serif;
   font-style: normal;
   font-weight: 400;
+}
+
+%ring-border {
+  border: $spacing / 4 solid $tertiary-color;
+  background-color: transparent;
+}
+
+%bar-border {
+  height: $spacing / 4;
+  background-color: $tertiary-color;
+}
+
+%ring-border--hover {
+  border-color: $tertiary-color--light;
+}
+
+%bar-border--hover {
+  background-color: $tertiary-color--light;
+}
+
+%reset {
+  margin: 0;
+  padding: 0;
+}
+
+%cursor-pointer {
+  cursor: pointer;
+}
+
+%z-index {
+  z-index: 1;
 }

@@ -1,24 +1,14 @@
 .Description {
+  align-self: flex-end;
   width: 50%;
-  margin-top: calc(50vh - #{$Header-y});
-  padding: $spacing * 4;
+  margin-right: 50%;
+  @extend %z-index;
 
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  &-title {
-    @extend %text-align-center;
+  &-paragraph {
+    padding: 0 $spacing-unit * 1%;
   }
 
   &-subject {
-    @extend %text-align-center;
-  }
-
-  &-paragraph {
-    @extend %text-align-center;
-    margin: 0 $spacing;
-    line-height: 1.5;
+    letter-spacing: $spacing;
   }
 }

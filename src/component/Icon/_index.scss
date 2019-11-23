@@ -1,4 +1,7 @@
 .Icon {
-  width: $icon-xy;
-  height: $icon-xy;
+  @include area($icon--xy);
+
+  &-rotate-90 {
+    transform: rotate(90deg);
+  }
 }

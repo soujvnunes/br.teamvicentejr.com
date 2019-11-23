@@ -1,5 +1,51 @@
 .Button {
+  flex-direction: column;
+  @extend %align-center;
+
   &-label {
-    @extend %link;
+    margin-bottom: $spacing;
+    letter-spacing: 0;
+    color: $primary-color;
+  }
+
+  &-adornment {
+    @extend %align-center;
+
+    &-ring {
+      @include area($button-adornment--xy);
+      border-radius: $button-adornment--xy / 2;
+      @extend %ring-border;
+      @include transition(border-color);
+
+      .Icon {
+        margin-top: $spacing / 2.5;
+        stroke: $primary-color;
+      }
+    }
+
+    &-bar {
+      width: $spacing * 8;
+      @extend %bar-border;
+      @include transition(background-color);
+
+      &--left {
+        border-radius: $spacing / 4 0 0 $spacing / 4;
+      }
+
+      &--right {
+        border-radius: 0 $spacing / 4 $spacing / 4 0;
+      }
+    }
+  }
+
+  &:hover {
+    .Button-adornment {
+      &-ring {
+        @extend %ring-border--hover;
+      }
+      &-bar {
+        @extend %bar-border--hover;
+      }
+    }
   }
 }

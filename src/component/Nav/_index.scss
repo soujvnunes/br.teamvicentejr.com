@@ -1,26 +1,4 @@
 .Nav {
   @extend %align-center;
-
-  &-logo {
-    margin-right: $spacing * 4;
-    .icon-logo {
-      width: $spacing * 8.5;
-      height: $spacing * 8.5;
-      stroke: $primary-color;
-    }
-  }
-
-  &-link {
-    margin-right: $spacing * 2;
-
-    .Icon {
-      stroke: $common-color--grey2;
-      @include transition(fill, stroke);
-
-      &:hover {
-        fill: $primary-color;
-        stroke: $primary-color;
-      }
-    }
-  }
+  flex-direction: row;
 }

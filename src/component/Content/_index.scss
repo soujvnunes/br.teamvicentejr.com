@@ -1,0 +1,5 @@
+.Content {
+  @extend %direction-row;
+  flex: 1;
+  padding: $spacing * 4;
+}

@@ -24,3 +24,8 @@
   @extend %transition;
   transition-property: $properties;
 }
+
+@mixin area($xy) {
+  width: $xy;
+  height: $xy;
+}
