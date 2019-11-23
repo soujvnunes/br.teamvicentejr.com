@@ -2,18 +2,16 @@
   flex-direction: column;
   @extend %align-center;
 
+  // default values
   &-label {
     margin-bottom: $spacing;
     letter-spacing: 0;
     color: $primary-color;
   }
-
   &-adornment {
     @extend %align-center;
 
     &-ring {
-      @include area($button-adornment--xy);
-      border-radius: $button-adornment--xy / 2;
       @extend %ring-border;
       @include transition(border-color);
 
@@ -21,9 +19,7 @@
         stroke: $primary-color;
       }
     }
-
     &-bar {
-      width: $spacing * 8;
       @extend %bar-border;
       @include transition(background-color);
 
@@ -33,6 +29,32 @@
 
       &--right {
         border-radius: 0 $spacing / 4 $spacing / 4 0;
+      }
+    }
+  }
+
+  // large type values
+  &-large {
+    .Button-adornment {
+      &-ring {
+        @include area($button-adornment--xy * 2);
+        border-radius: $button-adornment--xy;
+      }
+      &-bar {
+        width: $spacing * 6;
+      }
+    }
+  }
+
+  // normal type values
+  &-normal {
+    .Button-adornment {
+      &-ring {
+        @include area($button-adornment--xy);
+        border-radius: $button-adornment--xy / 2;
+      }
+      &-bar {
+        width: $spacing * 8;
       }
     }
   }

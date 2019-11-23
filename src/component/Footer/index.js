@@ -1,16 +1,22 @@
 import React from "react";
-import Typography from "../Typography";
-import Icon from "../Icon";
+/*import Typography from "../Typography";
+import Icon from "../Icon";*/
+import Button from "../Button";
 
 export default props => (
   <footer className={"Footer"}>
-    <Icon name={"logo"} stroke />
-    <span className={"Footer-rights"}>
+    <Button
+      id={"page-roll-down"}
+      className={"Footer-button"}
+      type={"large"}
+      icon={"chevrons"}
+    />
+    {/*<span className={"Footer-rights"}>
       ©{" "}
       <Typography
         subject={"Vicente Júnior"}
         className={"Footer-rights-label"}
       />
-    </span>
+    </span>*/}
   </footer>
 );

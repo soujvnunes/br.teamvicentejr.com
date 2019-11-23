@@ -38,10 +38,13 @@
             <path class="cls-1" d="M12,6.5v11M2.5,12h19" />
         </symbol>
         <symbol id="icon_chevrons">
-            <path class="cls-1" d="M2.5,13.9375l9.5-5.75,9.5,5.75m-4,1.875-5.5-3-5.5,3" />
+            <path class="cls-1" d="M21.5,12.65l-9.5-6-9.5,6,9.5-6Zm-14,1.56L12,11.37l4.5,2.84L12,11.37Z"/> <!--transform="translate(-1.5 -5.65)"-->
         </symbol>
-        <symbol id="icon_chevron">
-            <polyline class="cls-1" points="20 13.375 10.5 7.625 1 13.375" transform="translate(1.5 1.5)"/>
+        <symbol id="icon_chevronTop">
+            <polygon class="cls-1" points="1 7 10.5 1 20 7 10.5 1 1 7" transform="translate(2.5 8)" />
+        </symbol>
+        <symbol id="icon_chevronRight">
+            <polygon class="cls-1" points="1 1 7 10.5 1 20 7 10.5 1 1" transform="translate(8 2.5)" />
         </symbol>
         <symbol id="icon_user">
             <path class="cls-1" d="M20.8344,21.5a9.5041,9.5041,0,0,0-17.6688,0,9.5041,9.5041,0,0,1,17.6688,0Z"/>

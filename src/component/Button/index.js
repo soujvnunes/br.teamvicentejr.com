@@ -13,8 +13,22 @@ export default props => {
     props.className
   );
 
-  return (
-    <label className={className} htmlFor={`button-${props.id}`}>
+  const large = (
+    <div className={"Button-adornment"}>
+      <div className={"Button-adornment-bar"} />
+      <button
+        className={"Button-adornment-ring Button-adornment-ring--left"}
+        id={`button-${props.id}`}
+        onClick={props.onClick}
+      >
+        <Icon name={props.icon} className={"Button-adornment-ring-icon"} />
+      </button>
+      <div className={"Button-adornment-bar Button-adornment-ring--right"} />
+    </div>
+  );
+
+  const normal = (
+    <React.Fragment>
       <Typography subject={props.label} className={"Button-label"} />
       <div className={"Button-adornment"}>
         <div className={"Button-adornment-bar"} />
@@ -27,6 +41,13 @@ export default props => {
         </button>
         <div className={"Button-adornment-bar Button-adornment-ring--right"} />
       </div>
+    </React.Fragment>
+  );
+
+  return (
+    <label className={className} htmlFor={`button-${props.id}`}>
+      {props.type === "large" && large}
+      {props.type === "normal" && normal}
     </label>
   );
 };

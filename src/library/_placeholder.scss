@@ -1,7 +1,11 @@
+// animation
+
 %transition {
   transition-duration: $transition-duration;
   transition-timing-function: $transition-timing-function;
 }
+
+// display
 
 %align-center {
   display: flex;
@@ -17,15 +21,19 @@
   text-align: center;
 }
 
+// typography
+
 %font-family--uber {
   font-family: azo-sans-uber, sans-serif;
   font-style: normal;
   font-weight: 400;
 }
 
+// theme
+
 %ring-border {
   border: $spacing / 4 solid $tertiary-color;
-  background-color: transparent;
+  background-color: $secondary-color;
 }
 
 %bar-border {
@@ -40,6 +48,8 @@
 %bar-border--hover {
   background-color: $tertiary-color--light;
 }
+
+// config
 
 %reset {
   margin: 0;

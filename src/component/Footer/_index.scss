@@ -1,8 +1,7 @@
 .Footer {
   padding: $spacing * 2 $spacing * 4;
-  @extend %direction-row;
-  justify-content: space-between;
-  background-color: $secondary-color--light;
+  display: flex;
+  justify-content: center;
   color: $tertiary-color;
   @extend %z-index;
 

@@ -19,7 +19,8 @@ export default props => (
       id={"events"}
       className={"Description-button"}
       label={"Eventos"}
-      icon={"chevron"}
+      icon={"chevronRight"}
+      type={"normal"}
     />
   </section>
 );
