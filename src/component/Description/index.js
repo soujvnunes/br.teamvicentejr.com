@@ -10,7 +10,7 @@ export default props => (
     <Button
       id={"events"}
       className={"Description-button"}
-      label={"Eventos"}
+      label={props.actionLabel}
       icon={"chevronRight"}
       type={"normal"}
       onClick={props.action}

@@ -14,8 +14,28 @@
 
     &-link {
       margin-right: $spacing * 2;
+      position: relative;
 
-      .Icon {
+      &:before {
+        content: "";
+        position: absolute;
+        @include area(0);
+        border-radius: $spacing;
+        background-color: $primary-color;
+        bottom: -$spacing * 2;
+        left: 50%;
+        @include transition(width, height, left);
+      }
+
+      .active & {
+        .Icon {
+          fill: $primary-color;
+          stroke: $primary-color;
+        }
+        &:before {
+          @include area($spacing);
+          left: calc(50% - #{$spacing / 2});
+        }
       }
     }
   }
