@@ -1,16 +1,8 @@
 body {
   @extend %reset;
-  font-family: azo-sans-web, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: azo-sans-web, -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  text-decoration: none;
-  color: currentColor;
-  line-height: 0;
 }
 
 label {

@@ -1,9 +1,10 @@
 @charset "UTF-8";
+@import-normalize;
 
 // library
 @import "library/variables";
-@import "library/mixin";
 @import "library/placeholder";
+@import "library/mixin";
 @import "library/config";
 
 // components
