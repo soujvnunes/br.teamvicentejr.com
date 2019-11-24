@@ -2,11 +2,27 @@
   flex-direction: column;
   @extend %align-center;
 
+  &--spacing {
+    margin: 0 $spacing * 2;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
   // default values
   &-label {
     margin-bottom: $spacing;
-    letter-spacing: 0;
-    color: $primary-color;
+    @extend %direction-row;
+
+    &-text {
+      letter-spacing: 0;
+      color: $primary-color;
+    }
   }
   &-adornment {
     @extend %align-center;
@@ -22,14 +38,6 @@
     &-bar {
       @extend %bar-border;
       @include transition(background-color);
-
-      &--left {
-        border-radius: $spacing / 4 0 0 $spacing / 4;
-      }
-
-      &--right {
-        border-radius: 0 $spacing / 4 $spacing / 4 0;
-      }
     }
   }
 
@@ -59,10 +67,55 @@
     }
   }
 
+  // small type values
+  &-small {
+    .Button-label {
+      @extend %align-center;
+      align-self: flex-start;
+      margin-bottom: 0;
+      &-text {
+        color: $tertiary-color--light;
+      }
+      &-icon {
+        fill: $tertiary-color;
+        stroke: transparent;
+        margin-right: $spacing;
+      }
+    }
+    .Button-adornment {
+      &-ring {
+        @include area($button-adornment--xy / 2);
+        border-radius: $button-adornment--xy / 2;
+        &-icon {
+          &--small {
+            @include area($spacing * 1.1);
+            fill: $tertiary-color;
+            stroke: transparent;
+            margin-bottom: $spacing / 8;
+            margin-left: $spacing / 8;
+          }
+        }
+      }
+      &-bar--left {
+        width: $spacing * 18;
+      }
+    }
+  }
+
   &:hover {
+    .Button-label {
+      &-icon {
+        fill: $tertiary-color--light;
+      }
+    }
     .Button-adornment {
       &-ring {
         @extend %ring-border--hover;
+        &-icon {
+          &--small {
+            fill: $primary-color;
+          }
+        }
       }
       &-bar {
         @extend %bar-border--hover;

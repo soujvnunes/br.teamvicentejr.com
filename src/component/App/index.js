@@ -5,13 +5,15 @@ import Highlight from "../Highlight";
 import Footer from "../Footer";
 import Content from "../Content";
 
-export default props => (
-  <main role={"main"} className={"App"}>
-    <Header />
-    <Content>
-      <Description />
-    </Content>
-    <Footer />
-    <Highlight />
-  </main>
-);
+export default props => {
+  return (
+    <main role={"main"} className={"App"}>
+      <Header />
+      <Content>
+        <Description />
+      </Content>
+      <Footer />
+      <Highlight />
+    </main>
+  );
+};

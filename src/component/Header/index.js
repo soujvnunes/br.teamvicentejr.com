@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "../Nav";
 import Typography from "../Typography";
 import Icon from "../Icon";
-import Link from "../Link";
+import Button from "../Button";
 
 export default props => (
   <header className={"Header"}>
@@ -34,9 +34,27 @@ export default props => (
       />
     </Nav>
     <Nav className={"Header-social"}>
-      <Link label={"Facebook"} icon={"facebook"} />
-      <Link label={"Instagram"} icon={"instagram"} />
-      <Link label={"Youtube"} icon={"youtube"} />
+      <Button
+        spacing
+        label={"Facebook"}
+        icon={"facebook"}
+        type={"small"}
+        url={"https://fb.me"}
+      />
+      <Button
+        spacing
+        label={"Instagram"}
+        icon={"instagram"}
+        type={"small"}
+        url={"https://instagr.am"}
+      />
+      <Button
+        spacing
+        label={"Youtube"}
+        icon={"youtube"}
+        type={"small"}
+        url={"https://youtu.be"}
+      />
     </Nav>
   </header>
 );

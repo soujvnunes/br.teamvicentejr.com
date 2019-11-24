@@ -6,10 +6,7 @@ import classNames from "classnames";
 export default props => {
   const className = classNames(
     "Icon",
-    {
-      [`Icon-${props.name}`]: props.name,
-      [`Icon-rotate-${props.rotate}`]: props.rotate
-    },
+    { [`Icon-${props.name}`]: props.name },
     props.className
   );
 

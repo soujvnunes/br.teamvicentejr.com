@@ -8,46 +8,66 @@ export default props => {
     "Button",
     {
       [`Button-${props.type}`]: props.type,
-      [`Button-${props.type}-${props.state}`]: props.state
+      [`Button-${props.type}-${props.state}`]: props.state,
+      [`Button--spacing`]: props.spacing
     },
     props.className
   );
 
-  const large = (
-    <div className={"Button-adornment"}>
-      <div className={"Button-adornment-bar"} />
-      <button
-        className={"Button-adornment-ring Button-adornment-ring--left"}
-        id={`button-${props.id}`}
-        onClick={props.onClick}
-      >
-        <Icon name={props.icon} className={"Button-adornment-ring-icon"} />
-      </button>
-      <div className={"Button-adornment-bar Button-adornment-ring--right"} />
-    </div>
+  const ButtonIcon = (
+    <Icon
+      name={props.icon}
+      className={
+        props.type === "small"
+          ? `Button-label-icon`
+          : `Button-adornment-ring-icon`
+      }
+    />
   );
 
-  const normal = (
+  const Body = (
     <React.Fragment>
-      <Typography subject={props.label} className={"Button-label"} />
+      <div className={"Button-label"}>
+        {props.type === "small" && ButtonIcon}
+        <Typography subject={props.label} className={"Button-label-text"} />
+      </div>
       <div className={"Button-adornment"}>
-        <div className={"Button-adornment-bar"} />
+        <div className={"Button-adornment-bar Button-adornment-bar--left"} />
         <button
-          className={"Button-adornment-ring Button-adornment-ring--left"}
+          className={"Button-adornment-ring"}
           id={`button-${props.id}`}
           onClick={props.onClick}
         >
-          <Icon name={props.icon} className={"Button-adornment-ring-icon"} />
+          {props.type !== "small" ? (
+            ButtonIcon
+          ) : (
+            <Icon
+              name={"circle"}
+              className={"Button-adornment-ring-icon--small"}
+            />
+          )}
         </button>
-        <div className={"Button-adornment-bar Button-adornment-ring--right"} />
+        <div className={"Button-adornment-bar Button-adornment-bar--right"} />
       </div>
     </React.Fragment>
   );
 
   return (
-    <label className={className} htmlFor={`button-${props.id}`}>
-      {props.type === "large" && large}
-      {props.type === "normal" && normal}
-    </label>
+    <React.Fragment>
+      {props.url ? (
+        <a
+          className={className}
+          href={props.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {Body}
+        </a>
+      ) : (
+        <label className={className} htmlFor={`button-${props.id}`}>
+          {Body}
+        </label>
+      )}
+    </React.Fragment>
   );
 };

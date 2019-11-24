@@ -3,7 +3,7 @@ import Typography from "../Typography";
 import Button from "../Button";
 
 export default props => (
-  <section className={"Description"}>
+  <article className={"Description"}>
     <Typography title={"Vicente Júnior"} className={"Description-title"} />
     <Typography
       subject={"Brazilian Jiu-jítsu"}
@@ -22,5 +22,5 @@ export default props => (
       icon={"chevronRight"}
       type={"normal"}
     />
-  </section>
+  </article>
 );
