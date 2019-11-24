@@ -4,23 +4,16 @@ import Button from "../Button";
 
 export default props => (
   <article className={"Description"}>
-    <Typography title={"Vicente Júnior"} className={"Description-title"} />
-    <Typography
-      subject={"Brazilian Jiu-jítsu"}
-      className={"Description-subject"}
-    />
-    <Typography
-      paragraph={[...new Array(4)]
-        .map(() => `Cras mattis consectetur purus sit amet fermentum.`)
-        .join("\n")}
-      className={"Description-paragraph"}
-    />
+    <Typography title={props.title} className={"Description-title"} />
+    <Typography subject={props.subtitle} className={"Description-subject"} />
+    <Typography paragraph={props.text} className={"Description-paragraph"} />
     <Button
       id={"events"}
       className={"Description-button"}
       label={"Eventos"}
       icon={"chevronRight"}
       type={"normal"}
+      onClick={props.action}
     />
   </article>
 );

@@ -44,5 +44,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "devDependencies": {
+    "react-router-dom": "^5.1.2"
   }
 }
