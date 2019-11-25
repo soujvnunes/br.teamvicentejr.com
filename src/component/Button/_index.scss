@@ -29,7 +29,7 @@
 
     &-ring {
       @extend %ring-border;
-      @include transition(border-color);
+      @include transition(border-color, width);
 
       &-icon {
         stroke: $primary-color;
@@ -37,7 +37,7 @@
     }
     &-bar {
       @extend %bar-border;
-      @include transition(background-color);
+      @include transition(background-color, width);
     }
   }
 
@@ -52,6 +52,16 @@
         width: $spacing * 6;
       }
     }
+    &:hover {
+      .Button-adornment {
+        &-ring {
+          width: $button-adornment--xy * 4;
+        }
+        &-bar {
+          width: $spacing * 2;
+        }
+      }
+    }
   }
 
   // normal type values
@@ -63,6 +73,16 @@
       }
       &-bar {
         width: $spacing * 8;
+      }
+    }
+    &:hover {
+      .Button-adornment {
+        &-ring {
+          width: $button-adornment--xy * 4;
+        }
+        &-bar {
+          width: $spacing * 2;
+        }
       }
     }
   }
