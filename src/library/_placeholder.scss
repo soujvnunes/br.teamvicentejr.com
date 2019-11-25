@@ -29,6 +29,11 @@
   font-weight: 400;
 }
 
+%font-family--azo {
+  font-family: azo-sans-web, sans-serif;
+  font-style: normal;
+}
+
 // theme
 
 %ring-border {
@@ -62,4 +67,16 @@
 
 %z-index {
   z-index: 1;
+}
+
+// input
+
+%outline-none {
+  &:focus {
+    outline: none;
+  }
+}
+
+%border-none {
+  border: none;
 }

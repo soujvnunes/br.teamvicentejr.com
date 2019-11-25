@@ -3,12 +3,30 @@ import Content from "../Content";
 import Description from "../Description";
 import Footer from "../Footer";
 import Highlight from "../Highlight";
+import Input from "../Input";
 
 export default props => {
   return (
     <React.Fragment>
       <Content>
-        <Description title={"Conectar"} subtitle={"Área admninistrativa"} />
+        <Description
+          title={"Conectar"}
+          subtitle={"Área admninistrativa"}
+          actionLabel={"Conectar"}
+        >
+          <div
+            className={"Content-admin"}
+            style={{
+              margin: "16px 0",
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column"
+            }}
+          >
+            <Input label={"Usuário"} id={"user"} icon={"user"} />
+            <Input label={"Senha"} id={"password"} icon={"locker"} />
+          </div>
+        </Description>
       </Content>
       <Footer />
       <Highlight />

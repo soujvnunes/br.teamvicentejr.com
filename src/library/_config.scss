@@ -1,6 +1,6 @@
 body {
   @extend %reset;
-  font-family: azo-sans-web, -apple-system, BlinkMacSystemFont, sans-serif;
+  @extend %font-family--azo;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -15,13 +15,16 @@ label {
   @extend %cursor-pointer;
 }
 
+input {
+  background-color: transparent;
+  color: currentColor;
+  @extend %font-family--azo;
+  @extend %border-none;
+}
+
 button {
   @extend %cursor-pointer;
   @extend %reset;
-
-  &:focus {
-    outline: none;
-  }
 }
 
 figure {
