@@ -20,6 +20,8 @@ input {
   color: currentColor;
   @extend %font-family--azo;
   @extend %border-none;
+  @extend %outline-none;
+  @extend %reset;
 }
 
 button {

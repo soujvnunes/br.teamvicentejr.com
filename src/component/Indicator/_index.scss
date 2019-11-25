@@ -1,17 +1,18 @@
 .Indicator {
   width: calc(100% - #{$spacing} * 2);
-  height: $spacing / 3;
+  height: $spacing / 3.2;
   position: absolute;
   bottom: -$spacing;
   left: 0;
+  overflow: hidden;
 
   &-bar {
     background-color: $primary-color;
     width: $spacing * 3;
     height: 100%;
     border-radius: $spacing;
-    margin-left: 0;
-    @include transition(margin-left);
+    margin-left: -$spacing * 5;
+    @include transition(margin-left, width);
 
     .indicate-home-page & {
       margin-left: 0;

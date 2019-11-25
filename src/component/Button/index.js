@@ -4,12 +4,15 @@ import Icon from "../Icon";
 import classNames from "classnames";
 
 export default props => {
+  const [hovered, setHovered] = React.useState(false);
+
   const className = classNames(
     "Button",
     {
       [`Button-${props.type}`]: props.type,
       [`Button-${props.type}-${props.state}`]: props.state,
-      [`Button--spacing`]: props.spacing
+      [`Button--spacing`]: props.spacing,
+      [`Button--hovered`]: hovered
     },
     props.className
   );
@@ -34,6 +37,8 @@ export default props => {
       <div className={"Button-adornment"}>
         <div className={"Button-adornment-bar Button-adornment-bar--left"} />
         <button
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
           className={"Button-adornment-ring"}
           id={`button-${props.id}`}
           onClick={props.onClick}
