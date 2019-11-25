@@ -13,7 +13,9 @@ import Indicator from "../Indicator";
 import Highlight from "../Highlight";
 
 export default props => {
-  const [state, setState] = React.useState({ active: "home" });
+  const [state, setState] = React.useState({
+    active: window.location.pathname.substring(1)
+  });
 
   return (
     <main role={"main"} className={"App"}>

@@ -18,8 +18,8 @@ export default props => {
             style={{
               margin: "16px 0",
               display: "flex",
-              justifyContent: "center",
-              flexDirection: "column"
+              flexDirection: "column",
+              alignItems: "center"
             }}
           >
             <Input label={"Usuário"} id={"user"} icon={"user"} />

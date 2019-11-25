@@ -1,21 +1,94 @@
 .Highlight {
   position: absolute;
-  overflow: hidden;
   height: calc(100% - #{$Header--y});
-  padding: $Header--y 0 0 50%;
+  width: 50%;
+  right: 0;
+  top: $Header--y;
+  overflow: hidden;
+  display: flex;
 
+  &-image {
+    @include transition(height, opacity, margin-left);
+
+    &--1st {
+      z-index: 2;
+      margin-left: 0;
+    }
+
+    &--2nd {
+      margin-left: -90px;
+      height: calc(90% - #{$Footer--y});
+      transition-delay: 0.25s;
+      z-index: 1;
+    }
+
+    &--3rd {
+      margin-left: -80px;
+      height: calc(80% - #{$Footer--y});
+      transition-delay: 0.3s;
+      z-index: 0;
+    }
+
+    &--2nd,
+    &--3rd {
+      opacity: 0;
+    }
+  }
+
+  &--page,
   &-home-page {
-    & .Highlight-person {
-      & .Person-image {
-        width: 150%;
+    & .Highlight-image {
+      &--1st {
+        height: 300%;
+      }
+      &--2nd {
+      }
+      &--3rd {
       }
     }
   }
 
   &-teachers-page {
-    & .Highlight-person {
-      & .Person-image {
-        width: 34%;
+    & .Highlight-image {
+      &--1st {
+        height: calc(100% - #{$Footer--y});
+      }
+      &--2nd {
+        opacity: 0.8;
+      }
+      &--3rd {
+        opacity: 0.6;
+      }
+      &--2nd,
+      &--3rd {
+        margin-left: -$spacing * 4;
+      }
+    }
+  }
+
+  &-branches-page {
+    & .Highlight-image {
+      &--1st {
+        height: calc(100% - #{$Footer--y});
+      }
+      &--1st,
+      &--2nd,
+      &--3rd {
+        margin-left: 100%;
+      }
+    }
+  }
+
+  &-connect-page {
+    & .Highlight-image {
+      &--1st {
+        margin-left: 0;
+        height: 300%;
+        opacity: 0.6;
+      }
+      &--2nd,
+      &--3rd {
+        margin-left: 100%;
       }
     }
   }

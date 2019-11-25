@@ -3,10 +3,13 @@ import classNames from "classnames";
 import Icon from "../Icon";
 
 export default props => {
+  const [focused, setFocused] = React.useState(false);
+
   const className = classNames(
     "Input",
     { [`Input-${props.type}`]: props.type },
-    "Input-spacing",
+    { [`Input--focused`]: focused },
+    "Input--spacing",
     props.className
   );
 
@@ -19,6 +22,8 @@ export default props => {
         className={"Input-base"}
         placeholder={props.label}
         id={`input-${props.id}`}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
       />
     </label>
   );

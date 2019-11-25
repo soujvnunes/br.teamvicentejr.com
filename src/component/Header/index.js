@@ -8,7 +8,7 @@ export default props => {
   return (
     <header className={"Header"}>
       <Typography
-        url={"/"}
+        url={"/home"}
         subject={<Icon name={"logo"} />}
         className={"Header-logo"}
       />
