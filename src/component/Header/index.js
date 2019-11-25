@@ -1,10 +1,17 @@
 import React from "react";
 import Nav from "../Nav";
 import Button from "../Button";
+import Typography from "../Typography";
+import Icon from "../Icon";
 
 export default props => {
   return (
     <header className={"Header"}>
+      <Typography
+        url={"/"}
+        subject={<Icon name={"logo"} />}
+        className={"Header-logo"}
+      />
       {props.children}
       <Nav className={"Header-social"}>
         <Button

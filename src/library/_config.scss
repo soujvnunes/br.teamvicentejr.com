@@ -5,6 +5,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none;
+  color: currentColor;
+  line-height: 0;
+}
+
 label {
   @extend %cursor-pointer;
 }

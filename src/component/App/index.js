@@ -1,4 +1,5 @@
 import React from "react";
+import { data } from "../../utility/data";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import Header from "../Header";
 import Nav from "../Nav";
@@ -8,43 +9,31 @@ import Home from "../Page/Home";
 import Teachers from "../Page/Teachers";
 import Branches from "../Page/Branches";
 import Connect from "../Page/Connect";
+import Indicator from "../Indicator";
 
 export default props => {
+  const [state, setState] = React.useState({ active: "home" });
+
   return (
     <main role={"main"} className={"App"}>
       <Router>
         <Header>
           <Nav className={"Header-nav"}>
-            <NavLink to="/" exact>
-              <Typography
-                subject={<Icon name={"logo"} />}
-                className={"Header-nav-logo"}
-              />
-            </NavLink>
-            <NavLink to="/home">
-              <Typography
-                subject={<Icon name={"home"} />}
+            {Object.keys(data.nav).map((key, i) => (
+              <NavLink
+                key={i}
+                to={data.nav[key].to}
                 className={"Header-nav-link"}
-              />
-            </NavLink>
-            <NavLink to="/teachers">
-              <Typography
-                subject={<Icon name={"people"} />}
-                className={"Header-nav-link"}
-              />
-            </NavLink>
-            <NavLink to="/branches">
-              <Typography
-                subject={<Icon name={"local"} />}
-                className={"Header-nav-link"}
-              />
-            </NavLink>
-            <NavLink to="/connect">
-              <Typography
-                subject={<Icon name={"user"} />}
-                className={"Header-nav-link"}
-              />
-            </NavLink>
+                exact={data.nav.home ? true : null}
+                isActive={() => state.active === data.nav[key].name}
+                onClick={() =>
+                  setState({ ...state, active: `${data.nav[key].name}` })
+                }
+              >
+                <Typography subject={<Icon name={data.nav[key].icon} />} />
+              </NavLink>
+            ))}
+            <Indicator className={`indicate-${state.active}-page`} />
           </Nav>
         </Header>
         <Route exact path="/" render={props => <Home {...props} />} />

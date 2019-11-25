@@ -1,0 +1,29 @@
+.Indicator {
+  width: calc(100% - #{$spacing} * 2);
+  height: $spacing / 4;
+  position: absolute;
+  bottom: -$spacing;
+  left: 0;
+
+  &-bar {
+    background-color: $primary-color;
+    width: $spacing * 3;
+    height: 100%;
+    border-radius: $spacing;
+    margin-left: 0;
+    @include transition(margin-left);
+
+    .indicate-home-page & {
+      margin-left: 0;
+    }
+    .indicate-teachers-page & {
+      margin-left: $spacing * 5;
+    }
+    .indicate-branches-page & {
+      margin-left: $spacing * 10;
+    }
+    .indicate-connect-page & {
+      margin-left: $spacing * 15;
+    }
+  }
+}

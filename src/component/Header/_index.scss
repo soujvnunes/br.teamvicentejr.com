@@ -4,37 +4,27 @@
   @extend %align-center;
   @extend %z-index;
 
-  &-nav {
-    &-logo {
-      margin-right: $spacing * 4;
-      .Icon-logo {
-        @include area($spacing * 8.5);
-      }
+  &-logo {
+    margin-right: $spacing * 4;
+    .Icon-logo {
+      @include area($spacing * 8.5);
     }
+  }
 
+  &-social {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  &-nav {
+    position: relative;
     &-link {
       margin-right: $spacing * 2;
       position: relative;
-
-      &:before {
-        content: "";
-        position: absolute;
-        @include area(0);
-        border-radius: $spacing;
-        background-color: $primary-color;
-        bottom: -$spacing * 2;
-        left: 50%;
-        @include transition(width, height, left);
-      }
-
-      .active & {
+      &.active {
         .Icon {
           fill: $primary-color;
           stroke: $primary-color;
-        }
-        &:before {
-          @include area($spacing);
-          left: calc(50% - #{$spacing / 2});
         }
       }
     }

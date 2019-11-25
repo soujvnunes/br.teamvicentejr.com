@@ -1,4 +1,30 @@
 export const data = {
+  nav: {
+    home: {
+      name: "home",
+      to: "/home",
+      icon: "home",
+      primary: "Início"
+    },
+    teachers: {
+      name: "teachers",
+      to: "/teachers",
+      icon: "people",
+      primary: "Professores"
+    },
+    branches: {
+      name: "branches",
+      to: "/branches",
+      icon: "local",
+      primary: "Filiais"
+    },
+    connect: {
+      name: "connect",
+      to: "/connect",
+      icon: "user",
+      primary: "Conectar"
+    }
+  },
   page: {
     home: {
       title: "Vicente Júnior",
