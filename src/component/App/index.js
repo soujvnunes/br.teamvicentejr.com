@@ -10,6 +10,7 @@ import Teachers from "../Page/Teachers";
 import Branches from "../Page/Branches";
 import Connect from "../Page/Connect";
 import Indicator from "../Indicator";
+import Highlight from "../Highlight";
 
 export default props => {
   const [state, setState] = React.useState({ active: "home" });
@@ -41,6 +42,7 @@ export default props => {
         <Route path="/teachers" render={props => <Teachers {...props} />} />
         <Route path="/branches" render={props => <Branches {...props} />} />
         <Route path="/connect" render={props => <Connect {...props} />} />
+        <Highlight className={`Highlight-${state.active}-page`} />
       </Router>
     </main>
   );

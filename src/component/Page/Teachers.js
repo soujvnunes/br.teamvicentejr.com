@@ -2,7 +2,6 @@ import React from "react";
 import Content from "../Content";
 import Description from "../Description";
 import Footer from "../Footer";
-import Highlight from "../Highlight";
 
 export default props => {
   return (
@@ -18,7 +17,6 @@ export default props => {
         />
       </Content>
       <Footer />
-      <Highlight />
     </React.Fragment>
   );
 };

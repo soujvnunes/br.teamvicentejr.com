@@ -1,9 +1,9 @@
 .Person {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 
   &-image {
-    width: 150%;
+    @include transition(width);
   }
 
   &-caption {

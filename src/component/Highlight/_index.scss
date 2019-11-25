@@ -3,4 +3,20 @@
   overflow: hidden;
   height: calc(100% - #{$Header--y});
   padding: $Header--y 0 0 50%;
+
+  &-home-page {
+    & .Highlight-person {
+      & .Person-image {
+        width: 150%;
+      }
+    }
+  }
+
+  &-teachers-page {
+    & .Highlight-person {
+      & .Person-image {
+        width: 34%;
+      }
+    }
+  }
 }
