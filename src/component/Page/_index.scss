@@ -1,0 +1,13 @@
+.Content {
+  .Events {
+    margin-top: $spacing * 10;
+    @include transition(margin-top, opacity);
+    opacity: 0;
+
+    &--expanded {
+      margin-top: 0;
+      opacity: 1;
+      transition-delay: 0.16s;
+    }
+  }
+}

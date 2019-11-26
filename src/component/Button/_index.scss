@@ -14,6 +14,14 @@
     }
   }
 
+  &-no-bar {
+    .Button-adornment {
+      &-bar {
+        display: none;
+      }
+    }
+  }
+
   // default values
   &-label {
     margin-bottom: $spacing;
@@ -86,6 +94,16 @@
       }
     }
     &:hover {
+      .Button-adornment {
+        &-ring {
+          width: $button-adornment--xy * 4;
+        }
+        &-bar {
+          width: $spacing * 2;
+        }
+      }
+    }
+    &--expanded {
       .Button-adornment {
         &-ring {
           width: $button-adornment--xy * 4;

@@ -1,7 +1,9 @@
 import React from "react";
 import Content from "../Content";
 import Description from "../Description";
+/*
 import Footer from "../Footer";
+*/
 import Input from "../Input";
 
 export default props => {
@@ -27,7 +29,7 @@ export default props => {
           </div>
         </Description>
       </Content>
-      <Footer />
+      {/*<Footer />*/}
     </React.Fragment>
   );
 };

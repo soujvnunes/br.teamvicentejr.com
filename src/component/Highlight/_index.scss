@@ -6,6 +6,15 @@
   top: $Header--y;
   overflow: hidden;
   display: flex;
+  opacity: 1;
+  @include transition(height, opacity, top, width);
+
+  &--event {
+    height: calc(100% - #{$Header--y * 2});
+    top: $Header--y * 2;
+    opacity: 0;
+    width: 45%;
+  }
 
   &-image {
     @include transition(height, opacity, margin-left);

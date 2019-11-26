@@ -4,22 +4,20 @@ import Icon from "../Icon";
 import classNames from "classnames";
 
 export default props => {
-  const [hovered, setHovered] = React.useState(false);
-
   const className = classNames(
     "Button",
     {
       [`Button-${props.type}`]: props.type,
       [`Button-${props.type}--${props.state}`]: props.state,
       [`Button--spacing`]: props.spacing,
-      [`Button--hovered`]: hovered
+      [`Button-no-${props.adornment}`]: props.adornment
     },
     props.className
   );
 
   const ButtonIcon = (
     <Icon
-      name={props.icon}
+      name={props.state ? "remove" : props.icon}
       className={
         props.type === "small"
           ? `Button-label-icon`
@@ -30,17 +28,17 @@ export default props => {
 
   const Body = (
     <React.Fragment>
-      <div className={"Button-label"}>
-        {props.type === "small" && ButtonIcon}
-        <Typography subject={props.label} className={"Button-label-text"} />
-      </div>
+      {props.label ? (
+        <div className={"Button-label"}>
+          {props.type === "small" && ButtonIcon}
+          <Typography subject={props.label} className={"Button-label-text"} />
+        </div>
+      ) : null}
       <div className={"Button-adornment"}>
         <div className={"Button-adornment-bar Button-adornment-bar--left"} />
         <button
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
           className={"Button-adornment-ring"}
-          id={`button-${props.id}`}
+          id={props.id ? `button-${props.id}` : null}
           onClick={props.onClick}
         >
           {props.type !== "small" ? (
@@ -69,7 +67,10 @@ export default props => {
           {Body}
         </a>
       ) : (
-        <label className={className} htmlFor={`button-${props.id}`}>
+        <label
+          className={className}
+          htmlFor={props.id ? `button-${props.id}` : null}
+        >
           {Body}
         </label>
       )}

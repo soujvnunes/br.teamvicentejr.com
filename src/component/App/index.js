@@ -11,18 +11,35 @@ import Branches from "../Page/Branches";
 import Connect from "../Page/Connect";
 import Indicator from "../Indicator";
 import Highlight from "../Highlight";
+import classNames from "classnames";
 
 export default props => {
   const [state, setState] = React.useState({
     active: window.location.pathname.substring(1)
   });
 
+  const [event, setEvent] = React.useState(false);
+
   React.useEffect(() => setState({ ...state, active: data.nav.home.name }), []);
+
+  function handleEvent() {
+    if (event) setEvent(false);
+    else setEvent(true);
+  }
+
+  const className = {
+    Highlight: [
+      classNames({
+        [`Highlight-${state.active}-page`]: state.active,
+        [`Highlight--event`]: event
+      })
+    ]
+  };
 
   return (
     <main role={"main"} className={"App"}>
       <Router>
-        <Header social={state.active !== "home" && "condensed"}>
+        <Header social={(state.active !== "home" || event) && "condensed"}>
           <Nav className={"Header-nav"}>
             {Object.keys(data.nav).map((key, i) => (
               <NavLink
@@ -41,12 +58,21 @@ export default props => {
             <Indicator className={`indicate-${state.active}-page`} />
           </Nav>
         </Header>
-        <Route exact path="/" render={props => <Home {...props} />} />
-        <Route path="/home" render={props => <Home {...props} />} />
+        <Route
+          exact
+          path="/"
+          render={props => (
+            <Home
+              {...props}
+              event={handleEvent}
+              description={event && "expanded"}
+            />
+          )}
+        />
         <Route path="/teachers" render={props => <Teachers {...props} />} />
         <Route path="/branches" render={props => <Branches {...props} />} />
         <Route path="/connect" render={props => <Connect {...props} />} />
-        <Highlight className={`Highlight-${state.active}-page`} />
+        <Highlight className={className.Highlight} />
       </Router>
     </main>
   );

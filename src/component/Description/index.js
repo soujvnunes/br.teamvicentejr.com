@@ -17,6 +17,7 @@ export default props => (
       icon={"chevronRight"}
       type={"normal"}
       onClick={props.action}
+      state={props.description === "expanded" && "expanded"}
     />
   </article>
 );

@@ -1,6 +1,8 @@
 import React from "react";
-/*import Typography from "../Typography";
-import Icon from "../Icon";*/
+import Typography from "../Typography";
+/*
+import Icon from "../Icon";
+*/
 import Button from "../Button";
 
 export default props => (
@@ -11,12 +13,12 @@ export default props => (
       type={"large"}
       icon={"chevrons"}
     />
-    {/*<span className={"Footer-rights"}>
+    <span className={"Footer-rights"}>
       ©{" "}
       <Typography
         subject={"Vicente Júnior"}
         className={"Footer-rights-label"}
       />
-    </span>*/}
+    </span>
   </footer>
 );

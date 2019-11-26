@@ -1,7 +1,7 @@
 import React from "react";
 import Content from "../Content";
 import Description from "../Description";
-import Footer from "../Footer";
+/*import Footer from "../Footer";*/
 
 export default props => {
   return (
@@ -16,7 +16,7 @@ export default props => {
           //action={action}
         />
       </Content>
-      <Footer />
+      {/*<Footer />*/}
     </React.Fragment>
   );
 };
