@@ -17,16 +17,18 @@ export default props => {
     active: window.location.pathname.substring(1)
   });
 
+  React.useEffect(() => setState({ ...state, active: data.nav.home.name }), []);
+
   return (
     <main role={"main"} className={"App"}>
       <Router>
-        <Header>
+        <Header social={state.active !== "home" && "condensed"}>
           <Nav className={"Header-nav"}>
             {Object.keys(data.nav).map((key, i) => (
               <NavLink
                 key={i}
                 to={data.nav[key].to}
-                className={"Header-nav-link"}
+                className={data.nav[key].className}
                 exact={data.nav.home ? true : null}
                 isActive={() => state.active === data.nav[key].name}
                 onClick={() =>

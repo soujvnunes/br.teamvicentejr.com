@@ -27,6 +27,7 @@ input {
 button {
   @extend %cursor-pointer;
   @extend %reset;
+  @extend %outline-none;
 }
 
 figure {

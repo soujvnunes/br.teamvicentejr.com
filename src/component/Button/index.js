@@ -10,7 +10,7 @@ export default props => {
     "Button",
     {
       [`Button-${props.type}`]: props.type,
-      [`Button-${props.type}-${props.state}`]: props.state,
+      [`Button-${props.type}--${props.state}`]: props.state,
       [`Button--spacing`]: props.spacing,
       [`Button--hovered`]: hovered
     },

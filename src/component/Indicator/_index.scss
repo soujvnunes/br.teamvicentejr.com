@@ -1,9 +1,9 @@
 .Indicator {
-  width: calc(100% - #{$spacing} * 2);
+  width: $spacing * 15;
   height: $spacing / 3.2;
   position: absolute;
-  bottom: -$spacing;
-  left: 0;
+  bottom: $spacing;
+  right: 0;
   overflow: hidden;
 
   &-bar {
@@ -15,16 +15,16 @@
     @include transition(margin-left, width);
 
     .indicate-home-page & {
-      margin-left: 0;
+      margin-left: -$spacing * 5;
     }
     .indicate-teachers-page & {
-      margin-left: $spacing * 5;
+      margin-left: 0;
     }
     .indicate-branches-page & {
-      margin-left: $spacing * 10;
+      margin-left: $spacing * 5;
     }
     .indicate-connect-page & {
-      margin-left: $spacing * 15;
+      margin-left: $spacing * 10;
     }
   }
 }

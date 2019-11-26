@@ -22,6 +22,12 @@
     &-text {
       letter-spacing: 0;
       color: $primary-color;
+      margin-bottom: 0;
+      @include transition(margin-bottom);
+    }
+
+    &-icon {
+      @include transition(width, height, margin-right);
     }
   }
   &-adornment {
@@ -29,10 +35,14 @@
 
     &-ring {
       @extend %ring-border;
-      @include transition(border-color, width);
+      @include transition(border-color, width, height);
 
       &-icon {
         stroke: $primary-color;
+        @include transition(width, height);
+        &--small {
+          @include transition(width, height);
+        }
       }
     }
     &-bar {
@@ -103,6 +113,7 @@
       }
     }
     .Button-adornment {
+      align-self: flex-end;
       &-ring {
         @include area($button-adornment--xy / 2);
         border-radius: $button-adornment--xy / 2;
@@ -118,6 +129,30 @@
       }
       &-bar--left {
         width: $spacing * 18;
+      }
+    }
+    &--condensed {
+      .Button-label {
+        &-text {
+          margin-bottom: $spacing;
+        }
+        &-icon {
+          margin-right: 0;
+          @include area(0);
+        }
+      }
+      .Button-adornment {
+        &-ring {
+          @include area($button-adornment--xy / 4);
+          &-icon {
+            &--small {
+              @include area(0);
+            }
+          }
+        }
+        &-bar--left {
+          width: $spacing * 12;
+        }
       }
     }
   }

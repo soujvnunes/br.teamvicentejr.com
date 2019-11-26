@@ -2,26 +2,30 @@ export const data = {
   nav: {
     home: {
       name: "home",
-      to: "/home",
-      icon: "home",
+      to: "/",
+      icon: "logo",
+      className: "Header-nav-logo",
       primary: "Início"
     },
     teachers: {
       name: "teachers",
       to: "/teachers",
       icon: "people",
+      className: "Header-nav-link",
       primary: "Professores"
     },
     branches: {
       name: "branches",
       to: "/branches",
       icon: "local",
+      className: "Header-nav-link",
       primary: "Filiais"
     },
     connect: {
       name: "connect",
       to: "/connect",
       icon: "user",
+      className: "Header-nav-link",
       primary: "Conectar"
     }
   },

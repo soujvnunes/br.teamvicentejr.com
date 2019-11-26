@@ -1,17 +1,10 @@
 import React from "react";
 import Nav from "../Nav";
 import Button from "../Button";
-import Typography from "../Typography";
-import Icon from "../Icon";
 
 export default props => {
   return (
     <header className={"Header"}>
-      <Typography
-        url={"/"}
-        subject={<Icon name={"logo"} />}
-        className={"Header-logo"}
-      />
       {props.children}
       <Nav className={"Header-social"}>
         <Button
@@ -20,6 +13,7 @@ export default props => {
           icon={"facebook"}
           type={"small"}
           url={"https://fb.me"}
+          state={props.social === "condensed" && "condensed"}
         />
         <Button
           spacing
@@ -27,6 +21,7 @@ export default props => {
           icon={"instagram"}
           type={"small"}
           url={"https://instagr.am"}
+          state={props.social === "condensed" && "condensed"}
         />
         <Button
           spacing
@@ -34,6 +29,7 @@ export default props => {
           icon={"youtube"}
           type={"small"}
           url={"https://youtu.be"}
+          state={props.social === "condensed" && "condensed"}
         />
       </Nav>
     </header>
