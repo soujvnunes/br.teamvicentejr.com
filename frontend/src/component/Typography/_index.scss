@@ -1,7 +1,7 @@
 .Typography {
   &-title {
     line-height: 1;
-    font-size: 6rem;
+    font-size: 4rem;
     color: $primary-color;
   }
 
@@ -10,6 +10,7 @@
     font-size: $spacing-unit * 0.1rem;
     font-weight: 600;
     color: $tertiary-color--light;
+    @include transition(color);
   }
 
   &-paragraph {

@@ -12,9 +12,9 @@
   &-nav {
     position: relative;
 
-    &-logo {
+    &-mark {
       margin-right: $spacing * 4;
-      .Icon-logo {
+      &-img {
         @include area($spacing * 8.5);
       }
     }
@@ -22,12 +22,24 @@
     &-link {
       margin-right: $spacing * 2;
       position: relative;
+      @extend %text-align-center;
+
+      .Icon {
+        margin-bottom: $spacing;
+      }
+
+      .Typography-subject {
+        color: $tertiary-color;
+      }
     }
 
     & .active {
       .Icon {
         fill: $primary-color;
         stroke: $primary-color;
+      }
+      .Typography-subject {
+        color: $primary-color;
       }
     }
   }

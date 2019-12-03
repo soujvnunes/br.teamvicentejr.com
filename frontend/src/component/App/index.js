@@ -12,6 +12,7 @@ import Connect from "../Page/Connect";
 import Indicator from "../Indicator";
 import Highlight from "../Highlight";
 import classNames from "classnames";
+import Mark from "../../asset/mark.png";
 
 export default props => {
   const [state, setState] = React.useState({
@@ -20,7 +21,7 @@ export default props => {
 
   const [event, setEvent] = React.useState(false);
 
-  React.useEffect(() => setState({ ...state, active: data.nav.home.name }), []);
+  React.useEffect(() => setState({ ...state, active: "home" }), []);
 
   function handleEvent() {
     if (event) setEvent(false);
@@ -41,18 +42,27 @@ export default props => {
       <Router>
         <Header social={(state.active !== "home" || event) && "condensed"}>
           <Nav className={"Header-nav"}>
+            <NavLink
+              to={"/"}
+              className={"Header-nav-mark"}
+              exact
+              isActive={() => state.active === "home"}
+              onClick={() => setState({ ...state, active: "home" })}
+            >
+              <img src={Mark} alt={"Marca"} className={"Header-nav-mark-img"} />
+            </NavLink>
             {Object.keys(data.nav).map((key, i) => (
               <NavLink
                 key={i}
                 to={data.nav[key].to}
-                className={data.nav[key].className}
-                exact={data.nav.home ? true : null}
                 isActive={() => state.active === data.nav[key].name}
+                className={data.nav[key].className}
                 onClick={() =>
                   setState({ ...state, active: `${data.nav[key].name}` })
                 }
               >
-                <Typography subject={<Icon name={data.nav[key].icon} />} />
+                <Icon name={data.nav[key].icon} />
+                <Typography subject={data.nav[key].primary} />
               </NavLink>
             ))}
             <Indicator className={`indicate-${state.active}-page`} />

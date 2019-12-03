@@ -1,12 +1,5 @@
 export const data = {
   nav: {
-    home: {
-      name: "home",
-      to: "/",
-      icon: "logo",
-      className: "Header-nav-logo",
-      primary: "Início"
-    },
     teachers: {
       name: "teachers",
       to: "/teachers",
