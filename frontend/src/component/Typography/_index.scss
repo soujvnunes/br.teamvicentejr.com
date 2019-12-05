@@ -1,20 +1,17 @@
 .Typography {
   &-title {
     line-height: 1;
-    font-size: 4rem;
     color: $primary-color;
   }
 
   &-subject {
     text-transform: uppercase;
-    font-size: $spacing-unit * 0.1rem;
     font-weight: 600;
     color: $tertiary-color--light;
     @include transition(color);
   }
 
   &-paragraph {
-    font-size: 1rem;
     color: $tertiary-color;
     margin: $spacing * 2 0;
     line-height: 1.5;

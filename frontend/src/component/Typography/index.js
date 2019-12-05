@@ -2,33 +2,31 @@ import React from "react";
 import classNames from "classnames";
 
 export default props => {
-  const className = classNames(
-    { [`Typography-title`]: props.title },
-    { [`Typography-subject`]: props.subject },
-    { [`Typography-link`]: props.url },
-    { [`Typography-paragraph`]: props.paragraph },
-    props.className
+  const { title, subject, url, paragraph, className } = props;
+
+  const classes = classNames(
+    { [`Typography-title`]: title },
+    { [`Typography-subject`]: subject },
+    { [`Typography-link`]: url },
+    { [`Typography-paragraph`]: paragraph },
+    className
   );
 
-  return (
-    <React.Fragment>
-      {props.title && <h1 className={className} children={props.title} />}
-      {props.subject && (
-        <React.Fragment>
-          {props.url ? (
-            <a
-              href={props.url}
-              className={className}
-              children={props.subject}
-            />
-          ) : (
-            <h6 className={className} children={props.subject} />
-          )}
-        </React.Fragment>
-      )}
-      {props.paragraph && (
-        <p className={className} children={props.paragraph} />
-      )}
-    </React.Fragment>
-  );
+  if (title) return <h1 className={classes}>{title}</h1>;
+  if (subject)
+    if (url)
+      return (
+        <a
+          href={url}
+          className={classes}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {subject}
+        </a>
+      );
+    else return <h6 className={classes}>{subject}</h6>;
+  if (paragraph) return <p className={classes}>{paragraph}</p>;
+
+  return null;
 };

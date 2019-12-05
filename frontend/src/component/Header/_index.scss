@@ -1,3 +1,13 @@
+%active-link {
+  .Icon {
+    fill: $primary-color;
+    stroke: $primary-color;
+  }
+  .Typography-subject {
+    color: $primary-color;
+  }
+}
+
 .Header {
   padding: $spacing * 4;
   justify-content: space-between;
@@ -25,22 +35,20 @@
       @extend %text-align-center;
 
       .Icon {
-        margin-bottom: $spacing;
+        color: $tertiary-color;
       }
 
       .Typography-subject {
         color: $tertiary-color;
       }
+
+      &:hover {
+        @extend %active-link;
+      }
     }
 
     & .active {
-      .Icon {
-        fill: $primary-color;
-        stroke: $primary-color;
-      }
-      .Typography-subject {
-        color: $primary-color;
-      }
+      @extend %active-link;
     }
   }
 }

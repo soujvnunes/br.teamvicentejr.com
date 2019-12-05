@@ -3,8 +3,8 @@
   @include area($icon--xy);
   stroke: $tertiary-color;
 
-  &:hover {
+  /*  &:hover {
     fill: $primary-color;
     stroke: $primary-color;
-  }
+  }*/
 }
