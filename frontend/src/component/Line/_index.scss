@@ -1,5 +1,5 @@
 .Line {
-  padding: $spacing;
+  padding: 0;
   border: $spacing / 4 solid $tertiary-color;
   flex-direction: row;
   border-radius: $spacing * 10;
@@ -17,21 +17,25 @@
 
   &-info {
     flex: 1 0;
-    color: $tertiary-color;
     margin-left: $spacing * 5;
 
     &-title {
-      text-transform: uppercase;
+      /*      text-transform: uppercase;*/
       margin-bottom: $spacing;
+      text-align: left;
     }
 
-    &-description {
+    &-local {
       @extend %align-center;
       font-weight: 600;
-    }
-  }
 
-  p {
-    @extend %reset;
+      &-icon {
+        @include area($spacing * 2);
+      }
+
+      &-label {
+        color: $tertiary-color;
+      }
+    }
   }
 }
