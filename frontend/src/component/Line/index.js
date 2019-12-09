@@ -1,23 +1,27 @@
 import React from "react";
-import Button from "../Button";
+import IconButton from "../IconButton";
 import Icon from "../Icon";
 import Typography from "../Typography";
+import classNames from "classnames";
 
-export default props => (
-  <li className={"Line"}>
-    <div className={"Line-info"}>
-      <Typography subject={"Nome do evento"} className={"Line-info-title"} />
-      <div className={"Line-info-local"}>
-        <Icon name={"local"} className={"Line-info-local-icon"} />
-        <Typography subject={"Local"} className={"Line-info-local-label"} />
+export default props => {
+  let { className, primary, secondary, icon } = props;
+
+  const classes = classNames("Line", className);
+  return (
+    <li className={classes}>
+      <div className={"Line-info"}>
+        <Typography subject className={"Line-info-title"}>
+          {primary}
+        </Typography>
+        <div className={"Line-info-local"}>
+          <Icon name={icon} className={"Line-info-local-icon"} />
+          <Typography subject className={"Line-info-local-label"}>
+            {secondary}
+          </Typography>
+        </div>
       </div>
-    </div>
-    <Button
-      id={"open-event"}
-      className={"Footer-button"}
-      type={"large"}
-      icon={"add"}
-      adornment={"bar"}
-    />
-  </li>
-);
+      <IconButton className={"Line-button"} type={"large"} icon={"add"} />
+    </li>
+  );
+};

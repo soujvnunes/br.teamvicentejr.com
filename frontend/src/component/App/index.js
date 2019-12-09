@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { data } from "../../utility/data";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import Header from "../Header";
@@ -13,26 +13,28 @@ import Indicator from "../Indicator";
 import Highlight from "../Highlight";
 import classNames from "classnames";
 import Mark from "../../asset/mark.png";
+import Footer from "../Footer";
 
 export default props => {
-  const [state, setState] = React.useState({
-    active: window.location.pathname.substring(1)
+  const [state, setState] = useState({
+    active: window.location.pathname.substring(1),
+    switchContent: false
   });
 
-  const [event, setEvent] = React.useState(false);
+  let { active, switchContent } = state;
 
-  React.useEffect(() => setState({ ...state, active: "home" }), []);
+  useEffect(() => setState({ active: "home" }), []);
 
   function handleEvent() {
-    if (event) setEvent(false);
-    else setEvent(true);
+    if (switchContent) setState({ ...state, switchContent: false });
+    else setState({ ...state, switchContent: true });
   }
 
-  const className = {
+  const classes = {
     Highlight: [
       classNames({
-        [`Highlight-${state.active}-page`]: state.active,
-        [`Highlight--event`]: event
+        [`Highlight-${active}-page`]: active,
+        [`Highlight--event`]: switchContent
       })
     ]
   };
@@ -40,13 +42,13 @@ export default props => {
   return (
     <main role={"main"} className={"App"}>
       <Router>
-        <Header social={(state.active !== "home" || event) && "condensed"}>
+        <Header social={(active !== "home" || switchContent) && "condensed"}>
           <Nav className={"Header-nav"}>
             <NavLink
               to={"/"}
               className={"Header-nav-mark"}
               exact
-              isActive={() => state.active === "home"}
+              isActive={() => active === "home"}
               onClick={() => setState({ ...state, active: "home" })}
             >
               <img src={Mark} alt={"Marca"} className={"Header-nav-mark-img"} />
@@ -55,17 +57,17 @@ export default props => {
               <NavLink
                 key={i}
                 to={data.nav[key].to}
-                isActive={() => state.active === data.nav[key].name}
+                isActive={() => active === data.nav[key].name}
                 className={data.nav[key].className}
                 onClick={() =>
                   setState({ ...state, active: `${data.nav[key].name}` })
                 }
               >
                 <Icon name={data.nav[key].icon} />
-                <Typography subject={data.nav[key].primary} />
+                <Typography subject>{data.nav[key].primary}</Typography>
               </NavLink>
             ))}
-            <Indicator className={`indicate-${state.active}-page`} />
+            <Indicator className={`indicate-${active}-page`} />
           </Nav>
         </Header>
         <Route
@@ -75,14 +77,15 @@ export default props => {
             <Home
               {...props}
               event={handleEvent}
-              description={event && "expanded"}
+              switchContent={switchContent}
             />
           )}
         />
         <Route path="/teachers" render={props => <Teachers {...props} />} />
         <Route path="/branches" render={props => <Branches {...props} />} />
         <Route path="/connect" render={props => <Connect {...props} />} />
-        <Highlight className={className.Highlight} />
+        <Footer />
+        <Highlight className={classes.Highlight} />
       </Router>
     </main>
   );

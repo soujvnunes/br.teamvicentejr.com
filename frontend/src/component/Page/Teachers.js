@@ -1,26 +1,34 @@
 import React from "react";
 import Content from "../Content";
 import Description from "../Description";
-/*
-import Footer from "../Footer";
-*/
+import Typography from "../Typography";
+import Button from "../Button";
 
 export default props => {
   return (
     <React.Fragment>
       <Content>
-        <Description
-          title={"Professores"}
-          actionLabel={"Conheça"}
-          text={[...new Array(4)]
-            .map(() => `Cras mattis consectetur purus sit amet fermentum.`)
-            .join("\n")}
-          //action={action}
-        />
+        <Description>
+          <Typography title className={"Description-title"}>
+            Professores
+          </Typography>
+          <Typography paragraph className={"Description-paragraph"}>
+            Vicente começou a treinar Jiu-Jitsu com os professores Marcelo
+            (Kimura) e Diojone (Grace Barra). A qualidade no treinamento
+            prevalece até hoje.
+          </Typography>
+          <Button
+            className={"Description-button"}
+            label={"Conheça"}
+            icon={"chevronRight"}
+            type={"normal"}
+            /*
+            onClick={event}
+            state={switchContent && "expanded"}
+*/
+          />
+        </Description>
       </Content>
-      {/*
-      <Footer />
-*/}
     </React.Fragment>
   );
 };

@@ -2,10 +2,11 @@ import React from "react";
 import classNames from "classnames";
 
 export default props => {
-  const className = classNames("Indicator", props.className);
+  let { className } = props;
+  const classes = classNames("Indicator", className);
 
   return (
-    <div className={className}>
+    <div className={classes}>
       <div className={"Indicator-bar"} />
     </div>
   );

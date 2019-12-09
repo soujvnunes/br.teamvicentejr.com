@@ -49,6 +49,9 @@
         <symbol id="icon_chevronRight">
             <polygon class="cls-1" points="1 1 7 10.5 1 20 7 10.5 1 1" transform="translate(8 2.5)" />
         </symbol>
+        <symbol id="icon_chevronBottom">
+            <polygon class="cls-1" points="1 1 10.5 7 20 1 10.5 7 1 1" transform="translate(2.5 8)" />
+        </symbol>
         <symbol id="icon_user">
             <path class="cls-1" d="M20.8344,21.5a9.5041,9.5041,0,0,0-17.6688,0,9.5041,9.5041,0,0,1,17.6688,0Z"/>
             <circle class="cls-1" cx="9.8344" cy="6.5" r="5.5" transform="translate(2 1.5)"/>
@@ -65,6 +68,11 @@
         </symbol>
         <symbol id="icon_logo">
             <path class="cls-1" d="M20.044,6.9435,13,16,5.319,5.2466,13,16ZM12.0112,2.5A9.5056,9.5056,0,1,1,12,2.5a9.4944,9.4944,0,1,0,.0112,0Z"/>
+        </symbol>
+        <symbol id="icon_phone">
+            <circle class="cls-1" cx="6" cy="4" r="3"/>
+            <circle class="cls-1" cx="17" cy="15" r="3"/>
+            <path class="cls-1" d="M2.5,2.5a19,19,0,0,0,19,19A19,19,0,0,1,2.5,2.5Z" transform="translate(-1.5 -1.5)"/>
         </symbol>
     </defs>
 </svg>

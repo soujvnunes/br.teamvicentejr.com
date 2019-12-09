@@ -1,0 +1,14 @@
+.IconButton {
+  &-adornment {
+    @include area($spacing * 6);
+    @extend %align-center;
+    justify-content: center;
+    border-radius: $spacing * 3;
+    border: 0;
+    @include transition(width, height, border-radius);
+
+    &-icon {
+      stroke: $primary-color;
+    }
+  }
+}

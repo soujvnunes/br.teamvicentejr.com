@@ -8,6 +8,7 @@
   display: flex;
   opacity: 1;
   @include transition(height, opacity, top, width);
+  z-index: 1;
 
   &--event {
     height: calc(100% - #{$Header--y * 2});
@@ -95,7 +96,7 @@
       &--1st {
         margin-left: 0;
         height: 300%;
-        opacity: 0.6;
+        opacity: 0.4;
       }
       &--2nd,
       &--3rd {

@@ -1,11 +1,15 @@
 .Line {
-  padding: 0;
-  border: $spacing / 4 solid $tertiary-color;
+  padding: $spacing;
   flex-direction: row;
-  border-radius: $spacing * 10;
+  border: $spacing / 4 solid $tertiary-color;
+  border-radius: $spacing * 5;
   @extend %align-center;
-  background-color: $secondary-color--light;
   margin: $spacing 0;
+  @include transition(padding, border-color);
+
+  &:nth-child(odd) {
+    background-color: $secondary-color--light;
+  }
 
   &:first-child {
     margin-top: 0;
@@ -17,10 +21,10 @@
 
   &-info {
     flex: 1 0;
-    margin-left: $spacing * 5;
+    margin-left: $spacing * 3;
+    @include transition(margin-left);
 
     &-title {
-      /*      text-transform: uppercase;*/
       margin-bottom: $spacing;
       text-align: left;
     }
@@ -35,6 +39,21 @@
 
       &-label {
         color: $tertiary-color;
+      }
+    }
+  }
+
+  &:hover {
+    padding: 0;
+    border-color: $tertiary-color--light;
+
+    .Line-info {
+      margin-left: $spacing * 4;
+    }
+    .Line-button {
+      & .IconButton-adornment {
+        @include area($spacing * 8);
+        border-radius: $spacing * 4;
       }
     }
   }

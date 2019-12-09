@@ -7,6 +7,11 @@
   @extend %direction-row;
   @include transition(border-color, padding);
   padding: $spacing;
+  box-sizing: border-box;
+
+  &--fullWidth {
+    max-width: inherit;
+  }
 
   &--spacing {
     margin: $spacing * 2 0;

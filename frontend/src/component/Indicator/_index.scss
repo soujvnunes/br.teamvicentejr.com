@@ -1,5 +1,5 @@
 .Indicator {
-  width: $spacing * 31;
+  width: $spacing * 27.25;
   height: $spacing / 3.2;
   position: absolute;
   bottom: $spacing / 3;
@@ -18,13 +18,13 @@
       margin-left: -$spacing * 5;
     }
     .indicate-teachers-page & {
-      margin-left: $spacing * 3.75;
+      margin-left: $spacing * 3.2;
     }
     .indicate-branches-page & {
-      margin-left: $spacing * 14;
+      margin-left: $spacing * 12.1;
     }
     .indicate-connect-page & {
-      margin-left: $spacing * 23;
+      margin-left: $spacing * 20;
     }
   }
 }

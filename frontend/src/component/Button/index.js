@@ -4,44 +4,55 @@ import Icon from "../Icon";
 import classNames from "classnames";
 
 export default props => {
-  const className = classNames(
+  let {
+    type,
+    state,
+    spacing,
+    className,
+    icon,
+    id,
+    label,
+    onClick,
+    url
+  } = props;
+
+  const classes = classNames(
     "Button",
     {
-      [`Button-${props.type}`]: props.type,
-      [`Button-${props.type}--${props.state}`]: props.state,
-      [`Button--spacing`]: props.spacing,
-      [`Button-no-${props.adornment}`]: props.adornment
+      [`Button-${type}`]: type,
+      [`Button-${type}--${state}`]: state,
+      [`Button--spacing`]: spacing
     },
-    props.className
+    className
   );
 
   const ButtonIcon = (
     <Icon
-      name={props.state ? "remove" : props.icon}
+      name={icon}
       className={
-        props.type === "small"
-          ? `Button-label-icon`
-          : `Button-adornment-ring-icon`
+        type === "small" ? `Button-label-icon` : `Button-adornment-ring-icon`
       }
     />
   );
 
   const Body = (
     <React.Fragment>
-      {props.label ? (
+      {label ? (
         <div className={"Button-label"}>
-          {props.type === "small" && ButtonIcon}
-          <Typography subject={props.label} className={"Button-label-text"} />
+          {type === "small" && ButtonIcon}
+          <Typography subject className={"Button-label-text"}>
+            {label}
+          </Typography>
         </div>
       ) : null}
       <div className={"Button-adornment"}>
         <div className={"Button-adornment-bar Button-adornment-bar--left"} />
         <button
           className={"Button-adornment-ring"}
-          id={props.id ? `button-${props.id}` : null}
-          onClick={props.onClick}
+          id={id ? `button-${id}` : null}
+          onClick={onClick}
         >
-          {props.type !== "small" ? (
+          {type !== "small" ? (
             ButtonIcon
           ) : (
             <Icon
@@ -57,20 +68,17 @@ export default props => {
 
   return (
     <React.Fragment>
-      {props.url ? (
+      {url ? (
         <a
-          className={className}
-          href={props.url}
+          className={classes}
+          href={url}
           target="_blank"
           rel="noopener noreferrer"
         >
           {Body}
         </a>
       ) : (
-        <label
-          className={className}
-          htmlFor={props.id ? `button-${props.id}` : null}
-        >
+        <label className={classes} htmlFor={id ? `button-${id}` : null}>
           {Body}
         </label>
       )}

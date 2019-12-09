@@ -1,29 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import Icon from "../Icon";
 
 export default props => {
-  const [focused, setFocused] = React.useState(false);
+  const [state, setState] = useState({
+    focused: false
+  });
 
-  const className = classNames(
+  let { focused } = state;
+  let { type, id, icon, label, className, fullWidth } = props;
+
+  const classes = classNames(
     "Input",
-    { [`Input-${props.type}`]: props.type },
+    { [`Input-${type}`]: type },
     { [`Input--focused`]: focused },
+    { [`Input--fullWidth`]: fullWidth },
     "Input--spacing",
-    props.className
+    className
   );
 
   return (
-    <label htmlFor={`input-${props.id}`} className={className}>
+    <label htmlFor={`input-${id}`} className={classes}>
       <div className={"Input-icons"}>
-        <Icon name={props.icon} className={"Input-icons-icon"} />
+        <Icon name={icon} className={"Input-icons-icon"} />
       </div>
       <input
         className={"Input-base"}
-        placeholder={props.label}
-        id={`input-${props.id}`}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
+        placeholder={label}
+        id={`input-${id}`}
+        onFocus={() => setState({ ...state, focused: true })}
+        onBlur={() => setState({ ...state, focused: false })}
       />
     </label>
   );

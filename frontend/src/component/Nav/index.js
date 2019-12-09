@@ -1,5 +1,6 @@
 import React from "react";
 
-export default props => (
-  <nav className={`Nav ${props.className}`} children={props.children} />
-);
+export default props => {
+  let { className, children } = props;
+  return <nav className={`Nav ${className}`} children={children} />;
+};

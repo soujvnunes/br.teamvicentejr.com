@@ -14,14 +14,6 @@
     }
   }
 
-  &-no-bar {
-    .Button-adornment {
-      &-bar {
-        display: none;
-      }
-    }
-  }
-
   // default values
   &-label {
     margin-bottom: $spacing;
@@ -47,7 +39,7 @@
 
       &-icon {
         stroke: $primary-color;
-        @include transition(width, height);
+        @include transition(width, height, fill, stroke);
         &--small {
           @include transition(width, height);
         }
@@ -88,6 +80,9 @@
       &-ring {
         @include area($button-adornment--xy);
         border-radius: $button-adornment--xy / 2;
+        &-icon {
+          @include area($spacing / 0.4);
+        }
       }
       &-bar {
         width: $spacing * 8;
@@ -125,9 +120,13 @@
         color: $tertiary-color--light;
       }
       &-icon {
-        fill: $tertiary-color;
-        stroke: transparent;
         margin-right: $spacing;
+
+        &.Icon-facebook,
+        &.Icon-instagram {
+          fill: $tertiary-color;
+          stroke: transparent !important;
+        }
       }
     }
     .Button-adornment {
@@ -179,6 +178,7 @@
     .Button-label {
       &-icon {
         fill: $tertiary-color--light;
+        stroke: $tertiary-color--light;
       }
     }
     .Button-adornment {

@@ -3,9 +3,10 @@ import VicenteJunior from "../../asset/vicente.png";
 import classNames from "classnames";
 
 export default props => {
-  const className = classNames("Highlight", props.className);
+  let { className } = props;
+  const classes = classNames("Highlight", className);
   return (
-    <section className={className}>
+    <aside className={classes}>
       <img
         className={"Highlight-image Highlight-image--1st"}
         src={VicenteJunior}
@@ -21,6 +22,6 @@ export default props => {
         src={VicenteJunior}
         alt={`Imagem`}
       />
-    </section>
+    </aside>
   );
 };

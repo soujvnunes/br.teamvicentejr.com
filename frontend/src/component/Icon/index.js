@@ -4,23 +4,21 @@ import React from "react";
 import classNames from "classnames";
 
 export default props => {
-  const className = classNames(
-    "Icon",
-    { [`Icon-${props.name}`]: props.name },
-    props.className
-  );
+  let { className, name, fill, stroke } = props;
+
+  const classes = classNames("Icon", { [`Icon-${name}`]: name }, className);
 
   return (
     <svg
-      className={className}
+      className={classes}
       viewBox={"0 0 24 24"}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      fill={props.fill ? "currentColor" : "transparent"}
-      stroke={props.stroke ? "currentColor" : "transparent"}
+      fill={fill ? "currentColor" : "transparent"}
+      stroke={stroke ? "currentColor" : "transparent"}
     >
-      <title>{props.name}'s icon</title>
-      <use xlinkHref={`#icon_${props.name}`} />
+      <title>{name}'s icon</title>
+      <use xlinkHref={`#icon_${name}`} />
     </svg>
   );
 };
