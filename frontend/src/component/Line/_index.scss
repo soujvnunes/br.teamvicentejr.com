@@ -1,15 +1,13 @@
 .Line {
-  padding: $spacing;
-  flex-direction: row;
+  flex-direction: column;
   border: $spacing / 4 solid $tertiary-color;
   border-radius: $spacing * 5;
   @extend %align-center;
   margin: $spacing 0;
-  @include transition(padding, border-color);
-
-  &:nth-child(odd) {
-    background-color: $secondary-color--light;
-  }
+  @include transition(border-color, max-height, border-radius);
+  max-height: $spacing * 8.5;
+  box-sizing: border-box;
+  overflow: hidden;
 
   &:first-child {
     margin-top: 0;
@@ -19,42 +17,61 @@
     margin-bottom: 0;
   }
 
-  &-info {
-    flex: 1 0;
-    margin-left: $spacing * 3;
-    @include transition(margin-left);
+  &-header {
+    width: -webkit-fill-available;
+    padding: $spacing;
+    display: flex;
+    align-items: center;
+    @include transition(padding);
 
-    &-title {
-      margin-bottom: $spacing;
-      text-align: left;
-    }
+    &-info {
+      flex: auto;
+      margin-left: $spacing * 3;
+      @include transition(margin-left);
 
-    &-local {
-      @extend %align-center;
-      font-weight: 600;
-
-      &-icon {
-        @include area($spacing * 2);
+      &-title {
+        margin-bottom: $spacing;
+        text-align: left;
       }
 
-      &-label {
-        color: $tertiary-color;
+      &-local {
+        @extend %align-center;
+        font-weight: 600;
+
+        &-icon {
+          @include area($spacing * 2);
+        }
+
+        &-label {
+          color: $tertiary-color;
+        }
       }
     }
   }
 
+  &-content {
+    padding: $spacing * 2;
+  }
+
   &:hover {
-    padding: 0;
     border-color: $tertiary-color--light;
 
-    .Line-info {
-      margin-left: $spacing * 4;
-    }
-    .Line-button {
-      & .IconButton-adornment {
-        @include area($spacing * 8);
-        border-radius: $spacing * 4;
+    .Line-header {
+      padding: 0;
+      &-info {
+        margin-left: $spacing * 4;
+      }
+      &-button {
+        & .IconButton-adornment {
+          @include area($spacing * 8);
+          border-radius: $spacing * 4;
+        }
       }
     }
+  }
+
+  &--expand {
+    max-height: 100%;
+    border-radius: $spacing * 4.5;
   }
 }

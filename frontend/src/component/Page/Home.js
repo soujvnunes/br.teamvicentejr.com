@@ -113,15 +113,20 @@ export default props => {
           <Input
             label={"Pesquisar evento"}
             id={"user"}
-            icon={"circle"}
+            icon={"search"}
             fullWidth
           />
           <LineSet>
-            <Line
-              primary={"Nome do evento"}
-              secondary={"Local"}
-              icon={"local"}
-            />
+            <Line primary={"Nome do evento"} secondary={"Local"} icon={"local"}>
+              <Typography paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur.
+              </Typography>
+            </Line>
             <Line
               primary={"Nome do evento"}
               secondary={"Local"}

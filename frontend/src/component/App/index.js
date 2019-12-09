@@ -82,7 +82,16 @@ export default props => {
           )}
         />
         <Route path="/teachers" render={props => <Teachers {...props} />} />
-        <Route path="/branches" render={props => <Branches {...props} />} />
+        <Route
+          path="/branches"
+          render={props => (
+            <Branches
+              {...props}
+              event={handleEvent}
+              switchContent={switchContent}
+            />
+          )}
+        />
         <Route path="/connect" render={props => <Connect {...props} />} />
         <Footer />
         <Highlight className={classes.Highlight} />

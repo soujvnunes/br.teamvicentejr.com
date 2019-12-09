@@ -3,8 +3,11 @@ import Content from "../Content";
 import Description from "../Description";
 import Typography from "../Typography";
 import Button from "../Button";
+import Section from "../Section";
 
 export default props => {
+  let { event, switchContent } = props;
+
   return (
     <React.Fragment>
       <Content>
@@ -20,14 +23,16 @@ export default props => {
           <Button
             className={"Description-button"}
             label={"Explore"}
-            icon={"chevronRight"}
+            icon={switchContent ? "remove" : "chevronRight"}
             type={"normal"}
-            /*
             onClick={event}
             state={switchContent && "expanded"}
-*/
           />
         </Description>
+        <Section show={!switchContent}></Section>
+        <Section show={switchContent}>
+          <Typography paragraph>imagem das filiais</Typography>
+        </Section>
       </Content>
     </React.Fragment>
   );
