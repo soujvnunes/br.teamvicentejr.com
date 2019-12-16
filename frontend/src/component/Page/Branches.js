@@ -6,6 +6,10 @@ import Button from "../Button";
 import Section from "../Section";
 import Map from "../Map";
 import { withGoogleMap, withScriptjs } from "react-google-maps";
+import LineSet from "../LineSet";
+import Line from "../Line";
+import LineHeader from "../LineHeader";
+import IconButton from "../IconButton";
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
@@ -13,7 +17,7 @@ export default props => {
   let { event, switchContent } = props;
 
   return (
-    <React.Fragment>
+    <>
       <Content>
         <Description>
           <Typography title className={"Description-title"}>
@@ -34,17 +38,41 @@ export default props => {
           />
         </Description>
         <Section show={!switchContent}>
-          <MapWrapped
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBOY6UqLwmYbrczni-guS7b0KPnYfG-uPg`}
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `100%` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
-          />
+          <LineSet>
+            <Line expanded={true}>
+              <LineHeader
+                primary={"Nome do evento"}
+                secondary={"Local"}
+                icon={"local"}
+                className={"branch-map-card-header"}
+              >
+                <IconButton
+                  className={"Line-header-button"}
+                  type={"large"}
+                  icon={"share"}
+                />
+              </LineHeader>
+              <MapWrapped
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBOY6UqLwmYbrczni-guS7b0KPnYfG-uPg`}
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={
+                  <div
+                    style={{
+                      height: `100%`,
+                      width: `100%`,
+                      position: `absolute`
+                    }}
+                  />
+                }
+                mapElement={<div style={{ height: `100%` }} />}
+              />
+            </Line>
+          </LineSet>
         </Section>
         <Section show={switchContent}>
           <Typography paragraph>imagem das filiais</Typography>
         </Section>
       </Content>
-    </React.Fragment>
+    </>
   );
 };

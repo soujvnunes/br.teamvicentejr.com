@@ -2,3 +2,8 @@
   position: absolute;
   right: $spacing * 4;
 }
+
+.branch-map-card-header {
+  z-index: 1;
+  background-color: $secondary-color--light;
+}

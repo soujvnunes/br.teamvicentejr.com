@@ -10,14 +10,22 @@ import Typography from "../Typography";
 import SpaceshipContent from "../SpaceshipContent";
 import SpaceshipTitle from "../SpaceshipTitle";
 import Button from "../Button";
+import LineHeader from "../LineHeader";
+import IconButton from "../IconButton";
 
 export default props => {
   const [state, setState] = useState({
+    expandLine: false,
     open: false
   });
 
+  let { expandLine, open } = state;
   let { event, switchContent } = props;
-  let { open } = state;
+
+  function handleExpandLine() {
+    if (expandLine) setState({ ...state, expandLine: false });
+    else setState({ ...state, expandLine: true });
+  }
 
   return (
     <Fragment>
@@ -117,7 +125,23 @@ export default props => {
             fullWidth
           />
           <LineSet>
-            <Line primary={"Nome do evento"} secondary={"Local"} icon={"local"}>
+            <Line
+              primary={"Nome do evento"}
+              secondary={"Local"}
+              expand={expandLine}
+            >
+              <LineHeader
+                primary={"Nome do evento"}
+                secondary={"Local"}
+                icon={"local"}
+              >
+                <IconButton
+                  className={"Line-header-button"}
+                  type={"large"}
+                  icon={expandLine ? "remove" : "add"}
+                  onClick={handleExpandLine}
+                />
+              </LineHeader>
               <Typography paragraph>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -127,21 +151,6 @@ export default props => {
                 nulla pariatur.
               </Typography>
             </Line>
-            <Line
-              primary={"Nome do evento"}
-              secondary={"Local"}
-              icon={"local"}
-            />
-            <Line
-              primary={"Nome do evento"}
-              secondary={"Local"}
-              icon={"local"}
-            />
-            <Line
-              primary={"Nome do evento"}
-              secondary={"Local"}
-              icon={"local"}
-            />
           </LineSet>
         </Section>
       </Content>

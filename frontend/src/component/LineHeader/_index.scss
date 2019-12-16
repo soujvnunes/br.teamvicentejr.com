@@ -1,0 +1,31 @@
+.Line-header {
+  width: -webkit-fill-available;
+  padding: $spacing;
+  display: flex;
+  align-items: center;
+  @include transition(padding);
+
+  &-info {
+    flex: auto;
+    margin-left: $spacing * 3;
+    @include transition(margin-left);
+
+    &-title {
+      margin-bottom: $spacing;
+      text-align: left;
+    }
+
+    &-secondary {
+      @extend %align-center;
+      font-weight: 600;
+
+      &-icon {
+        @include area($spacing * 2);
+      }
+
+      &-label {
+        color: $tertiary-color;
+      }
+    }
+  }
+}
