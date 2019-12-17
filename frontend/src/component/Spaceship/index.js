@@ -17,13 +17,14 @@ export default props => {
         {children}
         <Button
           id={"close-spaceship"}
-          className={"Description-button"}
+          className={"Spaceship-area-button"}
           label={"Fechar"}
           icon={"remove"}
           type={"normal"}
           onClick={close}
         />
       </div>
+      <div className={"Spaceship-sky"} onClick={close} />
     </div>
   );
 };

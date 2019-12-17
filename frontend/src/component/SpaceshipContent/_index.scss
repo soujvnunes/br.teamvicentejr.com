@@ -1,6 +1,8 @@
 .SpaceshipContent {
-  padding: 0 $spacing 0 $spacing * 2;
-  overflow: auto;
+  padding: $spacing * 2;
+  overflow-y: auto;
+  border-top: 1px solid $tertiary-color--light;
+  border-bottom: 1px solid $tertiary-color--light;
 
   &::-webkit-scrollbar {
     width: $spacing;
