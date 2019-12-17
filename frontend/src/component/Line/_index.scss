@@ -3,7 +3,7 @@
   border: $spacing / 4 solid $tertiary-color;
   border-radius: $spacing * 5;
   @extend %align-center;
-  margin: $spacing 0;
+  margin: $spacing * 2 0;
   @include transition(border-color, max-height, border-radius);
   max-height: $spacing * 8.5;
   box-sizing: border-box;
@@ -19,16 +19,20 @@
 
   &:hover {
     border-color: $tertiary-color--light;
+  }
 
-    .Line-header {
-      padding: 0;
-      &-info {
-        margin-left: $spacing * 4;
-      }
-      &-button {
-        & .IconButton-adornment {
-          @include area($spacing * 8);
-          border-radius: $spacing * 4;
+  &--hover {
+    &:hover {
+      .Line-header {
+        padding: 0;
+        &-info {
+          margin-left: $spacing * 4;
+        }
+        &-button {
+          & .IconButton-adornment {
+            @include area($spacing * 8);
+            border-radius: $spacing * 4;
+          }
         }
       }
     }

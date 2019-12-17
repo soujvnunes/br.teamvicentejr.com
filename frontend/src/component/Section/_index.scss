@@ -5,6 +5,7 @@
   display: none;
   @include transition(margin-top, opacity);
   z-index: 2;
+  height: -webkit-fill-available;
 
   &--show {
     margin-top: 0;

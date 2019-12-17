@@ -4,14 +4,11 @@ import Description from "../Description";
 import Typography from "../Typography";
 import Button from "../Button";
 import Section from "../Section";
-import Map from "../Map";
-import { withGoogleMap, withScriptjs } from "react-google-maps";
 import LineSet from "../LineSet";
 import Line from "../Line";
 import LineHeader from "../LineHeader";
 import IconButton from "../IconButton";
-
-const MapWrapped = withScriptjs(withGoogleMap(Map));
+import branches from "../../utility/branches";
 
 export default props => {
   let { event, switchContent } = props;
@@ -39,34 +36,29 @@ export default props => {
         </Description>
         <Section show={!switchContent}>
           <LineSet>
-            <Line expanded={true}>
-              <LineHeader
-                primary={"Nome do evento"}
-                secondary={"Local"}
-                icon={"local"}
-                className={"branch-map-card-header"}
-              >
-                <IconButton
-                  className={"Line-header-button"}
-                  type={"large"}
-                  icon={"share"}
-                />
-              </LineHeader>
-              <MapWrapped
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyBOY6UqLwmYbrczni-guS7b0KPnYfG-uPg`}
-                loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={
-                  <div
-                    style={{
-                      height: `100%`,
-                      width: `100%`,
-                      position: `absolute`
-                    }}
+            {branches.br.map((data, i) => {
+              return (
+                <Line expanded={true} key={i}>
+                  <LineHeader
+                    primary={data.name}
+                    secondary={data.local}
+                    icon={"local"}
+                    className={"branch-map-card-header"}
+                  >
+                    <IconButton
+                      className={"Line-header-button"}
+                      type={"large"}
+                      icon={"share"}
+                    />
+                  </LineHeader>
+                  <img
+                    src={require(`../../asset/${data.map}`)}
+                    alt={`Imagem para mapa da filial ${data.name}`}
+                    className={"Line-header-button"}
                   />
-                }
-                mapElement={<div style={{ height: `100%` }} />}
-              />
-            </Line>
+                </Line>
+              );
+            })}
           </LineSet>
         </Section>
         <Section show={switchContent}>

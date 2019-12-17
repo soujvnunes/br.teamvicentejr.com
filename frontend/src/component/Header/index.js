@@ -4,6 +4,10 @@ import Button from "../Button";
 import Spaceship from "../Spaceship";
 import SpaceshipTitle from "../SpaceshipTitle";
 import SpaceshipContent from "../SpaceshipContent";
+import branches from "../../utility/branches";
+import LineSet from "../LineSet";
+import Line from "../Line";
+import LineHeader from "../LineHeader";
 
 export default props => {
   const [state, setState] = useState({
@@ -46,7 +50,21 @@ export default props => {
       </header>
       <Spaceship open={open} close={() => setState({ ...state, open: false })}>
         <SpaceshipTitle>Contato</SpaceshipTitle>
-        <SpaceshipContent>oi</SpaceshipContent>
+        <SpaceshipContent>
+          <LineSet>
+            {branches.br.map((data, i) => {
+              return (
+                <Line key={i} noHover={true}>
+                  <LineHeader
+                    primary={data.phone}
+                    secondary={data.name}
+                    icon={"local"}
+                  />
+                </Line>
+              );
+            })}
+          </LineSet>
+        </SpaceshipContent>
       </Spaceship>
     </Fragment>
   );

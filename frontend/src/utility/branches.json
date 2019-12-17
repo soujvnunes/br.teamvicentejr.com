@@ -1,0 +1,40 @@
+{
+  "br": [
+    {
+      "name": "CT Corpo Em Forma",
+      "phone": "082 9 9387 9275",
+      "map": "academiaHgFitness.jpg",
+      "local": "R. Cinqüenta e Cinco, 28, Maceió - AL"
+    },
+    {
+      "name": "Adois Academia",
+      "phone": "082 3338 7000",
+      "map": "adoisAcademia.jpg",
+      "local": "R. Cristiano Maia de Omena Calheiros, S/N - Gruta de Lourdes, Maceió - AL"
+    },
+    {
+      "name": "CT Jean lima",
+      "phone": "082 3378 9126",
+      "map": "centroDeTreinamentoWt.jpg",
+      "local": "Av. Dr. André Papini Góis, 177-203 - Cidade Universitária, Maceió - AL"
+    },
+    {
+      "name": "Academia HG Fitness",
+      "phone": "082 3023 3701",
+      "map": "xFightCentroDeTreinamento.jpg",
+      "local": "Rua Tereza de Azevedo, 258 - Pinheiro, Maceió - AL"
+    },
+    {
+      "name": "X Fight Centro de Treinamento",
+      "phone": "082 9 9444 2773",
+      "map": "ctCorpoEmForma.jpg",
+      "local": "R. Manoel Maia Nobre, 290 - Farol, Maceió - AL"
+    },
+    {
+      "name": "Centro De Treinamento WT",
+      "phone": "082 9 8839 150",
+      "map": "ctJeanLima.jpg",
+      "local": "Unnamed Road - Benedito Bentes, Maceió - AL"
+    }
+  ]
+}
