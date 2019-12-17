@@ -2,6 +2,7 @@
   align-self: flex-end;
   width: 50%;
   @extend %z-index;
+  padding: $spacing * 4;
 
   &-paragraph {
     padding: 0 $spacing-unit * 1%;

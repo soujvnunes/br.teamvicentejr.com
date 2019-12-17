@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Icon from "../Icon";
 
 export default props => {
-  let { className, icon, id, onClick } = props;
+  let { className, icon, id, onClick, url } = props;
 
   const classes = {
     root: [classNames(className, "IconButton")],
@@ -13,15 +13,32 @@ export default props => {
 
   let { root, adornment, iconButton } = classes;
 
+  const Body = (
+    <button
+      className={adornment}
+      id={id ? `button-${id}` : null}
+      onClick={onClick}
+    >
+      <Icon name={icon} className={iconButton} />
+    </button>
+  );
+
   return (
-    <label className={root} htmlFor={id ? `button-${id}` : null}>
-      <button
-        className={adornment}
-        id={id ? `button-${id}` : null}
-        onClick={onClick}
-      >
-        <Icon name={icon} className={iconButton} />
-      </button>
-    </label>
+    <>
+      {url ? (
+        <a
+          className={root}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {Body}
+        </a>
+      ) : (
+        <label className={root} htmlFor={id ? `button-${id}` : null}>
+          {Body}
+        </label>
+      )}
+    </>
   );
 };

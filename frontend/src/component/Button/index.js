@@ -36,7 +36,7 @@ export default props => {
   );
 
   const Body = (
-    <React.Fragment>
+    <>
       {label ? (
         <div className={"Button-label"}>
           {type === "small" && ButtonIcon}
@@ -63,11 +63,11 @@ export default props => {
         </button>
         <div className={"Button-adornment-bar Button-adornment-bar--right"} />
       </div>
-    </React.Fragment>
+    </>
   );
 
   return (
-    <React.Fragment>
+    <>
       {url ? (
         <a
           className={classes}
@@ -82,6 +82,6 @@ export default props => {
           {Body}
         </label>
       )}
-    </React.Fragment>
+    </>
   );
 };

@@ -5,5 +5,31 @@
 
 .branch-map-card-header {
   z-index: 1;
-  background-color: $secondary-color--light;
+  background-color: transparentize($secondary-color, 0.25);
+}
+
+.branch-list {
+  height: calc(100vh - #{$Header--y});
+  margin-right: $spacing * 4;
+  padding: 0 $spacing 0 $spacing * 2;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: $spacing;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $primary-color--light;
+    border-radius: $spacing / 2;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $primary-color;
+  }
+
+  .Line-map {
+    width: 160%;
+    margin-top: -$spacing * 22.5;
+  }
 }

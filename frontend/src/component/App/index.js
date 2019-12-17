@@ -93,7 +93,7 @@ export default props => {
           )}
         />
         <Route path="/connect" render={props => <Connect {...props} />} />
-        <Footer />
+        {/*        <Footer />*/}
         <Highlight className={classes.Highlight} />
       </Router>
     </main>

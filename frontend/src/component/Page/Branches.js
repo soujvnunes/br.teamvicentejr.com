@@ -35,7 +35,7 @@ export default props => {
           />
         </Description>
         <Section show={!switchContent}>
-          <LineSet>
+          <LineSet className={"branch-list"}>
             {branches.br.map((data, i) => {
               return (
                 <Line expanded={true} key={i}>
@@ -49,12 +49,14 @@ export default props => {
                       className={"Line-header-button"}
                       type={"large"}
                       icon={"share"}
+                      url={data.url}
                     />
                   </LineHeader>
                   <img
                     src={require(`../../asset/${data.map}`)}
                     alt={`Imagem para mapa da filial ${data.name}`}
-                    className={"Line-header-button"}
+                    className={"Line-map"}
+                    style={{ position: "absolute" }}
                   />
                 </Line>
               );
