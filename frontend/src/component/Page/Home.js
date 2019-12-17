@@ -117,7 +117,7 @@ export default props => {
             state={switchContent && "expanded"}
           />
         </Description>
-        <Section show={switchContent}>
+        <Section show={switchContent} className={"events-list"}>
           <Input
             label={"Pesquisar evento"}
             id={"user"}
@@ -142,7 +142,7 @@ export default props => {
                   onClick={handleExpandLine}
                 />
               </LineHeader>
-              <Typography paragraph>
+              <Typography paragraph className={"event-description"}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
