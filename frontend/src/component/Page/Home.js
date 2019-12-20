@@ -28,7 +28,7 @@ export default props => {
   }
 
   return (
-    <Fragment>
+    <>
       <Spaceship open={open} close={() => setState({ ...state, open: false })}>
         <SpaceshipTitle>História</SpaceshipTitle>
         <SpaceshipContent>
@@ -150,6 +150,6 @@ export default props => {
           </LineSet>
         </Section>
       </Content>
-    </Fragment>
+    </>
   );
 };

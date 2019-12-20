@@ -1,20 +1,11 @@
 .Spaceship {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: $spacing * 16 $spacing * 4;
 
-  &--open {
-    display: flex;
-  }
-
   &-area {
+    outline: 0;
     max-width: $spacing * 80;
     min-width: $spacing * 40;
     max-height: -webkit-fill-available;
@@ -29,14 +20,5 @@
     &-button {
       margin-top: $spacing * 2;
     }
-  }
-
-  &-sky {
-    position: absolute;
-    background-color: $secondary-color--light;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
   }
 }

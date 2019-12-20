@@ -67,3 +67,7 @@ ul {
 hr {
   @extend %reset;
 }
+
+* {
+  box-sizing: border-box;
+}

@@ -11,6 +11,7 @@
     &-title {
       margin-bottom: $spacing;
       text-align: left;
+      font-size: 1em;
     }
     &-secondary {
       @extend %align-center;

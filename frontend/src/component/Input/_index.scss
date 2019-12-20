@@ -14,7 +14,7 @@
   }
 
   &--spacing {
-    margin: $spacing * 2 0;
+    margin: $spacing 0;
 
     &:first-child {
       margin-top: 0;
@@ -26,16 +26,19 @@
   }
 
   &-icons {
-    padding: $spacing;
     background-color: $tertiary-color;
     border-radius: $spacing * 8;
     margin-right: $spacing * 2;
-    @include transition(background-color, padding, margin);
+    width: $spacing * 6;
+    height: $spacing * 3;
+    justify-content: center;
+    @extend %align-center;
+    @include transition(background-color, width, height, margin-right);
 
     &-icon {
       stroke: $tertiary-color--light;
-      @include transition(stroke);
-      padding: 0 $spacing / 5.3;
+      @include transition(stroke, padding);
+      padding: $spacing / 2;
     }
   }
 
@@ -65,11 +68,13 @@
     padding: 0 $spacing * 2 0 0;
 
     .Input-icons {
+      width: $spacing * 9;
+      height: $spacing * 5;
       margin-right: $spacing;
-      padding: $spacing * 2;
 
       &-icon {
         stroke: $primary-color !important;
+        padding: 0;
       }
     }
   }
