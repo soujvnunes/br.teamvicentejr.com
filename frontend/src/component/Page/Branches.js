@@ -56,7 +56,6 @@ export default props => {
                     src={require(`../../asset/${data.map}`)}
                     alt={`Imagem para mapa da filial ${data.name}`}
                     className={"Line-map"}
-                    style={{ position: "absolute" }}
                   />
                 </Line>
               );

@@ -125,11 +125,7 @@ export default props => {
             fullWidth
           />
           <LineSet>
-            <Line
-              primary={"Nome do evento"}
-              secondary={"Local"}
-              expand={expandLine}
-            >
+            <Line expand={expandLine}>
               <LineHeader
                 primary={"Nome do evento"}
                 secondary={"Local"}

@@ -1,4 +1,6 @@
 .IconButton {
+  margin-left: $spacing;
+
   &-adornment {
     @include area($spacing * 6);
     @extend %align-center;

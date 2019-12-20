@@ -1,71 +1,97 @@
-import React, { Fragment, useState } from "react";
+import React from "react";
 import Nav from "../Nav";
 import Button from "../Button";
-import Spaceship from "../Spaceship";
+import SocialButton from "./SocialButton";
 import SpaceshipTitle from "../SpaceshipTitle";
 import SpaceshipContent from "../SpaceshipContent";
-import branches from "../../utility/branches";
 import LineSet from "../LineSet";
 import Line from "../Line";
 import LineHeader from "../LineHeader";
+import IconButton from "../IconButton";
 
 export default props => {
-  const [state, setState] = useState({
-    open: false
-  });
-
-  let { open } = state;
   let { children, social } = props;
 
   return (
-    <Fragment>
-      <header className={"Header"}>
-        {children}
-        <Nav className={"Header-social"}>
-          <Button
-            spacing
-            label={"Facebook"}
-            icon={"facebook"}
-            type={"small"}
-            url={"https://fb.me"}
-            state={social === "condensed" && "condensed"}
-          />
-          <Button
-            spacing
-            label={"Instagram"}
-            icon={"instagram"}
-            type={"small"}
-            url={"https://instagr.am"}
-            state={social === "condensed" && "condensed"}
-          />
-          <Button
-            spacing
-            label={"Contato"}
-            icon={"phone"}
-            type={"small"}
-            state={social === "condensed" && "condensed"}
-            onClick={() => setState({ ...state, open: true })}
-          />
-        </Nav>
-      </header>
-      <Spaceship open={open} close={() => setState({ ...state, open: false })}>
-        <SpaceshipTitle>Contato</SpaceshipTitle>
-        <SpaceshipContent>
-          <LineSet>
-            {branches.br.map((data, i) => {
-              return (
-                <Line key={i} noHover={true}>
-                  <LineHeader
-                    primary={data.phone}
-                    secondary={data.name}
-                    icon={"local"}
+    <header className={"Header"}>
+      {children}
+      <Nav className={"Header-social"}>
+        <Button
+          spacing
+          label={"Youtube"}
+          icon={"youtube"}
+          type={"small"}
+          url={"https://youtube.com"}
+          state={social === "condensed" && "condensed"}
+        />
+        <SocialButton
+          spacing
+          label={"Instagram"}
+          icon={"instagram"}
+          type={"small"}
+          state={social === "condensed" && "condensed"}
+        >
+          <SpaceshipTitle>Instagram</SpaceshipTitle>
+          <SpaceshipContent>
+            <LineSet>
+              <Line noHover={true}>
+                <LineHeader
+                  primary={"@vicentejuniorteambrasil"}
+                  secondary={"Instagram"}
+                  icon={"instagram"}
+                >
+                  <IconButton
+                    type={"large"}
+                    icon={"share"}
+                    url={"https://instagr.am/vicentejrteambrasil"}
                   />
-                </Line>
-              );
-            })}
-          </LineSet>
-        </SpaceshipContent>
-      </Spaceship>
-    </Fragment>
+                </LineHeader>
+              </Line>
+              <Line noHover={true}>
+                <LineHeader
+                  primary={"@vicentebjj"}
+                  secondary={"Instagram do Professor Vicente"}
+                  icon={"instagram"}
+                >
+                  <IconButton
+                    type={"large"}
+                    icon={"share"}
+                    url={"https://instagr.am/vicentebjj"}
+                  />
+                </LineHeader>
+              </Line>
+            </LineSet>
+          </SpaceshipContent>
+        </SocialButton>
+        <SocialButton
+          spacing
+          label={"Contato"}
+          icon={"phone"}
+          type={"small"}
+          state={social === "condensed" && "condensed"}
+        >
+          <SpaceshipTitle>Contato</SpaceshipTitle>
+          <SpaceshipContent>
+            <LineSet>
+              <Line noHover={true}>
+                <LineHeader
+                  primary={"vicentejrteam@gmail.com"}
+                  secondary={"E-mail"}
+                  icon={"local"}
+                >
+                  <IconButton
+                    type={"large"}
+                    icon={"share"}
+                    url={
+                      "mailto:vicentejrteam@gmail.com?subject=Contato pelo site"
+                    }
+                  />
+                </LineHeader>
+              </Line>
+            </LineSet>
+          </SpaceshipContent>
+        </SocialButton>
+      </Nav>
+    </header>
   );
 };

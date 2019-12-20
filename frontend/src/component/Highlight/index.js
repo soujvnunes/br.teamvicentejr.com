@@ -1,5 +1,7 @@
 import React from "react";
-import VicenteJunior from "../../asset/vicente.png";
+import main_1 from "../../asset/main_1.png";
+import main_2 from "../../asset/main_2.png";
+import main_3 from "../../asset/main_3.png";
 import classNames from "classnames";
 
 export default props => {
@@ -9,17 +11,17 @@ export default props => {
     <aside className={classes}>
       <img
         className={"Highlight-image Highlight-image--1st"}
-        src={VicenteJunior}
+        src={main_1}
         alt={`Imagem`}
       />
       <img
         className={"Highlight-image Highlight-image--2nd"}
-        src={VicenteJunior}
+        src={main_2}
         alt={`Imagem`}
       />
       <img
         className={"Highlight-image Highlight-image--3rd"}
-        src={VicenteJunior}
+        src={main_3}
         alt={`Imagem`}
       />
     </aside>

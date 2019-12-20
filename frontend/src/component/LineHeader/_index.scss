@@ -17,6 +17,7 @@
       font-weight: 600;
       &-icon {
         @include area($spacing * 2);
+        margin-right: $spacing;
       }
       &-label {
         color: $tertiary-color;
