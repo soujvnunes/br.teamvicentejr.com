@@ -3,10 +3,12 @@ import classNames from "classnames";
 import Icon from "../Icon";
 
 export default props => {
-  let { className, icon, id, onClick, url } = props;
+  let { className, icon, id, onClick, url, noHover } = props;
 
   const classes = {
-    root: [classNames(className, "IconButton")],
+    root: [
+      classNames("IconButton", { [`IconButton--hover`]: !noHover }, className)
+    ],
     adornment: [classNames("IconButton-adornment")],
     iconButton: [classNames("IconButton-adornment-icon")]
   };

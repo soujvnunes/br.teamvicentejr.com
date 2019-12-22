@@ -3,10 +3,11 @@ import Content from "../Content";
 import Description from "../Description";
 import Typography from "../Typography";
 import Button from "../Button";
+import Section from "../Section";
 
 export default props => {
   return (
-    <React.Fragment>
+    <>
       <Content>
         <Description>
           <Typography title className={"Description-title"}>
@@ -22,13 +23,10 @@ export default props => {
             label={"Conheça"}
             icon={"chevronRight"}
             type={"normal"}
-            /*
-            onClick={event}
-            state={switchContent && "expanded"}
-*/
           />
         </Description>
+        <Section />
       </Content>
-    </React.Fragment>
+    </>
   );
 };

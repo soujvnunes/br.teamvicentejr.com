@@ -12,12 +12,14 @@ export default function LineHeader(props) {
         <Typography subject className={"Line-header-info-title"}>
           {primary}
         </Typography>
-        <div className={"Line-header-info-secondary"}>
-          <Icon name={icon} className={"Line-header-info-secondary-icon"} />
-          <Typography subject className={"Line-header-info-secondary-label"}>
-            {secondary}
-          </Typography>
-        </div>
+        {secondary && (
+          <div className={"Line-header-info-secondary"}>
+            <Icon name={icon} className={"Line-header-info-secondary-icon"} />
+            <Typography subject className={"Line-header-info-secondary-label"}>
+              {secondary}
+            </Typography>
+          </div>
+        )}
       </div>
       {children}
     </div>

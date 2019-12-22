@@ -1,5 +1,13 @@
 .IconButton {
-  margin-left: $spacing;
+  margin: 0 $spacing;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
 
   &-adornment {
     @include area($spacing * 6);
@@ -11,6 +19,30 @@
 
     &-icon {
       stroke: $primary-color;
+      fill: transparent;
+      @include transition(stroke, fill);
+    }
+  }
+
+  &--hover {
+    .IconButton-adornment {
+      background-color: transparent;
+      @include transition(border, background-color);
+
+      &-icon {
+        stroke: $tertiary-color--light;
+      }
+    }
+
+    &:hover {
+      .IconButton-adornment {
+        border: $spacing / 4 solid $tertiary-color--light;
+        background-color: $tertiary-color--light;
+        &-icon {
+          stroke: $primary-color;
+          fill: $primary-color;
+        }
+      }
     }
   }
 }

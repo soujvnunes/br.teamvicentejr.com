@@ -1,8 +1,8 @@
 .Indicator {
-  width: $spacing * 27.25;
-  height: $spacing / 3.2;
+  width: 100%;
+  height: $spacing/4;
   position: absolute;
-  bottom: $spacing / 3;
+  top: -$spacing * 1.6;
   right: 0;
   overflow: hidden;
 
@@ -18,13 +18,13 @@
       margin-left: -$spacing * 5;
     }
     .indicate-teachers-page & {
-      margin-left: $spacing * 3.2;
+      margin-left: $spacing * 4.5;
     }
     .indicate-branches-page & {
-      margin-left: $spacing * 12.1;
+      margin-left: $spacing * 16.5;
     }
-    .indicate-connect-page & {
-      margin-left: $spacing * 20;
+    .indicate-about-page & {
+      margin-left: $spacing * 28.25;
     }
   }
 }

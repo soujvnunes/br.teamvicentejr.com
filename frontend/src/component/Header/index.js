@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from "../Nav";
-import Button from "../Button";
 import SocialButton from "./SocialButton";
 import SpaceshipTitle from "../SpaceshipTitle";
 import SpaceshipContent from "../SpaceshipContent";
@@ -10,51 +9,29 @@ import LineHeader from "../LineHeader";
 import IconButton from "../IconButton";
 
 export default props => {
-  let { children, social } = props;
+  let { children } = props;
 
   return (
     <header className={"Header"}>
       {children}
       <Nav className={"Header-social"}>
-        <Button
-          spacing
-          label={"Youtube"}
-          icon={"youtube"}
-          type={"small"}
-          url={"https://youtube.com"}
-          state={social === "condensed" && "condensed"}
-        />
-        <SocialButton
-          spacing
-          label={"Instagram"}
-          icon={"instagram"}
-          type={"small"}
-          state={social === "condensed" && "condensed"}
-        >
+        <SocialButton icon={"instagram"}>
           <SpaceshipTitle>Instagram</SpaceshipTitle>
           <SpaceshipContent>
             <LineSet>
               <Line noHover={true}>
-                <LineHeader
-                  primary={"@vicentejuniorteambrasil"}
-                  secondary={"Instagram"}
-                  icon={"instagram"}
-                >
+                <LineHeader primary={"@vicentejuniorteambrasil"}>
                   <IconButton
-                    type={"large"}
+                    noHover={true}
                     icon={"share"}
                     url={"https://instagr.am/vicentejrteambrasil"}
                   />
                 </LineHeader>
               </Line>
               <Line noHover={true}>
-                <LineHeader
-                  primary={"@vicentebjj"}
-                  secondary={"Instagram do Professor Vicente"}
-                  icon={"instagram"}
-                >
+                <LineHeader primary={"@vicentebjj"}>
                   <IconButton
-                    type={"large"}
+                    noHover={true}
                     icon={"share"}
                     url={"https://instagr.am/vicentebjj"}
                   />
@@ -63,34 +40,11 @@ export default props => {
             </LineSet>
           </SpaceshipContent>
         </SocialButton>
-        <SocialButton
-          spacing
-          label={"Contato"}
+        <IconButton
           icon={"phone"}
-          type={"small"}
-          state={social === "condensed" && "condensed"}
-        >
-          <SpaceshipTitle>Contato</SpaceshipTitle>
-          <SpaceshipContent>
-            <LineSet>
-              <Line noHover={true}>
-                <LineHeader
-                  primary={"vicentejrteam@gmail.com"}
-                  secondary={"E-mail"}
-                  icon={"local"}
-                >
-                  <IconButton
-                    type={"large"}
-                    icon={"share"}
-                    url={
-                      "mailto:vicentejrteam@gmail.com?subject=Contato pelo site"
-                    }
-                  />
-                </LineHeader>
-              </Line>
-            </LineSet>
-          </SpaceshipContent>
-        </SocialButton>
+          url={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
+        />
+        <IconButton icon={"youtube"} url={"https://youtube.com"} />
       </Nav>
     </header>
   );

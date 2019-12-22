@@ -9,31 +9,31 @@
 }
 
 .Header {
-  padding: $spacing * 4;
+  padding: $spacing;
   justify-content: space-between;
   @extend %align-center;
   @extend %z-index;
   position: fixed;
+  bottom: 0;
   width: 100%;
   background: $secondary-color--light;
 
-  &-social {
-    flex: 1;
-    justify-content: flex-end;
+  &-logo {
+    width: $spacing * 22;
+    .Icon-logo {
+      @include area($spacing * 5);
+    }
+    &.active {
+      @extend %active-link;
+    }
   }
 
   &-nav {
     position: relative;
 
-    &-mark {
-      margin-right: $spacing * 4;
-      &-img {
-        @include area($spacing * 8.5);
-      }
-    }
-
     &-link {
-      margin-right: $spacing * 2;
+      margin: 0 $spacing;
+      min-width: $spacing * 10;
       position: relative;
       @extend %text-align-center;
 

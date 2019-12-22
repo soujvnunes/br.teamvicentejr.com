@@ -8,12 +8,9 @@ import Icon from "../Icon";
 import Home from "../Page/Home";
 import Teachers from "../Page/Teachers";
 import Branches from "../Page/Branches";
-import Connect from "../Page/Connect";
 import Indicator from "../Indicator";
 import Highlight from "../Highlight";
 import classNames from "classnames";
-import Mark from "../../asset/mark.png";
-import Footer from "../Footer";
 
 export default props => {
   const [state, setState] = useState({
@@ -43,16 +40,16 @@ export default props => {
     <main role={"main"} className={"App"}>
       <Router>
         <Header social={(active !== "home" || switchContent) && "condensed"}>
+          <NavLink
+            to={"/"}
+            className={"Header-logo"}
+            exact
+            isActive={() => active === "home"}
+            onClick={() => setState({ ...state, active: "home" })}
+          >
+            <Icon name={"logo"} />
+          </NavLink>
           <Nav className={"Header-nav"}>
-            <NavLink
-              to={"/"}
-              className={"Header-nav-mark"}
-              exact
-              isActive={() => active === "home"}
-              onClick={() => setState({ ...state, active: "home" })}
-            >
-              <img src={Mark} alt={"Marca"} className={"Header-nav-mark-img"} />
-            </NavLink>
             {Object.keys(data.nav).map((key, i) => (
               <NavLink
                 key={i}
@@ -81,9 +78,9 @@ export default props => {
             />
           )}
         />
-        <Route path="/teachers" render={props => <Teachers {...props} />} />
+        <Route path="/professores" render={props => <Teachers {...props} />} />
         <Route
-          path="/branches"
+          path="/filiais"
           render={props => (
             <Branches
               {...props}
@@ -92,8 +89,16 @@ export default props => {
             />
           )}
         />
-        <Route path="/connect" render={props => <Connect {...props} />} />
-        {/*        <Footer />*/}
+        <Route
+          path="/sobre"
+          render={props => (
+            <Branches
+              {...props}
+              event={handleEvent}
+              switchContent={switchContent}
+            />
+          )}
+        />
         <Highlight className={classes.Highlight} />
       </Router>
     </main>
