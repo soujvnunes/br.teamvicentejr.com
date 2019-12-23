@@ -24,7 +24,7 @@ export default function Header(props) {
         <Icon name={"logo"} />
       </a>
       <aside className={"Header-social"}>
-        <SocialButton icon={"instagram"}>
+        <SocialButton icon={"instagram"} noHover={true}>
           <SpaceshipTitle>Instagram</SpaceshipTitle>
           <SpaceshipContent>
             <LineSet>
@@ -52,8 +52,13 @@ export default function Header(props) {
         <IconButton
           icon={"phone"}
           url={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
+          noHover={true}
         />
-        <IconButton icon={"youtube"} url={"https://youtube.com"} />
+        <IconButton
+          icon={"youtube"}
+          url={"https://youtube.com"}
+          noHover={true}
+        />
       </aside>
     </header>
   );

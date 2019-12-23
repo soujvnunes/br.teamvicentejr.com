@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LineSet from "../component/LineSet";
 import Line from "../component/Line";
-import Input from "../component/Input";
+import TextField from "../component/TextField";
 import Section from "../component/Section";
 import Typography from "../component/Typography";
 import LineHeader from "../component/LineHeader";
@@ -9,6 +9,7 @@ import IconButton from "../component/IconButton";
 import Content from "../component/Content";
 import Header from "../component/Header";
 import { ReactComponent as Logo } from "../asset/logo.svg";
+import InputBase from "../component/InputBase";
 
 export default props => {
   const [state, setState] = useState({
@@ -35,13 +36,14 @@ export default props => {
           />
         </Typography>
         <Typography subject className={"home-intro-subject"}>
-          A equipe de jiu-jítsu que mais cresce em arte e esporte brasileiro
+          A equipe de jiu-jítsu que mais cresce em <br />
+          arte e esporte americano.
         </Typography>
       </Section>
       <Section className={"home-events"}>
-        <Input
+        <TextField
           label={"Pesquisar evento"}
-          id={"user"}
+          id={"user-event-search"}
           icon={"search"}
           fullWidth
         />

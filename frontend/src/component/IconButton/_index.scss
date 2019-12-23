@@ -1,26 +1,24 @@
 .IconButton {
-  margin: 0 $spacing;
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
   &-adornment {
     @include area($spacing * 6);
     @extend %align-center;
     justify-content: center;
-    border-radius: $spacing * 3;
-    border: 0;
     @include transition(width, height, border-radius);
+    position: relative;
 
     &-icon {
-      stroke: $primary-color;
+      stroke: $tertiary-color;
       fill: transparent;
       @include transition(stroke, fill);
+    }
+  }
+
+  &:hover {
+    .IconButton-adornment {
+      &-icon {
+        stroke: $tertiary-color--light;
+        fill: $tertiary-color--light;
+      }
     }
   }
 
@@ -28,19 +26,13 @@
     .IconButton-adornment {
       background-color: transparent;
       @include transition(border, background-color);
-
-      &-icon {
-        stroke: $tertiary-color;
-      }
     }
 
     &:hover {
       .IconButton-adornment {
-        border: $spacing / 4 solid $tertiary-color--light;
-        background-color: $tertiary-color--light;
-        &-icon {
-          stroke: $primary-color;
-          fill: $primary-color;
+        &:before {
+          border: $spacing / 4 solid $tertiary-color--light;
+          background-color: $tertiary-color--light;
         }
       }
     }

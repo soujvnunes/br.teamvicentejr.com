@@ -1,8 +1,9 @@
 import React from "react";
 import classNames from "classnames";
 import Icon from "../Icon";
+import Skew from "../Skew";
 
-export default props => {
+export default function IconButton(props) {
   let { className, icon, id, onClick, url, noHover } = props;
 
   const classes = {
@@ -10,18 +11,16 @@ export default props => {
       classNames("IconButton", { [`IconButton--hover`]: !noHover }, className)
     ],
     adornment: [classNames("IconButton-adornment")],
+    skew: [classNames("IconButton-skew")],
     iconButton: [classNames("IconButton-adornment-icon")]
   };
 
-  let { root, adornment, iconButton } = classes;
+  let { root, adornment, iconButton, skew } = classes;
 
   const Body = (
-    <button
-      className={adornment}
-      id={id ? `button-${id}` : null}
-      onClick={onClick}
-    >
+    <button className={adornment} id={id} onClick={onClick}>
       <Icon name={icon} className={iconButton} />
+      {!noHover && <Skew className={skew} />}
     </button>
   );
 
@@ -37,10 +36,8 @@ export default props => {
           {Body}
         </a>
       ) : (
-        <label className={root} htmlFor={id ? `button-${id}` : null}>
-          {Body}
-        </label>
+        <div className={root}>{Body}</div>
       )}
     </>
   );
-};
+}

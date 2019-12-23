@@ -1,0 +1,11 @@
+.Skew {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
+  @include transition(border-color, background-color);
+  @extend %ring-border;
+}
