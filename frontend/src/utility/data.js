@@ -1,43 +1,32 @@
 export const data = {
   nav: {
+    home: {
+      name: "home",
+      to: "/",
+      icon: "home",
+      className: "Nav-link",
+      primary: "Início"
+    },
     teachers: {
       name: "teachers",
       to: "/professores",
       icon: "people",
-      className: "Header-nav-link",
+      className: "Nav-link",
       primary: "Professores"
     },
     branches: {
       name: "branches",
       to: "/filiais",
       icon: "local",
-      className: "Header-nav-link",
+      className: "Nav-link",
       primary: "Filiais"
     },
     about: {
       name: "about",
       to: "/sobre",
       icon: "about",
-      className: "Header-nav-link",
+      className: "Nav-link",
       primary: "Sobre"
-    }
-  },
-  page: {
-    home: {
-      title: "Vicente Júnior",
-      subtitle: "Brazilian Jiu-jítsu",
-      text: [...new Array(4)]
-        .map(() => `Cras mattis consectetur purus sit amet fermentum.`)
-        .join("\n"),
-      action: ""
-    },
-    teachers: {
-      title: "Professores",
-      subtitle: "Título importante",
-      text: [...new Array(4)]
-        .map(() => `Cras mattis consectetur purus sit amet fermentum.`)
-        .join("\n"),
-      action: ""
     }
   }
 };

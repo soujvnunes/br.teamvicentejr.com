@@ -3,7 +3,7 @@
 import React from "react";
 import classNames from "classnames";
 
-export default props => {
+export default function Icon(props) {
   let { className, name, fill, stroke } = props;
 
   const classes = classNames("Icon", { [`Icon-${name}`]: name }, className);
@@ -21,4 +21,4 @@ export default props => {
       <use xlinkHref={`#icon_${name}`} />
     </svg>
   );
-};
+}

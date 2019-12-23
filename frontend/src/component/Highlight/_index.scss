@@ -1,14 +1,17 @@
+$height: calc(100% - #{$spacing * 8} - #{$spacing * 8} - #{$spacing * 4});
+
 .Highlight {
   position: absolute;
-  height: calc(100% - #{$Header--y});
+  height: $height;
   width: 50%;
   right: 0;
-  top: $Header--y;
   overflow: hidden;
   display: flex;
   opacity: 1;
   @include transition(height, opacity, top, width);
   z-index: 1;
+  align-self: center;
+  bottom: 0;
 
   &--event {
     height: calc(100% - #{$Header--y * 2});

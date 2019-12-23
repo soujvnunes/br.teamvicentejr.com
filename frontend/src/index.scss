@@ -8,22 +8,17 @@
 @import "library/config";
 
 // components
-@import "component/App/index";
+@import "component/Content/index";
 @import "component/Icon/index";
 @import "component/Header/index";
 @import "component/Nav/index";
 @import "component/Typography/index";
-@import "component/Description/index";
 @import "component/Button/index";
 @import "component/Highlight/index";
-@import "component/Footer/index";
-@import "component/Content/index";
-@import "component/Indicator/index";
 @import "component/Input/index";
 @import "component/LineSet/index";
 @import "component/Line/index";
 @import "component/LineHeader/index";
-@import "component/Page/index";
 @import "component/Section/index";
 @import "component/Spaceship/index";
 @import "component/SpaceshipContent/index";
@@ -31,3 +26,4 @@
 @import "component/IconButton/index";
 @import "component/Divider/index";
 @import "component/ImageExpand/index";
+@import "page/index";

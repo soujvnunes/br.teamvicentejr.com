@@ -34,8 +34,20 @@
     @extend %align-center;
 
     &-ring {
-      @extend %ring-border;
       @include transition(border-color, width, height);
+      position: relative;
+      @extend %reset-button;
+
+      &:before {
+        content: "";
+        position: absolute;
+        @include area(100%);
+        @extend %ring-border;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        transform: skewX($spacing-unit * 3 * -1deg) skewY(0deg);
+      }
 
       &-icon {
         stroke: $primary-color;
@@ -130,7 +142,6 @@
       }
     }
     .Button-adornment {
-      align-self: flex-end;
       &-ring {
         @include area($button-adornment--xy / 2);
         border-radius: $button-adornment--xy / 2;

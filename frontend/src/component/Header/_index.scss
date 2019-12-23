@@ -1,57 +1,30 @@
-%active-link {
-  .Icon {
-    fill: $primary-color;
-    stroke: $primary-color;
-  }
-  .Typography-subject {
-    color: $primary-color;
-  }
-}
-
 .Header {
-  padding: $spacing;
-  justify-content: space-between;
-  @extend %align-center;
+  margin: $spacing * 4 0;
   @extend %z-index;
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  background: $secondary-color--light;
+  position: sticky;
+  top: 0;
 
-  &-logo {
-    width: $spacing * 22;
-    .Icon-logo {
-      @include area($spacing * 5);
-    }
-    &.active {
-      @extend %active-link;
-    }
-  }
+  &-intro {
+    display: flex;
+    justify-content: space-between;
 
-  &-nav {
-    position: relative;
-
-    &-link {
-      margin: 0 $spacing;
-      min-width: $spacing * 10;
-      position: relative;
-      @extend %text-align-center;
-
+    &-logo {
       .Icon {
-        color: $tertiary-color;
+        @include area($spacing * 8);
+        stroke: $tertiary-color;
+        fill: transparent;
       }
-
-      .Typography-subject {
-        color: $tertiary-color;
-      }
-
       &:hover {
-        @extend %active-link;
+        .Icon {
+          stroke: $primary-color;
+          fill: $primary-color;
+        }
       }
     }
 
-    & .active {
-      @extend %active-link;
+    &-social {
+      @extend %align-center;
     }
   }
 }

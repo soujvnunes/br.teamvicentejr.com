@@ -18,7 +18,7 @@ input {
   background-color: transparent;
   color: currentColor;
   @extend %font-family--azo;
-  @extend %border-none;
+  @extend %reset-button;
   @extend %outline-none;
   @extend %reset;
 }

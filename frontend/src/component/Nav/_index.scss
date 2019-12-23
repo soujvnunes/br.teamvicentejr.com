@@ -1,3 +1,68 @@
+%active-link {
+  .Icon {
+    fill: $primary-color;
+    stroke: $primary-color;
+  }
+  .Typography-subject {
+    color: $primary-color;
+  }
+}
+
 .Nav {
   @extend %align-center;
+  position: fixed;
+  padding: $spacing;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  bottom: 0;
+  width: 100%;
+  background: $secondary-color--light;
+
+  &-link {
+    margin: 0 $spacing;
+    min-width: $spacing * 10;
+    @extend %text-align-center;
+
+    .Typography-subject {
+      color: $tertiary-color;
+    }
+
+    &:hover {
+      @extend %active-link;
+    }
+
+    &.active {
+      @extend %active-link;
+    }
+  }
+
+  &-indicator {
+    width: $spacing * 46;
+    height: $spacing/4;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+
+    &-bar {
+      background-color: $primary-color;
+      width: $spacing * 10;
+      height: 100%;
+      margin-left: -$spacing * 5;
+      @include transition(margin-left);
+
+      .home & {
+        margin-left: 0;
+      }
+      .teachers & {
+        margin-left: $spacing * 12;
+      }
+      .branches & {
+        margin-left: $spacing * 24;
+      }
+      .about & {
+        margin-left: $spacing * 36;
+      }
+    }
+  }
 }
