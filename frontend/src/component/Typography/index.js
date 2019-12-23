@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-export default props => {
+export default function Typography(props) {
   let { title, subject, url, paragraph, className, children } = props;
 
   const classes = classNames(
@@ -29,4 +29,4 @@ export default props => {
   if (paragraph) return <p className={classes}>{children}</p>;
 
   return null;
-};
+}

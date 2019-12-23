@@ -8,10 +8,10 @@
 @import "library/config";
 
 // components
+@import "component/Nav/index";
+@import "component/Header/index";
 @import "component/Content/index";
 @import "component/Icon/index";
-@import "component/Header/index";
-@import "component/Nav/index";
 @import "component/Typography/index";
 @import "component/Button/index";
 @import "component/Highlight/index";

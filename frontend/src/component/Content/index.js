@@ -5,13 +5,13 @@ export default function Content(props) {
   let { children, className } = props;
 
   const classes = {
-    root: [classNames("Content" /*, { [`class`]: prop }*/, className)]
+    root: [classNames("Content" /*, { [`class`]: prop }*/)]
   };
 
   let { root } = classes;
   return (
     <div className={root}>
-      <div className={`${root}-wrapper`}>{children}</div>
+      <div className={`${root}-wrapper ${className}`}>{children}</div>
     </div>
   );
 }

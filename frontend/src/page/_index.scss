@@ -1,3 +1,24 @@
+.home {
+  &-intro {
+    &-title {
+      text-align: left;
+      &-svg {
+        height: $spacing * 24;
+        width: auto;
+      }
+    }
+
+    &-subject {
+      text-align: left;
+      font-size: 0.83em;
+    }
+  }
+
+  &-events {
+    margin: $spacing * 4 0;
+  }
+}
+
 .Branches {
   position: absolute;
   right: $spacing * 4;
@@ -47,10 +68,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.events-list {
-  padding: $spacing * 19 $spacing * 2 $spacing * 2;
 }
 
 .event-description {

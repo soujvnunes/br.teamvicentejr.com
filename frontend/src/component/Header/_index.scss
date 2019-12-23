@@ -4,27 +4,23 @@
   width: 100%;
   position: sticky;
   top: 0;
+  justify-content: space-between;
+  display: flex;
 
-  &-intro {
-    display: flex;
-    justify-content: space-between;
-
-    &-logo {
+  &-logo {
+    .Icon {
+      @include area($spacing * 8);
+      stroke: transparent;
+      fill: $tertiary-color;
+    }
+    &:hover {
       .Icon {
-        @include area($spacing * 8);
-        stroke: $tertiary-color;
-        fill: transparent;
-      }
-      &:hover {
-        .Icon {
-          stroke: $primary-color;
-          fill: $primary-color;
-        }
+        fill: $primary-color;
       }
     }
+  }
 
-    &-social {
-      @extend %align-center;
-    }
+  &-social {
+    @extend %align-center;
   }
 }

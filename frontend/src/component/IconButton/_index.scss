@@ -30,7 +30,7 @@
       @include transition(border, background-color);
 
       &-icon {
-        stroke: $tertiary-color--light;
+        stroke: $tertiary-color;
       }
     }
 

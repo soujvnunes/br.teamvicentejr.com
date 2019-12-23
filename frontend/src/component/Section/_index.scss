@@ -1,14 +1,5 @@
 .Section {
   flex-direction: column;
   width: 50%;
-  margin-top: $spacing * 10;
-  display: none;
-  @include transition(margin-top, opacity);
-  z-index: 2;
-
-  &--show {
-    margin-top: 0;
-    display: flex;
-    transition-delay: 0.16s;
-  }
+  display: flex;
 }

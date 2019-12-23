@@ -8,6 +8,7 @@ import LineHeader from "../component/LineHeader";
 import IconButton from "../component/IconButton";
 import Content from "../component/Content";
 import Header from "../component/Header";
+import { ReactComponent as Logo } from "../asset/logo.svg";
 
 export default props => {
   const [state, setState] = useState({
@@ -24,16 +25,20 @@ export default props => {
   }
 
   return (
-    <Content>
-      <Header>
-        <Typography title className={"Description-title"}>
-          Vicente Júnior
+    <Content className={"home"}>
+      <Header />
+      <Section className={"home-intro"}>
+        <Typography title className={"home-intro-title"}>
+          <Logo
+            title={"Vicente Júnior — Brazilian Jiu-Jitsu"}
+            className={"home-intro-title-svg"}
+          />
         </Typography>
-        <Typography subject className={"Description-subject"}>
-          Brazilian Jiu-jítsu
+        <Typography subject className={"home-intro-subject"}>
+          A equipe de jiu-jítsu que mais cresce em arte e esporte brasileiro
         </Typography>
-      </Header>
-      <Section show={switchContent} className={"events-list"}>
+      </Section>
+      <Section className={"home-events"}>
         <Input
           label={"Pesquisar evento"}
           id={"user"}
