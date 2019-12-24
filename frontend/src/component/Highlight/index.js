@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { data } from "../../utility/data";
@@ -7,22 +6,22 @@ import { data } from "../../utility/data";
 export default props => {
   let { className, activeCarousel } = props;
 
-  const classes = { root: [classNames("Highlight", className)] };
-
-  let { root } = classes;
-
   return (
     <Carousel
       infiniteLoop
-      showStatus={false}
-      showIndicators={false}
-      className={root}
+      showStatus={!!activeCarousel}
+      showIndicators={!!activeCarousel}
+      className={`Highlight ${className ? className : null}`}
       autoPlay={activeCarousel}
     >
       {data.teachers.map((data, i) => {
         return (
           <div key={i}>
-            <img src={data.url} alt={data.name} />
+            <img
+              src={data.url}
+              alt={data.name}
+              className={"Highlight-carousel-image"}
+            />
             <p className="legend">
               {data.name}
               {data.title}

@@ -1,6 +1,11 @@
 import React from "react";
-import Main from "../component/Content";
+import Content from "../component/Content";
+import Header from "../component/Header";
 
 export default props => {
-  return <Main>professores</Main>;
+  return (
+    <Content className={"teachers"}>
+      <Header />
+    </Content>
+  );
 };
