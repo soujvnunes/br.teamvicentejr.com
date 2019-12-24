@@ -5,10 +5,6 @@ import Nav from "../Nav";
 import Typography from "../Typography";
 import Icon from "../Icon";
 import Home from "../../page/Home";
-import Teachers from "../../page/Teachers";
-import Branches from "../../page/Branches";
-import classNames from "classnames";
-import About from "../../page/About";
 import { NavHashLink as NavLink } from "react-router-hash-link";
 
 export default props => {
@@ -19,14 +15,6 @@ export default props => {
   let { active } = state;
 
   useEffect(() => setState({ active: "home" }), []);
-
-  const classes = {
-    Highlight: [
-      classNames({
-        [`Highlight-${active}-page`]: active
-      })
-    ]
-  };
 
   return (
     <Router>
@@ -46,13 +34,6 @@ export default props => {
         ))}
       </Nav>
       <Route exact path="/" render={props => <Home {...props} />} />
-      {/*      <Route path="/professores" render={props => <Teachers {...props} />} />
-      <Route path="/filiais" render={props => <Branches {...props} />} />
-      <Route path="/sobre" render={props => <About {...props} />} />
-      <Highlight
-        className={classes.Highlight}
-        activeCarousel={active === "teachers"}
-      />*/}
     </Router>
   );
 };
