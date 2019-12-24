@@ -28,7 +28,7 @@ export default function TextField(props) {
 
   return (
     <label htmlFor={id} className={classes}>
-      <IconButton id={id} icon={icon} className={"TextField-icon"} />
+      <IconButton icon={icon} className={"TextField-icon"} />
       <div className={"TextField-divider"}>
         <Skew />
       </div>

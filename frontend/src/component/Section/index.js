@@ -2,9 +2,25 @@ import React from "react";
 import classNames from "classnames";
 
 export default function Section(props) {
-  let { children, className, show } = props;
+  let { children, className, id, wrap } = props;
 
-  const classes = classNames("Section", { [`Section--show`]: show }, className);
+  const classes = { root: [classNames("Section", className)] };
 
-  return <section className={classes} children={children} />;
+  let { root } = classes;
+
+  const wrapped = (
+    <>
+      {wrap ? (
+        <div className={"Section-wrapper"}>{children}</div>
+      ) : (
+        <>{children}</>
+      )}
+    </>
+  );
+
+  return (
+    <section className={root} id={id}>
+      {wrapped}
+    </section>
+  );
 }

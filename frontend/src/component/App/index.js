@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { data } from "../../utility/data";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Nav from "../Nav";
 import Typography from "../Typography";
 import Icon from "../Icon";
@@ -9,7 +9,7 @@ import Teachers from "../../page/Teachers";
 import Branches from "../../page/Branches";
 import classNames from "classnames";
 import About from "../../page/About";
-import Highlight from "../Highlight";
+import { NavHashLink as NavLink } from "react-router-hash-link";
 
 export default props => {
   const [state, setState] = useState({
@@ -33,6 +33,7 @@ export default props => {
       <Nav indicator={active}>
         {data.navigation.map((data, i) => (
           <NavLink
+            smooth
             key={i}
             to={data.to}
             isActive={() => active === data.name}
@@ -45,13 +46,13 @@ export default props => {
         ))}
       </Nav>
       <Route exact path="/" render={props => <Home {...props} />} />
-      <Route path="/professores" render={props => <Teachers {...props} />} />
+      {/*      <Route path="/professores" render={props => <Teachers {...props} />} />
       <Route path="/filiais" render={props => <Branches {...props} />} />
       <Route path="/sobre" render={props => <About {...props} />} />
       <Highlight
         className={classes.Highlight}
         activeCarousel={active === "teachers"}
-      />
+      />*/}
     </Router>
   );
 };

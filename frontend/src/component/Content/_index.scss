@@ -1,12 +1,3 @@
 .Content {
   background-color: $common-color--black;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-
-  &-wrapper {
-    flex: 1;
-    max-width: $spacing * 135;
-    margin: 0 $spacing * 4;
-  }
 }

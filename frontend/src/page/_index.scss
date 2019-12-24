@@ -1,76 +1,54 @@
 .home {
   &-intro {
     &-title {
-      text-align: left;
-      &-svg {
-        height: $spacing * 24;
-        width: auto;
+      &-label {
+        text-align: left;
+        &-svg {
+          height: $spacing * 24;
+          width: auto;
+        }
+      }
+      &-subject {
+        text-align: left;
+        font-size: 0.83em;
       }
     }
 
-    &-subject {
-      text-align: left;
-      font-size: 0.83em;
+    &-events {
+      max-width: $spacing * 60;
+      margin: $spacing * 4 0;
+
+      &-input {
+        margin-bottom: $spacing * 4;
+      }
     }
   }
 
-  &-events {
-    max-width: $spacing * 60;
-    margin: $spacing * 4 0;
+  &-teachers {
+    /*    position: absolute;
+    height: calc(100% - #{$spacing * 8} - #{$spacing * 8} - #{$spacing * 4});
+    width: 50%;
+    right: 0;
+    bottom: 0;*/
+    @include transition(width, height);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 
-    &-input {
-      margin-bottom: $spacing * 4;
+    &-carousel {
+      display: flex;
+      flex-direction: row;
+
+      &-item {
+        min-width: $spacing-unit * 2%;
+        @include transition(min-width);
+        text-align: center;
+
+        &-image {
+          width: 60%;
+          @include transition(width, margin-top, margin-left);
+        }
+      }
     }
   }
-}
-
-.Branches {
-  position: absolute;
-  right: $spacing * 4;
-}
-
-.branch-map-card-header {
-  z-index: 1;
-  background-color: transparentize($secondary-color, 0.25);
-}
-
-.exploreBranch-list,
-.branch-list {
-  height: 100vh;
-  overflow: auto;
-  padding: $spacing * 19 $spacing $spacing * 2;
-
-  &::-webkit-scrollbar {
-    width: $spacing;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: $primary-color--light;
-    border-radius: $spacing / 2;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: $primary-color;
-  }
-
-  .Line-map-wrapper {
-    height: 300px;
-  }
-
-  .Line-map {
-    width: 160%;
-    margin-top: -$spacing * 22.5;
-    position: absolute;
-    align-self: center;
-  }
-}
-
-.exploreBranch-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
