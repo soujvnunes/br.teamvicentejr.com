@@ -25,28 +25,64 @@
   }
 
   &-teachers {
-    /*    position: absolute;
-    height: calc(100% - #{$spacing * 8} - #{$spacing * 8} - #{$spacing * 4});
-    width: 50%;
-    right: 0;
-    bottom: 0;*/
     @include transition(width, height);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    height: 100%;
 
     &-carousel {
-      display: flex;
-      flex-direction: row;
+      width: inherit;
 
       &-item {
-        min-width: $spacing-unit * 2%;
-        @include transition(min-width);
-        text-align: center;
+        &-legend {
+          margin: $spacing * 2 0;
+        }
+      }
 
-        &-image {
-          width: 60%;
-          @include transition(width, margin-top, margin-left);
+      .carousel {
+        margin-top: $spacing;
+        &.carousel-slider {
+        }
+
+        & .slide {
+          @include transition(margin-left);
+          margin-left: 0;
+
+          &:first-child {
+            &.selected {
+              margin-left: 25%;
+            }
+          }
+
+          &:last-child {
+            &.selected {
+              margin-right: 25%;
+            }
+          }
+
+          img {
+            width: inherit;
+          }
+        }
+
+        & .thumbs-wrapper {
+          margin: $spacing;
+
+          & .thumb {
+            margin: 0 $spacing;
+            height: $spacing-unit * 7.5px;
+            border-width: $spacing/4;
+            border-color: $tertiary-color;
+
+            &.selected {
+              border-color: $primary-color;
+            }
+          }
+        }
+      }
+
+      &-item {
+        & > &-image {
+          height: calc(100vh - 218px);
+          width: auto;
         }
       }
     }

@@ -8,6 +8,8 @@ import Content from "../component/Content";
 import Header from "../component/Header";
 import { ReactComponent as Logo } from "../asset/logo.svg";
 import { data } from "../utility/data";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default props => {
   return (
@@ -22,8 +24,7 @@ export default props => {
             />
           </Typography>
           <Typography subject className={"home-intro-subject"}>
-            A equipe de jiu-jítsu que mais cresce em <br />
-            arte e esporte americano.
+            A equipe de jiu-jítsu que mais cresce em arte e esporte americano.
           </Typography>
         </div>
         <div className={"home-intro-events"}>
@@ -49,7 +50,14 @@ export default props => {
         </div>
       </Section>
       <Section className={"home-teachers"} id={"professores"}>
-        <div className={"home-teachers-carousel"}>
+        <Carousel
+          className={"home-teachers-carousel"}
+          centerMode={true}
+          centerSlidePercentage={50}
+          showStatus={false}
+          showIndicators={false}
+          showArrows={false}
+        >
           {data.teachers.map((data, i) => {
             return (
               <div key={i} className={"home-teachers-carousel-item"}>
@@ -65,7 +73,10 @@ export default props => {
               </div>
             );
           })}
-        </div>
+        </Carousel>
+      </Section>
+      <Section className={"home-branches"} id={"filiais"}>
+        oi
       </Section>
     </Content>
   );
