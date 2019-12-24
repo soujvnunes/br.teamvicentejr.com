@@ -1,9 +1,4 @@
 import React from "react";
-import SocialButton from "./SocialButton";
-import SpaceshipTitle from "../SpaceshipTitle";
-import SpaceshipContent from "../SpaceshipContent";
-import LineSet from "../LineSet";
-import Line from "../Line";
 import IconButton from "../IconButton";
 import classNames from "classnames";
 import Icon from "../Icon";
@@ -23,31 +18,6 @@ export default function Header(props) {
         <Icon name={"logo"} />
       </a>
       <aside className={"Header-social"}>
-        {/*        <SocialButton icon={"instagram"} noHover={true}>
-          <SpaceshipTitle>Instagram</SpaceshipTitle>
-          <SpaceshipContent>
-            <LineSet>
-              <Line noHover={true}>
-                <LineHeader primary={"@vicentejuniorteambrasil"}>
-                  <IconButton
-                    noHover={true}
-                    icon={"share"}
-                    url={"https://instagr.am/vicentejrteambrasil"}
-                  />
-                </LineHeader>
-              </Line>
-              <Line noHover={true}>
-                <LineHeader primary={"@vicentebjj"}>
-                  <IconButton
-                    noHover={true}
-                    icon={"share"}
-                    url={"https://instagr.am/vicentebjj"}
-                  />
-                </LineHeader>
-              </Line>
-            </LineSet>
-          </SpaceshipContent>
-        </SocialButton>*/}
         <IconButton
           icon={"instagram"}
           url={"https://instagr.am/vicentejrteambrasil"}

@@ -2,7 +2,7 @@ import React from "react";
 import Section from "../component/Section";
 import LineSet from "../component/LineSet";
 import Line from "../component/Line";
-import branches from "../utility/branches";
+import { data } from "../utility/data";
 import Main from "../component/Content";
 
 export default props => {
@@ -12,7 +12,7 @@ export default props => {
     <Main>
       <Section show={!switchContent}>
         <LineSet className={"branch-list"}>
-          {branches.br.map((data, i) => {
+          {data.branches.map((data, i) => {
             return (
               <Line
                 expanded={true}
@@ -23,11 +23,7 @@ export default props => {
                 secondary={data.local}
                 icon={"share"}
               >
-                {/*                  <img
-                    src={require(`../../asset/branches/${data.map}`)}
-                    alt={`Imagem para mapa da filial ${data.name}`}
-                    className={"Line-map"}
-                  />*/}
+                <img src={data.map} alt={data.name} className={"Line-map"} />
               </Line>
             );
           })}
