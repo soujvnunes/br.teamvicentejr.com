@@ -1,30 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import LineSet from "../component/LineSet";
 import Line from "../component/Line";
 import TextField from "../component/TextField";
 import Section from "../component/Section";
 import Typography from "../component/Typography";
-import LineHeader from "../component/LineHeader";
-import IconButton from "../component/IconButton";
 import Content from "../component/Content";
 import Header from "../component/Header";
 import { ReactComponent as Logo } from "../asset/logo.svg";
-import InputBase from "../component/InputBase";
 
 export default props => {
-  const [state, setState] = useState({
-    expandLine: false,
-    open: false
-  });
-
-  let { expandLine, open } = state;
-  let { event, switchContent } = props;
-
-  function handleExpandLine() {
-    if (expandLine) setState({ ...state, expandLine: false });
-    else setState({ ...state, expandLine: true });
-  }
-
   return (
     <Content className={"home"}>
       <Header />
@@ -46,22 +30,11 @@ export default props => {
           id={"user-event-search"}
           icon={"search"}
           fullWidth
+          className={"home-events-input"}
         />
         <LineSet>
-          <Line expand={expandLine}>
-            <LineHeader
-              primary={"Nome do evento"}
-              secondary={"Local"}
-              icon={"local"}
-            >
-              <IconButton
-                className={"Line-header-button"}
-                type={"large"}
-                icon={expandLine ? "remove" : "add"}
-                onClick={handleExpandLine}
-              />
-            </LineHeader>
-            <Typography paragraph className={"event-description"}>
+          <Line primary={"Nome do evento"} secondary={"Local"} icon={"add"}>
+            <Typography paragraph>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris

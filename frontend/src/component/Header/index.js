@@ -4,7 +4,6 @@ import SpaceshipTitle from "../SpaceshipTitle";
 import SpaceshipContent from "../SpaceshipContent";
 import LineSet from "../LineSet";
 import Line from "../Line";
-import LineHeader from "../LineHeader";
 import IconButton from "../IconButton";
 import classNames from "classnames";
 import Icon from "../Icon";
@@ -24,7 +23,7 @@ export default function Header(props) {
         <Icon name={"logo"} />
       </a>
       <aside className={"Header-social"}>
-        <SocialButton icon={"instagram"} noHover={true}>
+        {/*        <SocialButton icon={"instagram"} noHover={true}>
           <SpaceshipTitle>Instagram</SpaceshipTitle>
           <SpaceshipContent>
             <LineSet>
@@ -48,7 +47,12 @@ export default function Header(props) {
               </Line>
             </LineSet>
           </SpaceshipContent>
-        </SocialButton>
+        </SocialButton>*/}
+        <IconButton
+          icon={"instagram"}
+          url={"https://instagr.am/vicentejrteambrasil"}
+          noHover={true}
+        />
         <IconButton
           icon={"phone"}
           url={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}

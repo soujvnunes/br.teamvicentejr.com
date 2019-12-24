@@ -1,20 +1,40 @@
 .Line {
   flex-direction: column;
-  border: $spacing / 4 solid $tertiary-color;
-  border-radius: $spacing * 5;
   @extend %align-center;
-  margin: $spacing * 2 0;
-  @include transition(border-color, max-height, border-radius);
-  max-height: $spacing * 8.5;
-  box-sizing: border-box;
-  overflow: hidden;
 
-  &:first-child {
-    margin-top: 0;
+  &-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    @include transition(padding);
+
+    &-info {
+      flex: auto;
+      position: relative;
+      padding: $spacing;
+
+      &-title {
+        margin-bottom: $spacing;
+        text-align: left;
+      }
+
+      &-secondary {
+        font-weight: 600;
+        color: $tertiary-color;
+        margin-left: $spacing;
+        text-align: left;
+      }
+    }
   }
 
-  &:last-child {
-    margin-bottom: 0;
+  &-content {
+    overflow: hidden;
+    max-height: 0;
+    @include transition(max-height);
+
+    &--expand {
+      max-height: $spacing * 100;
+    }
   }
 
   &:hover {
@@ -24,29 +44,13 @@
   &--hover {
     &:hover {
       .Line-header {
-        padding: 0;
         &-info {
-          margin-left: $spacing * 4;
         }
         &-button {
           & .IconButton-adornment {
-            @include area($spacing * 8);
-            border-radius: $spacing * 4;
           }
         }
       }
     }
-  }
-
-  &--expand {
-    max-height: 100%;
-    border-radius: $spacing * 4.5;
-  }
-
-  &--expanded {
-    position: relative;
-    height: $spacing * 25;
-    max-height: unset;
-    border-radius: $spacing * 4.5;
   }
 }

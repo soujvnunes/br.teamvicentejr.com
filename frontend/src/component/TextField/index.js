@@ -28,6 +28,10 @@ export default function TextField(props) {
 
   return (
     <label htmlFor={id} className={classes}>
+      <IconButton id={id} icon={icon} className={"TextField-icon"} />
+      <div className={"TextField-divider"}>
+        <Skew />
+      </div>
       <InputBase
         className={"TextField-base"}
         label={label}
@@ -35,10 +39,6 @@ export default function TextField(props) {
         onFocus={handleFocus}
         onBlur={handleFocus}
       />
-      <div className={"TextField-divider"}>
-        <Skew />
-      </div>
-      <IconButton id={id} icon={icon} className={"TextField-icon"} />
     </label>
   );
 }

@@ -8,4 +8,12 @@
   transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
   @include transition(border-color, background-color);
   @extend %ring-border;
+
+  &--curve-left {
+    transform: skewX($spacing-unit * 2 * 1deg) skewY(0deg);
+  }
+
+  &--curve-right {
+    transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
+  }
 }

@@ -4,7 +4,7 @@ import Icon from "../Icon";
 import Skew from "../Skew";
 
 export default function IconButton(props) {
-  let { className, icon, id, onClick, url, noHover } = props;
+  let { className, icon, id, onClick, url, noHover, skewCurve } = props;
 
   const classes = {
     root: [
@@ -20,7 +20,7 @@ export default function IconButton(props) {
   const Body = (
     <button className={adornment} id={id} onClick={onClick}>
       <Icon name={icon} className={iconButton} />
-      {!noHover && <Skew className={skew} />}
+      {!noHover && <Skew curve={skewCurve} className={skew} />}
     </button>
   );
 
