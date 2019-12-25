@@ -33,72 +33,72 @@ export const data = {
     {
       name: "Vicente Júnior",
       title: "Título",
-      url: require("../asset/br/teachers/1.png")
+      url: require("../asset/br/teachers/Fotos00001.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/2.png")
+      url: require("../asset/br/teachers/Fotos00002.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/3.png")
+      url: require("../asset/br/teachers/Fotos00003.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/4.png")
+      url: require("../asset/br/teachers/Fotos00004.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/5.png")
+      url: require("../asset/br/teachers/Fotos00005.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/6.png")
+      url: require("../asset/br/teachers/Fotos00006.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/7.png")
+      url: require("../asset/br/teachers/Fotos00007.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/8.png")
+      url: require("../asset/br/teachers/Fotos00008.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/9.png")
+      url: require("../asset/br/teachers/Fotos00009.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/10.png")
+      url: require("../asset/br/teachers/Fotos00010.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/11.png")
+      url: require("../asset/br/teachers/Fotos00011.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/12.png")
+      url: require("../asset/br/teachers/Fotos00012.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/13.png")
+      url: require("../asset/br/teachers/Fotos00013.jpg")
     },
     {
       name: "Nome",
       title: "Título",
-      url: require("../asset/br/teachers/14.png")
+      url: require("../asset/br/teachers/Fotos00014.jpg")
     }
   ],
   branches: [
