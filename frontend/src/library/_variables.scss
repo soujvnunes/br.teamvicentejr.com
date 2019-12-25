@@ -31,6 +31,9 @@ $primary-color: #f44336;
 $secondary-color: #212121;
 $tertiary-color: #9e9e9e;
 
-$primary-color--light: transparentize($primary-color, 0.5);
-$secondary-color--light: transparentize($secondary-color, 0.5);
+$primary-color--light: #ff7961;
+$secondary-color--light: #484848;
 $tertiary-color--light: #dfe6e9;
+
+$common-color--black--light: transparentize($common-color--black, 0.25);
+$common-color--white--light: transparentize($common-color--white, 0.25);

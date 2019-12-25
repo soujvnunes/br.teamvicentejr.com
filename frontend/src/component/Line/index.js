@@ -9,14 +9,14 @@ export default function Line(props) {
     expand: false
   });
   let { expand } = state;
-  let { className, children, expanded, primary, secondary, icon } = props;
+  let { className, children, primary, secondary, icon } = props;
 
   const classes = {
     root: [classNames("Line", className)],
     header: [classNames("Line-header")],
     content: [
       classNames("Line-content", {
-        [`Line-content--expand`]: expand || expanded
+        [`Line-content--expand`]: expand
       })
     ]
   };

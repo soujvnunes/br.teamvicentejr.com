@@ -3,6 +3,7 @@ body {
   @extend %font-family--azo;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $common-color--black;
 }
 
 a {
@@ -37,12 +38,10 @@ figure {
 h1 {
   @extend %reset;
   @extend %font-family--uber;
-  @extend %text-align-center;
 }
 
 h6 {
   @extend %reset;
-  @extend %text-align-center;
 }
 
 h5 {

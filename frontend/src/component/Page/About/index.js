@@ -2,5 +2,5 @@ import React from "react";
 import Main from "../../../component/Main";
 
 export default props => {
-  return <Main>Sobre</Main>;
+  return <Main className={"about"}>Sobre</Main>;
 };

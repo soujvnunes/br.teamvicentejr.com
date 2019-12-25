@@ -1,13 +1,20 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { data } from "../../../library/data";
-import Main from "../../../component/Main";
 import Typography from "../../Typography";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import classNames from "classnames";
+import Main from "../../Main";
 
 export default props => {
+  const classes = {
+    root: [classNames("teachers")]
+  };
+
+  let { root } = classes;
+
   return (
-    <Main className={"teachers"}>
+    <Main className={root}>
       <Carousel
         className={"teachers-carousel"}
         centerMode={true}

@@ -12,13 +12,13 @@ export default props => {
     <Main className={"home"}>
       <Wrapper>
         <div className={"home-title"}>
-          <Typography title className={"home-label"}>
+          <Typography title className={"home-title-label"}>
             <Mark
               title={"Vicente Júnior — Brazilian Jiu-Jitsu"}
               className={"home-title-label-svg"}
             />
           </Typography>
-          <Typography subject className={"home-subject"}>
+          <Typography subject className={"home-title-subject"}>
             A equipe de jiu-jítsu que mais cresce em arte e esporte americano.
           </Typography>
         </div>

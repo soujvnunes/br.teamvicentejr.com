@@ -7,13 +7,12 @@ import Wrapper from "../../Wrapper";
 
 export default props => {
   return (
-    <Main>
+    <Main className={"branches"}>
       <Wrapper>
         <LineSet className={"branch-list"}>
           {data.branches.map((data, i) => {
             return (
               <Line
-                expanded={true}
                 noHover={true}
                 key={i}
                 className={"Line-map-wrapper"}

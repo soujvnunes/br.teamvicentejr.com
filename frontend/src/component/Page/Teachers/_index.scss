@@ -1,7 +1,4 @@
 .teachers {
-  @include transition(width, height);
-  height: 100%;
-
   &-carousel {
     width: inherit;
 
@@ -76,6 +73,7 @@
             height: $spacing-unit * 7.5px;
             border-width: $spacing/4;
             border-color: $tertiary-color;
+            padding: 0;
 
             &.selected {
               border-color: $primary-color;

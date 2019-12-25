@@ -1,15 +1,16 @@
 .home {
+  z-index: 1;
+
   &-title {
+    margin-left: $spacing/1.5;
     &-label {
-      text-align: left;
       &-svg {
-        height: $spacing * 24;
-        width: auto;
+        height: auto;
+        width: 50%;
       }
     }
     &-subject {
-      text-align: left;
-      font-size: 0.83em;
+      font-size: 1em;
     }
   }
 
