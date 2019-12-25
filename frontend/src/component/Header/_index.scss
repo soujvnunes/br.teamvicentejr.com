@@ -1,15 +1,21 @@
 .Header {
-  margin: $spacing * 4 0;
   @extend %z-index;
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
-  justify-content: space-between;
   display: flex;
+  justify-content: center;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 
   &-logo {
+    line-height: 0;
+
     .Icon {
-      @include area($spacing * 8);
+      @include area($spacing * 10);
       stroke: transparent;
       fill: $tertiary-color;
     }

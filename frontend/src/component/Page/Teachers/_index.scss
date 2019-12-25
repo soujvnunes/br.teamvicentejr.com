@@ -1,0 +1,95 @@
+.teachers {
+  @include transition(width, height);
+  height: 100%;
+
+  &-carousel {
+    width: inherit;
+
+    .carousel {
+      &.carousel-slider {
+        max-width: inherit;
+
+        & .slide {
+          @include transition(margin-left);
+          margin-left: 0;
+
+          &:first-child {
+            &.selected {
+              margin-left: 25%;
+            }
+          }
+
+          &:last-child {
+            &.selected {
+              margin-right: 25%;
+            }
+          }
+
+          .teachers-carousel-item {
+            $value: $spacing-unit/1.25 * 0.1;
+
+            &-legend {
+              margin: $spacing * 2 0;
+              opacity: 0;
+              @include transition(opacity);
+            }
+
+            &-image {
+              -moz-transform: scale($value);
+              -webkit-transform: scale($value);
+              -o-transform: scale($value);
+              -ms-transform: scale($value);
+              transform: scale($value);
+              opacity: $value;
+              @include transition(transform, opacity);
+            }
+
+            img {
+              width: inherit;
+            }
+          }
+
+          &.selected {
+            .teachers-carousel-item {
+              &-legend {
+                opacity: 1;
+              }
+              &-image {
+                -moz-transform: scale(1);
+                -webkit-transform: scale(1);
+                -o-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      & .thumbs-wrapper {
+        margin: 0;
+
+        & .thumbs {
+          & .thumb {
+            margin: 0 $spacing;
+            height: $spacing-unit * 7.5px;
+            border-width: $spacing/4;
+            border-color: $tertiary-color;
+
+            &.selected {
+              border-color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+
+    &-item {
+      & > &-image {
+        height: calc(100vh - 315px);
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,38 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="66" height="20" viewBox="0 0 66 20">
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" width="44" height="20" viewBox="0 0 44 20">
     <defs>
         <style>
-            .cls-1,
-            .cls-2,
-            .cls-3 {
+            #logo .cls-1 {
+            fill: #dfe6e9;
+            }
+
+            #logo .cls-2 {
             fill: none;
+            stroke: #f44336;
             stroke-linecap: square;
             stroke-miterlimit: 10;
-            }
-
-            .cls-1,
-            .cls-2 {
-            stroke: #f44336;
-            }
-
-            .cls-1,
-            .cls-3 {
             stroke-width: 2px;
-            }
-
-            .cls-2 {
-            stroke-width: 3px;
-            }
-
-            .cls-3 {
-            stroke: #9e9e9e;
             }
         </style>
     </defs>
-    <title>Marca</title>
-    <g id="Policromia">
-        <polygon class="cls-1" points="17.6 5.2 10.9 16.6 3.7 3.6 10.9 13.8 17.6 5.2" />
-        <path class="cls-2" d="M11,8.5A8.5,8.5,0,1,1,2.5,17,8.5,8.5,0,0,1,11,8.5,8.5,8.5,0,1,0,19.5,17,8.5,8.5,0,0,0,11,8.5Z" transform="translate(-1 -7)" />
-        <path class="cls-1" d="M29,8v4a2.9,2.9,0,0,1-3,3H24V8m8,0v7m6-7H35v4a2.9,2.9,0,0,0,3,3h0m6-4h1a2.9,2.9,0,0,0-3-3H41v4a2.9,2.9,0,0,0,3,3h1m20-4h1a2.9,2.9,0,0,0-3-3H62v4a2.9,2.9,0,0,0,3,3h1M53,15V11a2.9,2.9,0,0,0-3-3H48v7m8-7v4a2.9,2.9,0,0,0,3,3h0m0-4H56" transform="translate(-1 -7)" />
-        <path class="cls-3" d="M34,19v6a.9.9,0,0,1-1,1H31a.9.9,0,0,1-1-1V19m15,0v7m8-4V21a2,2,0,0,0-2-2H48v5a2,2,0,0,0,2,2h3ZM42,26V22a2.9,2.9,0,0,0-3-3H37v7m22-7h0a2.9,2.9,0,0,0-3,3v4M24,26h0a2.9,2.9,0,0,0,3-3V19H24" transform="translate(-1 -7)" />
-    </g>
+    <title>logo</title>
+    <path class="cls-1" d="M112.5,13v.3h-.2V13Zm-.5,8.8V22h.3v-.2Zm-.2,0V22h.2v-.2ZM112,13v.3h.3V13Zm-1.2,0v.3h.2V13Zm.2.3h.3V13H111Zm-.5,8.5V22h.3v-.2Zm.3,0V22h.2v-.2Zm.7-8.8v.3h.3V13Zm-.2,8.8V22h.2v-.2Zm0-8.8v.3h.2V13Zm-.3,8.8V22h.3v-.2Zm.8-8.5h.2V13h-.2Zm-.3,8.5V22h.3v-.2Zm2.3-8.5v.2h.2v-.2Zm0,2.5V16h.2v-.2Zm0-1.8v.3h.2V14Zm0,7.3v.2h.2v-.2Zm0-6.3v.3h.2V15Zm0,4.8V20h.2v-.2Zm0-6V14h.2v-.2Zm0,7.7v.3h.2v-.3Zm0-3.7V18h.2v-.2Zm0,2.7v.3h.2v-.3Zm0,.5v.3h.2V21Zm0-3v.3h.2V18Zm0,2.3v.2h.2v-.2Zm0-6.8v.3h.2v-.3Zm0-.2h.2V13h-.2Zm0,7.5V21h.2v-.2Zm0-2.5v.2h.2v-.2Zm0-3v.2h.2v-.2Zm0,.2v.3h.2v-.3Zm0,4.5v.3h.2V20Zm0-4v.3h.2V16Zm0-1.2V15h.2v-.2Zm0,7V22h.2v-.2Zm0-4.5v.2h.2v-.2Zm0-.5V17h.2v-.2Zm0-.3v.3h.2v-.3Zm-.3,5.3V22h.3v-.2Zm.3-5.5v.2h.2v-.2Zm0,2.7v.3h.2V19Zm0-.5v.3h.2v-.3Zm0,.3V19h.2v-.2Zm0-1.8v.3h.2V17Zm0,2.5v.3h.2v-.3Zm0-.2v.2h.2v-.2Zm0-1.8v.3h.2v-.3Zm0-3.2v.2h.2v-.2Zm0,.2v.3h.2v-.3Zm-.5,7.3V22h.2v-.2Zm.2-8.5h.3V13h-.3Zm-.7,8.5V22h.2v-.2Zm.5-8.8v.3h.2V13Zm-.3,8.8V22h.3v-.2Zm0-8.5h.3V13H113Zm-.7,8.5V22h.2v-.2Zm.5-8.8v.3h.2V13Zm-.3,0v.3h.3V13Zm0,8.8V22h.3v-.2Zm-3.2,0V22h.2v-.2Zm.5-8.8v.3h.2V13Zm-.3,8.8V22h.3v-.2Zm0-8.5h.3V13h-.3Zm-.7,8.5V22h.2v-.2ZM109,13v.3h.3V13Zm0,8.8V22h.3v-.2Zm.3-8.8v.3h.2V13Zm-.5,0v.3h.2V13Zm-.3,0v.3h.3V13Zm-.2,8.8V22h.2v-.2Zm.2,0V22h.3v-.2Zm-.2-8.5h.2V13h-.2ZM110,13v.3h.3V13Zm.3.3h.2V13h-.2Zm-.3,8.5V22h.3v-.2Zm-.2,0V22h.2v-.2Zm.7-8.8v.3h.3V13Zm-.2,8.8V22h.2v-.2ZM108,18v.3h.3V18Zm0-1.2V17h.3v-.2Zm0,.7v.3h.3v-.3Zm0-4v.3h.3v-.3Zm0,5.5v.3h.3V19Zm0,1.5v.3h.3v-.3Zm0-5.5v.3h.3V15Zm0,2.3v.2h.3v-.2Zm0,1v.2h.3v-.2Zm0-1.3v.3h.3V17Zm0-2.5v.3h.3v-.3Zm0,7v.3h.3v-.3Zm0-2.7V19h.3v-.2Zm0-2.8v.3h.3V16Zm0,3.8V20h.3v-.2Zm0-.5v.2h.3v-.2Zm0-5.5V14h.3v-.2Zm0,4V18h.3v-.2Zm0,2.5v.2h.3v-.2Zm0,1.5V22h.3v-.2Zm0-.8v.3h.3V21Zm0-5.5v.3h.3v-.3Zm0-2.5v.3h.3V13Zm0,8.3v.2h.3v-.2Zm0-6v.2h.3v-.2Zm0,4.2v.3h.3v-.3Zm0-1v.3h.3v-.3Zm0-4.2v.2h.3v-.2Zm0,2.2v.3h.3v-.3Zm0-.7V16h.3v-.2Zm0,.5v.2h.3v-.2Zm0,3.7v.3h.3V20Zm0,.8V21h.3v-.2Zm0-6V15h.3v-.2Zm0-.8v.3h.3V14Zm0-.7v.2h.3v-.2Zm4.1,5v.2h.3v-.2Zm-.2,0v.2h.2v-.2Zm-.3,0v.2h.3v-.2Zm-1,.5V19h.3v-.2Zm-.2,0V19h.2v-.2Zm.7,0V19h.3v-.2Zm.3,0V19h.2v-.2Zm-1.5,1.7v.3h.2v-.3Zm0-1v.3h.2v-.3Zm0,.3V20h.2v-.2Zm0,.5v.2h.2v-.2Zm0,.5V21h.2v-.2Zm0-.8v.3h.2V20Zm1.7.8V21h.3v-.2Zm.3-.3v.3h.2v-.3Zm0,.3V21h.2v-.2Zm0-1.3v.3h.2v-.3Zm0,.8v.2h.2v-.2Zm0-.5V20h.2v-.2Zm0,.2v.3h.2V20Zm.5-.7v.2h.2v-.2Zm-.3,0v.2h.3v-.2Zm-.2,0v.2h.2v-.2Zm-.3,0v.2h.3v-.2Zm-.2,0v.2h.2v-.2Zm.7-3.5V16h.3v-.2Zm-.2,0V16h.2v-.2Zm-1.5,0V16h.2v-.2Zm.2,0V16h.3v-.2Zm-.7,0V16h.2v-.2Zm.2,0V16h.3v-.2Zm1.5,0V16h.3v-.2Zm-.2,0V16h.2v-.2Zm-.3,0V16h.3v-.2Zm-1.5,0V16h.3v-.2Zm2.3-1V15h.2v-.2Zm-1.3,0V15h.3v-.2Zm-.2,0V15h.2v-.2Zm-.5,0V15h.2v-.2Zm.2,0V15h.3v-.2Zm1.5,0V15h.3v-.2Zm-.5,0V15h.3v-.2Zm.3,0V15h.2v-.2Zm-.5,4.5v.2h.2v-.2Zm0,.7v.3h.2V20Zm0,.8V21h.2v-.2Zm0-2.5v.2h.2v-.2Zm0,1.2v.3h.2v-.3Zm0-.7V19h.2v-.2Zm0-.3v.3h.2v-.3Zm0,.5v.3h.2V19Zm0,1.5v.3h.2v-.3Zm0-.2v.2h.2v-.2Zm0-.5V20h.2v-.2Zm0-3.8v.3h.2V16Zm0,.8V17h.2v-.2Zm0-2.3v.3h.2v-.3Zm0,.5v.3h.2V15Zm0-.2V15h.2v-.2Zm0,1.7v.3h.2v-.3Zm0-.2v.2h.2v-.2Zm0-2v.2h.2v-.2Zm0,1.5V16h.2v-.2Zm0-.3v.3h.2v-.3Zm0-.2v.2h.2v-.2Zm.7-1.3v.3h.3V14Zm-.2,0v.3h.2V14Zm-.3,0v.3h.3V14Zm-.2,0v.3h.2V14Zm-.3,0v.3h.3V14Zm-.2,0v.3h.2V14Zm-.3,0v.3h.3V14Zm1,2,.8.7.2-.2Zm-.2,0-1,.5.2.2Zm-1-.8.2.3.8-.5Zm.2-1,.5.3-.2-.3Zm.3,5-.3-.2-.5,1Zm-.8-.2.5-.5-.2-.3Zm1.5.5.3.8.2-.3Zm-.2,0-.3-.3-.2,1.3Z" transform="translate(-70 -2)" />
+    <path class="cls-2" d="M76,3V7a2.9,2.9,0,0,1-3,3H71V3m8,0v7m6-7H82V7a2.9,2.9,0,0,0,3,3h0m6-4h1a2.9,2.9,0,0,0-3-3H88V7a2.9,2.9,0,0,0,3,3h1m20-4h1a2.9,2.9,0,0,0-3-3h-1V7a2.9,2.9,0,0,0,3,3h1m-13,0V6a2.9,2.9,0,0,0-3-3H95v7m8-7V7a2.9,2.9,0,0,0,3,3h0m0-4h-3M81,14v6a.9.9,0,0,1-1,1H78a.9.9,0,0,1-1-1V14m15,0v7m8-4V16a2,2,0,0,0-2-2H95v5a2,2,0,0,0,2,2h3ZM89,21V17a2.9,2.9,0,0,0-3-3H84v7m22-7h0a2.9,2.9,0,0,0-3,3v4M71,21h0a2.9,2.9,0,0,0,3-3V14H71" transform="translate(-70 -2)" />
 </svg>

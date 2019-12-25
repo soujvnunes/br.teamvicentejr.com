@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { data } from "../../utility/data";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { data } from "../../library/data";
 import Nav from "../Nav";
 import Typography from "../Typography";
 import Icon from "../Icon";
-import Home from "../../page/Home";
-import { NavHashLink as NavLink } from "react-router-hash-link";
+import { Home, Teachers, Branches, About } from "../Page";
+import Header from "../Header";
 
 export default props => {
   const [state, setState] = useState({
     active: window.location.pathname.substring(1)
   });
 
-  let { active } = state;
-
   useEffect(() => setState({ active: "home" }), []);
+
+  let { active } = state;
 
   return (
     <Router>
+      <Header />
       <Nav indicator={active}>
         {data.navigation.map((data, i) => (
           <NavLink
-            smooth
             key={i}
             to={data.to}
             isActive={() => active === data.name}
@@ -34,6 +34,13 @@ export default props => {
         ))}
       </Nav>
       <Route exact path="/" render={props => <Home {...props} />} />
+      <Route
+        exact
+        path="/professores"
+        render={props => <Teachers {...props} />}
+      />
+      <Route exact path="/filiais" render={props => <Branches {...props} />} />
+      <Route exact path="/sobre" render={props => <About {...props} />} />
     </Router>
   );
 };

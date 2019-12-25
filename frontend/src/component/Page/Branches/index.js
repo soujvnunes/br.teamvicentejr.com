@@ -1,16 +1,14 @@
 import React from "react";
-import Section from "../component/Section";
-import LineSet from "../component/LineSet";
-import Line from "../component/Line";
-import { data } from "../utility/data";
-import Main from "../component/Content";
+import { data } from "../../../library/data";
+import LineSet from "../../LineSet";
+import Line from "../../Line";
+import Main from "../../../component/Main";
+import Wrapper from "../../Wrapper";
 
 export default props => {
-  let { switchContent } = props;
-
   return (
     <Main>
-      <Section show={!switchContent}>
+      <Wrapper>
         <LineSet className={"branch-list"}>
           {data.branches.map((data, i) => {
             return (
@@ -28,7 +26,7 @@ export default props => {
             );
           })}
         </LineSet>
-      </Section>
+      </Wrapper>
     </Main>
   );
 };

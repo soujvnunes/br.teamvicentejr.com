@@ -2,21 +2,21 @@ export const data = {
   navigation: [
     {
       name: "home",
-      to: { pathname: "/", hash: "#intro" },
+      to: "/",
       icon: "home",
       className: "Nav-link",
       primary: "Início"
     },
     {
       name: "teachers",
-      to: { pathname: "/", hash: "#professores" },
+      to: "/professores",
       icon: "people",
       className: "Nav-link",
       primary: "Professores"
     },
     {
       name: "branches",
-      to: { pathname: "/", hash: "#filiais" },
+      to: "/filiais",
       icon: "local",
       className: "Nav-link",
       primary: "Filiais"

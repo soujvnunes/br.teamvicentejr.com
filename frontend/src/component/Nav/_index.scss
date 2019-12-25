@@ -37,30 +37,33 @@
     }
   }
 
-  &-indicator {
+  &-bar {
     width: $spacing * 46;
     height: $spacing/4;
     position: absolute;
     overflow: hidden;
     top: 0;
 
-    &-bar {
+    &-runner {
       background-color: $primary-color;
       width: $spacing * 10;
       height: 100%;
       margin-left: -$spacing * 5;
       @include transition(margin-left);
 
-      .home & {
+      &.indicate-home-page {
         margin-left: 0;
       }
-      .teachers & {
+
+      &.indicate-teachers-page {
         margin-left: $spacing * 12;
       }
-      .branches & {
+
+      &.indicate-branches-page {
         margin-left: $spacing * 24;
       }
-      .about & {
+
+      &.indicate-about-page {
         margin-left: $spacing * 36;
       }
     }

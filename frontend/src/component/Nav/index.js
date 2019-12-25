@@ -2,18 +2,24 @@ import React from "react";
 import classNames from "classnames";
 
 export default props => {
-  let { className, children, indicator } = props;
+  let { children, indicator } = props;
 
   const classes = {
-    root: [classNames("Nav" /*, { [`class`]: prop }*/, className)]
+    root: [classNames("Nav")],
+    bar: [classNames("Nav-bar")],
+    runner: [
+      classNames("Nav-bar-runner", {
+        [`indicate-${indicator}-page`]: indicator
+      })
+    ]
   };
 
-  let { root } = classes;
+  let { root, bar, runner } = classes;
 
   return (
     <nav className={root}>
-      <div className={`${root}-indicator ${indicator}`}>
-        <div className={`${root}-indicator-bar`} />
+      <div className={bar}>
+        <div className={runner} />
       </div>
       {children}
     </nav>

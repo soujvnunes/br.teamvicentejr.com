@@ -1,0 +1,24 @@
+.home {
+  &-title {
+    &-label {
+      text-align: left;
+      &-svg {
+        height: $spacing * 24;
+        width: auto;
+      }
+    }
+    &-subject {
+      text-align: left;
+      font-size: 0.83em;
+    }
+  }
+
+  &-events {
+    max-width: $spacing * 60;
+    margin: $spacing * 4 0;
+
+    &-input {
+      margin-bottom: $spacing * 4;
+    }
+  }
+}
