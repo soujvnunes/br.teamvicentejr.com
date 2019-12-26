@@ -2,11 +2,16 @@
   z-index: 1;
 
   &-title {
+    position: relative;
+    z-index: 1;
     margin-left: $spacing/1.5;
     &-label {
       &-svg {
         height: auto;
         width: 50%;
+        @include viewport(phone) {
+          width: 100%;
+        }
       }
     }
     &-subject {
@@ -16,7 +21,8 @@
 
   &-events {
     max-width: $spacing * 60;
-    margin: $spacing * 4 0;
+    position: relative;
+    z-index: 1;
 
     &-input {
       margin-bottom: $spacing * 4;

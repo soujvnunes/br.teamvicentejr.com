@@ -1,0 +1,15 @@
+.CardMedia {
+  display: block;
+  background-size: inherit;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 50%;
+  position: relative;
+  border: $spacing/4 solid $tertiary-color;
+  @include transition(border-color);
+
+  @include viewport(phone) {
+    width: 100%;
+    flex: 1;
+  }
+}

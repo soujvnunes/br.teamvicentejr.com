@@ -1,3 +1,19 @@
+.page-title {
+  margin: 0 0 $spacing * 4 $spacing/1.5;
+  &-label {
+    &-svg {
+      height: $spacing * 10;
+      width: auto;
+    }
+  }
+  & > &-subject {
+    font-size: 1em;
+    text-transform: none;
+    color: $tertiary-color;
+    font-weight: bold;
+  }
+}
+
 @import "Home/index";
 @import "Teachers/index";
 @import "Branches/index";

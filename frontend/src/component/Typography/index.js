@@ -12,21 +12,23 @@ export default function Typography(props) {
     className
   );
 
-  if (title) return <h1 className={classes}>{children}</h1>;
-  if (subject)
-    if (url)
-      return (
-        <a
-          href={url}
-          className={classes}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {children}
-        </a>
-      );
-    else return <h6 className={classes}>{children}</h6>;
-  if (paragraph) return <p className={classes}>{children}</p>;
-
-  return null;
+  if (children) {
+    if (title) return <h1 className={classes}>{children}</h1>;
+    if (subject)
+      if (url)
+        return (
+          <a
+            href={url}
+            className={classes}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {children}
+          </a>
+        );
+      else return <h6 className={classes}>{children}</h6>;
+    if (paragraph) return <p className={classes}>{children}</p>;
+  } else {
+    return null;
+  }
 }

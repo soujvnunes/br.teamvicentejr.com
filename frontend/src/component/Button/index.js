@@ -2,8 +2,9 @@ import React from "react";
 import Typography from "../Typography";
 import Icon from "../Icon";
 import classNames from "classnames";
+import Skew from "../Skew";
 
-export default props => {
+export default function Button(props) {
   let {
     type,
     state,
@@ -46,7 +47,6 @@ export default props => {
         </div>
       ) : null}
       <div className={"Button-adornment"}>
-        <div className={"Button-adornment-bar Button-adornment-bar--left"} />
         <button
           className={"Button-adornment-ring"}
           id={id ? `button-${id}` : null}
@@ -60,8 +60,8 @@ export default props => {
               className={"Button-adornment-ring-icon--small"}
             />
           )}
+          <Skew />
         </button>
-        <div className={"Button-adornment-bar Button-adornment-bar--right"} />
       </div>
     </>
   );
@@ -84,4 +84,4 @@ export default props => {
       )}
     </>
   );
-};
+}

@@ -105,7 +105,7 @@ export const data = {
     {
       name: "CT Corpo Em Forma",
       phone: "082 9 9387 9275",
-      map: require("../asset/br/branches/academiaHgFitness.jpg"),
+      map: require("../asset/br/branches/ctCorpoEmForma.jpg"),
       local: "R. Cinqüenta e Cinco, 28, Maceió - AL",
       url: "https://goo.gl/maps/QQdKTtBiVuhp4XYf6"
     },

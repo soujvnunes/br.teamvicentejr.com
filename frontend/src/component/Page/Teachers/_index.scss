@@ -24,11 +24,15 @@
 
           .teachers-carousel-item {
             $value: $spacing-unit/1.25 * 0.1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
 
             &-legend {
               margin: $spacing * 2 0;
               opacity: 0;
               @include transition(opacity);
+              flex: 1;
             }
 
             &-image {
@@ -47,6 +51,7 @@
           }
 
           &.selected {
+            z-index: 1;
             .teachers-carousel-item {
               &-legend {
                 opacity: 1;
@@ -87,6 +92,9 @@
       & > &-image {
         height: calc(100vh - 315px);
         width: auto;
+        @include viewport(phone) {
+          height: calc(100vh - 332px);
+        }
       }
     }
   }

@@ -1,0 +1,28 @@
+.Person {
+  overflow: hidden;
+  position: fixed;
+  top: 80px;
+  height: calc(100vh - 80px);
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  &-image {
+    width: $spacing-unit * 10%;
+    margin-right: -$spacing * 42;
+  }
+
+  @include viewport(phone) {
+    top: 290px;
+    justify-content: center;
+    &-image {
+      width: $spacing-unit * 20%;
+      margin-right: 0;
+    }
+  }
+
+  &-caption {
+    visibility: hidden;
+  }
+}

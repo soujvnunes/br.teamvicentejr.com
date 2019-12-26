@@ -14,8 +14,9 @@
       padding: $spacing;
 
       &-title {
-        margin-bottom: $spacing;
+        margin-bottom: $spacing/4;
         text-align: left;
+        font-size: 1rem;
       }
 
       &-secondary {

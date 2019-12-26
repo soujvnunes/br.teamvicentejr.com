@@ -1,3 +1,15 @@
 .branches {
   z-index: 1;
+
+  &-list {
+    margin: $spacing 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

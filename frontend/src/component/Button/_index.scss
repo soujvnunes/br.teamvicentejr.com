@@ -1,6 +1,6 @@
 .Button {
-  flex-direction: column;
-  @extend %align-center;
+  display: flex;
+  flex-direction: row;
 
   &--spacing {
     margin: 0 $spacing * 2;
@@ -16,159 +16,37 @@
 
   // default values
   &-label {
-    margin-bottom: $spacing;
-    @extend %direction-row;
+    display: flex;
+    align-items: center;
+    border-bottom: $spacing/4 solid $tertiary-color;
+    padding: 0 $spacing $spacing/4 0;
+    margin-right: $spacing/2;
+    max-width: $spacing * 20;
+    flex: 1;
 
     &-text {
       letter-spacing: 0;
       color: $primary-color;
       margin-bottom: 0;
       @include transition(margin-bottom);
-    }
-
-    &-icon {
-      @include transition(width, height, margin-right);
+      font-size: $spacing-unit * 0.1em;
     }
   }
+
   &-adornment {
-    @extend %align-center;
+    display: flex;
+    align-items: flex-end;
 
     &-ring {
       @include transition(border-color, width, height);
+      @include area($button-adornment--xy);
+      border-radius: $button-adornment--xy / 2;
       position: relative;
 
       &-icon {
         stroke: $primary-color;
         @include transition(width, height, fill, stroke);
-        &--small {
-          @include transition(width, height);
-        }
-      }
-    }
-    &-bar {
-      @extend %bar-border;
-      @include transition(background-color, width);
-    }
-  }
-
-  // large type values
-  &-large {
-    .Button-adornment {
-      &-ring {
-        @include area($button-adornment--xy * 2);
-        border-radius: $button-adornment--xy;
-      }
-      &-bar {
-        width: $spacing * 6;
-      }
-    }
-    &:hover {
-      .Button-adornment {
-        &-ring {
-          width: $button-adornment--xy * 4;
-        }
-        &-bar {
-          width: $spacing * 2;
-        }
-      }
-    }
-  }
-
-  // normal type values
-  &-normal {
-    .Button-adornment {
-      &-ring {
-        @include area($button-adornment--xy);
-        border-radius: $button-adornment--xy / 2;
-        &-icon {
-          @include area($spacing / 0.4);
-        }
-      }
-      &-bar {
-        width: $spacing * 8;
-      }
-    }
-    &:hover {
-      .Button-adornment {
-        &-ring {
-          width: $button-adornment--xy * 4;
-        }
-        &-bar {
-          width: $spacing * 2;
-        }
-      }
-    }
-    &--expanded {
-      .Button-adornment {
-        &-ring {
-          width: $button-adornment--xy * 4;
-        }
-        &-bar {
-          width: $spacing * 2;
-        }
-      }
-    }
-  }
-
-  // small type values
-  &-small {
-    .Button-label {
-      @extend %align-center;
-      align-self: flex-start;
-      margin-bottom: 0;
-      &-text {
-        color: $tertiary-color--light;
-      }
-      &-icon {
-        margin-right: $spacing;
-
-        &.Icon-facebook,
-        &.Icon-instagram {
-          fill: $tertiary-color;
-          stroke: transparent !important;
-        }
-      }
-    }
-    .Button-adornment {
-      &-ring {
-        @include area($button-adornment--xy / 2);
-        border-radius: $button-adornment--xy / 2;
-        &-icon {
-          &--small {
-            @include area($spacing * 1.1);
-            fill: $tertiary-color;
-            stroke: transparent;
-            margin-bottom: $spacing / 8;
-            margin-left: $spacing / 8;
-          }
-        }
-      }
-      &-bar--left {
-        width: $spacing * 18;
-      }
-    }
-    &--condensed {
-      .Button-label {
-        &-text {
-          margin-bottom: $spacing;
-        }
-        &-icon {
-          margin-right: 0;
-          @include area(0);
-        }
-      }
-      .Button-adornment {
-        &-ring {
-          @include area($button-adornment--xy / 4);
-          &-icon {
-            &--small {
-              @include area(0);
-            }
-          }
-        }
-        &-bar--left {
-          width: $spacing * 12;
-        }
+        @include area($spacing / 0.4);
       }
     }
   }
@@ -183,14 +61,7 @@
     .Button-adornment {
       &-ring {
         @extend %ring-border--hover;
-        &-icon {
-          &--small {
-            fill: $primary-color;
-          }
-        }
-      }
-      &-bar {
-        @extend %bar-border--hover;
+        width: $button-adornment--xy * 2;
       }
     }
   }

@@ -6,12 +6,14 @@ import Typography from "../../Typography";
 import Main from "../../../component/Main";
 import { ReactComponent as Mark } from "../../../asset/mark.svg";
 import Wrapper from "../../Wrapper";
+import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
+import Person from "../../Person";
 
 export default props => {
   return (
     <Main className={"home"}>
       <Wrapper>
-        <div className={"home-title"}>
+        <div className={"page-title home-title"}>
           <Typography title className={"home-title-label"}>
             <Mark
               title={"Vicente Júnior — Brazilian Jiu-Jitsu"}
@@ -43,6 +45,7 @@ export default props => {
             </Line>
           </LineSet>
         </div>
+        <Person name={"Professor Vicente Júnior"} image={VicenteJuniorImage} />
       </Wrapper>
     </Main>
   );

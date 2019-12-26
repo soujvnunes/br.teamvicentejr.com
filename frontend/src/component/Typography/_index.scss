@@ -23,6 +23,10 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    @include viewport(phone) {
+      font-size: $spacing-unit * 0.12rem;
+    }
   }
 
   &-link {

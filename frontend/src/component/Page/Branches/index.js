@@ -1,30 +1,44 @@
 import React from "react";
 import { data } from "../../../library/data";
-import LineSet from "../../LineSet";
-import Line from "../../Line";
 import Main from "../../../component/Main";
 import Wrapper from "../../Wrapper";
+import Typography from "../../Typography";
+import { ReactComponent as BranchesTitle } from "../../../asset/br/titles/filiais.svg";
+import Card from "../../Card";
+import CardMedia from "../../CardMedia";
+import CardDescription from "../../CardDescription";
+import Button from "../../Button";
 
 export default props => {
   return (
     <Main className={"branches"}>
       <Wrapper>
-        <LineSet className={"branch-list"}>
+        <div className={"page-title"}>
+          <Typography title className={"page-title-label"}>
+            <BranchesTitle className={"page-title-label-svg"} />
+          </Typography>
+          <Typography subject className={"page-title-subject"}>
+            Confira a localização e detalhes de
+            <br /> nossas principais filiais.
+          </Typography>
+        </div>
+        <div>
           {data.branches.map((data, i) => {
             return (
-              <Line
-                noHover={true}
-                key={i}
-                className={"Line-map-wrapper"}
-                primary={data.name}
-                secondary={data.local}
-                icon={"share"}
-              >
-                <img src={data.map} alt={data.name} className={"Line-map"} />
-              </Line>
+              <Card key={i} className={"branches-list"}>
+                <CardMedia image={data.map} title={data.name} />
+                <CardDescription secondary={data.local}>
+                  <Button
+                    label={data.name}
+                    icon={"local"}
+                    type={"normal"}
+                    url={data.url}
+                  />
+                </CardDescription>
+              </Card>
             );
           })}
-        </LineSet>
+        </div>
       </Wrapper>
     </Main>
   );
