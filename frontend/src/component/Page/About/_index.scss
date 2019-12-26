@@ -1,11 +1,13 @@
 .about {
   z-index: 1;
   padding-top: 0;
-
+  flex-direction: column;
+  align-items: center;
   &-title {
     margin-bottom: 0;
   }
   &-history {
     margin: $spacing * 2 0;
+    height: auto;
   }
 }
