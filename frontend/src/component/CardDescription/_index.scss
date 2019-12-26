@@ -2,12 +2,6 @@
   align-self: flex-end;
   margin: $spacing $spacing * 2 0;
 
-  @include viewport(phone) {
-    align-self: flex-start;
-    flex-direction: row;
-    display: flex;
-  }
-
   &-hgroup {
     color: $tertiary-color;
     @include transition(color);
@@ -26,6 +20,23 @@
       font-weight: normal;
       text-align: left;
       color: inherit;
+    }
+  }
+
+  &-content {
+    flex: 1;
+  }
+
+  @include viewport(phone) {
+    align-self: flex-start;
+    flex-direction: row;
+    display: flex;
+    margin-right: 0;
+    margin-left: 0;
+
+    &-hgroup {
+      margin-bottom: 0;
+      margin-right: $spacing;
     }
   }
 }

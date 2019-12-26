@@ -5,19 +5,20 @@
   height: calc(100vh - 80px);
   right: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
 
   &-image {
-    width: $spacing-unit * 10%;
+    max-width: $spacing-unit * 10%;
     margin-right: -$spacing * 42;
   }
 
   @include viewport(phone) {
     top: 290px;
-    justify-content: center;
     &-image {
-      width: $spacing-unit * 20%;
+      /*
+      width: $spacing-unit * 14%;
+      */
       margin-right: 0;
     }
   }

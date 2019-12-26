@@ -1,0 +1,11 @@
+.Panel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  width: 100%;
+  height: $spacing * 50;
+  padding: $spacing * 10 0;
+}

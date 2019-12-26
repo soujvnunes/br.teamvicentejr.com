@@ -21,7 +21,7 @@ export default props => {
             />
           </Typography>
           <Typography subject className={"home-title-subject"}>
-            A equipe de jiu-jítsu que mais cresce em arte e esporte americano.
+            A equipe de jiu-jítsu que mais cresce em arte e esporte.
           </Typography>
         </div>
         <div className={"home-events"}>

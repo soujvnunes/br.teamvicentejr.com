@@ -1,0 +1,32 @@
+.History {
+  display: flex;
+  flex-direction: row;
+  height: $spacing * 40;
+
+  &--orientation-left {
+    flex-direction: row;
+    & .History-text {
+      margin-left: $spacing * 2;
+    }
+  }
+
+  &--orientation-right {
+    flex-direction: row-reverse;
+    & .History-text {
+      margin-right: $spacing * 2;
+    }
+  }
+
+  &-image {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-width: 50%;
+  }
+
+  &-text {
+    align-items: flex-end;
+    display: flex;
+  }
+}
