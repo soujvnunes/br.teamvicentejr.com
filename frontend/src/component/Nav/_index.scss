@@ -1,68 +1,111 @@
 .Nav {
-  @extend %align-center;
   position: fixed;
-  height: $spacing * 7.5;
-  justify-content: center;
-  bottom: 0;
-  width: 100%;
-  background: $common-color--black--light;
+  background: $secondary-color;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing * 3 0;
+  height: 100%;
+  width: inherit;
 
-  &-link {
-    margin: 0 $spacing;
-    min-width: $spacing * 11.25;
-    @extend %text-align-center;
-    color: $tertiary-color;
+  &-wrapper {
+    width: $spacing * 12;
+  }
 
-    &-label {
-      color: currentColor;
-      display: block;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin-top: $spacing/2;
-      font-size: $spacing-unit * 0.09rem;
+  &-logo {
+    line-height: 0;
+
+    .logo {
+      @include area($spacing * 6);
+      @include transition(color);
+      color: $tertiary-color;
+      margin-bottom: $spacing * 16;
     }
 
-    &-icon {
-      stroke: currentColor !important;
-    }
-
-    &:hover,
-    &.active {
-      .Nav-link-icon {
-        fill: currentColor;
+    &:hover {
+      .logo {
+        color: $primary-color;
       }
-      color: $primary-color;
     }
   }
 
-  &-bar {
-    width: $spacing * 53;
-    height: $spacing/4;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
+  &-links {
+    position: relative;
+    width: inherit;
+    display: grid;
 
-    &-runner {
+    &-indicator {
       background-color: $primary-color;
-      width: 25%;
-      height: 100%;
-      margin-left: -$spacing * 5;
-      @include transition(margin-left);
+      border: 0;
+      height: 25%;
+      width: calc(100% + #{$spacing});
 
-      &.indicate-home-page {
-        margin-left: 0;
+      &.Nav-home-indicator {
+        top: 0;
       }
 
-      &.indicate-teachers-page {
-        margin-left: 25%;
+      &.Nav-teachers-indicator {
+        top: 25%;
       }
 
-      &.indicate-branches-page {
-        margin-left: 50%;
+      &.Nav-branches-indicator {
+        top: 50%;
       }
 
-      &.indicate-about-page {
-        margin-left: 75%;
+      &.Nav-about-indicator {
+        top: 75%;
+      }
+    }
+
+    &-link {
+      @extend %text-align-center;
+      color: $tertiary-color--light;
+      position: relative;
+      display: block;
+      margin: $spacing * 2 0;
+
+      &-label {
+        color: currentColor;
+        display: block;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: $spacing/2;
+        font-size: $spacing-unit * 0.08rem;
+      }
+
+      &-icon {
+        stroke: currentColor !important;
+        @include transition(stroke);
+      }
+
+      &:hover {
+        .Nav-links-link-icon {
+          fill: currentColor;
+        }
+        color: $tertiary-color;
+      }
+
+      &.active {
+        .Nav-links-link-icon {
+          fill: currentColor;
+        }
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &-footer {
+    &-link {
+      margin: $spacing * 2 0;
+      display: block;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }

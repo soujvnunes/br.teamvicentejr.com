@@ -1,0 +1,11 @@
+.App {
+  display: flex;
+  @extend %font-family--azo;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $spacing * 2;
+  font-style: normal;
+  min-height: 100vh;
+  background-color: $common-color--black;
+  color: $tertiary-color;
+}

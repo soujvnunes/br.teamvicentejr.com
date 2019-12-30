@@ -1,6 +1,6 @@
 .teachers {
   &-carousel {
-    width: inherit;
+    width: 100%;
 
     .carousel {
       &.carousel-slider {
@@ -68,15 +68,24 @@
       }
 
       & .thumbs-wrapper {
-        margin: 0;
+        margin: $spacing * 2 $spacing * 3;
 
         & .thumbs {
+          line-height: 0;
           & .thumb {
             margin: 0 $spacing;
             height: $spacing-unit * 7.5px;
             border-width: $spacing/4;
             border-color: $tertiary-color;
             padding: 0;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
 
             &.selected {
               border-color: $primary-color;
@@ -88,7 +97,7 @@
 
     &-item {
       & > &-image {
-        height: calc(100vh - 338px);
+        height: calc(100vh - 207px);
         width: auto;
         @include viewport(phone) {
           height: calc(100vh - 370px);

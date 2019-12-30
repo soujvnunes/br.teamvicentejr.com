@@ -44,7 +44,9 @@ export default props => {
             </Line>
           </LineSet>
         </div>
+        {/*
         <Person name={"Professor Vicente Júnior"} image={VicenteJuniorImage} />
+*/}
       </Wrapper>
     </Main>
   );
