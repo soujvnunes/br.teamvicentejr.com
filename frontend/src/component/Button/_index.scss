@@ -1,53 +1,39 @@
 .Button {
-  display: flex;
-  flex-direction: row;
+  position: relative;
+  max-width: $spacing * 26;
+  @extend %align-center;
+  height: $spacing * 4;
 
-  &--spacing {
-    margin: 0 $spacing * 2;
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:last-child {
-      margin-right: 0;
-    }
+  &-skew {
+    border: 0;
+    background-color: $primary-color;
   }
 
-  // default values
   &-label {
-    display: flex;
-    align-items: center;
-    border-bottom: $spacing/4 solid $tertiary-color;
-    padding: 0 $spacing $spacing/4 0;
-    margin-right: $spacing/2;
-    max-width: $spacing * 20;
+    margin: 0 $spacing * 2;
     flex: 1;
-
-    &-text {
-      letter-spacing: 0;
-      color: $primary-color;
-      margin-bottom: 0;
-      @include transition(margin-bottom);
-      font-size: $spacing-unit * 0.1em;
-    }
+    color: $secondary-color;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 
   &-adornment {
-    display: flex;
-    align-items: flex-end;
+    @include transition(border-color, width, height);
+    @include area($spacing * 6);
+    position: relative;
+    margin: 0 $spacing * 2;
 
-    &-ring {
-      @include transition(border-color, width, height);
-      @include area($button-adornment--xy);
-      border-radius: $button-adornment--xy / 2;
+    &-icon {
       position: relative;
+      stroke: $primary-color;
+      @include transition(width, height, fill, stroke);
+      @include area($spacing / 0.4);
+    }
 
-      &-icon {
-        stroke: $primary-color;
-        @include transition(width, height, fill, stroke);
-        @include area($spacing / 0.4);
-      }
+    &-skew {
+      border: 0;
+      background-color: $secondary-color--light;
     }
   }
 

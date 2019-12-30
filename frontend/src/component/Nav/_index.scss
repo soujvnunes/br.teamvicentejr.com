@@ -3,7 +3,6 @@
   position: fixed;
   height: $spacing * 7.5;
   justify-content: center;
-  z-index: 3;
   bottom: 0;
   width: 100%;
   background: $common-color--black--light;
@@ -37,7 +36,7 @@
   }
 
   &-bar {
-    width: $spacing * 46;
+    width: $spacing * 53;
     height: $spacing/4;
     position: absolute;
     overflow: hidden;
@@ -45,7 +44,7 @@
 
     &-runner {
       background-color: $primary-color;
-      width: $spacing * 10;
+      width: 25%;
       height: 100%;
       margin-left: -$spacing * 5;
       @include transition(margin-left);
@@ -55,15 +54,15 @@
       }
 
       &.indicate-teachers-page {
-        margin-left: $spacing * 12;
+        margin-left: 25%;
       }
 
       &.indicate-branches-page {
-        margin-left: $spacing * 24;
+        margin-left: 50%;
       }
 
       &.indicate-about-page {
-        margin-left: $spacing * 36;
+        margin-left: 75%;
       }
     }
   }

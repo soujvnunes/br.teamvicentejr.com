@@ -1,11 +1,10 @@
 .CardDescription {
   align-self: flex-end;
-  margin: $spacing $spacing * 2 0;
+  margin: $spacing * 2;
 
   &-hgroup {
     color: $tertiary-color;
     @include transition(color);
-    max-width: 50%;
     margin-bottom: $spacing * 2;
 
     &-title {

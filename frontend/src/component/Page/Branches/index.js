@@ -26,9 +26,9 @@ export default props => {
             return (
               <Card key={i} className={"branches-list"}>
                 <CardMedia image={data.map} title={data.name} />
-                <CardDescription secondary={data.local}>
+                <CardDescription primary={data.name} secondary={data.local}>
                   <Button
-                    label={data.name}
+                    label={"Visitar"}
                     icon={"local"}
                     type={"normal"}
                     url={data.url}

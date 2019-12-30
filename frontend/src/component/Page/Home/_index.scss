@@ -1,15 +1,11 @@
 .home {
-  z-index: 1;
-
   &-title {
     position: relative;
-    z-index: 1;
   }
 
   &-events {
     max-width: $spacing * 60;
     position: relative;
-    z-index: 1;
 
     &-input {
       margin-bottom: $spacing * 4;

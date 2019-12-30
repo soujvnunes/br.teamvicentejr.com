@@ -1,68 +1,32 @@
 import React from "react";
-import Typography from "../Typography";
 import Icon from "../Icon";
 import classNames from "classnames";
 import Skew from "../Skew";
 
 export default function Button(props) {
-  let {
-    type,
-    state,
-    spacing,
-    className,
-    icon,
-    id,
-    label,
-    onClick,
-    url
-  } = props;
+  let { type, state, className, icon, id, label, onClick, url } = props;
 
   const classes = classNames(
     "Button",
     {
       [`Button-${type}`]: type,
-      [`Button-${type}--${state}`]: state,
-      [`Button--spacing`]: spacing
+      [`Button-${type}--${state}`]: state
     },
     className
   );
 
-  const ButtonIcon = (
-    <Icon
-      name={icon}
-      className={
-        type === "small" ? `Button-label-icon` : `Button-adornment-ring-icon`
-      }
-    />
-  );
-
   const Body = (
     <>
-      {label ? (
-        <div className={"Button-label"}>
-          {type === "small" && ButtonIcon}
-          <Typography subject className={"Button-label-text"}>
-            {label}
-          </Typography>
-        </div>
-      ) : null}
-      <div className={"Button-adornment"}>
-        <button
-          className={"Button-adornment-ring"}
-          id={id ? `button-${id}` : null}
-          onClick={onClick}
-        >
-          {type !== "small" ? (
-            ButtonIcon
-          ) : (
-            <Icon
-              name={"circle"}
-              className={"Button-adornment-ring-icon--small"}
-            />
-          )}
-          <Skew />
-        </button>
-      </div>
+      <Skew className={"Button-skew"} />
+      {label && <span className={"Button-label"}>{label}</span>}
+      <button
+        className={"Button-adornment"}
+        id={id ? `button-${id}` : null}
+        onClick={onClick}
+      >
+        <Skew className={"Button-adornment-skew"} />
+        <Icon name={icon} className={"Button-adornment-icon"} />
+      </button>
     </>
   );
 

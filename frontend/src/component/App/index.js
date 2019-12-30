@@ -17,6 +17,14 @@ export default props => {
 
   return (
     <Router>
+      <Route exact path="/" render={props => <Home {...props} />} />
+      <Route
+        exact
+        path="/professores"
+        render={props => <Teachers {...props} />}
+      />
+      <Route exact path="/filiais" render={props => <Branches {...props} />} />
+      <Route exact path="/sobre" render={props => <About {...props} />} />
       <Header />
       <Nav indicator={active}>
         {data.navigation.map((data, i) => (
@@ -32,14 +40,6 @@ export default props => {
           </NavLink>
         ))}
       </Nav>
-      <Route exact path="/" render={props => <Home {...props} />} />
-      <Route
-        exact
-        path="/professores"
-        render={props => <Teachers {...props} />}
-      />
-      <Route exact path="/filiais" render={props => <Branches {...props} />} />
-      <Route exact path="/sobre" render={props => <About {...props} />} />
     </Router>
   );
 };
