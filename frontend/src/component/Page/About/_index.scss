@@ -5,6 +5,9 @@
   align-items: center;
   &-title {
     margin-bottom: 0;
+    &-label {
+      color: $tertiary-color--light;
+    }
   }
   &-history {
     margin: $spacing * 2 0;

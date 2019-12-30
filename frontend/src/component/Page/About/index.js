@@ -14,8 +14,8 @@ export default props => {
       <Panel image={imgPanel1}>
         <Wrapper>
           <div className={"page-title about-title"}>
-            <Typography title className={"page-title-label"}>
-              <AboutTitle className={"page-title-label-svg"} />
+            <Typography title className={"page-title-label about-title-label"}>
+              Sobre
             </Typography>
           </div>
         </Wrapper>

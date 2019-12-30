@@ -4,28 +4,24 @@ export const data = {
       name: "home",
       to: "/",
       icon: "home",
-      className: "Nav-link",
       primary: "Início"
     },
     {
       name: "teachers",
       to: "/professores",
       icon: "people",
-      className: "Nav-link",
       primary: "Professores"
     },
     {
       name: "branches",
       to: "/filiais",
       icon: "local",
-      className: "Nav-link",
       primary: "Filiais"
     },
     {
       name: "about",
       to: "/sobre",
       icon: "about",
-      className: "Nav-link",
       primary: "Sobre"
     }
   ],

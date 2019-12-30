@@ -1,5 +1,8 @@
 .page-title {
+  /*
   margin: 0 0 $spacing * 4 $spacing/1.5;
+  */
+  max-width: 50%;
   &-label {
     &-svg {
       height: $spacing * 10;

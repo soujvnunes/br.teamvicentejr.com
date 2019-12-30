@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: $common-color--black;
   font-size: $spacing * 2;
+  font-style: normal;
 }
 
 a {
@@ -33,31 +34,6 @@ button {
 }
 
 figure {
-  @extend %reset;
-}
-
-h1 {
-  @extend %reset;
-  @extend %font-family--uber;
-}
-
-h6 {
-  @extend %reset;
-}
-
-h5 {
-  @extend %reset;
-}
-
-h4 {
-  @extend %reset;
-}
-
-h3 {
-  @extend %reset;
-}
-
-p {
   @extend %reset;
 }
 

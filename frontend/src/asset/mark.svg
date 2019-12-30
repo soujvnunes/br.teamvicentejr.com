@@ -1,11 +1,11 @@
-<svg id="logo" xmlns="http://www.w3.org/2000/svg" width="44" height="20" viewBox="0 0 44 20">
+<svg id="mark" xmlns="http://www.w3.org/2000/svg" width="44" height="20" viewBox="0 0 44 20">
     <defs>
         <style>
-            #logo .cls-1 {
+            #mark .cls-1 {
             fill: #dfe6e9;
             }
 
-            #logo .cls-2 {
+            #mark .cls-2 {
             fill: none;
             stroke: #f44336;
             stroke-linecap: square;

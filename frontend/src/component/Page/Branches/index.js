@@ -15,7 +15,7 @@ export default props => {
       <Wrapper>
         <div className={"page-title"}>
           <Typography title className={"page-title-label"}>
-            <BranchesTitle className={"page-title-label-svg"} />
+            Filiais
           </Typography>
           <Typography subject className={"page-title-subject"}>
             Confira a localização e detalhes de

@@ -1,18 +1,7 @@
-%active-link {
-  .Icon {
-    fill: $primary-color;
-    stroke: $primary-color;
-  }
-  .Typography-subject {
-    color: $primary-color;
-  }
-}
-
 .Nav {
   @extend %align-center;
   position: fixed;
-  padding: $spacing;
-  display: flex;
+  height: $spacing * 7.5;
   justify-content: center;
   z-index: 3;
   bottom: 0;
@@ -21,19 +10,29 @@
 
   &-link {
     margin: 0 $spacing;
-    min-width: $spacing * 10;
+    min-width: $spacing * 11.25;
     @extend %text-align-center;
+    color: $tertiary-color;
 
-    .Typography-subject {
-      color: $tertiary-color;
+    &-label {
+      color: currentColor;
+      display: block;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-top: $spacing/2;
+      font-size: $spacing-unit * 0.09rem;
     }
 
-    &:hover {
-      @extend %active-link;
+    &-icon {
+      stroke: currentColor !important;
     }
 
+    &:hover,
     &.active {
-      @extend %active-link;
+      .Nav-link-icon {
+        fill: currentColor;
+      }
+      color: $primary-color;
     }
   }
 

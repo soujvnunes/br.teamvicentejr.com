@@ -1,8 +1,8 @@
 import React from "react";
 import IconButton from "../IconButton";
 import classNames from "classnames";
-import Icon from "../Icon";
 import Wrapper from "../Wrapper";
+import { ReactComponent as Logo } from "../../asset/logo.svg";
 
 export default function Header(props) {
   let { className } = props;
@@ -17,7 +17,7 @@ export default function Header(props) {
     <header className={root}>
       <Wrapper className={"Header-wrapper"}>
         <a href={"/"} className={"Header-logo"}>
-          <Icon name={"logo"} />
+          <Logo />
         </a>
         <aside className={"Header-social"}>
           <IconButton

@@ -4,7 +4,6 @@ import Line from "../../Line";
 import TextField from "../../TextField";
 import Typography from "../../Typography";
 import Main from "../../../component/Main";
-import { ReactComponent as Mark } from "../../../asset/mark.svg";
 import Wrapper from "../../Wrapper";
 import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
 import Person from "../../Person";
@@ -15,10 +14,7 @@ export default props => {
       <Wrapper>
         <div className={"page-title home-title"}>
           <Typography title className={"home-title-label"}>
-            <Mark
-              title={"Vicente Júnior — Brazilian Jiu-Jitsu"}
-              className={"home-title-label-svg"}
-            />
+            Vicente Júnior
           </Typography>
           <Typography subject className={"home-title-subject"}>
             A equipe de jiu-jítsu que mais cresce em arte e esporte.

@@ -25,11 +25,11 @@ export default props => {
             key={i}
             to={data.to}
             isActive={() => active === data.name}
-            className={data.className}
+            className={"Nav-link"}
             onClick={() => setState({ ...state, active: `${data.name}` })}
           >
-            <Icon name={data.icon} />
-            <Typography subject>{data.primary}</Typography>
+            <Icon className={"Nav-link-icon"} name={data.icon} />
+            <span className={"Nav-link-label"}>{data.primary}</span>
           </NavLink>
         ))}
       </Nav>

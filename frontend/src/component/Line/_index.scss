@@ -12,18 +12,20 @@
       flex: auto;
       position: relative;
       padding: $spacing;
+      color: $tertiary-color;
 
       &-title {
-        margin-bottom: $spacing/4;
         text-align: left;
-        font-size: 1rem;
+        font-weight: 600;
+        display: block;
+        font-size: $spacing-unit * 0.1rem;
+        text-transform: uppercase;
       }
 
       &-secondary {
-        font-weight: 600;
-        color: $tertiary-color;
         margin-left: $spacing;
         text-align: left;
+        font-size: $spacing-unit * 0.1rem;
       }
     }
   }

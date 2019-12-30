@@ -29,7 +29,6 @@
             flex-direction: column;
 
             &-legend {
-              margin: $spacing * 2 0;
               opacity: 0;
               @include transition(opacity);
               flex: 1;
@@ -90,10 +89,10 @@
 
     &-item {
       & > &-image {
-        height: calc(100vh - 315px);
+        height: calc(100vh - 338px);
         width: auto;
         @include viewport(phone) {
-          height: calc(100vh - 332px);
+          height: calc(100vh - 370px);
         }
       }
     }

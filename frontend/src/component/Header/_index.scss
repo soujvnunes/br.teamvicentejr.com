@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   background: $common-color--black--light;
+  padding: $spacing * 2 0;
 
   &-wrapper {
     display: flex;
@@ -15,14 +16,15 @@
   &-logo {
     line-height: 0;
 
-    .Icon {
-      @include area($spacing * 10);
-      stroke: transparent;
-      fill: $tertiary-color;
+    .logo {
+      @include area($spacing * 6);
+      @include transition(color);
+      color: $tertiary-color;
     }
+
     &:hover {
-      .Icon {
-        fill: $primary-color;
+      .logo {
+        color: $primary-color;
       }
     }
   }

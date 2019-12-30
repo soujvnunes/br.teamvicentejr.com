@@ -32,12 +32,8 @@ export default function Line(props) {
     <li className={root}>
       <div className={header}>
         <div className={"Line-header-info"}>
-          <Typography subject className={"Line-header-info-title"}>
-            {primary}
-          </Typography>
-          <Typography subject className={"Line-header-info-secondary"}>
-            {secondary}
-          </Typography>
+          <span className={"Line-header-info-title"}>{primary}</span>
+          <span className={"Line-header-info-secondary"}>{secondary}</span>
           <Skew curve={"left"} />
         </div>
         <IconButton
