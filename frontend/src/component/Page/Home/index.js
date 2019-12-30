@@ -7,22 +7,18 @@ import Main from "../../../component/Main";
 import Wrapper from "../../Wrapper";
 import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
 import Person from "../../Person";
+import Header from "../../Header";
+import HeaderImage from "../../../asset/br/home/header.jpg";
 
 export default props => {
   return (
     <Main className={"home"}>
+      <Header
+        title={"Vicente Júnior"}
+        subject={"Brazilian Jiu-jítsu"}
+        image={HeaderImage}
+      />
       <Wrapper>
-        <div className={"home-title page-title"}>
-          <Typography title className={"home-title-label page-title-label"}>
-            Vicente Júnior
-          </Typography>
-          <Typography
-            subject
-            className={"home-title-subject page-title-subject"}
-          >
-            A equipe de jiu-jítsu que mais cresce em arte e esporte.
-          </Typography>
-        </div>
         <div className={"home-events"}>
           <TextField
             label={"Pesquisar evento"}

@@ -1,13 +1,3 @@
-.page-title {
-  text-align: center;
-  &-label {
-    font-size: $spacing-unit * 0.6rem;
-  }
-  &-subject {
-    font-size: $spacing-unit * 0.1em;
-  }
-}
-
 @import "Home/index";
 @import "Teachers/index";
 @import "Branches/index";

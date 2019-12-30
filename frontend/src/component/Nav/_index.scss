@@ -8,6 +8,7 @@
   padding: $spacing * 3 0;
   height: 100%;
   width: inherit;
+  z-index: 1;
 
   &-wrapper {
     width: $spacing * 12;
@@ -106,6 +107,71 @@
 
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+  }
+
+  @include viewport(phone) {
+    flex-direction: row;
+    width: 100%;
+    height: inherit;
+    padding: 0 $spacing * 14 0 $spacing * 2;
+
+    &-wrapper {
+      height: $spacing * 10;
+      width: 100%;
+    }
+
+    &-logo {
+      .logo {
+        margin-bottom: 0;
+      }
+    }
+
+    &-links {
+      display: flex;
+      align-items: center;
+      width: $spacing * 12;
+      margin-right: -$spacing * 1.5;
+      /*width: calc(100% - 80px);*/
+      height: 80px;
+      position: absolute;
+      right: 0;
+
+      &-skew {
+        border: 0;
+        background-color: $primary-color;
+      }
+
+      &-indicator {
+      }
+
+      &-link {
+        margin: 0 $spacing * 2;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-footer {
+      display: flex;
+      flex-direction: row;
+      &-link {
+        margin: 0 $spacing * 2;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }

@@ -1,18 +1,28 @@
 .Header {
-  width: 100%;
-  position: fixed;
-  top: 0;
   display: flex;
   justify-content: center;
-  background: $common-color--black--light;
-  padding: $spacing * 2 0;
+  align-items: flex-end;
+  background-size: cover;
+  width: 100%;
+  height: $spacing * 50;
+  @extend %text-align-center;
+  position: relative;
 
   &-wrapper {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    z-index: 1;
   }
 
-  &-social {
-    @extend %align-center;
+  &-backdrop {
+    background-color: $common-color--black--light;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  @include viewport(phone) {
+    height: $spacing * 25;
   }
 }

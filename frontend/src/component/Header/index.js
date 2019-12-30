@@ -1,11 +1,10 @@
 import React from "react";
-import IconButton from "../IconButton";
 import classNames from "classnames";
 import Wrapper from "../Wrapper";
-import { ReactComponent as Logo } from "../../asset/logo.svg";
+import Typography from "../Typography";
 
 export default function Header(props) {
-  let { className } = props;
+  let { className, image, title, subject } = props;
 
   const classes = {
     root: [classNames("Header" /*, { [`class`]: prop }*/, className)]
@@ -14,29 +13,19 @@ export default function Header(props) {
   let { root } = classes;
 
   return (
-    <header className={root}>
+    <header
+      className={root}
+      style={image ? { backgroundImage: `url(${image})` } : null}
+    >
       <Wrapper className={"Header-wrapper"}>
-        <a href={"/"} className={"Header-logo"}>
-          <Logo />
-        </a>
-        <aside className={"Header-social"}>
-          <IconButton
-            icon={"instagram"}
-            url={"https://instagr.am/vicentejrteambrasil"}
-            noHover={true}
-          />
-          <IconButton
-            icon={"phone"}
-            url={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
-            noHover={true}
-          />
-          <IconButton
-            icon={"youtube"}
-            url={"https://youtube.com"}
-            noHover={true}
-          />
-        </aside>
+        <Typography title className={"Header-title"}>
+          {title}
+        </Typography>
+        <Typography subject className={"Header-subject"}>
+          {subject}
+        </Typography>
       </Wrapper>
+      {image && <div className={"Header-backdrop"} />}
     </header>
   );
 }

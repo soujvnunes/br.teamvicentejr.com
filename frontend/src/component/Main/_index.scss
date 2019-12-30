@@ -1,5 +1,10 @@
 .Main {
   width: calc(100% - #{$spacing * 10});
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include viewport(phone) {
+    width: 100%;
+  }
 }

@@ -8,4 +8,8 @@
   min-height: 100vh;
   background-color: $common-color--black;
   color: $tertiary-color;
+
+  @include viewport(phone) {
+    flex-direction: column;
+  }
 }
