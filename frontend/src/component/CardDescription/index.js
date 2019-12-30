@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "../Typography";
-import Skew from "../Skew";
 import classNames from "classnames";
 
 export default function CardDescription(props) {

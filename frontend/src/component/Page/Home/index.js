@@ -12,11 +12,14 @@ export default props => {
   return (
     <Main className={"home"}>
       <Wrapper>
-        <div className={"page-title home-title"}>
-          <Typography title className={"home-title-label"}>
+        <div className={"home-title page-title"}>
+          <Typography title className={"home-title-label page-title-label"}>
             Vicente Júnior
           </Typography>
-          <Typography subject className={"home-title-subject"}>
+          <Typography
+            subject
+            className={"home-title-subject page-title-subject"}
+          >
             A equipe de jiu-jítsu que mais cresce em arte e esporte.
           </Typography>
         </div>

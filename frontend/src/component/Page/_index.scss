@@ -1,19 +1,10 @@
 .page-title {
-  /*
-  margin: 0 0 $spacing * 4 $spacing/1.5;
-  */
   max-width: 50%;
   &-label {
-    &-svg {
-      height: $spacing * 10;
-      width: auto;
-    }
+    font-size: $spacing-unit * 0.6rem;
   }
-  & > &-subject {
-    font-size: 1em;
-    text-transform: none;
-    color: $tertiary-color;
-    font-weight: bold;
+  &-subject {
+    font-size: $spacing-unit * 0.1em;
   }
 }
 

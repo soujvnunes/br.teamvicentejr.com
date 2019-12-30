@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import classNames from "classnames";
-import Typography from "../Typography";
 import Skew from "../Skew";
 import IconButton from "../IconButton";
 

@@ -6,8 +6,8 @@ export default function Main(props) {
   const classes = { root: [classNames("Main", className)] };
   let { root } = classes;
   return (
-    <div className={root} id={id}>
+    <main role={"main"} className={root} id={id}>
       {children}
-    </div>
+    </main>
   );
 }

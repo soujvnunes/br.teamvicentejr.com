@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import { data } from "../../library/data";
 import Nav from "../Nav";
-import Typography from "../Typography";
 import Icon from "../Icon";
 import { Home, Teachers, Branches, About } from "../Page";
 import Header from "../Header";

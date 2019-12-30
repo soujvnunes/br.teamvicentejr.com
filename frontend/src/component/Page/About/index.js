@@ -1,7 +1,6 @@
 import React from "react";
 import Main from "../../../component/Main";
 import Typography from "../../Typography";
-import { ReactComponent as AboutTitle } from "../../../asset/br/titles/sobre.svg";
 import Wrapper from "../../Wrapper";
 import Panel from "../../Panel";
 import imgPanel1 from "../../../asset/panel/01001.jpg";

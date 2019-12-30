@@ -4,12 +4,6 @@
   &-title {
     position: relative;
     z-index: 1;
-    &-label {
-      font-size: $spacing-unit * 0.6rem;
-    }
-    &-subject {
-      font-size: $spacing-unit * 0.1em;
-    }
   }
 
   &-events {

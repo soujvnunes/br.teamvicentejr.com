@@ -3,7 +3,6 @@ import { data } from "../../../library/data";
 import Main from "../../../component/Main";
 import Wrapper from "../../Wrapper";
 import Typography from "../../Typography";
-import { ReactComponent as BranchesTitle } from "../../../asset/br/titles/filiais.svg";
 import Card from "../../Card";
 import CardMedia from "../../CardMedia";
 import CardDescription from "../../CardDescription";
