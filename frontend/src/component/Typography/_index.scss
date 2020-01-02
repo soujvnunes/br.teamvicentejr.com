@@ -21,6 +21,7 @@
     line-height: 1;
     color: $primary-color;
     font-family: "VLNL-Decks-W00-Bold", sans-serif;
+    font-size: $spacing-unit * 0.4rem;
   }
 
   &-subject {
@@ -28,6 +29,7 @@
     font-weight: 600;
     color: $tertiary-color--light;
     @include transition(color);
+    font-size: $spacing-unit * 0.16rem;
   }
 
   &-paragraph {

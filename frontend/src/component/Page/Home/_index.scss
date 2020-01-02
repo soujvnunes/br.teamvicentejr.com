@@ -1,10 +1,11 @@
 .home {
   &-events {
-    max-width: $spacing * 60;
-    position: relative;
-
-    &-input {
-      margin-bottom: $spacing * 4;
+    &-sections {
+      display: grid;
+      &-filter {
+        max-width: $spacing * 80;
+        margin: 0 auto;
+      }
     }
   }
 }

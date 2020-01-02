@@ -28,10 +28,10 @@
             align-items: center;
             flex-direction: column;
 
-            &-legend {
+            &-button {
               opacity: 0;
               @include transition(opacity);
-              flex: 1;
+              margin: $spacing * 2 0;
             }
 
             &-image {
@@ -50,8 +50,10 @@
           }
 
           &.selected {
+            z-index: 1;
+
             .teachers-carousel-item {
-              &-legend {
+              &-button {
                 opacity: 1;
               }
               &-image {
@@ -97,10 +99,10 @@
 
     &-item {
       & > &-image {
-        height: calc(100vh - 207px);
+        height: calc(100vh - 156px);
         width: auto;
         @include viewport(phone) {
-          height: calc(100vh - 319px);
+          height: calc(100vh - 236px);
         }
       }
     }

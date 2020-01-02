@@ -1,21 +1,22 @@
 .Button {
   position: relative;
-  max-width: $spacing * 26;
+  min-width: $spacing * 26;
   @extend %align-center;
   height: $spacing * 4;
 
   &-skew {
     border: 0;
-    background-color: $primary-color;
+    background-color: $secondary-color;
   }
 
   &-label {
     margin: 0 $spacing * 2;
     flex: 1;
-    color: $secondary-color;
+    color: $primary-color;
     z-index: 1;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: $spacing-unit * 0.1rem;
   }
 
   &-adornment {
@@ -26,14 +27,14 @@
 
     &-icon {
       position: relative;
-      stroke: $primary-color;
+      stroke: $secondary-color;
       @include transition(width, height, fill, stroke);
       @include area($spacing / 0.4);
     }
 
     &-skew {
       border: 0;
-      background-color: $secondary-color--light;
+      background-color: $primary-color;
     }
   }
 

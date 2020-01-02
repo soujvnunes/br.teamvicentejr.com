@@ -4,11 +4,11 @@ import Line from "../../Line";
 import TextField from "../../TextField";
 import Typography from "../../Typography";
 import Main from "../../../component/Main";
-import Wrapper from "../../Wrapper";
 import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
 import Person from "../../Person";
 import Header from "../../Header";
 import HeaderImage from "../../../asset/br/home/header.jpg";
+import Section from "../../Section";
 
 export default props => {
   return (
@@ -18,15 +18,17 @@ export default props => {
         subject={"Brazilian Jiu-jítsu"}
         image={HeaderImage}
       />
-      <Wrapper>
-        <div className={"home-events"}>
+      <div className={"home-events-sections"}>
+        <Section>
           <TextField
             label={"Pesquisar evento"}
-            id={"user-event-search"}
+            id={"event-search"}
             icon={"search"}
             fullWidth
-            className={"home-events-input"}
+            className={"home-events-sections-filter"}
           />
+        </Section>
+        <Section>
           <LineSet>
             <Line primary={"Nome do evento"} secondary={"Local"} icon={"add"}>
               <Typography paragraph>
@@ -39,11 +41,8 @@ export default props => {
               </Typography>
             </Line>
           </LineSet>
-        </div>
-        {/*
-        <Person name={"Professor Vicente Júnior"} image={VicenteJuniorImage} />
-*/}
-      </Wrapper>
+        </Section>
+      </div>
     </Main>
   );
 };
