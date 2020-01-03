@@ -29,3 +29,15 @@
   width: $xy;
   height: $xy;
 }
+
+@mixin shadow($horizontal, $vertical, $blur, $spread, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $horizontal $vertical $blur $spread $color;
+    -moz-box-shadow: inset $horizontal $vertical $blur $spread $color;
+    box-shadow: inset $horizontal $vertical $blur $spread $color;
+  } @else {
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+    -moz-box-shadow: $horizontal $vertical $blur $spread $color;
+    box-shadow: $horizontal $vertical $blur $spread $color;
+  }
+}

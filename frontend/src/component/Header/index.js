@@ -32,7 +32,6 @@ export default function Header(props) {
           {subject}
         </Typography>
       </Wrapper>
-      {!noBackdrop && <>{image && <div className={"Header-backdrop"} />}</>}
     </header>
   );
 }

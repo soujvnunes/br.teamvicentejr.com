@@ -4,7 +4,7 @@
   max-width: $spacing * 50;
   @extend %direction-row;
   @include transition(border-color, padding);
-  position: relative;
+  @extend %position-relative;
 
   &--fullWidth {
     max-width: inherit;
@@ -23,7 +23,7 @@
   }
 
   &-divider {
-    position: relative;
+    @extend %position-relative;
     width: $spacing/2;
     height: $spacing * 6;
     margin: 0 $spacing/2;

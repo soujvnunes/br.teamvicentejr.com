@@ -1,5 +1,5 @@
 .Button {
-  position: relative;
+  @extend %position-relative;
   min-width: $spacing * 26;
   @extend %align-center;
   height: $spacing * 4;
@@ -17,11 +17,11 @@
   &-adornment {
     @include transition(border-color, width, height);
     @include area($spacing * 6);
-    position: relative;
+    @extend %position-relative;
     margin: 0 $spacing * 2;
 
     &-icon {
-      position: relative;
+      @extend %position-relative;
       stroke: $secondary-color;
       @include transition(width, height, fill, stroke);
       @include area($spacing / 0.4);

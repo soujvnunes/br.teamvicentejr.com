@@ -44,14 +44,22 @@
     &:last-child {
       margin-bottom: 0;
     }
-
-    @include viewport(phone) {
-      font-size: $spacing-unit * 0.12rem;
-    }
   }
 
   &-link {
     color: $tertiary-color--light;
     letter-spacing: 0;
+  }
+
+  @include viewport(phone) {
+    &-title {
+      font-size: $spacing-unit * 0.2rem;
+    }
+    &-subject {
+      font-size: $spacing-unit * 0.1rem;
+    }
+    &-paragraph {
+      font-size: $spacing-unit * 0.12rem;
+    }
   }
 }

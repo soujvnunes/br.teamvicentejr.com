@@ -1,77 +1,59 @@
 .Nav {
+  @extend %align-center;
   position: fixed;
-  background: $secondary-color;
   justify-content: space-between;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: $spacing * 3 0;
-  height: 100%;
-  width: inherit;
+  flex-direction: row;
   z-index: 1;
-  border-right: $spacing/8 solid $common-color--black;
+  height: $spacing * 6;
+  width: calc(100% - #{$spacing * 4}* 2);
+  margin: $spacing * 4;
+  padding: 0 $spacing;
 
-  &-wrapper {
-    width: $spacing * 12;
-  }
-
-  &-logo {
-    line-height: 0;
-
-    .logo {
-      @include area($spacing * 6);
-      @include transition(color);
-      color: $tertiary-color;
-      margin-bottom: $spacing * 16;
-    }
-
-    &:hover {
-      .logo {
-        color: $primary-color;
-      }
-    }
+  &-skew {
+    color: $secondary-color;
   }
 
   &-links {
-    position: relative;
-    width: inherit;
-    display: grid;
+    @extend %position-relative;
+    @extend %direction-row;
 
     &-indicator {
-      background-color: $primary-color;
-      border: 0;
-      height: 25%;
-      width: calc(100% + #{$spacing});
+      color: $primary-color;
+      width: 25%;
+      height: calc(100% + #{$spacing}* 2);
+      top: -$spacing;
 
       &.Nav-home-indicator {
-        top: 0;
+        left: 0;
       }
 
       &.Nav-teachers-indicator {
-        top: 25%;
+        left: 25%;
       }
 
       &.Nav-branches-indicator {
-        top: 50%;
+        left: 50%;
       }
 
       &.Nav-about-indicator {
-        top: 75%;
+        left: 75%;
       }
     }
 
     &-link {
       @extend %text-align-center;
+      @extend %position-relative;
       color: $tertiary-color--light;
-      position: relative;
-      display: block;
-      margin: $spacing * 2 0;
+      margin: 0 $spacing * 2;
+      min-width: $spacing * 8;
+      transform: scale($spacing-unit * 0.1);
+      @include transition(transform);
 
       &-label {
         color: currentColor;
-        display: block;
         text-transform: uppercase;
         font-weight: bold;
+        display: block;
         margin-top: $spacing/2;
         font-size: $spacing-unit * 0.08rem;
       }
@@ -89,6 +71,7 @@
       }
 
       &.active {
+        transform: scale(1);
         .Nav-links-link-icon {
           fill: currentColor;
         }
@@ -97,33 +80,48 @@
     }
   }
 
-  &-footer {
-    &-link {
-      margin: $spacing * 2 0;
-      display: block;
+  &-logo {
+    line-height: 0;
+    @extend %position-relative;
+    @include area($spacing * 6);
 
-      &:first-child {
-        margin-top: 0;
+    img {
+      width: inherit;
+      height: inherit;
+      transform: scale(1.5);
+    }
+
+    .logo {
+      @include transition(color);
+      color: $tertiary-color;
+    }
+
+    &:hover {
+      .logo {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &-footer {
+    @extend %direction-row;
+
+    &-link {
+      .Icon {
+        @include area($spacing * 2.5);
       }
 
-      &:last-child {
-        margin-bottom: 0;
+      &:first-child {
+        margin-left: $spacing * 30;
       }
     }
   }
 
   @include viewport(phone) {
-    border-right: 0;
-    border-top: $spacing/8 solid $common-color--black;
-    flex-direction: row;
-    width: 100%;
-    height: inherit;
-    padding: 0 $spacing * 13 0 $spacing * 2;
     bottom: 0;
 
-    &-wrapper {
-      height: $spacing * 10;
-      width: 100%;
+    &-skew {
+      color: $common-color--black;
     }
 
     &-logo {
@@ -133,48 +131,12 @@
     }
 
     &-links {
-      display: flex;
-      align-items: center;
-      width: $spacing * 12;
-      margin-right: -$spacing * 1.5;
-      /*width: calc(100% - 80px);*/
-      height: 80px;
-      position: absolute;
-      right: 0;
-
-      &-skew {
-        border: 0;
-        background-color: $primary-color;
-      }
-
-      &-indicator {
-      }
-
-      &-link {
-        margin: 0 $spacing * 2;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
     }
 
     &-footer {
-      display: flex;
-      flex-direction: row;
       &-link {
-        margin: 0 $spacing * 2;
-
         &:first-child {
           margin-left: 0;
-        }
-
-        &:last-child {
-          margin-right: 0;
         }
       }
     }

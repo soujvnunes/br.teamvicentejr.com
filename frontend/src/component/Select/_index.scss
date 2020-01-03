@@ -1,5 +1,5 @@
 .Select {
-  position: relative;
+  @extend %position-relative;
   color: $primary-color;
   padding: $spacing;
   @extend %align-center;

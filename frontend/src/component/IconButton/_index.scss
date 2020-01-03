@@ -4,7 +4,7 @@
     @extend %align-center;
     justify-content: center;
     @include transition(width, height, border-radius);
-    position: relative;
+    @extend %position-relative;
 
     &-icon {
       stroke: $tertiary-color;

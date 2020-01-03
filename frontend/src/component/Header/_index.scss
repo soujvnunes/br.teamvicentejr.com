@@ -4,23 +4,22 @@
   align-items: flex-end;
   background-size: cover;
   width: 100%;
-  min-height: $spacing * 50;
+  min-height: $spacing * 64;
   @extend %text-align-center;
-  position: relative;
+  @extend %position-relative;
   padding: $spacing * 2 0;
+  @include shadow(
+    0,
+    -$spacing * 24,
+    $spacing * 8,
+    -$spacing * 8,
+    $common-color--black--light,
+    inset
+  );
 
   &-wrapper {
-    position: relative;
+    @extend %position-relative;
     z-index: 1;
-  }
-
-  &-backdrop {
-    background-color: $common-color--black--light;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
   }
 
   &--noBackdrop {
@@ -32,6 +31,6 @@
   }
 
   @include viewport(phone) {
-    min-height: $spacing * 25;
+    min-height: 50vh;
   }
 }

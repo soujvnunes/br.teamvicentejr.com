@@ -10,7 +10,7 @@
 
     &-info {
       flex: auto;
-      position: relative;
+      @extend %position-relative;
       padding: $spacing;
       color: $tertiary-color;
 

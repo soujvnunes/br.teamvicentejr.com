@@ -2,12 +2,12 @@
   background-color: $secondary-color;
 
   &-header {
-    background-size: 50%;
+    background-size: 40%;
     background-repeat: no-repeat;
-    background-position-y: top;
+    background-position-y: -$spacing-unit * 0.4%;
     background-position-x: center;
-    height: 50vh;
   }
+
   &-events {
     &-filter {
       @extend %direction-row;

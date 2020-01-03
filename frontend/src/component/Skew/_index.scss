@@ -5,7 +5,7 @@
   right: 0;
   bottom: 0;
   transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
-  @include transition(border-color, background-color, top);
+  @include transition(border-color, background-color, left);
 
   &--curve-left {
     transform: skewX($spacing-unit * 2 * 1deg) skewY(0deg);

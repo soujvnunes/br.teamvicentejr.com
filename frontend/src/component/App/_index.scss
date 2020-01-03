@@ -1,5 +1,6 @@
 .App {
   display: flex;
+  flex-direction: column;
   @extend %font-family--azo;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7,8 +8,4 @@
   font-style: normal;
   background-color: $common-color--black;
   color: $tertiary-color;
-
-  @include viewport(phone) {
-    flex-direction: column;
-  }
 }
