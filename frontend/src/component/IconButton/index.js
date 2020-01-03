@@ -11,16 +11,15 @@ export default function IconButton(props) {
       classNames("IconButton", { [`IconButton--hover`]: !noHover }, className)
     ],
     adornment: [classNames("IconButton-adornment")],
-    skew: [classNames("IconButton-skew")],
     iconButton: [classNames("IconButton-adornment-icon")]
   };
 
-  let { root, adornment, iconButton, skew } = classes;
+  let { root, adornment, iconButton } = classes;
 
   const Body = (
     <button className={adornment} id={id} onClick={onClick}>
       <Icon name={icon} className={iconButton} />
-      {!noHover && <Skew curve={skewCurve} className={skew} />}
+      {!noHover && <Skew curve={skewCurve} outlined />}
     </button>
   );
 

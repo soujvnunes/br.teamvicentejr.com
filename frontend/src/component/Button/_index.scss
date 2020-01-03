@@ -3,16 +3,11 @@
   min-width: $spacing * 26;
   @extend %align-center;
   height: $spacing * 4;
-
-  &-skew {
-    border: 0;
-    background-color: $secondary-color;
-  }
+  color: $primary-color;
 
   &-label {
     margin: 0 $spacing * 2;
     flex: 1;
-    color: $primary-color;
     z-index: 1;
     text-transform: uppercase;
     font-weight: bold;
@@ -30,26 +25,6 @@
       stroke: $secondary-color;
       @include transition(width, height, fill, stroke);
       @include area($spacing / 0.4);
-    }
-
-    &-skew {
-      border: 0;
-      background-color: $primary-color;
-    }
-  }
-
-  &:hover {
-    .Button-label {
-      &-icon {
-        fill: $tertiary-color--light;
-        stroke: $tertiary-color--light;
-      }
-    }
-    .Button-adornment {
-      &-ring {
-        @extend %ring-border--hover;
-        width: $button-adornment--xy * 2;
-      }
     }
   }
 }

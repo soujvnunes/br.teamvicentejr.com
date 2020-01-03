@@ -6,7 +6,6 @@
   bottom: 0;
   transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
   @include transition(border-color, background-color, top);
-  @extend %ring-border;
 
   &--curve-left {
     transform: skewX($spacing-unit * 2 * 1deg) skewY(0deg);
@@ -22,5 +21,13 @@
 
   &--axis-y {
     transform: skewX(0deg) skewY($spacing-unit * 2 * -1deg);
+  }
+
+  &--contained {
+    @extend %contained;
+  }
+
+  &--outlined {
+    @extend %outlined;
   }
 }

@@ -36,21 +36,14 @@
 
 // theme
 
-%ring-border {
-  border: $spacing / 4 solid $tertiary-color;
+%outlined {
+  border-width: $spacing/4;
+  border-style: solid;
+  border-color: currentColor;
 }
 
-%bar-border {
-  height: $spacing / 4;
-  background-color: $tertiary-color;
-}
-
-%ring-border--hover {
-  border-color: $tertiary-color--light;
-}
-
-%bar-border--hover {
-  background-color: $tertiary-color--light;
+%contained {
+  background-color: currentColor;
 }
 
 // config
@@ -73,6 +66,9 @@
 }
 
 %reset-button {
+  font: inherit;
+  color: inherit;
+  appearance: none;
   border: 0;
   background: transparent;
 }

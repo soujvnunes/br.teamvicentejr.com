@@ -174,5 +174,65 @@ export const data = {
       text:
         "Vicente ainda hoje compete e, por todos os títulos que detém, tambémé um instrutor magnífico. Vicente criou muitos programas em relação ao jiu-jítsu, incluindo um curso de atualização em técnicas e pedagogias e um curso de Primeiros Socorros na Escola de Educação Física do Exército Brasileiro em 1998. Vicente também iniciou um projeto social na capital Maceió/AL, Brasil, que ensina o esporte às crianças carentes que não podem pagar em uma academia. Tenho certeza de que estou criando um futuro melhor para eles, observa Vicente. Vicente ensina jiu-jítsu há dezesseis anos e possui várias academias no Nordeste do Brasil e nos Estados Unidos."
     }
+  ],
+  month: [
+    {
+      value: "january",
+      label: "Janeiro"
+    },
+    {
+      value: "february",
+      label: "Fevereiro"
+    },
+    {
+      value: "march",
+      label: "Março"
+    },
+    {
+      value: "april",
+      label: "Abril"
+    },
+    {
+      value: "may",
+      label: "Maio"
+    },
+    {
+      value: "june",
+      label: "Junho"
+    },
+    {
+      value: "july",
+      label: "Julho"
+    },
+    {
+      value: "august",
+      label: "Agosto"
+    },
+    {
+      value: "september",
+      label: "Setembro"
+    },
+    {
+      value: "october",
+      label: "Outubro"
+    },
+    {
+      value: "november",
+      label: "Novembro"
+    },
+    {
+      value: "december",
+      label: "Dezembro"
+    }
+  ],
+  year: [
+    {
+      value: "2019",
+      label: "2019"
+    },
+    {
+      value: "2020",
+      label: "2020"
+    }
   ]
 };

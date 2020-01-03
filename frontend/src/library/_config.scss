@@ -40,6 +40,10 @@ hr {
   @extend %reset;
 }
 
+select {
+  @extend %reset-button;
+}
+
 * {
   box-sizing: border-box;
 }

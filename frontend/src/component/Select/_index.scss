@@ -1,0 +1,18 @@
+.Select {
+  position: relative;
+  color: $primary-color;
+  padding: $spacing;
+  @extend %align-center;
+
+  &-select {
+    position: inherit;
+    font-weight: bold;
+    width: 100%;
+    padding-right: $spacing * 4;
+  }
+
+  &-adornment {
+    position: absolute;
+    right: $spacing * 2;
+  }
+}

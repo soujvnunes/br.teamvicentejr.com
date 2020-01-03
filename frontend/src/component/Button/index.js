@@ -4,7 +4,18 @@ import classNames from "classnames";
 import Skew from "../Skew";
 
 export default function Button(props) {
-  let { type, state, className, icon, id, label, onClick, url } = props;
+  let {
+    type,
+    state,
+    className,
+    icon,
+    id,
+    label,
+    onClick,
+    url,
+    children,
+    selectId
+  } = props;
 
   const classes = classNames(
     "Button",
@@ -17,14 +28,14 @@ export default function Button(props) {
 
   const Body = (
     <>
-      <Skew className={"Button-skew"} />
-      {label && <span className={"Button-label"}>{label}</span>}
+      <Skew outlined />
+      {label ? <span className={"Button-label"}>{label}</span> : children}
       <button
         className={"Button-adornment"}
-        id={id ? `button-${id}` : null}
+        id={!selectId && id ? `button-${id}` : null}
         onClick={onClick}
       >
-        <Skew className={"Button-adornment-skew"} />
+        <Skew contained />
         <Icon name={icon} className={"Button-adornment-icon"} />
       </button>
     </>
@@ -42,7 +53,10 @@ export default function Button(props) {
           {Body}
         </a>
       ) : (
-        <label className={classes} htmlFor={id ? `button-${id}` : null}>
+        <label
+          className={classes}
+          htmlFor={!selectId ? (id ? `button-${id}` : null) : selectId}
+        >
           {Body}
         </label>
       )}
