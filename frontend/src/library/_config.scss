@@ -33,6 +33,10 @@ figure {
 }
 
 ul {
+  padding: 0;
+}
+
+h6 {
   @extend %reset;
 }
 

@@ -1,10 +1,11 @@
 .Main {
   width: calc(100% - #{$spacing * 12});
-  display: flex;
-  align-items: center;
+  @extend %align-center;
   flex-direction: column;
+  min-height: 100vh;
 
   @include viewport(phone) {
     width: 100%;
+    margin-top: -$spacing * 10;
   }
 }

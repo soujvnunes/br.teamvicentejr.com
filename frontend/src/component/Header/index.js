@@ -4,10 +4,17 @@ import Wrapper from "../Wrapper";
 import Typography from "../Typography";
 
 export default function Header(props) {
-  let { className, image, title, subject } = props;
+  let { className, image, title, subject, align, noBackdrop } = props;
 
   const classes = {
-    root: [classNames("Header" /*, { [`class`]: prop }*/, className)]
+    root: [
+      classNames(
+        "Header",
+        { [`Header--align-${align}`]: align },
+        { [`Header--noBackdrop`]: noBackdrop },
+        className
+      )
+    ]
   };
 
   let { root } = classes;
@@ -25,7 +32,7 @@ export default function Header(props) {
           {subject}
         </Typography>
       </Wrapper>
-      {image && <div className={"Header-backdrop"} />}
+      {!noBackdrop && <>{image && <div className={"Header-backdrop"} />}</>}
     </header>
   );
 }

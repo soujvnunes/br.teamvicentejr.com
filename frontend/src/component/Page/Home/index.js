@@ -4,20 +4,23 @@ import Line from "../../Line";
 import Typography from "../../Typography";
 import Main from "../../../component/Main";
 import Header from "../../Header";
-import HeaderImage from "../../../asset/br/home/header.jpg";
 import Section from "../../Section";
 import Select from "../../Select";
 import { data } from "../../../library/data";
+import { events } from "../../../library/events";
+import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
 
 export default props => {
   return (
     <Main className={"home"}>
       <Header
+        noBackdrop
         title={"Vicente Júnior"}
         subject={"Brazilian Jiu-jítsu"}
-        image={HeaderImage}
+        image={VicenteJuniorImage}
+        className={"home-header"}
       />
-      <Section>
+      <Section className={"home-events"}>
         <div className={"home-events-filter"}>
           <Typography subject className={"home-events-filter-title"}>
             Eventos
@@ -25,19 +28,18 @@ export default props => {
           <Select id={"event-filter-byMonth"} option={data.month} />
           <Select id={"event-filter-byYear"} option={data.year} />
         </div>
-      </Section>
-      <Section>
-        <LineSet>
-          <Line primary={"Nome do evento"} secondary={"Local"} icon={"add"}>
-            <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
-            </Typography>
-          </Line>
+        <LineSet className={"home-events-list"}>
+          {events.map((data, i) => (
+            <Line
+              key={i}
+              primary={data.title}
+              secondary={data.local}
+              icon={"add"}
+              className={"home-events-list-item"}
+            >
+              <Typography paragraph>{data.description}</Typography>
+            </Line>
+          ))}
         </LineSet>
       </Section>
     </Main>

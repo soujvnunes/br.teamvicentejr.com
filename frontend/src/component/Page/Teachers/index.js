@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
-import { data } from "../../../library/data";
+import { data } from "../../../library/teachers";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
 import Main from "../../Main";
@@ -23,7 +23,7 @@ export default props => {
         showIndicators={false}
         showArrows={false}
       >
-        {data.teachers.map((data, i) => {
+        {data.br.map((data, i) => {
           return (
             <div key={i} className={"teachers-carousel-item"}>
               <img

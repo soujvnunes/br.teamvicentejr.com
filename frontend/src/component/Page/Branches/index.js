@@ -1,5 +1,5 @@
 import React from "react";
-import { data } from "../../../library/data";
+import { data } from "../../../library/branches";
 import Main from "../../../component/Main";
 import Card from "../../Card";
 import CardMedia from "../../CardMedia";
@@ -18,7 +18,7 @@ export default props => {
         }
       />
       <Section>
-        {data.branches.map((data, i) => {
+        {data.br.map((data, i) => {
           return (
             <Card key={i} className={"branches-list"}>
               <CardMedia image={data.map} title={data.name} />

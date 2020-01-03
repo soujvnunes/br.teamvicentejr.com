@@ -4,9 +4,10 @@
   align-items: flex-end;
   background-size: cover;
   width: 100%;
-  height: $spacing * 50;
+  min-height: $spacing * 50;
   @extend %text-align-center;
   position: relative;
+  padding: $spacing * 2 0;
 
   &-wrapper {
     position: relative;
@@ -22,7 +23,15 @@
     right: 0;
   }
 
+  &--noBackdrop {
+    background-color: $common-color--black--light;
+  }
+
+  &--align-left {
+    text-align: left;
+  }
+
   @include viewport(phone) {
-    height: $spacing * 25;
+    min-height: $spacing * 25;
   }
 }

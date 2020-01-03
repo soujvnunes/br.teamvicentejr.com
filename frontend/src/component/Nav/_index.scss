@@ -9,6 +9,7 @@
   height: 100%;
   width: inherit;
   z-index: 1;
+  border-right: $spacing/8 solid $common-color--black;
 
   &-wrapper {
     width: $spacing * 12;
@@ -112,10 +113,13 @@
   }
 
   @include viewport(phone) {
+    border-right: 0;
+    border-top: $spacing/8 solid $common-color--black;
     flex-direction: row;
     width: 100%;
     height: inherit;
     padding: 0 $spacing * 13 0 $spacing * 2;
+    bottom: 0;
 
     &-wrapper {
       height: $spacing * 10;

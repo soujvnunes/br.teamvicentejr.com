@@ -1,4 +1,13 @@
 .home {
+  background-color: $secondary-color;
+
+  &-header {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-position-x: center;
+    height: 50vh;
+  }
   &-events {
     &-filter {
       @extend %direction-row;
@@ -7,6 +16,25 @@
         margin: 0;
         flex: 1;
       }
+    }
+    &-list {
+      &-item {
+        margin: $spacing * 2 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  @include viewport(phone) {
+    &-header {
+      background-size: 100%;
     }
   }
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import { data } from "../../library/data";
+import { data } from "../../library/navigation";
 import Nav from "../Nav";
 import Icon from "../Icon";
 import { Home, Teachers, Branches, About } from "../Page";
@@ -18,7 +18,7 @@ export default props => {
     <Router>
       <div className={"App"}>
         <Nav indicator={active}>
-          {data.navigation.map((data, i) => (
+          {data.map((data, i) => (
             <NavLink
               key={i}
               to={data.to}
