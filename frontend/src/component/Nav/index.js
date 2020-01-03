@@ -1,12 +1,14 @@
 import React from "react";
+/*
 import { useMediaQuery } from "react-responsive";
+*/
 import classNames from "classnames";
 import IconButton from "../IconButton";
 import Skew from "../Skew";
 import Mark from "../../asset/mark.png";
 
 export default props => {
-  const isPhone = useMediaQuery({ maxDeviceWidth: 600 });
+  /*  const isPhone = useMediaQuery({ maxDeviceWidth: 600 });*/
   let { children, indicator } = props;
 
   const classes = {

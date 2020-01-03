@@ -9,6 +9,7 @@ import Select from "../../Select";
 import { data } from "../../../library/data";
 import { events } from "../../../library/events";
 import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
+import Chip from "../../Chip";
 
 export default props => {
   const [state, setState] = useState({
@@ -23,11 +24,8 @@ export default props => {
     let currentMonth = newDate.getMonth() + 1;
     let currentYear = newDate.getFullYear();
     const undefinedDate = month === undefined || year === undefined;
-
     if (undefinedDate) setState({ month: currentMonth, year: currentYear });
   }, [month, year]);
-
-  console.log(year);
 
   const filterMonth = () => {
     const select = document.getElementById("event-filter-byMonth");
@@ -56,18 +54,22 @@ export default props => {
           <Select
             id={"event-filter-byMonth"}
             option={data.month}
-            onChange={filterMonth}
+            onChange={() => filterMonth()}
+            value={month}
           />
           <Select
             id={"event-filter-byYear"}
             option={data.year}
-            onChange={filterYear}
+            onChange={() => filterYear()}
+            value={year}
+            className={"home-events-filter-select--year"}
           />
         </div>
         <LineSet className={"home-events-list"}>
           {events.map((data, i) => {
-            const matchMonth = data.month === month;
-            const matchYear = data.year === year;
+            const matchMonth = data.month == month;
+            const matchYear = data.year == year;
+            console.log(data.month, month);
 
             return (
               <Line
@@ -79,6 +81,14 @@ export default props => {
                 className={"home-events-list-item"}
               >
                 <Typography paragraph>{data.description}</Typography>
+                <div>
+                  {data.day && <Chip icon={"calendar"} primary={data.day} />}
+                  {data.time && <Chip icon={"clock"} primary={data.time} />}
+                  {data.teacher && (
+                    <Chip icon={"user"} primary={data.teacher} />
+                  )}
+                  {data.price && <Chip icon={"cents"} primary={data.price} />}
+                </div>
               </Line>
             );
           })}

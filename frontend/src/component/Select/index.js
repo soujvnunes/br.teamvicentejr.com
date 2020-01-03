@@ -4,7 +4,7 @@ import Skew from "../Skew";
 import Icon from "../Icon";
 
 export default function Select(props) {
-  let { option, name, className, id, onChange, selected } = props;
+  let { option, name, className, id, onChange, value } = props;
 
   const classes = {
     root: [
@@ -21,14 +21,19 @@ export default function Select(props) {
     <label className={root} htmlFor={id}>
       <Skew outlined />
       <Icon name={"chevronBottom"} className={adornment} />
-      <select name={name} className={select} id={id} onChange={onChange}>
+      <select
+        name={name}
+        className={select}
+        id={id}
+        onChange={onChange}
+        value={value}
+      >
         {option.map((option, i) => (
           <option
             className={options}
             key={i}
             label={option.label}
             value={option.value}
-            selected={selected}
           />
         ))}
       </select>

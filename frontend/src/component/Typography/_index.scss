@@ -34,16 +34,9 @@
 
   &-paragraph {
     color: $tertiary-color;
-    margin: $spacing * 2 0;
     line-height: 1.5;
     text-align: justify;
-    text-indent: $spacing * 4;
-    &:first-child {
-      margin-top: 0;
-    }
-    &:last-child {
-      margin-bottom: 0;
-    }
+    text-indent: $spacing;
   }
 
   &-link {

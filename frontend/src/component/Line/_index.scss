@@ -1,7 +1,4 @@
 .Line {
-  flex-direction: column;
-  @extend %align-center;
-
   &-header {
     display: flex;
     align-items: center;

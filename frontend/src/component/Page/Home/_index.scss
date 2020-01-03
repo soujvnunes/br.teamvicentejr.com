@@ -16,6 +16,11 @@
         margin: 0;
         flex: 1;
       }
+      &-select {
+        &--year {
+          margin-left: $spacing * 2;
+        }
+      }
     }
     &-list {
       &-item {

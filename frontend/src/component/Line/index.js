@@ -8,7 +8,7 @@ export default function Line(props) {
     expand: false
   });
   let { expand } = state;
-  let { className, children, primary, secondary, icon, hidden } = props;
+  let { className, children, primary, secondary, hidden } = props;
 
   const classes = {
     root: [classNames("Line", className)],
@@ -42,7 +42,7 @@ export default function Line(props) {
             <IconButton
               className={"Line-header-button"}
               type={"large"}
-              icon={expand ? "remove" : icon}
+              icon={expand ? "remove" : "add"}
               onClick={handleExpand}
               skewCurve={"left"}
             />
