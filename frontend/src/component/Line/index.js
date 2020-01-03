@@ -8,7 +8,7 @@ export default function Line(props) {
     expand: false
   });
   let { expand } = state;
-  let { className, children, primary, secondary, icon } = props;
+  let { className, children, primary, secondary, icon, hidden } = props;
 
   const classes = {
     root: [classNames("Line", className)],
@@ -28,22 +28,28 @@ export default function Line(props) {
   };
 
   return (
-    <li className={root}>
-      <div className={header}>
-        <div className={"Line-header-info"}>
-          <span className={"Line-header-info-title"}>{primary}</span>
-          <span className={"Line-header-info-secondary"}>{secondary}</span>
-          <Skew curve={"left"} outlined />
-        </div>
-        <IconButton
-          className={"Line-header-button"}
-          type={"large"}
-          icon={expand ? "remove" : icon}
-          onClick={handleExpand}
-          skewCurve={"left"}
-        />
-      </div>
-      <div className={content}>{children}</div>
-    </li>
+    <>
+      {hidden ? (
+        ""
+      ) : (
+        <li className={root}>
+          <div className={header}>
+            <div className={"Line-header-info"}>
+              <span className={"Line-header-info-title"}>{primary}</span>
+              <span className={"Line-header-info-secondary"}>{secondary}</span>
+              <Skew curve={"left"} outlined />
+            </div>
+            <IconButton
+              className={"Line-header-button"}
+              type={"large"}
+              icon={expand ? "remove" : icon}
+              onClick={handleExpand}
+              skewCurve={"left"}
+            />
+          </div>
+          <div className={content}>{children}</div>
+        </li>
+      )}
+    </>
   );
 }

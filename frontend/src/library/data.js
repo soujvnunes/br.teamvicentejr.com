@@ -1,51 +1,51 @@
 export const data = {
   month: [
     {
-      value: "january",
+      value: "1",
       label: "Janeiro"
     },
     {
-      value: "february",
+      value: "2",
       label: "Fevereiro"
     },
     {
-      value: "march",
+      value: "3",
       label: "Março"
     },
     {
-      value: "april",
+      value: "4",
       label: "Abril"
     },
     {
-      value: "may",
+      value: "5",
       label: "Maio"
     },
     {
-      value: "june",
+      value: "6",
       label: "Junho"
     },
     {
-      value: "july",
+      value: "7",
       label: "Julho"
     },
     {
-      value: "august",
+      value: "8",
       label: "Agosto"
     },
     {
-      value: "september",
+      value: "9",
       label: "Setembro"
     },
     {
-      value: "october",
+      value: "10",
       label: "Outubro"
     },
     {
-      value: "november",
+      value: "11",
       label: "Novembro"
     },
     {
-      value: "december",
+      value: "12",
       label: "Dezembro"
     }
   ],
