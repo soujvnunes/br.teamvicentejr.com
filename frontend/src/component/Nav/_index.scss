@@ -7,7 +7,7 @@
   height: $spacing * 6;
   width: calc(100% - #{$spacing * 4}* 2);
   margin: $spacing * 4;
-  padding: 0 $spacing;
+  padding: 0 $spacing * 2;
 
   &-skew {
     color: $secondary-color;
@@ -20,8 +20,8 @@
     &-indicator {
       color: $primary-color;
       width: 25%;
-      height: calc(100% + #{$spacing}* 2);
-      top: -$spacing;
+      height: calc(100% + #{$spacing}* 4);
+      top: -$spacing * 2;
 
       &.Nav-home-indicator {
         left: 0;

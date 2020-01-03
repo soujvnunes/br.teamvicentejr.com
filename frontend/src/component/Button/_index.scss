@@ -1,14 +1,13 @@
 .Button {
   @extend %position-relative;
-  min-width: $spacing * 26;
+  max-width: $spacing * 30;
   @extend %align-center;
   height: $spacing * 4;
   color: $primary-color;
 
   &-label {
-    margin: 0 $spacing * 2;
     flex: 1;
-    z-index: 1;
+    margin: 0 $spacing * 2;
     text-transform: uppercase;
     font-weight: bold;
     font-size: $spacing-unit * 0.1rem;

@@ -1,12 +1,16 @@
 import React from "react";
 import classNames from "classnames";
-import Button from "../Button";
 import Modal from "@material-ui/core/Modal";
+import Wrapper from "../Wrapper";
 
 export default function Spaceship(props) {
   let { open, close, children, className } = props;
 
-  const classes = classNames("Spaceship", className);
+  const classes = {
+    root: [classNames("Spaceship", /*{ [``]: !noHover },*/ className)]
+  };
+
+  let { root } = classes;
 
   return (
     <Modal
@@ -14,19 +18,9 @@ export default function Spaceship(props) {
       aria-describedby="simple-modal"
       open={open}
       onClose={close}
-      className={classes}
+      className={root}
     >
-      <div className={"Spaceship-area"}>
-        {children}
-        <Button
-          id={"close-spaceship"}
-          className={"Spaceship-area-button"}
-          label={"Fechar"}
-          icon={"remove"}
-          type={"normal"}
-          onClick={close}
-        />
-      </div>
+      <Wrapper>{children}</Wrapper>
     </Modal>
   );
 }

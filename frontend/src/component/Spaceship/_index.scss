@@ -3,21 +3,4 @@
   align-items: center;
   justify-content: center;
   padding: $spacing * 16 $spacing * 4;
-
-  &-area {
-    outline: 0;
-    max-width: $spacing * 80;
-    min-width: $spacing * 40;
-    max-height: -webkit-fill-available;
-    background-color: $secondary-color;
-    border: $spacing / 4 solid $tertiary-color--light;
-    padding: $spacing * 2 0;
-    border-radius: $spacing * 4;
-    display: flex;
-    flex-direction: column;
-
-    &-button {
-      margin-top: $spacing * 2;
-    }
-  }
 }
