@@ -118,26 +118,13 @@
   }
 
   @include viewport(phone) {
-    bottom: 0;
-
-    &-skew {
-      color: $common-color--black;
-    }
-
-    &-logo {
-      .logo {
-        margin-bottom: 0;
-      }
-    }
-
     &-links {
-    }
-
-    &-footer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      min-width: 25%;
       &-link {
-        &:first-child {
-          margin-left: 0;
-        }
+        margin: 0;
       }
     }
   }

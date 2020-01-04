@@ -102,9 +102,6 @@
       & > &-image {
         height: calc(100vh - 300px);
         width: auto;
-        @include viewport(phone) {
-          height: calc(100vh - 268px);
-        }
       }
     }
   }
