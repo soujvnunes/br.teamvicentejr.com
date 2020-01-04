@@ -16,13 +16,12 @@
     margin: 0 $spacing;
 
     &-icon {
-      @include area($spacing * 2.5);
       margin-right: $spacing;
     }
 
     &-primary {
       @extend %position-relative;
-      font-size: 12px;
+      font-size: $spacing * 2;
       font-weight: bold;
     }
   }

@@ -39,4 +39,46 @@ export const events = [
     local: "local",
     description: "descrição"
   }
+  /*
+    2019: {
+    1: [
+      {
+        title: "janeiro 2019",
+        local: "local",
+        description: "descrição"
+      },
+      {
+        title: "janeiro 2 2019",
+        local: "local",
+        description: "descrição"
+      },
+      {
+        title: "janeiro 3 2019",
+        local: "local",
+        description: "descrição"
+      }
+    ],
+    10: [
+      {
+        title: "outubro 2019",
+        local: "local",
+        description: "descrição"
+      }
+    ]
+  },
+  2020: {
+    1: [
+      {
+        title: "Primeiros Socorros",
+        local: "CT corpo em forma",
+        description:
+          "Treinamento de primeiros socorros para professores e instrutores da equipe.",
+        day: "11/01",
+        time: "08:30 às 11:30",
+        teacher: "Kleyson",
+        price: "R$ 30,00"
+      }
+    ]
+  }
+   */
 ];

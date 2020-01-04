@@ -67,32 +67,28 @@ export default props => {
         </div>
         <LineSet className={"home-events-list"}>
           {events.map((data, i) => {
-            const matchMonth = data.month == month;
-            const matchYear = data.year == year;
-            const showError = !matchMonth && !matchYear;
+            const matchDate = data.month == month && data.year == year;
 
-            if (showError) return "Nenhum evento encontrado.";
-            else
-              return (
-                <Line
-                  hidden={!matchMonth || !matchYear}
-                  key={i}
-                  primary={data.title}
-                  secondary={data.local}
-                  icon={"add"}
-                  className={"home-events-list-item"}
-                >
-                  <Typography paragraph>{data.description}</Typography>
-                  <div>
-                    {data.day && <Chip icon={"calendar"} primary={data.day} />}
-                    {data.time && <Chip icon={"clock"} primary={data.time} />}
-                    {data.teacher && (
-                      <Chip icon={"user"} primary={data.teacher} />
-                    )}
-                    {data.price && <Chip icon={"cents"} primary={data.price} />}
-                  </div>
-                </Line>
-              );
+            return (
+              <Line
+                hidden={!matchDate}
+                key={i}
+                primary={data.title}
+                secondary={data.local}
+                icon={"add"}
+                className={"home-events-list-item"}
+              >
+                <Typography paragraph>{data.description}</Typography>
+                <div>
+                  {data.day && <Chip icon={"calendar"} primary={data.day} />}
+                  {data.time && <Chip icon={"clock"} primary={data.time} />}
+                  {data.teacher && (
+                    <Chip icon={"people"} primary={data.teacher} />
+                  )}
+                  {data.price && <Chip icon={"cents"} primary={data.price} />}
+                </div>
+              </Line>
+            );
           })}
         </LineSet>
       </Section>

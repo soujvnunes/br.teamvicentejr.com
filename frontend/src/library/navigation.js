@@ -9,7 +9,7 @@ export const data = [
     name: "teachers",
     to: "/professores",
     icon: "people",
-    primary: "Instrutor"
+    primary: "Professores"
   },
   {
     name: "branches",
