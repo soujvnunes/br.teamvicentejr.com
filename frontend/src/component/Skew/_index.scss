@@ -30,4 +30,12 @@
   &--outlined {
     @extend %outlined;
   }
+
+  &--outline {
+    &-bottom {
+      @extend %contained;
+      height: $spacing/4;
+      top: auto;
+    }
+  }
 }

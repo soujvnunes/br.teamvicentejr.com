@@ -45,41 +45,28 @@ export default props => {
                 alt={data.name}
                 className={"teachers-carousel-item-image"}
               />
-              {isTablet ? (
-                <Line key={i} primary={data.name} icon={"view"}>
-                  <Typography
-                    subject
-                    className={"teachers-carousel-item-info-subject"}
-                  >
-                    {data.title}
-                  </Typography>
-                  {data.description && (
-                    <Typography paragraph>{data.description}</Typography>
-                  )}
-                </Line>
-              ) : (
-                <div className={"teachers-carousel-item-info"}>
-                  <Typography
-                    title
-                    className={"teachers-carousel-item-info-title"}
-                  >
-                    {data.name}
-                    <Skew
-                      contained
-                      className={"teachers-carousel-item-info-title-skew"}
-                    />
-                  </Typography>
-                  <Typography
-                    subject
-                    className={"teachers-carousel-item-info-subject"}
-                  >
-                    {data.title}
-                  </Typography>
-                  {data.description && (
-                    <Typography paragraph>{data.description}</Typography>
-                  )}
-                </div>
-              )}
+              <div className={"teachers-carousel-item-info"}>
+                <Typography
+                  title
+                  className={"teachers-carousel-item-info-title"}
+                >
+                  {data.name}
+                  <Skew outline={"bottom"} />
+                </Typography>
+                <Typography
+                  subject
+                  className={"teachers-carousel-item-info-subject"}
+                >
+                  {data.title}
+                </Typography>
+                {!isTablet && (
+                  <>
+                    {data.description && (
+                      <Typography paragraph>{data.description}</Typography>
+                    )}
+                  </>
+                )}
+              </div>
             </div>
           );
         })}

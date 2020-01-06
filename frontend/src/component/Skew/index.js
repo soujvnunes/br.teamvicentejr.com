@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 
 export default function Skew(props) {
-  let { className, curve, axis, outlined, contained } = props;
+  let { className, curve, axis, outlined, contained, outline } = props;
 
   const classes = {
     root: [
@@ -12,6 +12,7 @@ export default function Skew(props) {
         { [`Skew--axis-${axis}`]: axis },
         { [`Skew--outlined`]: outlined },
         { [`Skew--contained`]: contained },
+        { [`Skew--outline-${outline}`]: outline },
         className
       )
     ]

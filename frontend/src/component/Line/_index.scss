@@ -10,9 +10,6 @@
       @extend %position-relative;
       padding: $spacing;
       color: $tertiary-color;
-      height: inherit;
-      display: flex;
-      align-items: center;
 
       &-title {
         margin-left: $spacing;
