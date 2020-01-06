@@ -26,7 +26,7 @@
           .teachers-carousel-item {
             $value: $spacing-unit/1.25 * 0.1;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             -moz-transform: scale($value);
             -webkit-transform: scale($value);
             -o-transform: scale($value);
@@ -44,7 +44,7 @@
               @include transition(opacity, margin-left);
               text-align: left;
               max-width: 50%;
-              margin-left: -50%;
+              margin-left: -24%;
 
               @include viewport(tablet) {
                 text-align: inherit;

@@ -10,6 +10,7 @@ import { data } from "../../../library/data";
 import { events } from "../../../library/events";
 import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
 import Chip from "../../Chip";
+import { keys } from "@material-ui/core/styles/createBreakpoints";
 
 export default props => {
   const [state, setState] = useState({
@@ -66,8 +67,44 @@ export default props => {
           />
         </div>
         <LineSet className={"home-events-list"}>
-          {events.map((data, i) => {
+          {events[keys].month && month ? (
+            <>
+              {events.map((data, i) => {
+                const matchDate = data.month == month && data.year == year;
+                console.log(data);
+
+                return (
+                  <Line
+                    hidden={!matchDate}
+                    key={i}
+                    primary={data.title}
+                    secondary={data.local}
+                    icon={"add"}
+                    className={"home-events-list-item"}
+                  >
+                    <Typography paragraph>{data.description}</Typography>
+                    <div>
+                      {data.day && (
+                        <Chip icon={"calendar"} primary={data.day} />
+                      )}
+                      {data.time && <Chip icon={"clock"} primary={data.time} />}
+                      {data.teacher && (
+                        <Chip icon={"people"} primary={data.teacher} />
+                      )}
+                      {data.price && (
+                        <Chip icon={"cents"} primary={data.price} />
+                      )}
+                    </div>
+                  </Line>
+                );
+              })}
+            </>
+          ) : (
+            "nada"
+          )}
+          {/*          {events.map((data, i) => {
             const matchDate = data.month == month && data.year == year;
+            console.log(data);
 
             return (
               <Line
@@ -89,7 +126,7 @@ export default props => {
                 </div>
               </Line>
             );
-          })}
+          })}*/}
         </LineSet>
       </Section>
     </Main>

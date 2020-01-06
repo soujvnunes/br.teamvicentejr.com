@@ -9,6 +9,7 @@
   @extend %position-relative;
   padding: $spacing * 11 0 $spacing * 2 0;
   background-color: $common-color--black;
+
   @include shadow(
     0,
     -$spacing * 24,
@@ -23,6 +24,6 @@
   }
 
   &--image {
-    min-height: $spacing * 50;
+    min-height: 50vh;
   }
 }

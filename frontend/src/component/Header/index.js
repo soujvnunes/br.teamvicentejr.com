@@ -18,11 +18,9 @@ export default function Header(props) {
     ]
   };
 
-  let { root } = classes;
-
   return (
     <header
-      className={root}
+      className={classes.root}
       style={image ? { backgroundImage: `url(${image})` } : null}
     >
       <Wrapper className={"Header-wrapper"}>

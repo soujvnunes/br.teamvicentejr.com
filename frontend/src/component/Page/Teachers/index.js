@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { data } from "../../../library/teachers";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -7,25 +7,13 @@ import Main from "../../Main";
 import Typography from "../../Typography";
 import Skew from "../../Skew";
 import { useMediaQuery } from "react-responsive";
-import Line from "../../Line";
 
 export default props => {
-  const [state, setState] = useState({
-    open: false
-  });
-
-  let { open } = state;
-
   const classes = {
     root: [classNames("teachers")]
   };
 
   const isTablet = useMediaQuery({ maxDeviceWidth: 960 });
-
-  function handleOpen() {
-    if (open) setState({ ...state, open: false });
-    else setState({ ...state, open: true });
-  }
 
   return (
     <Main className={classes.root}>
