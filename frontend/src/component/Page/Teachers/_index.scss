@@ -26,23 +26,53 @@
           .teachers-carousel-item {
             $value: $spacing-unit/1.25 * 0.1;
             display: flex;
-            align-items: center;
-            flex-direction: column;
+            justify-content: center;
+            -moz-transform: scale($value);
+            -webkit-transform: scale($value);
+            -o-transform: scale($value);
+            -ms-transform: scale($value);
+            transform: scale($value);
+            @include transition(transform);
 
-            &-button {
+            @include viewport(phone) {
+              align-items: center;
+              flex-direction: column;
+            }
+
+            &-info {
               opacity: 0;
-              @include transition(opacity);
-              margin: $spacing * 2 0;
+              @include transition(opacity, margin-left);
+              text-align: left;
+              max-width: $spacing * 32;
+              margin-left: -50%;
+
+              @include viewport(phone) {
+                text-align: inherit;
+              }
+
+              &-title {
+                position: relative;
+                padding: $spacing 0;
+                font-size: $spacing-unit * 0.16rem;
+                letter-spacing: 0;
+                width: 100%;
+                margin: 0 0 $spacing * 3 0;
+
+                @include viewport(phone) {
+                  margin-bottom: $spacing;
+                }
+
+                &-skew {
+                  height: $spacing/2;
+                  top: auto;
+                }
+              }
             }
 
             &-image {
-              -moz-transform: scale($value);
-              -webkit-transform: scale($value);
-              -o-transform: scale($value);
-              -ms-transform: scale($value);
-              transform: scale($value);
+              z-index: 1;
               opacity: $value;
-              @include transition(transform, opacity);
+              @include transition(opacity);
             }
 
             img {
@@ -54,15 +84,18 @@
             z-index: 1;
 
             .teachers-carousel-item {
-              &-button {
+              -moz-transform: scale(1);
+              -webkit-transform: scale(1);
+              -o-transform: scale(1);
+              -ms-transform: scale(1);
+              transform: scale(1);
+
+              &-info {
                 opacity: 1;
+                margin-left: 0;
               }
+
               &-image {
-                -moz-transform: scale(1);
-                -webkit-transform: scale(1);
-                -o-transform: scale(1);
-                -ms-transform: scale(1);
-                transform: scale(1);
                 opacity: 1;
               }
             }
@@ -100,8 +133,11 @@
 
     &-item {
       & > &-image {
-        height: calc(100vh - 300px);
+        height: calc(100vh - 236px);
         width: auto;
+        @include viewport(phone) {
+          height: calc(100vh - 314px);
+        }
       }
     }
   }

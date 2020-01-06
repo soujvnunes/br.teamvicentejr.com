@@ -10,15 +10,13 @@ export default function Spaceship(props) {
     root: [classNames("Spaceship", /*{ [``]: !noHover },*/ className)]
   };
 
-  let { root } = classes;
-
   return (
     <Modal
       aria-labelledby="simple-modal"
       aria-describedby="simple-modal"
       open={open}
       onClose={close}
-      className={root}
+      className={classes.root}
     >
       <Wrapper>{children}</Wrapper>
     </Modal>

@@ -3,7 +3,7 @@
   max-width: $spacing * 30;
   @extend %align-center;
   height: $spacing * 4;
-  color: $primary-color;
+  color: $tertiary-color;
 
   &-label {
     flex: 1;

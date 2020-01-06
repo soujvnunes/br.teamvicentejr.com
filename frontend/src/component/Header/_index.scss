@@ -9,6 +9,7 @@
   @extend %text-align-center;
   @extend %position-relative;
   padding: $spacing * 2 0;
+
   @include shadow(
     0,
     -$spacing * 24,

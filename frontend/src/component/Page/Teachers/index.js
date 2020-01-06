@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { data } from "../../../library/teachers";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
 import Main from "../../Main";
-import Button from "../../Button";
+import Typography from "../../Typography";
+import Skew from "../../Skew";
+import { useMediaQuery } from "react-responsive";
 
 export default props => {
+  const [state, setState] = useState({
+    view: false
+  });
+
+  let { view } = state;
+
   const classes = {
     root: [classNames("teachers")]
   };
 
-  let { root } = classes;
+  const isPhone = useMediaQuery({ maxDeviceWidth: 600 });
+
+  function handleViewPerson() {
+    if (view) setState({ ...state, view: false });
+    else setState({ ...state, view: true });
+  }
 
   return (
-    <Main className={root}>
+    <Main className={classes.root}>
       <Carousel
         className={"teachers-carousel"}
         centerMode={true}
@@ -31,13 +44,31 @@ export default props => {
                 alt={data.name}
                 className={"teachers-carousel-item-image"}
               />
-              <Button
-                label={data.name}
-                icon={"view"}
-                type={"normal"}
-                /*url={data.url}*/
-                className={"teachers-carousel-item-button"}
-              />
+              <div className={"teachers-carousel-item-info"}>
+                <Typography
+                  title
+                  className={"teachers-carousel-item-info-title"}
+                >
+                  {data.name}
+                  <Skew
+                    contained
+                    className={"teachers-carousel-item-info-title-skew"}
+                  />
+                </Typography>
+                <Typography
+                  subject
+                  className={"teachers-carousel-item-info-subject"}
+                >
+                  {data.title}
+                </Typography>
+                {!isPhone && (
+                  <>
+                    {data.description && (
+                      <Typography paragraph>{data.description}</Typography>
+                    )}
+                  </>
+                )}
+              </div>
             </div>
           );
         })}

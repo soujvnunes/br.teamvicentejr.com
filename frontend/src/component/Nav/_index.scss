@@ -10,7 +10,7 @@
   padding: 0 $spacing * 2;
 
   &-skew {
-    color: $secondary-color;
+    color: $primary-color;
   }
 
   &-links {
@@ -18,7 +18,7 @@
     @extend %direction-row;
 
     &-indicator {
-      color: $primary-color;
+      color: $tertiary-color;
       width: 25%;
       height: calc(100% + #{$spacing}* 4);
       top: -$spacing * 2;

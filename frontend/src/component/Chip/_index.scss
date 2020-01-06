@@ -1,19 +1,15 @@
 .Chip {
   @extend %position-relative;
   display: inline-block;
-  margin: 0 $spacing;
+  margin: $spacing/2;
   height: $spacing * 4;
   min-width: $spacing * 10;
-
-  &-skew {
-    background-color: $common-color--black--light;
-  }
 
   &-content {
     @extend %position-relative;
     @extend %align-center;
     height: inherit;
-    margin: 0 $spacing;
+    margin: 0 $spacing * 2;
 
     &-icon {
       margin-right: $spacing;
@@ -21,7 +17,7 @@
 
     &-primary {
       @extend %position-relative;
-      font-size: $spacing * 2;
+      font-size: $spacing-unit * 0.1rem;
       font-weight: bold;
     }
   }
