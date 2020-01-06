@@ -1,16 +1,28 @@
 .Nav {
   @extend %align-center;
   position: fixed;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
   z-index: 1;
   height: $spacing * 6;
   width: calc(100% - #{$spacing * 4}* 2);
   margin: $spacing * 4;
-  padding: 0 $spacing * 2;
+  padding: 0 $spacing;
 
   &-skew {
     color: $primary-color;
+  }
+
+  &-link {
+    color: $tertiary-color--light;
+
+    &:hover {
+      color: $tertiary-color;
+    }
+
+    &.active {
+      color: $secondary-color;
+    }
   }
 
   &-links {
@@ -18,12 +30,13 @@
     @extend %direction-row;
     height: inherit;
     align-items: center;
+    justify-content: space-around;
 
     &-indicator {
       color: $tertiary-color--light;
       width: 25%;
-      height: calc(100% + #{$spacing}* 4);
-      top: -$spacing * 2;
+      height: calc(100% + #{$spacing}* 2);
+      top: -$spacing;
 
       &.Nav-home-indicator {
         left: 0;
@@ -43,48 +56,22 @@
     }
 
     &-link {
-      @extend %text-align-center;
       @extend %position-relative;
-      color: $tertiary-color--light;
-      margin: 0 $spacing * 2;
-      min-width: 25%;
-      transform: scale($spacing-unit * 0.1);
-      @include transition(transform);
+      margin: 0 $spacing;
+      min-width: $spacing * 14;
+      @include transition(color);
+      @extend %align-center;
+      justify-content: center;
 
       &-label {
-        color: currentColor;
-        text-transform: uppercase;
+        margin-left: $spacing;
         font-weight: bold;
-        display: block;
-        margin-top: $spacing/2;
-        font-size: $spacing-unit * 0.08rem;
-      }
-
-      &-icon {
-        stroke: currentColor !important;
-        @include transition(stroke);
-      }
-
-      &:hover {
-        .Nav-links-link-icon {
-          fill: currentColor;
-        }
-        color: $tertiary-color;
-      }
-
-      &.active {
-        transform: scale(1);
-        .Nav-links-link-icon {
-          fill: currentColor;
-        }
-        color: $secondary-color;
+        font-size: $spacing-unit * 0.1rem;
       }
     }
   }
 
   &-logo {
-    line-height: 0;
-    @extend %position-relative;
     @include area($spacing * 6);
 
     img {
@@ -92,43 +79,33 @@
       height: inherit;
       transform: scale(1.5);
     }
-
-    .logo {
-      @include transition(color);
-      color: $tertiary-color;
-    }
-
-    &:hover {
-      .logo {
-        color: $primary-color;
-      }
-    }
   }
 
-  &-footer {
+  &-aside {
     @extend %direction-row;
 
     &-link {
-      .Icon {
-        @include area($spacing * 2.5);
-      }
-
       &:first-child {
-        margin-left: $spacing * 30;
+        margin-left: $spacing * 43;
       }
     }
   }
 
-  @include viewport(phone) {
-    width: 100%;
+  &:hover {
+    .Nav-skew {
+      color: $primary-color--light;
+    }
+  }
+
+  @include viewport(tablet) {
+    width: 100vw;
     margin: 0;
     background-color: $primary-color;
     height: $spacing * 9;
+    padding: 0 $spacing * 2;
 
     &-links {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
 
       &-indicator {
         height: 100%;
@@ -137,6 +114,13 @@
 
       &-link {
         margin: 0;
+        min-width: 25%;
+        flex-direction: column;
+
+        &-label {
+          margin-left: 0;
+          margin-top: $spacing;
+        }
       }
     }
   }

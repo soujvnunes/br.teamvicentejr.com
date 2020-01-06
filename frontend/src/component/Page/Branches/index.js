@@ -28,6 +28,7 @@ export default props => {
                   icon={"local"}
                   type={"normal"}
                   url={data.url}
+                  skew
                 />
               </CardDescription>
             </Card>

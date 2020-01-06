@@ -22,20 +22,18 @@
     }
   }
 
-  &-content {
-    flex: 1;
-  }
-
   @include viewport(phone) {
     align-self: flex-start;
     flex-direction: row;
     display: flex;
     margin-right: 0;
     margin-left: 0;
+    width: 100%;
 
     &-hgroup {
       margin-bottom: 0;
       margin-right: $spacing;
+      flex: 1;
     }
   }
 }

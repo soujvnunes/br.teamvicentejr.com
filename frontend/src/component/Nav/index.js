@@ -1,12 +1,12 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import classNames from "classnames";
-import IconButton from "../IconButton";
+import Button from "../Button";
 import Skew from "../Skew";
 import Mark from "../../asset/mark.png";
 
 export default props => {
-  const isPhone = useMediaQuery({ maxDeviceWidth: 600 });
+  const isTablet = useMediaQuery({ maxDeviceWidth: 960 });
   let { children, indicator } = props;
 
   const classes = {
@@ -22,34 +22,31 @@ export default props => {
 
   return (
     <nav className={root}>
-      {!isPhone && <Skew contained className={"Nav-skew"} />}
+      {!isTablet && <Skew contained className={"Nav-skew"} />}
       <div className={"Nav-links"}>
         <Skew contained className={runner} />
         {children}
       </div>
-      {!isPhone && (
+      {!isTablet && (
         <>
           <a href={"/"} className={"Nav-logo"}>
             <img src={Mark} alt={"marca da aplicação"} />
           </a>
-          <aside className={"Nav-footer"}>
-            <IconButton
+          <aside className={"Nav-aside"}>
+            <Button
               icon={"instagram"}
               url={"https://instagr.am/vicentejrteambrasil"}
-              noHover={true}
-              className={"Nav-footer-link"}
+              className={"Nav-aside-link Nav-link"}
             />
-            <IconButton
+            <Button
               icon={"phone"}
               url={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
-              noHover={true}
-              className={"Nav-footer-link"}
+              className={"Nav-aside-link Nav-link"}
             />
-            <IconButton
+            <Button
               icon={"youtube"}
               url={"https://youtube.com"}
-              className={"Nav-footer-link"}
-              noHover={true}
+              className={"Nav-aside-link Nav-link"}
             />
           </aside>
         </>

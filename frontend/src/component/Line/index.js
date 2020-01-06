@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import Skew from "../Skew";
-import IconButton from "../IconButton";
+import Button from "../Button";
 
 export default function Line(props) {
   const [state, setState] = useState({
@@ -37,14 +37,14 @@ export default function Line(props) {
             <div className={"Line-header-info"}>
               <span className={"Line-header-info-title"}>{primary}</span>
               <span className={"Line-header-info-secondary"}>{secondary}</span>
-              <Skew curve={"left"} outlined />
+              <Skew outlined />
             </div>
-            <IconButton
+            <Button
+              skew
               className={"Line-header-button"}
               type={"large"}
               icon={expand ? "remove" : "add"}
               onClick={handleExpand}
-              skewCurve={"left"}
             />
           </div>
           <div className={content}>{children}</div>

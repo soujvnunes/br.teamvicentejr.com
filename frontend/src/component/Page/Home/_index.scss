@@ -4,7 +4,7 @@
   &-header {
     background-size: 40%;
     background-repeat: no-repeat;
-    background-position-y: -$spacing-unit * 1.6%;
+    background-position-y: -$spacing;
     background-position-x: center;
   }
 
@@ -40,6 +40,7 @@
   @include viewport(phone) {
     &-header {
       background-size: 100%;
+      background-position-y: $spacing * 10;
     }
   }
 }

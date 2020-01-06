@@ -1,10 +1,11 @@
 .Icon {
   @include transition(fill, stroke);
   @include area($icon--xy);
-  stroke: $tertiary-color;
+  stroke: currentColor;
+  fill: transparentize(transparent, 1);
 
-  /*  &:hover {
-    fill: $primary-color;
-    stroke: $primary-color;
-  }*/
+  &:hover,
+  &--active {
+    fill: currentColor;
+  }
 }

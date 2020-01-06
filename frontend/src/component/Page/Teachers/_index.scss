@@ -34,7 +34,7 @@
             transform: scale($value);
             @include transition(transform);
 
-            @include viewport(phone) {
+            @include viewport(tablet) {
               align-items: center;
               flex-direction: column;
             }
@@ -46,7 +46,7 @@
               max-width: 50%;
               margin-left: -50%;
 
-              @include viewport(phone) {
+              @include viewport(tablet) {
                 text-align: inherit;
               }
 
@@ -58,7 +58,7 @@
                 width: 100%;
                 margin: 0 0 $spacing * 3 0;
 
-                @include viewport(phone) {
+                @include viewport(tablet) {
                   margin-bottom: $spacing;
                 }
 
@@ -135,8 +135,8 @@
       & > &-image {
         height: calc(100vh - 236px);
         width: auto;
-        @include viewport(phone) {
-          height: calc(100vh - 314px);
+        @include viewport(tablet) {
+          height: calc(100vh - 320px);
         }
       }
     }

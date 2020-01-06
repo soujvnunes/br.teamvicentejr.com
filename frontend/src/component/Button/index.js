@@ -14,7 +14,8 @@ export default function Button(props) {
     onClick,
     url,
     children,
-    selectId
+    selectId,
+    skew
   } = props;
 
   const classes = classNames(
@@ -28,16 +29,15 @@ export default function Button(props) {
 
   const Body = (
     <>
-      <Skew outlined />
-      {label ? <span className={"Button-label"}>{label}</span> : children}
+      {skew && <Skew outlined />}
       <button
         className={"Button-adornment"}
         id={!selectId && id ? `button-${id}` : null}
         onClick={onClick}
       >
-        <Skew contained />
         <Icon name={icon} className={"Button-adornment-icon"} />
       </button>
+      {label ? <span className={"Button-label"}>{label}</span> : children}
     </>
   );
 

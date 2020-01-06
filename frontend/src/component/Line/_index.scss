@@ -1,17 +1,21 @@
 .Line {
   &-header {
     display: flex;
-    align-items: center;
     width: 100%;
     @include transition(padding);
+    height: $spacing * 6;
 
     &-info {
       flex: auto;
       @extend %position-relative;
       padding: $spacing;
       color: $tertiary-color;
+      height: inherit;
+      display: flex;
+      align-items: center;
 
       &-title {
+        margin-left: $spacing;
         text-align: left;
         font-weight: 600;
         display: block;
@@ -20,7 +24,6 @@
       }
 
       &-secondary {
-        margin-left: $spacing;
         text-align: left;
         font-size: $spacing-unit * 0.1rem;
       }
@@ -39,18 +42,5 @@
 
   &:hover {
     border-color: $tertiary-color--light;
-  }
-
-  &--hover {
-    &:hover {
-      .Line-header {
-        &-info {
-        }
-        &-button {
-          & .IconButton-adornment {
-          }
-        }
-      }
-    }
   }
 }

@@ -29,7 +29,8 @@
     display: block;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-x: center;
+    background-position-y: -$spacing * 6;
     min-width: 50%;
     max-height: 200px;
     height: 200px;

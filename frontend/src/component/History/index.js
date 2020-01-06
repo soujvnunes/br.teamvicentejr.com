@@ -21,10 +21,12 @@ export default function History(props) {
 
   return (
     <div className={root}>
-      <div
-        style={{ backgroundImage: `url(${image})` }}
-        className={historyImage}
-      />
+      {image && (
+        <div
+          style={{ backgroundImage: `url(${image})` }}
+          className={historyImage}
+        />
+      )}
       <div className={historyText}>
         <Typography paragraph>{text}</Typography>
       </div>

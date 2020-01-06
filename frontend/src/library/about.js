@@ -3,7 +3,6 @@ export const data = {
     history: [
       {
         orientation: "left",
-        image: require("../asset/br/about/01002.jpg"),
         text:
           "A equipe de jiu-jítsu Vicente Junior é uma das que mais crescem em arte e esporte brasileiro. Cada uma das nossas academias afiliadas crescendo todos os dias com equipes no Brasil e nos Estados Unidos, oferece o mais alto nível de treinamento. O professor Vicente Junior dá aulas em cada uma delas, fornecendo um nível incomparável de instrução pessoal."
       },

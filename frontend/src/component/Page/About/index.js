@@ -1,6 +1,7 @@
 import React from "react";
 import Main from "../../../component/Main";
 import panelImage from "../../../asset/br/about/01001.jpg";
+import headerImage from "../../../asset/br/about/01002.jpg";
 import History from "../../History";
 import { data } from "../../../library/about";
 import Header from "../../Header";
@@ -13,7 +14,7 @@ import Wrapper from "../../Wrapper";
 export default props => {
   return (
     <Main className={"about"}>
-      <Header title={"Sobre"} />
+      <Header title={"Sobre"} image={headerImage} />
       <Section>
         {data.br.history.map((data, i) => {
           return (
