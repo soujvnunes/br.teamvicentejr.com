@@ -1,7 +1,7 @@
 .Nav {
   @extend %align-center;
   position: fixed;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
   z-index: 1;
   height: $spacing * 6;
@@ -16,9 +16,11 @@
   &-links {
     @extend %position-relative;
     @extend %direction-row;
+    height: inherit;
+    align-items: center;
 
     &-indicator {
-      color: $tertiary-color;
+      color: $tertiary-color--light;
       width: 25%;
       height: calc(100% + #{$spacing}* 4);
       top: -$spacing * 2;
@@ -45,7 +47,7 @@
       @extend %position-relative;
       color: $tertiary-color--light;
       margin: 0 $spacing * 2;
-      min-width: $spacing * 8;
+      min-width: 25%;
       transform: scale($spacing-unit * 0.1);
       @include transition(transform);
 
@@ -118,11 +120,21 @@
   }
 
   @include viewport(phone) {
+    width: 100%;
+    margin: 0;
+    background-color: $primary-color;
+    height: $spacing * 9;
+
     &-links {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      min-width: 25%;
+
+      &-indicator {
+        height: 100%;
+        top: 0;
+      }
+
       &-link {
         margin: 0;
       }

@@ -2,14 +2,41 @@
   padding-top: 0;
   flex-direction: column;
   align-items: center;
+
   &-title {
     margin-bottom: 0;
+
     &-label {
       color: $tertiary-color--light;
     }
   }
+
   &-history {
-    margin: $spacing * 2 0;
     height: auto;
+  }
+
+  &-panel {
+    &-title {
+      margin: 0;
+    }
+
+    &-content {
+      &-text {
+        display: flex;
+        align-items: center;
+        &-icon {
+          margin: 0 $spacing;
+        }
+      }
+    }
+  }
+
+  &-footer {
+    height: $spacing * 10;
+    display: flex;
+    align-items: center;
+    &-link {
+      margin: 0 $spacing;
+    }
   }
 }

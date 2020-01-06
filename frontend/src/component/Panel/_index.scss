@@ -6,6 +6,23 @@
   background-repeat: no-repeat;
   background-position: center 40%;
   width: 100%;
-  height: $spacing * 50;
-  padding: $spacing * 10 0;
+  min-height: $spacing * 24;
+  padding: $spacing * 8 0;
+  @extend %position-relative;
+
+  &-backdrop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $common-color--black--light-2;
+    @include transition(background-color);
+  }
+
+  &:hover {
+    .Panel-backdrop {
+      background-color: $common-color--black--light;
+    }
+  }
 }

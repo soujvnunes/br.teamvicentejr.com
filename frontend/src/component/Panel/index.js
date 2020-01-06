@@ -1,18 +1,42 @@
 import React from "react";
 import classNames from "classnames";
+import Wrapper from "../Wrapper";
 
 export default function Panel(props) {
-  let { className, image, children } = props;
+  let { className, image, children, url } = props;
 
   const classes = {
-    root: [classNames("Panel", className)]
+    root: [classNames("Panel", className)],
+    backdrop: [classNames("Panel-backdrop")]
   };
 
-  let { root } = classes;
+  const Body = (
+    <>
+      <div className={classes.backdrop} />
+      <Wrapper>{children}</Wrapper>
+    </>
+  );
 
   return (
-    <div className={root} style={{ backgroundImage: `url(${image})` }}>
-      {children}
-    </div>
+    <>
+      {url ? (
+        <a
+          className={classes.root}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ backgroundImage: `url(${image})` }}
+        >
+          {Body}
+        </a>
+      ) : (
+        <div
+          className={classes.root}
+          style={{ backgroundImage: `url(${image})` }}
+        >
+          {Body}
+        </div>
+      )}
+    </>
   );
 }

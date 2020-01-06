@@ -12,6 +12,7 @@ export default function Header(props) {
         "Header",
         { [`Header--align-${align}`]: align },
         { [`Header--noBackdrop`]: noBackdrop },
+        { ["Header--image"]: image },
         className
       )
     ]

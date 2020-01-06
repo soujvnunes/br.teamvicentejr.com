@@ -21,10 +21,10 @@ export default props => {
         {data.br.map((data, i) => {
           return (
             <Card key={i} className={"branches-list"}>
-              <CardMedia image={data.map} title={data.name} />
-              <CardDescription primary={data.name} secondary={data.local}>
+              <CardMedia image={data.map} title={data.local} />
+              <CardDescription primary={data.name}>
                 <Button
-                  label={"Visitar"}
+                  label={"Localização"}
                   icon={"local"}
                   type={"normal"}
                   url={data.url}

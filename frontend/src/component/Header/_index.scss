@@ -5,11 +5,10 @@
   background-size: cover;
   background-position: center;
   width: 100%;
-  min-height: $spacing * 64;
   @extend %text-align-center;
   @extend %position-relative;
-  padding: $spacing * 2 0;
-
+  padding: $spacing * 14 0 $spacing * 2 0;
+  background-color: $common-color--black;
   @include shadow(
     0,
     -$spacing * 24,
@@ -24,15 +23,11 @@
     z-index: 1;
   }
 
-  &--noBackdrop {
-    background-color: $common-color--black--light;
-  }
-
   &--align-left {
     text-align: left;
   }
 
-  @include viewport(phone) {
-    min-height: 50vh;
+  &--image {
+    min-height: $spacing * 64;
   }
 }

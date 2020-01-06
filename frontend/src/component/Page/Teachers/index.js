@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import { data } from "../../../library/teachers";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -9,22 +9,11 @@ import Skew from "../../Skew";
 import { useMediaQuery } from "react-responsive";
 
 export default props => {
-  const [state, setState] = useState({
-    view: false
-  });
-
-  let { view } = state;
-
   const classes = {
     root: [classNames("teachers")]
   };
 
   const isPhone = useMediaQuery({ maxDeviceWidth: 600 });
-
-  function handleViewPerson() {
-    if (view) setState({ ...state, view: false });
-    else setState({ ...state, view: true });
-  }
 
   return (
     <Main className={classes.root}>

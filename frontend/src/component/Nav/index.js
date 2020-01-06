@@ -22,7 +22,7 @@ export default props => {
 
   return (
     <nav className={root}>
-      <Skew contained className={"Nav-skew"} />
+      {!isPhone && <Skew contained className={"Nav-skew"} />}
       <div className={"Nav-links"}>
         <Skew contained className={runner} />
         {children}

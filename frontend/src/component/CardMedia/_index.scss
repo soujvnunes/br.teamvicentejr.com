@@ -1,12 +1,26 @@
 .CardMedia {
-  display: block;
+  display: flex;
+  align-items: flex-end;
   background-size: inherit;
   background-repeat: no-repeat;
   background-position: center;
-  min-width: 50%;
+  width: 50%;
   @extend %position-relative;
   border: $spacing/4 solid $tertiary-color;
   @include transition(border-color);
+  padding: $spacing * 2;
+  @include shadow(
+    0,
+    -$spacing * 24,
+    $spacing * 16,
+    -$spacing * 16,
+    $common-color--black--light,
+    inset
+  );
+
+  &-title {
+    color: $tertiary-color--light;
+  }
 
   @include viewport(phone) {
     width: 100%;

@@ -43,7 +43,7 @@
               opacity: 0;
               @include transition(opacity, margin-left);
               text-align: left;
-              max-width: $spacing * 32;
+              max-width: 50%;
               margin-left: -50%;
 
               @include viewport(phone) {
