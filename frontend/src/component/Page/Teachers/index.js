@@ -31,29 +31,31 @@ export default props => {
                 className={"teachers-carousel-item-image"}
               />
               <div className={"teachers-carousel-item-info"}>
-                <Typography
-                  title
-                  className={"teachers-carousel-item-info-title"}
-                >
-                  {data.name}
-                  <Skew outline={"bottom"} />
-                </Typography>
-                <Typography
-                  subject
-                  className={"teachers-carousel-item-info-subject"}
-                >
-                  {data.title}
-                </Typography>
-                <>
-                  {data.description && (
-                    <Typography
-                      paragraph
-                      className={"teachers-carousel-item-info-paragraph"}
-                    >
-                      {data.description}
-                    </Typography>
-                  )}
-                </>
+                {data.name && (
+                  <Typography
+                    title
+                    className={"teachers-carousel-item-info-title"}
+                  >
+                    {data.name}
+                    <Skew outline={"bottom"} />
+                  </Typography>
+                )}
+                {data.title && (
+                  <Typography
+                    subject
+                    className={"teachers-carousel-item-info-subject"}
+                  >
+                    {data.title}
+                  </Typography>
+                )}
+                {data.description && (
+                  <Typography
+                    paragraph
+                    className={"teachers-carousel-item-info-paragraph"}
+                  >
+                    {data.description}
+                  </Typography>
+                )}
               </div>
             </div>
           );

@@ -14,8 +14,10 @@
         max-width: inherit;
 
         & .slide {
-          @include transition(margin-left);
+          @include transition(margin-left, margin-right);
           margin-left: 0;
+          right: 0;
+          background: transparent;
 
           &:first-child {
             &.selected {
