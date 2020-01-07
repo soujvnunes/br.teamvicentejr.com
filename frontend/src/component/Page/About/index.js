@@ -9,7 +9,6 @@ import Section from "../../Section";
 import Panel from "../../Panel";
 import Typography from "../../Typography";
 import Icon from "../../Icon";
-import Wrapper from "../../Wrapper";
 
 export default props => {
   return (

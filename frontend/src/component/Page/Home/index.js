@@ -19,26 +19,17 @@ export default props => {
   const [state, setState] = useState({
     month: currentMonth,
     year: currentYear,
-    matchDate: false
+    matchDate: true
   });
 
   let { month, year, matchDate } = state;
 
   useEffect(() => {
     events.map(data => {
-      const matchMonth = data.month == month;
-      const matchYear = data.year == year;
-      const definedDate = matchMonth && matchYear;
-
-      console.log(data.month, month, "data month");
-      console.log(data.year, year, "data year");
-      console.log(matchMonth, "data.month === month");
-      console.log(matchYear, "data.year === year");
-      console.log(matchDate, "matchDate");
-      console.log("___________________________________");
-
-      if (definedDate) return setState({ ...state, matchDate: true });
-      else return setState({ ...state, matchDate: false });
+      if (data.month == month && data.year == year)
+        setState({ ...state, matchDate: true });
+      else setState({ ...state, matchDate: false });
+      return null;
     });
   }, [month, year, matchDate]);
 
@@ -46,7 +37,7 @@ export default props => {
     const select = document.getElementById("event-filter-byMonth");
     setState({
       ...state,
-      month: select.options[select.selectedIndex].value.replace(/["]+/g, "")
+      month: select.options[select.selectedIndex].value
     });
   }
 
@@ -54,14 +45,13 @@ export default props => {
     const select = document.getElementById("event-filter-byYear");
     setState({
       ...state,
-      year: select.options[select.selectedIndex].value.replace(/["]+/g, "")
+      year: select.options[select.selectedIndex].value
     });
   }
 
   return (
     <Main className={"home"}>
       <Header
-        noBackdrop
         title={"Vicente Júnior"}
         subject={"Brazilian Jiu-jítsu"}
         image={VicenteJuniorImage}
@@ -91,7 +81,6 @@ export default props => {
             <>
               {events.map((data, i) => {
                 const thisMatchDate = data.month == month && data.year == year;
-
                 return (
                   <Line
                     hidden={!thisMatchDate}
@@ -119,7 +108,7 @@ export default props => {
               })}
             </>
           ) : (
-            "Nenhum evento encontrado"
+            "Nenhum encontrado."
           )}
         </LineSet>
       </Section>

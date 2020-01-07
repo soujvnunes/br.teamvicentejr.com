@@ -4,7 +4,6 @@ import classNames from "classnames";
 import Button from "../Button";
 import Skew from "../Skew";
 import Mark from "../../asset/mark.png";
-import Wrapper from "../Wrapper";
 
 export default props => {
   const isTablet = useMediaQuery({ maxDeviceWidth: 960 });

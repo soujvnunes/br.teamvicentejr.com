@@ -4,14 +4,13 @@ import Wrapper from "../Wrapper";
 import Typography from "../Typography";
 
 export default function Header(props) {
-  let { className, image, title, subject, align, noBackdrop } = props;
+  let { className, image, title, subject, align } = props;
 
   const classes = {
     root: [
       classNames(
         "Header",
         { [`Header--align-${align}`]: align },
-        { [`Header--noBackdrop`]: noBackdrop },
         { [`Header--noImage`]: !image },
         className
       )
