@@ -15,5 +15,6 @@
 
   @include viewport(phone) {
     flex-direction: column;
+    width: 100%;
   }
 }
