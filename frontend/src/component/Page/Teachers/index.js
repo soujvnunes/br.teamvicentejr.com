@@ -47,13 +47,16 @@ export default props => {
                 >
                   {data.title}
                 </Typography>
-                {!isTablet && (
-                  <>
-                    {data.description && (
-                      <Typography paragraph>{data.description}</Typography>
-                    )}
-                  </>
-                )}
+                <>
+                  {data.description && (
+                    <Typography
+                      paragraph
+                      className={"teachers-carousel-item-info-paragraph"}
+                    >
+                      {data.description}
+                    </Typography>
+                  )}
+                </>
               </div>
             </div>
           );

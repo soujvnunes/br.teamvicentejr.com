@@ -33,15 +33,6 @@ export default props => {
         setState({ ...state, matchDate: false });
       }
     });
-
-    events.map(data => {
-      console.log(data.month, month, "data month");
-      console.log(data.year, year, "data year");
-      console.log(data.month == month, "data.month == month");
-      console.log(data.year == year, "data.year == year");
-      console.log(matchDate, "matchDate");
-      console.log("___________________________________");
-    });
   }, [month, year, matchDate]);
 
   function filterMonth() {
