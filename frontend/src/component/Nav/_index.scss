@@ -15,9 +15,11 @@
 
   &-link {
     color: $tertiary-color--light;
+    opacity: 1;
+    @include transition(opacity, color);
 
     &:hover {
-      color: $tertiary-color;
+      opacity: $spacing-unit * 0.1;
     }
 
     &.active {
@@ -59,7 +61,6 @@
       @extend %position-relative;
       margin: 0 $spacing;
       min-width: $spacing * 14;
-      @include transition(color);
       @extend %align-center;
       justify-content: center;
 

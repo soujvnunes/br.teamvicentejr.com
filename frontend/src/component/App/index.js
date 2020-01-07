@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { data } from "../../library/navigation";
 import Nav from "../Nav";
-import Icon from "../Icon";
 import { Home, Teachers, Branches, About } from "../Page";
+import NavItem from "../NavItem";
 
 export default props => {
   const [state, setState] = useState({
@@ -19,16 +19,16 @@ export default props => {
       <div className={"App"}>
         <Nav indicator={active}>
           {data.map((data, i) => (
-            <NavLink
+            <NavItem
               key={i}
               to={data.to}
               isActive={() => active === data.name}
               className={"Nav-links-link Nav-link"}
               onClick={() => setState({ ...state, active: `${data.name}` })}
-            >
-              <Icon name={data.icon} active={active === data.name} />
-              <span className={"Nav-links-link-label"}>{data.primary}</span>
-            </NavLink>
+              primary={data.primary}
+              icon={data.icon}
+              active={active === data.name}
+            />
           ))}
         </Nav>
         <Route exact path="/" render={props => <Home {...props} />} />
