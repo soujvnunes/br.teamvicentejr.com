@@ -46,20 +46,6 @@ export default props => {
           Instagram
         </div>
       </Panel>
-      <footer className={"about-footer"}>
-        <Wrapper>
-          {data.br.footer.map((data, i) => (
-            <Typography
-              key={i}
-              subject
-              url={data.url}
-              className={"about-footer-link"}
-            >
-              {data.label}
-            </Typography>
-          ))}
-        </Wrapper>
-      </footer>
     </Main>
   );
 };

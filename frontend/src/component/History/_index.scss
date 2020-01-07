@@ -13,14 +13,14 @@
 
   &--orientation-left {
     flex-direction: row;
-    & .History-text {
+    & .History-image ~ .History-text {
       margin-left: $spacing * 2;
     }
   }
 
   &--orientation-right {
     flex-direction: row-reverse;
-    & .History-text {
+    & .History-image ~ .History-text {
       margin-right: $spacing * 2;
     }
   }

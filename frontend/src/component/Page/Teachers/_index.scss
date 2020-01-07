@@ -1,5 +1,11 @@
 .teachers {
   padding-top: $spacing * 14;
+  margin-bottom: 0;
+
+  @include viewport(tablet) {
+    padding-top: $spacing * 9;
+  }
+
   &-carousel {
     width: 100%;
 
@@ -145,6 +151,9 @@
       & > &-image {
         height: calc(100vh - 236px);
         width: auto;
+        @include viewport(phone) {
+          height: calc(100vh - 266px);
+        }
       }
     }
   }

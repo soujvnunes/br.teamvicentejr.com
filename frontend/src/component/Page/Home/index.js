@@ -29,8 +29,6 @@ export default props => {
       const matchMonth = data.month == month;
       const matchYear = data.year == year;
       const definedDate = matchMonth && matchYear;
-      if (definedDate) setState({ ...state, matchDate: true });
-      else setState({ ...state, matchDate: false });
 
       console.log(data.month, month, "data month");
       console.log(data.year, year, "data year");
@@ -38,6 +36,9 @@ export default props => {
       console.log(matchYear, "data.year === year");
       console.log(matchDate, "matchDate");
       console.log("___________________________________");
+
+      if (definedDate) return setState({ ...state, matchDate: true });
+      else return setState({ ...state, matchDate: false });
     });
   }, [month, year, matchDate]);
 

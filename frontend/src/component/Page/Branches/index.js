@@ -18,22 +18,24 @@ export default props => {
         }
       />
       <Section>
-        {data.br.map((data, i) => {
-          return (
-            <Card key={i} className={"branches-list"}>
-              <CardMedia image={data.map} title={data.local} />
-              <CardDescription primary={data.name}>
-                <Button
-                  label={"Localização"}
-                  icon={"local"}
-                  type={"normal"}
-                  url={data.url}
-                  skew
-                />
-              </CardDescription>
-            </Card>
-          );
-        })}
+        <div className={"branches-lists"}>
+          {data.br.map((data, i) => {
+            return (
+              <Card key={i} className={"branches-list"}>
+                <CardMedia image={data.map} />
+                <CardDescription primary={data.name} secondary={data.local}>
+                  <Button
+                    label={"Localização"}
+                    icon={"local"}
+                    type={"normal"}
+                    url={data.url}
+                    skew
+                  />
+                </CardDescription>
+              </Card>
+            );
+          })}
+        </div>
       </Section>
     </Main>
   );

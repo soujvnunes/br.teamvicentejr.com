@@ -1,5 +1,4 @@
 .CardDescription {
-  align-self: flex-end;
   margin: $spacing * 2;
 
   &-hgroup {
@@ -23,9 +22,6 @@
   }
 
   @include viewport(phone) {
-    align-self: flex-start;
-    flex-direction: row;
-    display: flex;
     margin-right: 0;
     margin-left: 0;
     width: 100%;
