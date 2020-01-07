@@ -47,7 +47,10 @@
               margin-left: -24%;
 
               @include viewport(tablet) {
-                text-align: inherit;
+                text-align: center;
+                width: 200%;
+                max-width: none;
+                padding: 0 $spacing * 2;
               }
 
               &-title {
@@ -60,6 +63,7 @@
 
                 @include viewport(tablet) {
                   margin-bottom: $spacing;
+                  text-align: inherit;
                 }
               }
             }
@@ -131,7 +135,7 @@
         height: calc(100vh - 236px);
         width: auto;
         @include viewport(tablet) {
-          height: calc(100vh - 320px);
+          height: calc(100vh - 298px);
         }
       }
     }

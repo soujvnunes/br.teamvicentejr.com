@@ -32,12 +32,12 @@
     background-position-x: center;
     background-position-y: -$spacing * 6;
     min-width: 50%;
-    max-height: 200px;
-    height: 200px;
+    min-height: 200px;
   }
 
   &-text {
-    align-items: flex-end;
-    display: flex;
+    .Typography-paragraph {
+      margin: 0;
+    }
   }
 }

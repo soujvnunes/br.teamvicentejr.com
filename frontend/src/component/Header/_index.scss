@@ -4,11 +4,12 @@
   align-items: flex-end;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   @extend %text-align-center;
   @extend %position-relative;
-  padding: $spacing * 11 0 $spacing * 2 0;
   background-color: $common-color--black;
+  padding: $spacing * 14 0 $spacing * 2 0;
 
   @include shadow(
     0,
@@ -24,6 +25,16 @@
   }
 
   &--image {
-    min-height: 50vh;
+    min-height: $spacing * 100;
+    @include viewport(tablet) {
+      min-height: 50vh;
+    }
+  }
+
+  @include viewport(tablet) {
+    padding-top: $spacing * 11;
+    &--image {
+      min-height: 50vh;
+    }
   }
 }

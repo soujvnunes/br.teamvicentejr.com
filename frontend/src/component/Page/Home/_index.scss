@@ -3,9 +3,7 @@
 
   &-header {
     background-size: 40%;
-    background-repeat: no-repeat;
-    background-position-y: -$spacing;
-    background-position-x: center;
+    background-position-y: $spacing * 14;
   }
 
   &-events {

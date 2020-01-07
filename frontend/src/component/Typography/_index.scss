@@ -28,7 +28,7 @@
     text-transform: uppercase;
     font-weight: 600;
     @include transition(color);
-    font-size: $spacing-unit * 0.1rem;
+    font-size: $spacing-unit * 0.12rem;
   }
 
   &-paragraph {

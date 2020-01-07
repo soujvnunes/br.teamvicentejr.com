@@ -17,26 +17,5 @@ export const events = [
     title: "março",
     local: "local",
     description: "descrição"
-  },
-  {
-    month: "3",
-    year: "2020",
-    title: "março 2",
-    local: "local",
-    description: "descrição"
-  },
-  {
-    month: "1",
-    year: "2020",
-    title: "teste 2 janeiro 2020",
-    local: "local",
-    description: "descrição"
-  },
-  {
-    month: "1",
-    year: "2019",
-    title: "teste 1 janeiro 2019",
-    local: "local",
-    description: "descrição"
   }
 ];
