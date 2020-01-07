@@ -19,19 +19,18 @@ export default props => {
   const [state, setState] = useState({
     month: currentMonth,
     year: currentYear,
-    matchDate: true
+    matchDate: []
   });
 
   let { month, year, matchDate } = state;
 
   useEffect(() => {
-    events.map(data => {
-      if (data.month == month && data.year == year)
-        setState({ ...state, matchDate: true });
-      else setState({ ...state, matchDate: false });
-      return null;
-    });
-  }, [month, year, matchDate]);
+    const matchYear = events.filter(data => data.year == year);
+    const matchMonth = matchYear.filter(data => data.month == month);
+    console.log(matchYear, matchMonth);
+    if (matchMonth) setState({ ...state, matchDate: matchMonth });
+    else setState({ ...state, matchDate: [] });
+  }, [month, year]);
 
   function filterMonth() {
     const select = document.getElementById("event-filter-byMonth");
@@ -77,13 +76,11 @@ export default props => {
           />
         </div>
         <LineSet className={"home-events-list"}>
-          {matchDate ? (
+          {matchDate && matchDate.length > 0 ? (
             <>
-              {events.map((data, i) => {
-                const thisMatchDate = data.month == month && data.year == year;
+              {matchDate.map((data, i) => {
                 return (
                   <Line
-                    hidden={!thisMatchDate}
                     key={i}
                     primary={data.title}
                     secondary={data.local}
