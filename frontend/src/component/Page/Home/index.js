@@ -26,23 +26,35 @@ export default props => {
 
   useEffect(() => {
     events.map(data => {
-      const definedDate = data.month == month && data.year == year;
-      if (definedDate) {
-        setState({ ...state, matchDate: true });
-      } else {
-        setState({ ...state, matchDate: false });
-      }
+      const matchMonth = data.month == month;
+      const matchYear = data.year == year;
+      const definedDate = matchMonth && matchYear;
+      if (definedDate) setState({ ...state, matchDate: true });
+      else setState({ ...state, matchDate: false });
+
+      console.log(data.month, month, "data month");
+      console.log(data.year, year, "data year");
+      console.log(matchMonth, "data.month === month");
+      console.log(matchYear, "data.year === year");
+      console.log(matchDate, "matchDate");
+      console.log("___________________________________");
     });
   }, [month, year, matchDate]);
 
   function filterMonth() {
     const select = document.getElementById("event-filter-byMonth");
-    setState({ ...state, month: select.options[select.selectedIndex].value });
+    setState({
+      ...state,
+      month: select.options[select.selectedIndex].value.replace(/["]+/g, "")
+    });
   }
 
   function filterYear() {
     const select = document.getElementById("event-filter-byYear");
-    setState({ ...state, year: select.options[select.selectedIndex].value });
+    setState({
+      ...state,
+      year: select.options[select.selectedIndex].value.replace(/["]+/g, "")
+    });
   }
 
   return (
@@ -73,7 +85,6 @@ export default props => {
             className={"home-events-filter-select--year"}
           />
         </div>
-
         <LineSet className={"home-events-list"}>
           {matchDate ? (
             <>

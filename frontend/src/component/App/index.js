@@ -23,11 +23,10 @@ export default props => {
               key={i}
               to={data.to}
               isActive={() => active === data.name}
-              className={"Nav-links-link Nav-link"}
               onClick={() => setState({ ...state, active: `${data.name}` })}
               primary={data.primary}
               icon={data.icon}
-              active={active === data.name}
+              iconActive={active === data.name}
             />
           ))}
         </Nav>

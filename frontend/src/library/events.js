@@ -1,7 +1,7 @@
 export const events = [
   {
-    month: "1",
-    year: "2020",
+    month: 1,
+    year: 2020,
     title: "Primeiros Socorros",
     local: "CT corpo em forma",
     description:
@@ -12,8 +12,8 @@ export const events = [
     price: "R$ 30,00"
   },
   {
-    month: "3",
-    year: "2020",
+    month: 3,
+    year: 2020,
     title: "março",
     local: "local",
     description: "descrição"

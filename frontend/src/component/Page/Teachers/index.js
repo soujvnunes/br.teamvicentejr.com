@@ -6,14 +6,11 @@ import classNames from "classnames";
 import Main from "../../Main";
 import Typography from "../../Typography";
 import Skew from "../../Skew";
-import { useMediaQuery } from "react-responsive";
 
 export default props => {
   const classes = {
     root: [classNames("teachers")]
   };
-
-  const isTablet = useMediaQuery({ maxDeviceWidth: 960 });
 
   return (
     <Main className={classes.root}>

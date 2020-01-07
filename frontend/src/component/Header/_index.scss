@@ -6,11 +6,11 @@
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  @extend %text-align-center;
-  @extend %position-relative;
   background-color: $common-color--black;
   padding: $spacing * 14 0 $spacing * 2 0;
-
+  min-height: $spacing * 100;
+  @extend %text-align-center;
+  @extend %position-relative;
   @include shadow(
     0,
     -$spacing * 24,
@@ -24,17 +24,12 @@
     text-align: left;
   }
 
-  &--image {
-    min-height: $spacing * 100;
-    @include viewport(tablet) {
-      min-height: 50vh;
-    }
+  &--noImage {
+    min-height: auto !important;
   }
 
   @include viewport(tablet) {
+    min-height: 50vh;
     padding-top: $spacing * 11;
-    &--image {
-      min-height: 50vh;
-    }
   }
 }

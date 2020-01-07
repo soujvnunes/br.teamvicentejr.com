@@ -7,7 +7,7 @@ export default function NavItem(props) {
     hover: false
   });
 
-  let { icon, active, primary } = props;
+  let { icon, isActive, primary, to, iconActive, onClick } = props;
   let { hover } = state;
 
   function handleHover() {
@@ -17,11 +17,14 @@ export default function NavItem(props) {
 
   return (
     <NavLink
-      {...props}
+      to={to}
+      isActive={isActive}
+      className={"Nav-links-link Nav-link"}
+      onClick={onClick}
       onMouseEnter={() => handleHover()}
       onMouseLeave={() => handleHover()}
     >
-      <Icon name={icon} active={active || hover} />
+      <Icon name={icon} active={iconActive || hover} />
       <span className={"Nav-links-link-label"}>{primary}</span>
     </NavLink>
   );
