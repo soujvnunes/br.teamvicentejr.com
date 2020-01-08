@@ -1,7 +1,7 @@
 .Card {
   border: $spacing/4 solid $tertiary-color;
   border-radius: $spacing;
-  margin: $spacing $spacing $spacing * 4;
+  margin: $spacing 0 $spacing * 4 0;
   @extend %position-relative;
 
   &Header {
