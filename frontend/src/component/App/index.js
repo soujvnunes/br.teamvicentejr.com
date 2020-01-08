@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { data } from "../../library/navigation";
+import { data } from "../../library/data";
 import Nav from "../Nav";
 import { Home, Teachers, Branches, About } from "../Page";
 import NavItem from "../NavItem";
@@ -18,7 +18,7 @@ export default props => {
     <Router>
       <div className={"App"}>
         <Nav indicator={active}>
-          {data.map((data, i) => (
+          {data.navigation.map((data, i) => (
             <NavItem
               key={i}
               to={data.to}

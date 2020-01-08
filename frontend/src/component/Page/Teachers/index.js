@@ -5,10 +5,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
 import Main from "../../Main";
 import Typography from "../../Typography";
-import Skew from "../../Skew";
 import Wrapper from "../../Wrapper";
 import Chip from "../../Chip";
-import Line from "../../Line";
 
 export default props => {
   const classes = {
