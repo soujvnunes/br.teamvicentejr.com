@@ -19,17 +19,16 @@ export default props => {
   const [state, setState] = useState({
     month: currentMonth,
     year: currentYear,
-    matchDate: []
+    filteredEvents: []
   });
 
-  let { month, year, matchDate } = state;
+  let { month, year, filteredEvents } = state;
 
   useEffect(() => {
     const matchYear = events.filter(data => data.year == year);
     const matchMonth = matchYear.filter(data => data.month == month);
-    console.log(matchYear, matchMonth);
-    if (matchMonth) setState({ ...state, matchDate: matchMonth });
-    else setState({ ...state, matchDate: [] });
+    if (matchMonth) setState({ ...state, filteredEvents: matchMonth });
+    else setState({ ...state, filteredEvents: [] });
   }, [month, year]);
 
   function filterMonth() {
@@ -76,9 +75,9 @@ export default props => {
           />
         </div>
         <LineSet className={"home-events-list"}>
-          {matchDate && matchDate.length > 0 ? (
+          {filteredEvents && filteredEvents.length > 0 ? (
             <>
-              {matchDate.map((data, i) => {
+              {filteredEvents.map((data, i) => {
                 return (
                   <Line
                     key={i}
@@ -105,7 +104,7 @@ export default props => {
               })}
             </>
           ) : (
-            "Nenhum encontrado."
+            <Typography paragraph>Nenhum evento encontrado.</Typography>
           )}
         </LineSet>
       </Section>

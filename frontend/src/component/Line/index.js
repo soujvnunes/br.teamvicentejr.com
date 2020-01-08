@@ -8,7 +8,7 @@ export default function Line(props) {
     expand: false
   });
   let { expand } = state;
-  let { className, children, primary, secondary, hidden } = props;
+  let { className, children, primary, secondary } = props;
 
   const classes = {
     root: [classNames("Line", className)],

@@ -11,47 +11,23 @@
 
     .carousel {
       &.carousel-slider {
-        max-width: inherit;
-
         & .slide {
-          @include transition(margin-left, margin-right);
-          margin-left: 0;
-          right: 0;
           background: transparent;
 
-          &:first-child {
-            &.selected {
-              margin-left: 25%;
-            }
-          }
-
-          &:last-child {
-            &.selected {
-              margin-right: 25%;
-            }
-          }
-
           .teachers-carousel-item {
-            $value: $spacing-unit/1.25 * 0.1;
             display: flex;
+            align-items: center;
+            flex-direction: row;
             justify-content: center;
-            -moz-transform: scale($value);
-            -webkit-transform: scale($value);
-            -o-transform: scale($value);
-            -ms-transform: scale($value);
-            transform: scale($value);
-            @include transition(transform);
-
-            @include viewport(tablet) {
-              align-items: center;
-              flex-direction: column;
-            }
 
             &-info {
-              opacity: 0;
-              @include transition(opacity, margin-left);
+              min-height: $spacing * 25;
               position: absolute;
-              align-self: flex-end;
+              bottom: 0;
+              width: 100%;
+              margin: 0;
+              padding: 0 $spacing * 2;
+              text-align: center;
               @include shadow(
                 0,
                 -$spacing * 24,
@@ -61,89 +37,45 @@
                 inset
               );
 
-              @include viewport(tablet) {
-                width: 200%;
-                left: -50%;
-                padding: 0 $spacing * 2;
-                bottom: 0;
-              }
-
               &-title {
-                position: relative;
-                padding: $spacing 0;
                 font-size: $spacing-unit * 0.16rem;
                 letter-spacing: 0;
-                width: 100%;
-                margin: 0 0 $spacing * 3 0;
-
-                @include viewport(tablet) {
-                  margin-bottom: $spacing;
-                }
-              }
-
-              &-paragraph {
-                @include viewport(phone) {
-                  font-size: $spacing-unit * 0.08rem;
-                }
               }
             }
-
-            &-image {
-              opacity: $value;
-              @include transition(opacity);
-            }
-
             img {
               width: inherit;
-            }
-          }
-
-          &.selected {
-            z-index: 1;
-
-            .teachers-carousel-item {
-              -moz-transform: scale(1);
-              -webkit-transform: scale(1);
-              -o-transform: scale(1);
-              -ms-transform: scale(1);
-              transform: scale(1);
-
-              &-info {
-                opacity: 1;
-                margin-left: 0;
-              }
-
-              &-image {
-                opacity: 1;
-              }
             }
           }
         }
       }
 
-      & .thumbs-wrapper {
-        margin: $spacing * 2 $spacing * 3;
+      & .control-prev {
+        &.control-arrow {
+          left: $spacing * 1.5;
+        }
+      }
 
-        & .thumbs {
-          line-height: 0;
-          & .thumb {
-            margin: 0 $spacing;
-            height: $spacing-unit * 7.5px;
-            border-width: $spacing/4;
-            border-color: $tertiary-color;
-            padding: 0;
+      & .control-next {
+        &.control-arrow {
+          right: $spacing * 1.5;
+        }
+      }
 
-            &:first-child {
-              margin-left: 0;
-            }
+      & .control-dots {
+        position: inherit;
+        bottom: inherit;
 
-            &:last-child {
-              margin-right: 0;
-            }
+        & .dot {
+          outline: 0;
+          box-shadow: none;
+          @include transition(background-color);
+          background-color: $tertiary-color--light;
+          opacity: 1;
+          transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
+          border-radius: 0;
 
-            &.selected {
-              border-color: $primary-color;
-            }
+          &.selected {
+            background-color: $primary-color;
           }
         }
       }
@@ -151,10 +83,10 @@
 
     &-item {
       & > &-image {
-        height: calc(100vh - 236px);
+        height: calc(100vh - 150px);
         width: auto;
         @include viewport(phone) {
-          height: calc(100vh - 266px);
+          height: calc(100vh - 182px);
         }
       }
     }

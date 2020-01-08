@@ -6,6 +6,9 @@ import classNames from "classnames";
 import Main from "../../Main";
 import Typography from "../../Typography";
 import Skew from "../../Skew";
+import Wrapper from "../../Wrapper";
+import Chip from "../../Chip";
+import Line from "../../Line";
 
 export default props => {
   const classes = {
@@ -16,11 +19,8 @@ export default props => {
     <Main className={classes.root}>
       <Carousel
         className={"teachers-carousel"}
-        centerMode={true}
-        centerSlidePercentage={50}
+        showThumbs={false}
         showStatus={false}
-        showIndicators={false}
-        showArrows={false}
       >
         {data.br.map((data, i) => {
           return (
@@ -30,24 +30,20 @@ export default props => {
                 alt={data.name}
                 className={"teachers-carousel-item-image"}
               />
-              <div className={"teachers-carousel-item-info"}>
+              <Wrapper className={"teachers-carousel-item-info"}>
                 {data.name && (
                   <Typography
                     title
                     className={"teachers-carousel-item-info-title"}
                   >
                     {data.name}
-                    <Skew outline={"bottom"} />
                   </Typography>
                 )}
-                {data.title && (
-                  <Typography
-                    subject
-                    className={"teachers-carousel-item-info-subject"}
-                  >
-                    {data.title}
-                  </Typography>
-                )}
+                <div>
+                  {data.titles.map((title, i) => (
+                    <Chip key={i} primary={title} />
+                  ))}
+                </div>
                 {data.description && (
                   <Typography
                     paragraph
@@ -56,7 +52,7 @@ export default props => {
                     {data.description}
                   </Typography>
                 )}
-              </div>
+              </Wrapper>
             </div>
           );
         })}
