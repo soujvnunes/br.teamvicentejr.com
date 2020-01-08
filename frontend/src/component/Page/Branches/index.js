@@ -1,9 +1,7 @@
 import React from "react";
 import { data } from "../../../library/branches";
 import Main from "../../../component/Main";
-import Card from "../../Card";
-import CardMedia from "../../CardMedia";
-import CardDescription from "../../CardDescription";
+import { Card, CardAction, CardHeader, CardMedia } from "../../Card";
 import Button from "../../Button";
 import Header from "../../Header";
 import Section from "../../Section";
@@ -18,24 +16,24 @@ export default props => {
         }
       />
       <Section>
-        <div className={"branches-lists"}>
-          {data.br.map((data, i) => {
-            return (
-              <Card key={i} className={"branches-list"}>
-                <CardMedia image={data.map} />
-                <CardDescription primary={data.name} secondary={data.local}>
-                  <Button
-                    label={"Localização"}
-                    icon={"local"}
-                    type={"normal"}
-                    url={data.url}
-                    skew
-                  />
-                </CardDescription>
-              </Card>
-            );
-          })}
-        </div>
+        {data.br.map((data, i) => {
+          return (
+            <Card key={i} className={"branches-list"}>
+              <CardHeader primary={data.name} secondary={data.local} />
+              <CardMedia image={data.map} title={data.name} />
+              <CardAction>
+                <Button
+                  variant={"contained"}
+                  label={"Localização"}
+                  icon={"local"}
+                  type={"normal"}
+                  url={data.url}
+                  skew
+                />
+              </CardAction>
+            </Card>
+          );
+        })}
       </Section>
     </Main>
   );

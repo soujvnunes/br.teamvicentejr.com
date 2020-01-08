@@ -6,29 +6,34 @@
   bottom: 0;
   transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
   @include transition(border-color, background-color, left, color);
+  border-radius: $spacing;
 
-  &--curve-left {
-    transform: skewX($spacing-unit * 2 * 1deg) skewY(0deg);
+  &--curve {
+    &-left {
+      transform: skewX($spacing-unit * 2 * 1deg) skewY(0deg);
+    }
+    &-right {
+      transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
+    }
   }
 
-  &--curve-right {
-    transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
+  &--axis {
+    &-x {
+      transform: skewX($spacing-unit * 2 * 1deg) skewY(0deg);
+    }
+    &-y {
+      transform: skewX(0deg) skewY($spacing-unit * 2 * -1deg);
+    }
   }
 
-  &--axis-x {
-    transform: skewX($spacing-unit * 2 * 1deg) skewY(0deg);
-  }
+  &--variant {
+    &-contained {
+      @extend %contained;
+    }
 
-  &--axis-y {
-    transform: skewX(0deg) skewY($spacing-unit * 2 * -1deg);
-  }
-
-  &--contained {
-    @extend %contained;
-  }
-
-  &--outlined {
-    @extend %outlined;
+    &-outlined {
+      @extend %outlined;
+    }
   }
 
   &--outline {

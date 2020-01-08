@@ -4,10 +4,10 @@
     width: 100%;
     @include transition(padding);
     height: $spacing * 6;
+    @extend %position-relative;
 
     &-info {
       flex: auto;
-      @extend %position-relative;
       padding: $spacing;
       color: $tertiary-color;
 

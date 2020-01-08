@@ -47,9 +47,9 @@ export default props => {
 
   return (
     <nav className={classes.root}>
-      {!isTablet && <Skew contained className={"Nav-skew"} />}
+      {!isTablet && <Skew variant={"contained"} className={"Nav-skew"} />}
       <div className={"Nav-links"}>
-        <Skew contained className={classes.runner} />
+        <Skew variant={"contained"} className={classes.runner} />
         {children}
       </div>
       {isTablet ? (

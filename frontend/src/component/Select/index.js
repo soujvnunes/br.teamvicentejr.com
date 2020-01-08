@@ -19,7 +19,7 @@ export default function Select(props) {
 
   return (
     <label className={root} htmlFor={id}>
-      <Skew outlined />
+      <Skew variant={"outlined"} />
       <Icon name={"chevronBottom"} className={adornment} />
       <select
         name={name}

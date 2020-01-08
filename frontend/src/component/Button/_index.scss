@@ -19,4 +19,14 @@
     margin: 0 $spacing;
     @extend %align-center;
   }
+
+  &--variant {
+    &-contained {
+      .Button-label,
+      .Button-adornment {
+        color: $secondary-color--light;
+        @extend %position-relative;
+      }
+    }
+  }
 }

@@ -1,6 +1,6 @@
 .Select {
   @extend %position-relative;
-  padding: $spacing;
+  padding: $spacing $spacing * 2;
   @extend %align-center;
 
   &-select {

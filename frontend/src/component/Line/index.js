@@ -33,10 +33,9 @@ export default function Line(props) {
         <div className={"Line-header-info"}>
           <span className={"Line-header-info-title"}>{primary}</span>
           <span className={"Line-header-info-secondary"}>{secondary}</span>
-          <Skew outlined />
         </div>
+        <Skew variant={"outlined"} />
         <Button
-          skew
           className={"Line-header-button"}
           type={"large"}
           icon={expand ? "remove" : "add"}

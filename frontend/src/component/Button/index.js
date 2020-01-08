@@ -5,8 +5,7 @@ import Skew from "../Skew";
 
 export default function Button(props) {
   let {
-    type,
-    state,
+    variant,
     className,
     icon,
     id,
@@ -21,15 +20,14 @@ export default function Button(props) {
   const classes = classNames(
     "Button",
     {
-      [`Button-${type}`]: type,
-      [`Button-${type}--${state}`]: state
+      [`Button--variant-${variant}`]: variant
     },
     className
   );
 
   const Body = (
     <>
-      {skew && <Skew outlined />}
+      {skew && <Skew variant={variant} />}
       <button
         className={"Button-adornment"}
         id={!selectId && id ? `button-${id}` : null}

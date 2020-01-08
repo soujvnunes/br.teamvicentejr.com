@@ -1,6 +1,25 @@
 .Card {
-  width: 50%;
-  padding: $spacing;
+  border: $spacing/4 solid $tertiary-color;
+  border-radius: $spacing;
+  margin: $spacing $spacing $spacing * 4;
+  @extend %position-relative;
+
+  &Header {
+    margin: $spacing * 2;
+  }
+
+  &Media {
+    background-position: center;
+    height: $spacing * 30;
+  }
+
+  &Action {
+    position: absolute;
+    bottom: -$spacing * 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   &:hover {
     .CardMedia {

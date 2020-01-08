@@ -1,16 +1,4 @@
-import React from "react";
-import classNames from "classnames";
-
-export default function Card(props) {
-  let { className, children } = props;
-
-  const classes = {
-    root: [
-      classNames("Card" /*,{ [`IconButton--hover`]: !noHover }*/, className)
-    ]
-  };
-
-  let { root } = classes;
-
-  return <div className={root}>{children}</div>;
-}
+export { default as Card } from "./Card";
+export { default as CardHeader } from "./Header";
+export { default as CardMedia } from "./Media";
+export { default as CardAction } from "./Action";

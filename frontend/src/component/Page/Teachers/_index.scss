@@ -39,9 +39,12 @@
                 $common-color--black--light 50%
               );
 
-              @include viewport(phone) {
-                padding: $spacing * 8 $spacing * 2 0 $spacing * 2;
+              @include viewport(tablet) {
                 height: calc(100vh - 182px - 50%);
+              }
+
+              @include viewport(phone) {
+                padding-top: $spacing * 8;
               }
 
               &-title {
@@ -79,7 +82,7 @@
           background-color: $tertiary-color;
           opacity: 1;
           transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
-          border-radius: 0;
+          border-radius: $spacing/4;
 
           &.selected {
             background-color: $primary-color;
@@ -92,7 +95,7 @@
       & > &-image {
         height: calc(100vh - 150px);
         width: auto;
-        @include viewport(phone) {
+        @include viewport(tablet) {
           height: calc(100vh - 182px);
         }
       }
