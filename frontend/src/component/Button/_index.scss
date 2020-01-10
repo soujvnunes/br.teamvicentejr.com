@@ -9,22 +9,20 @@
   padding: 0 $spacing;
 
   &-label {
-    margin: 0 $spacing;
     text-transform: uppercase;
     font-weight: bold;
     font-size: $spacing-unit * 0.1rem;
   }
 
-  &-adornment {
-    margin: 0 $spacing;
-    @extend %align-center;
+  &-icon {
+    margin: 0 $spacing 0 0;
   }
 
   &--variant {
     &-contained {
       .Button-label,
-      .Button-adornment {
-        color: $secondary-color--light;
+      .Button-icon {
+        color: $common-color--black--light-2;
         @extend %position-relative;
       }
     }

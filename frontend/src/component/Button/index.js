@@ -1,63 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import Icon from "../Icon";
 import classNames from "classnames";
 import Skew from "../Skew";
 
 export default function Button(props) {
-  let {
-    variant,
-    className,
-    icon,
-    id,
-    label,
-    onClick,
-    url,
-    children,
-    selectId,
-    skew
-  } = props;
+  const [state, setState] = useState({
+    hover: false
+  });
+  let { variant, className, icon, id, label, onClick, url, skew } = props;
+  let { hover } = state;
 
-  const classes = classNames(
-    "Button",
-    {
-      [`Button--variant-${variant}`]: variant
-    },
-    className
-  );
+  function handleHover() {
+    if (hover) setState({ ...state, hover: false });
+    else setState({ ...state, hover: true });
+  }
+  const classes = {
+    root: [
+      classNames(
+        "Button",
+        {
+          [`Button--variant-${variant}`]: variant
+        },
+        className
+      )
+    ]
+  };
 
-  const Body = (
-    <>
-      {skew && <Skew variant={variant} />}
+  function Body() {
+    return (
+      <>
+        {skew && <Skew variant={variant} />}
+        {icon && <Icon name={icon} className={"Button-icon"} active={hover} />}
+        {label && <span className={"Button-label"}>{label}</span>}
+      </>
+    );
+  }
+
+  if (url) {
+    return (
+      <a
+        onMouseEnter={() => handleHover()}
+        onMouseLeave={() => handleHover()}
+        className={classes.root}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Body />
+      </a>
+    );
+  } else {
+    return (
       <button
-        className={"Button-adornment"}
-        id={!selectId && id ? `button-${id}` : null}
+        onMouseEnter={() => handleHover()}
+        onMouseLeave={() => handleHover()}
+        className={classes.root}
+        id={id}
         onClick={onClick}
       >
-        <Icon name={icon} className={"Button-adornment-icon"} />
+        <Body />
       </button>
-      {label ? <span className={"Button-label"}>{label}</span> : children}
-    </>
-  );
+    );
+  }
 
-  return (
-    <>
-      {url ? (
-        <a
-          className={classes}
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {Body}
-        </a>
-      ) : (
-        <label
-          className={classes}
-          htmlFor={!selectId ? (id ? `button-${id}` : null) : selectId}
-        >
-          {Body}
-        </label>
-      )}
-    </>
-  );
+  return null;
 }
