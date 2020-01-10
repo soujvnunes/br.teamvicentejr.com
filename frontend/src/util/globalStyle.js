@@ -1,13 +1,11 @@
+import theme from "./theme";
 import { createGlobalStyle } from "styled-components";
 import reboot from "styled-reboot";
 
-// Options are, of course, optional, these are the default options
 const options = {
   black: "0, 0, 0",
-  fontFamilyBase:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
-  fontFamilyMonospace:
-    'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  fontFamilyBase: theme.get("type.fontFamilyBase"),
+  fontFamilyMonospace: theme.get("type.fontFamilyHeadings"),
   fontSizeBase: "1rem",
   fontWeightBase: 400,
   lineHeightBase: 1.5,
@@ -28,8 +26,7 @@ const options = {
 const rebootCss = reboot(options);
 
 const GlobalStyle = createGlobalStyle`
-${rebootCss}
-  /* other styles */
+  ${rebootCss}
 `;
 
 export default GlobalStyle;
