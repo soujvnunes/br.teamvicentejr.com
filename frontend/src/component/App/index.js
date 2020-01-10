@@ -4,6 +4,8 @@ import { data } from "../../library/data";
 import Nav from "../Nav";
 import { Home, Teachers, Branches, About } from "../Page";
 import NavItem from "../NavItem";
+import { Reset } from "styled-reset";
+import { Normalize } from "styled-normalize";
 
 export default props => {
   const [state, setState] = useState({
@@ -16,6 +18,8 @@ export default props => {
 
   return (
     <Router>
+      <Reset />
+      <Normalize />
       <div className={"App"}>
         <Nav indicator={active}>
           {data.navigation.map((data, i) => (
