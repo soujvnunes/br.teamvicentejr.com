@@ -4,10 +4,21 @@ import { data } from "../../library/data";
 import Nav from "../Nav";
 import { Home, Teachers, Branches, About } from "../Page";
 import NavItem from "../NavItem";
-import { Reset } from "styled-reset";
-import { Normalize } from "styled-normalize";
+import styled from "styled-components";
+import GlobalStyle from "../../util/globalStyle";
 
-export default props => {
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  @extend %font-family--azo;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $spacing * 2;
+  background-color: $common-color--black;
+  color: $tertiary-color;
+`;
+
+export default function App() {
   const [state, setState] = useState({
     active: window.location.pathname.substring(1)
   });
@@ -18,9 +29,8 @@ export default props => {
 
   return (
     <Router>
-      <Reset />
-      <Normalize />
-      <div className={"App"}>
+      <GlobalStyle />
+      <Wrapper>
         <Nav indicator={active}>
           {data.navigation.map((data, i) => (
             <NavItem
@@ -34,19 +44,11 @@ export default props => {
             />
           ))}
         </Nav>
-        <Route exact path="/" render={props => <Home {...props} />} />
-        <Route
-          exact
-          path="/professores"
-          render={props => <Teachers {...props} />}
-        />
-        <Route
-          exact
-          path="/filiais"
-          render={props => <Branches {...props} />}
-        />
-        <Route exact path="/sobre" render={props => <About {...props} />} />
-      </div>
+        <Route exact path="/" render={props => <Home />} />
+        <Route exact path="/professores" render={props => <Teachers />} />
+        <Route exact path="/filiais" render={props => <Branches />} />
+        <Route exact path="/sobre" render={props => <About />} />
+      </Wrapper>
     </Router>
   );
-};
+}

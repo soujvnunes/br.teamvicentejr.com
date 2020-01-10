@@ -17,8 +17,8 @@
     "react-scripts": "^3.3.0",
     "styled-breakpoints": "^7.2.0",
     "styled-components": "^5.0.0-rc.3",
-    "styled-normalize": "^8.0.6",
-    "styled-reset": "^4.0.9"
+    "styled-reboot": "^4.0.3",
+    "styled-theme": "^0.3.3"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
