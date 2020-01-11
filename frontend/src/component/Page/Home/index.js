@@ -6,8 +6,8 @@ import Main from "../../../component/Main";
 import Header from "../../Header";
 import Section from "../../Section";
 import Select from "../../Select";
-import { data } from "../../../library/data";
-import { events } from "../../../library/events";
+import { data } from "../../../lib/data";
+import { events } from "../../../lib/events";
 import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
 import Chip from "../../Chip";
 

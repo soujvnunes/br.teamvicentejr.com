@@ -15,22 +15,27 @@ const transitions = {
   timing: "cubic-bezier(0.75, 0.02, 0.25, 1)"
 };
 
-const theme = {
+const designSystem = {
   type: {
-    baseFontSize: "20px",
+    baseFontSize: 20,
 
     sizes: {
-      xs: "16px",
-      s: "20px",
-      base: "30px",
-      m: "36px",
-      l: "42px",
-      xl: "50px",
-      xxl: "58px"
+      xs: "12px",
+      s: "14px",
+      base: "16px", // [default] p, h5, h6
+      m: "20px", // h4
+      l: "24px", // h3
+      xl: "30px", // h2
+      xxl: "40px" // h1
+    },
+
+    modularscale: {
+      base: 20,
+      ratio: 1.5
     },
 
     fontFamily,
-    fontFamilyBase: fontFamily.system,
+    fontFamilyBase: [fontFamily.system, fontFamily.sans].join(","),
     fontFamilyHeadings: fontFamily.mono,
 
     lineHeight: {
@@ -48,19 +53,15 @@ const theme = {
     colorPalette: palette,
 
     brand: {
-      red: "#e82219",
-      deeporange: "#ff7200",
-      orange: "#ff9500",
-      green: "#c4d000",
-      teal: "#1aa5c8",
-      navy: "#0052da"
+      red: "#a60505",
+      black: "#343434"
     }
   },
 
   breakpoints: {
-    s: 300,
-    m: 500,
-    l: 800
+    s: 600,
+    m: 960,
+    l: 1280
   },
 
   zIndex: {
@@ -72,12 +73,12 @@ const theme = {
   spacing: {
     baseline: 20,
     padding: "0.3em",
-    scale: [0, 8, 16, 24, 32, 40]
+    scale: [0, 8, 16, 24, 32, 40, 48]
   },
 
   layout: {
     gutter: 20,
-    maxWidth: 1200,
+    maxWidth: 1080,
     grid: {
       columnCount: 12
     }
@@ -94,6 +95,6 @@ const theme = {
   borderRadius: "0.3em"
 };
 
-console.log(theme.type.fontFamily);
-
-export default new DesignSystem(theme);
+export const theme = new DesignSystem(designSystem, {
+  fontSizeUnit: "rem"
+});

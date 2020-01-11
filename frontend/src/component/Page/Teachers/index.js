@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
-import { data } from "../../../library/teachers";
+import { data } from "../../../lib/teachers";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import classNames from "classnames";
 import Main from "../../Main";

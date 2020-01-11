@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-// library
-@import "library/variables";
-@import "library/placeholder";
-@import "library/mixin";
-@import "library/config";
+// lib
+@import "lib/variables";
+@import "lib/placeholder";
+@import "lib/mixin";
+@import "lib/config";
 
 // components
 @import "component/Icon/index";
@@ -14,7 +14,6 @@
 @import "component/Header/index";
 @import "component/Chip/index";
 @import "component/Typography/index";
-@import "component/Button/index";
 @import "component/LineSet/index";
 @import "component/Line/index";
 @import "component/Main/index";

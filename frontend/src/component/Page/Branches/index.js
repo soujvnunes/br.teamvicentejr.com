@@ -1,5 +1,5 @@
 import React from "react";
-import { data } from "../../../library/branches";
+import { data } from "../../../lib/branches";
 import Main from "../../../component/Main";
 import { Card, CardAction, CardHeader, CardMedia } from "../../Card";
 import Button from "../../Button";
@@ -23,7 +23,6 @@ export default props => {
               <CardMedia image={data.map} title={data.name} />
               <CardAction>
                 <Button
-                  variant={"contained"}
                   label={"Localização"}
                   icon={"local"}
                   type={"normal"}

@@ -12,28 +12,28 @@ export default {
   },
 
   primary: {
-    base: "#181830",
-    light: "#292952",
-    dark: "#0d0d19"
+    base: "#a60505",
+    light: "#df4830",
+    dark: "#700000"
   },
 
   secondary: {
-    base: "#fe7c08",
-    light: "#fea04c",
-    dark: "#d26401"
+    base: "#343434",
+    light: "#5e5e5e",
+    dark: "#0d0d0d"
   },
 
   text: {
-    base: "#212B35",
-    light: "#454F5B"
+    base: "#a6a6a6",
+    light: "#d9d9d9"
   },
 
   background: {
-    base: "#f1f1f1"
+    base: "#000" //default f1f1f1
   },
 
   link: {
-    base: "#fe7c08",
-    over: "#fea04c"
+    base: "#df4830",
+    over: "#700000"
   }
 };

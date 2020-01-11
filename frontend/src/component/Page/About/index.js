@@ -3,7 +3,7 @@ import Main from "../../../component/Main";
 import panelImage from "../../../asset/br/about/01001.jpg";
 import headerImage from "../../../asset/br/about/01002.jpg";
 import History from "../../History";
-import { data } from "../../../library/about";
+import { data } from "../../../lib/about";
 import Header from "../../Header";
 import Section from "../../Section";
 import Panel from "../../Panel";

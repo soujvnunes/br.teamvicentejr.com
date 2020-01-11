@@ -1,7 +1,0 @@
-{
-  "title": "Bem-vindo a reagir usando o react-i18next",
-  "description": {
-    "part1": "Para começar, edite <1>src/App.js</1> e salve para recarregar.",
-    "part2": "Alterne o idioma entre inglês e alemão usando os botões acima."
-  }
-}

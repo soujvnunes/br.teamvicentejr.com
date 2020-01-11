@@ -1,67 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import Icon from "../Icon";
-import classNames from "classnames";
 import Skew from "../Skew";
+import styled from "styled-components";
+
+const Root = styled.button`
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: ${props => props.theme.spacing(6)};
+  min-width: ${props => props.theme.spacing(6)};
+  padding: 0 ${props => props.theme.spacing(2)};
+  color: ${props => props.theme.color("text")};
+
+  &:hover {
+    color: ${props => props.theme.color("text.light")};
+  }
+`;
+
+const IconStyled = styled(Icon)`
+  margin-right: ${props => props.theme.spacing(2)};
+`;
+
+const Label = styled.span`
+  text-transform: uppercase;
+  font-weight: bold;
+`;
 
 export default function Button(props) {
-  const [state, setState] = useState({
-    hover: false
-  });
-  let { variant, className, icon, id, label, onClick, url, skew } = props;
+  let { icon, id, label, onClick, skew } = props;
   let { hover } = state;
 
-  function handleHover() {
-    if (hover) setState({ ...state, hover: false });
-    else setState({ ...state, hover: true });
-  }
-  const classes = {
-    root: [
-      classNames(
-        "Button",
-        {
-          [`Button--variant-${variant}`]: variant
-        },
-        className
-      )
-    ]
-  };
-
-  function Body() {
-    return (
-      <>
-        {skew && <Skew variant={variant} />}
-        {icon && <Icon name={icon} className={"Button-icon"} active={hover} />}
-        {label && <span className={"Button-label"}>{label}</span>}
-      </>
-    );
-  }
-
-  if (url) {
-    return (
-      <a
-        onMouseEnter={() => handleHover()}
-        onMouseLeave={() => handleHover()}
-        className={classes.root}
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Body />
-      </a>
-    );
-  } else {
-    return (
-      <button
-        onMouseEnter={() => handleHover()}
-        onMouseLeave={() => handleHover()}
-        className={classes.root}
-        id={id}
-        onClick={onClick}
-      >
-        <Body />
-      </button>
-    );
-  }
-
-  return null;
+  return (
+    <Root id={id} onClick={onClick}>
+      {icon && <IconStyled name={icon} active={hover} />}
+      {label && <Label>{label}</Label>}
+      {skew && <Skew variant={"outlined"} />}
+    </Root>
+  );
 }
