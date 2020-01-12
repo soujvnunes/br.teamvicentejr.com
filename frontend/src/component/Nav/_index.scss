@@ -1,16 +1,5 @@
 .Nav {
-  @extend %align-center;
-  position: fixed;
-  justify-content: space-between;
-  flex-direction: row;
-  z-index: 1;
-  height: $spacing * 6;
-  width: calc(100% - #{$spacing * 4}* 2);
-  margin: $spacing * 4;
-  padding: 0 $spacing;
-
   &-skew {
-    color: $primary-color;
   }
 
   &-link {

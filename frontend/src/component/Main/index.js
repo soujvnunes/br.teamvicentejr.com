@@ -1,13 +1,25 @@
 import React from "react";
-import classNames from "classnames";
+import styled from "styled-components";
+import { down } from "styled-breakpoints";
+
+const MainRoot = styled.main`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+
+  ${down("md")} {
+    margin-bottom: calc(var(--spacing) * 9px);
+  }
+`;
 
 export default function Main(props) {
-  let { children, className, id } = props;
-  const classes = { root: [classNames("Main", className)] };
-  let { root } = classes;
+  let { children, className } = props;
+
   return (
-    <main role={"main"} className={root} id={id}>
+    <MainRoot role={"main"} className={className}>
       {children}
-    </main>
+    </MainRoot>
   );
 }

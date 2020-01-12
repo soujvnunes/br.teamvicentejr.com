@@ -27,6 +27,10 @@ export default function App() {
       <Router>
         <GlobalStyle />
         <AppRoot>
+          <Route exact path="/" render={props => <Home />} />
+          <Route exact path="/professores" render={props => <Teachers />} />
+          <Route exact path="/filiais" render={props => <Branches />} />
+          <Route exact path="/sobre" render={props => <About />} />
           <Nav indicator={active}>
             {data.navigation.map((data, i) => (
               <NavItem
@@ -40,10 +44,6 @@ export default function App() {
               />
             ))}
           </Nav>
-          <Route exact path="/" render={props => <Home />} />
-          <Route exact path="/professores" render={props => <Teachers />} />
-          <Route exact path="/filiais" render={props => <Branches />} />
-          <Route exact path="/sobre" render={props => <About />} />
         </AppRoot>
       </Router>
     </ThemeProvider>

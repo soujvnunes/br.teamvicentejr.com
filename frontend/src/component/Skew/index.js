@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
-const Root = styled.div`
+const SkewRoot = styled.div`
   position: absolute;
   left: 0;
   top: 0;
@@ -59,7 +59,7 @@ const Root = styled.div`
 
 export default function Skew(props) {
   let { className, variant } = props;
-  return <Root className={className} variant={variant} />;
+  return <SkewRoot className={className} variant={variant} />;
 }
 
 Skew.propTypes = {

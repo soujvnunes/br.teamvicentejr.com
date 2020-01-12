@@ -1,9 +1,7 @@
 import React from "react";
-import classNames from "classnames";
 
-export default props => {
+export default function LineSet(props) {
   let { className, children } = props;
-  const classes = classNames("LineSet", className);
 
-  return <ul className={classes} children={children} />;
-};
+  return <ul className={className} children={children} />;
+}

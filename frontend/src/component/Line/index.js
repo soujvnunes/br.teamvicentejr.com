@@ -1,8 +1,52 @@
 import React, { useState } from "react";
-import classNames from "classnames";
 import Skew from "../Skew";
 import Button from "../Button";
 import Typography from "../Typography";
+import styled, { css } from "styled-components";
+import { down } from "styled-breakpoints";
+
+const LineRoot = styled.li``;
+
+const LineHeader = styled.header`
+  display: flex;
+  width: 100%;
+  transition: var(--transition);
+  position: relative;
+  align-items: center;
+`;
+
+const LineHeaderInfo = styled.div`
+  flex: auto;
+  padding: calc(var(--spacing) * 2px);
+
+  ${down("md")} {
+    padding: calc(var(--spacing) * 1px);
+  }
+`;
+
+const LineHeaderInfoHeading = styled(Typography)`
+  margin-left: calc(var(--spacing) * 1px);
+`;
+
+const LineHeaderInfoSubject = styled(Typography)`
+  margin-top: 1rem;
+`;
+
+const LineHeaderButton = styled(Button)`
+  margin-right: calc(var(--spacing) * 2px);
+`;
+
+const LineContent = styled.div`
+  overflow: hidden;
+  max-height: 0;
+  transition: var(--transition);
+
+  ${props =>
+    props.expand &&
+    css`
+      max-height: calc(var(--spacing) * 100px);
+    `}
+`;
 
 export default function Line(props) {
   const [state, setState] = useState({
@@ -11,41 +55,31 @@ export default function Line(props) {
   let { expand } = state;
   let { className, children, primary, secondary } = props;
 
-  const classes = {
-    root: [classNames("Line", className)],
-    header: [classNames("Line-header")],
-    content: [
-      classNames("Line-content", {
-        [`Line-content--expand`]: expand
-      })
-    ]
-  };
-
-  let { root, header, content } = classes;
-
   const handleExpand = () => {
     if (expand) setState({ ...state, expand: false });
     else setState({ ...state, expand: true });
   };
 
   return (
-    <li className={root}>
-      <div className={header}>
-        <div className={"Line-header-info"}>
-          <Typography variant={"heading"}>{primary}</Typography>
-          <Typography variant={"subject"}>{secondary}</Typography>
-        </div>
+    <LineRoot className={className}>
+      <LineHeader>
+        <LineHeaderInfo>
+          <LineHeaderInfoHeading variant={"heading"}>
+            {primary}
+          </LineHeaderInfoHeading>
+          <LineHeaderInfoSubject variant={"subject"}>
+            {secondary}
+          </LineHeaderInfoSubject>
+        </LineHeaderInfo>
         <Skew variant={"outlined"} />
-        <Button
+        <LineHeaderButton
           skew={false}
-          className={"Line-header-button"}
-          type={"large"}
           icon={expand ? "remove" : "add"}
           onClick={handleExpand}
           variant={"text"}
         />
-      </div>
-      <div className={content}>{children}</div>
-    </li>
+      </LineHeader>
+      <LineContent expand={expand}>{children}</LineContent>
+    </LineRoot>
   );
 }

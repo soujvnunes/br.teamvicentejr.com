@@ -33,10 +33,10 @@ const HeaderRoot = styled.header`
 `;
 
 export default function Header(props) {
-  let { image, title, subject } = props;
+  let { className, image, title, subject } = props;
 
   return (
-    <HeaderRoot image={image}>
+    <HeaderRoot image={image} className={className}>
       <Wrapper>
         <Typography variant={"title"}>{title}</Typography>
         <Typography variant={"subtitle"}>{subject}</Typography>
