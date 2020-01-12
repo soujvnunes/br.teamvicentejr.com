@@ -29,16 +29,10 @@ const Label = styled.span`
 `;
 
 export default function Button(props) {
-  let { icon, id, label, onClick, variant, className, href, skew } = props;
+  let { icon, id, label, onClick, variant, href, skew } = props;
 
   return (
-    <Root
-      id={id}
-      onClick={onClick}
-      className={className}
-      href={href}
-      {...As("a")}
-    >
+    <Root id={id} onClick={onClick} href={href} {...As("a")}>
       {icon && <IconStyled name={icon} />}
       {label && <Label>{label}</Label>}
       {skew && <Skew variant={variant} />}
