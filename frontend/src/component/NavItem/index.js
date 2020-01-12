@@ -2,6 +2,25 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Icon from "../Icon";
 import Typography from "../Typography";
+import styled from "styled-components";
+import Button from "../Button";
+import { down } from "styled-breakpoints";
+import { NavLinkDefault } from "../../util/NavLinkDefault";
+
+const NavLinkRoot = styled(NavLink)`
+  ${NavLinkDefault};
+
+  position: relative;
+  margin: 0 calc(var(--spacing) * 1px);
+  min-width: calc(var(--spacing) * 14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const NavLinkLabel = styled(Typography)`
+  margin-left: calc(var(--spacing) * 1px);
+`;
 
 export default function NavItem(props) {
   const [state, setState] = useState({
@@ -17,7 +36,7 @@ export default function NavItem(props) {
   }
 
   return (
-    <NavLink
+    <NavLinkRoot
       to={to}
       isActive={isActive}
       className={"Nav-links-link Nav-link"}
@@ -26,9 +45,7 @@ export default function NavItem(props) {
       onMouseLeave={() => handleHover()}
     >
       <Icon name={icon} variant={iconActive || hover ? "active" : "default"} />
-      <Typography variant={"action"} className={"Nav-links-link-label"}>
-        {primary}
-      </Typography>
-    </NavLink>
+      <NavLinkLabel variant={"action"}>{primary}</NavLinkLabel>
+    </NavLinkRoot>
   );
 }

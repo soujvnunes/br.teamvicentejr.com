@@ -1,12 +1,12 @@
 import { css } from "styled-components";
 
-export const NavLink = css`
+export const NavLinkDefault = css`
   color: var(--color-tertiary-light);
   opacity: 1;
   transition: var(--transition);
 
   &:hover {
-    opacity: 0.5;
+    opacity: 0.75;
   }
 
   &.active {

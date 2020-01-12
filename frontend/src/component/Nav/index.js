@@ -5,6 +5,7 @@ import Skew from "../Skew";
 import Mark from "../../asset/mark.png";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
+import { NavLinkDefault } from "../../util/NavLinkDefault";
 
 const NavRoot = styled.nav`
   display: flex;
@@ -83,6 +84,8 @@ const NavAside = styled.aside`
 `;
 
 const NavAsideButton = styled(Button)`
+  ${NavLinkDefault};
+
   &:first-child {
     margin-left: calc(var(--spacing) * 43px);
 
