@@ -42,36 +42,44 @@ const Label = styled.span`
 `;
 
 export default function Typography(props) {
-  let { variant, children } = props;
+  let { variant, children, className } = props;
 
   if (variant === "title")
     return (
-      <Label as={"h1"} variant={variant}>
+      <Label className={className} as={"h1"} variant={variant}>
         {children}
       </Label>
     );
   else if (variant === "subtitle")
     return (
-      <Label as={"h3"} variant={variant}>
+      <Label className={className} as={"h3"} variant={variant}>
         {children}
       </Label>
     );
   else if (variant === "paragraph")
     return (
-      <Label as={"p"} variant={variant}>
+      <Label className={className} as={"p"} variant={variant}>
         {children}
       </Label>
     );
   else if (variant === "heading")
     return (
-      <Label as={"h5"} variant={variant}>
+      <Label className={className} as={"h5"} variant={variant}>
         {children}
       </Label>
     );
   else if (variant === "subject")
-    return <Label variant={variant}>{children}</Label>;
+    return (
+      <Label className={className} variant={variant}>
+        {children}
+      </Label>
+    );
   else if (variant === "action")
-    return <Label variant={variant}>{children}</Label>;
+    return (
+      <Label className={className} variant={variant}>
+        {children}
+      </Label>
+    );
 }
 
 Typography.propTypes = {

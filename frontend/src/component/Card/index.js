@@ -4,7 +4,7 @@ import Typography from "../Typography";
 import PropTypes from "prop-types";
 import As from "../../util/As";
 
-const Root = styled.article`
+const CardRoot = styled.article`
   border: var(--border);
   border-radius: var(--radius);
   margin: calc(var(--spacing) * 2px) 0;
@@ -40,10 +40,19 @@ const CardAction = styled.div`
 `;
 
 export default function Card(props) {
-  let { children, primary, secondary, actions, image, title, href } = props;
+  let {
+    className,
+    children,
+    primary,
+    secondary,
+    actions,
+    image,
+    title,
+    href
+  } = props;
 
   return (
-    <Root>
+    <CardRoot className={className}>
       <CardHeader>
         <Typography variant={"heading"}>{primary}</Typography>
         <Typography variant={"subject"}>{secondary}</Typography>
@@ -52,7 +61,7 @@ export default function Card(props) {
         {children}
       </CardContent>
       {actions && <CardAction>{actions}</CardAction>}
-    </Root>
+    </CardRoot>
   );
 }
 

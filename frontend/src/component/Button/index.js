@@ -6,8 +6,9 @@ import Icon from "../Icon";
 import Skew from "../Skew";
 import As from "../../util/As";
 
-const Root = styled.button`
+const ButtonRoot = styled.button`
   ${InputBase};
+
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -17,26 +18,32 @@ const Root = styled.button`
   padding: 0 calc(var(--spacing) * 2px);
 `;
 
-const IconStyled = styled(Icon)`
-  & ~ span {
-    margin-left: calc(var(--spacing) * 2px);
-  }
-`;
-
 const Label = styled.span`
   text-transform: uppercase;
   font-weight: bold;
 `;
 
+const IconStyled = styled(Icon)`
+  & ~ ${Label} {
+    margin-left: calc(var(--spacing) * 2px);
+  }
+`;
+
 export default function Button(props) {
-  let { icon, id, label, onClick, variant, href, skew } = props;
+  let { className, icon, id, label, onClick, variant, href, skew } = props;
 
   return (
-    <Root id={id} onClick={onClick} href={href} {...As("a")}>
+    <ButtonRoot
+      className={className}
+      id={id}
+      onClick={onClick}
+      href={href}
+      {...As("a")}
+    >
       {icon && <IconStyled name={icon} />}
       {label && <Label>{label}</Label>}
       {skew && <Skew variant={variant} />}
-    </Root>
+    </ButtonRoot>
   );
 }
 
