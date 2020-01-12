@@ -58,6 +58,6 @@ Button.propTypes = {
   variant: PropTypes.oneOf(["text", "outlined", "contained"]).isRequired
 };
 
-Skew.defaultProps = {
+Button.defaultProps = {
   variant: "text"
 };

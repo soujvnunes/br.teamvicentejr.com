@@ -25,7 +25,7 @@ export default function NavItem(props) {
       onMouseEnter={() => handleHover()}
       onMouseLeave={() => handleHover()}
     >
-      <Icon name={icon} active={iconActive || hover} />
+      <Icon name={icon} variant={iconActive || hover ? "active" : "default"} />
       <Typography variant={"action"} className={"Nav-links-link-label"}>
         {primary}
       </Typography>

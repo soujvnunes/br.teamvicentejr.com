@@ -1,31 +1,50 @@
 // tutorial used: https://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css/
 
 import React from "react";
-import classNames from "classnames";
+import styled, { css } from "styled-components";
+import PropTypes from "prop-types";
+
+const IconSvg = styled.svg`
+  transition: var(--transition);
+  width: calc(var(--spacing) * 3px);
+  height: calc(var(--spacing) * 3px);
+  fill: transparent;
+  stroke: currentColor;
+
+  &:hover {
+    fill: currentColor;
+  }
+
+  ${props =>
+    props.variant === "active" &&
+    css`
+      fill: currentColor;
+    `}
+`;
 
 export default function Icon(props) {
-  let { className, name, active } = props;
-
-  const classes = {
-    root: [
-      classNames(
-        "Icon",
-        { [`Icon-${name}`]: name },
-        { [`Icon--active`]: active },
-        className
-      )
-    ]
-  };
+  let { className, name, variant } = props;
 
   return (
-    <svg
-      className={classes.root}
+    <IconSvg
+      className={className}
+      variant={variant}
       viewBox={"0 0 24 24"}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <title>{name}'s icon</title>
       <use xlinkHref={`#icon_${name}`} />
-    </svg>
+    </IconSvg>
   );
 }
+
+Icon.propTypes = {
+  className: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(["default", "active"]).isRequired
+};
+
+Icon.defaultProps = {
+  variant: "default"
+};
