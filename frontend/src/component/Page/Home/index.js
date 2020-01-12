@@ -57,7 +57,10 @@ export default props => {
       />
       <Section className={"home-events"}>
         <div className={"home-events-filter"}>
-          <Typography subject className={"home-events-filter-title"}>
+          <Typography
+            variant={"subtitle"}
+            className={"home-events-filter-title"}
+          >
             Eventos
           </Typography>
           <Select
@@ -86,7 +89,9 @@ export default props => {
                     icon={"add"}
                     className={"home-events-list-item"}
                   >
-                    <Typography paragraph>{data.description}</Typography>
+                    <Typography variant={"paragraph"}>
+                      {data.description}
+                    </Typography>
                     <div>
                       {data.day && (
                         <Chip icon={"calendar"} primary={data.day} />
@@ -104,7 +109,9 @@ export default props => {
               })}
             </>
           ) : (
-            <Typography paragraph>Nenhum evento encontrado.</Typography>
+            <Typography variant={"paragraph"}>
+              Nenhum evento encontrado.
+            </Typography>
           )}
         </LineSet>
       </Section>

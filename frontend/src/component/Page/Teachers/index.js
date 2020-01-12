@@ -31,7 +31,7 @@ export default props => {
               <Wrapper className={"teachers-carousel-item-info"}>
                 {data.name && (
                   <Typography
-                    title
+                    variant={"title"}
                     className={"teachers-carousel-item-info-title"}
                   >
                     {data.name}
@@ -44,7 +44,6 @@ export default props => {
                 </div>
                 {data.description && (
                   <Typography
-                    paragraph
                     className={"teachers-carousel-item-info-paragraph"}
                   >
                     {data.description}

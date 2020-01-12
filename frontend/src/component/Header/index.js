@@ -23,10 +23,10 @@ export default function Header(props) {
       style={image ? { backgroundImage: `url(${image})` } : null}
     >
       <Wrapper className={"Header-wrapper"}>
-        <Typography title className={"Header-title"}>
+        <Typography variant={"title"} className={"Header-title"}>
           {title}
         </Typography>
-        <Typography subject className={"Header-subject"}>
+        <Typography variant={"subtitle"} className={"Header-subject"}>
           {subject}
         </Typography>
       </Wrapper>

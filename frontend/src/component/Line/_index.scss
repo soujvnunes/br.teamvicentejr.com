@@ -3,8 +3,8 @@
     display: flex;
     width: 100%;
     @include transition(padding);
-    height: $spacing * 6;
     @extend %position-relative;
+    align-items: center;
 
     &-info {
       flex: auto;

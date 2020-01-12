@@ -1,34 +1,92 @@
 import React from "react";
-import classNames from "classnames";
+import PropTypes from "prop-types";
+import styled, { css } from "styled-components";
+
+const Label = styled.span`
+  display: block;
+  word-wrap: break-word;
+
+  ${props =>
+    props.variant === "title" &&
+    css`
+      font-family: var(--font-mono);
+      letter-spacing: calc(var(--spacing) * 1px);
+      font-size: calc(var(--spacing) * 5px);
+    `}
+
+  ${props =>
+    (props.variant === "heading" || props.variant === "action") &&
+    css`
+      font-weight: bold;
+      text-transform: uppercase;
+    `}
+  
+  ${props =>
+    props.variant === "subtitle" &&
+    css`
+      font-size: calc(var(--spacing) * 4px);
+    `}
+  
+  ${props =>
+    (props.variant === "subject" || props.variant === "heading") &&
+    css`
+      font-size: calc(var(--spacing) * 2px);
+    `}
+  
+  
+  ${props =>
+    props.variant === "action" &&
+    css`
+      font-size: calc(var(--spacing) * 1.5px);
+    `}
+`;
 
 export default function Typography(props) {
-  let { title, subject, url, paragraph, className, children } = props;
+  let { variant, children } = props;
 
-  const classes = classNames(
-    { [`Typography-title`]: title },
-    { [`Typography-subject`]: subject },
-    { [`Typography-link`]: url },
-    { [`Typography-paragraph`]: paragraph },
-    className
-  );
-
-  if (children) {
-    if (title) return <h1 className={classes}>{children}</h1>;
-    if (subject)
-      if (url)
-        return (
-          <a
-            href={url}
-            className={classes}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {children}
-          </a>
-        );
-      else return <h5 className={classes}>{children}</h5>;
-    if (paragraph) return <p className={classes}>{children}</p>;
-  } else {
-    return null;
-  }
+  if (variant === "title")
+    return (
+      <Label as={"h1"} variant={variant}>
+        {children}
+      </Label>
+    );
+  else if (variant === "subtitle")
+    return (
+      <Label as={"h3"} variant={variant}>
+        {children}
+      </Label>
+    );
+  else if (variant === "paragraph")
+    return (
+      <Label as={"p"} variant={variant}>
+        {children}
+      </Label>
+    );
+  else if (variant === "heading")
+    return (
+      <Label as={"h5"} variant={variant}>
+        {children}
+      </Label>
+    );
+  else if (variant === "subject")
+    return <Label variant={variant}>{children}</Label>;
+  else if (variant === "action")
+    return <Label variant={variant}>{children}</Label>;
 }
+
+Typography.propTypes = {
+  children: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  variant: PropTypes.oneOf([
+    "title",
+    "subtitle",
+    "paragraph",
+    "heading",
+    "subject",
+    "action"
+  ]).isRequired
+};
+
+Typography.defaultProps = {
+  variant: "paragraph"
+};

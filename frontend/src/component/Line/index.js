@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import Skew from "../Skew";
 import Button from "../Button";
+import Typography from "../Typography";
 
 export default function Line(props) {
   const [state, setState] = useState({
@@ -31,15 +32,17 @@ export default function Line(props) {
     <li className={root}>
       <div className={header}>
         <div className={"Line-header-info"}>
-          <span className={"Line-header-info-title"}>{primary}</span>
-          <span className={"Line-header-info-secondary"}>{secondary}</span>
+          <Typography variant={"heading"}>{primary}</Typography>
+          <Typography variant={"subject"}>{secondary}</Typography>
         </div>
         <Skew variant={"outlined"} />
         <Button
+          skew={false}
           className={"Line-header-button"}
           type={"large"}
           icon={expand ? "remove" : "add"}
           onClick={handleExpand}
+          variant={"text"}
         />
       </div>
       <div className={content}>{children}</div>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { InputBase } from "../../util/InputBase";
 import Icon from "../Icon";
 import Skew from "../Skew";
-import as from "../../util/as";
+import As from "../../util/As";
 
 const Root = styled.button`
   ${InputBase};
@@ -37,7 +37,7 @@ export default function Button(props) {
       onClick={onClick}
       className={className}
       href={href}
-      {...as("a")}
+      {...As("a")}
     >
       {icon && <IconStyled name={icon} />}
       {label && <Label>{label}</Label>}

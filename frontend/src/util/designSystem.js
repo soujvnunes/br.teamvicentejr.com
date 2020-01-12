@@ -2,12 +2,13 @@ import { css } from "styled-components";
 
 export const DesignSystem = css`
   :root {
-    --font-system: azo-sans-web, VLNL-Decks-W00-Bold;
-    --font-sans: var(--font-system, azo-sans-web), -apple-system,
-      BlinkMacSystemFont, Helvetica Neue, Helvetica, Roboto, sans-serif;
+    --font-system-primary: azo-sans-web;
+    --font-system-secondary: VLNL-Decks-W00-Bold;
+    --font-sans: var(--font-system-primary), -apple-system, BlinkMacSystemFont,
+      Helvetica Neue, Helvetica, Roboto, sans-serif;
     --font-serif: Georgia, "Times New Roman", Times, serif;
-    --font-mono: var(--font-system, VLNL-Decks-W00-Bold), SFMono-Regular, Menlo,
-      Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-mono: var(--font-system-secondary), SFMono-Regular, Menlo, Monaco,
+      Consolas, "Liberation Mono", "Courier New", monospace;
 
     --transition-duration: 340ms;
     --transition-timing-function: cubic-bezier(0.75, 0.02, 0.25, 1);

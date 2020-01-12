@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import Typography from "../Typography";
 import PropTypes from "prop-types";
-import as from "../../util/as";
+import As from "../../util/As";
 
 const Root = styled.article`
   border: var(--border);
@@ -45,10 +45,10 @@ export default function Card(props) {
   return (
     <Root>
       <CardHeader>
-        <Typography subject>{primary}</Typography>
-        <span>{secondary}</span>
+        <Typography variant={"heading"}>{primary}</Typography>
+        <Typography variant={"subject"}>{secondary}</Typography>
       </CardHeader>
-      <CardContent href={href} {...as("a")} image={image} title={title}>
+      <CardContent href={href} {...As("a")} image={image} title={title}>
         {children}
       </CardContent>
       {actions && <CardAction>{actions}</CardAction>}

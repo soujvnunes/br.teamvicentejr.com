@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Icon from "../Icon";
+import Typography from "../Typography";
 
 export default function NavItem(props) {
   const [state, setState] = useState({
@@ -25,7 +26,9 @@ export default function NavItem(props) {
       onMouseLeave={() => handleHover()}
     >
       <Icon name={icon} active={iconActive || hover} />
-      <span className={"Nav-links-link-label"}>{primary}</span>
+      <Typography variant={"action"} className={"Nav-links-link-label"}>
+        {primary}
+      </Typography>
     </NavLink>
   );
 }
