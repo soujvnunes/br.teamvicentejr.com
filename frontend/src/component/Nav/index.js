@@ -26,16 +26,22 @@ export default props => {
         </a>
         <aside className={"Nav-aside"}>
           <Button
+            skew={false}
+            variant={"text"}
             icon={"instagram"}
             href={"https://instagr.am/vicentejrteambrasil"}
             className={"Nav-aside-link Nav-link"}
           />
           <Button
+            skew={false}
+            variant={"text"}
             icon={"phone"}
             href={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
             className={"Nav-aside-link Nav-link"}
           />
           <Button
+            skew={false}
+            variant={"text"}
             icon={"youtube"}
             href={"https://youtube.com"}
             className={"Nav-aside-link Nav-link"}

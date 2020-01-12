@@ -13,7 +13,7 @@ const Root = styled.div`
   border-radius: var(--radius);
 
   ${props =>
-    props.variant === true &&
+    props.variant === "text" &&
     css`
       opacity: 0;
       background-color: currentColor;
@@ -51,7 +51,9 @@ const Root = styled.div`
   ${props =>
     props.variant === "underlined" &&
     css`
-      border-bottom: var(--border);
+      background-color: currentColor;
+      height: calc(var(--spacing) * 0.25px);
+      top: auto;
     `}
 `;
 
@@ -62,9 +64,5 @@ export default function Skew(props) {
 
 Skew.propTypes = {
   className: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-  variant: PropTypes.oneOf([true, "outlined", "contained", "underlined"])
-};
-
-Skew.defaultProps = {
-  variant: true
+  variant: PropTypes.oneOf(["text", "outlined", "contained", "underlined"])
 };

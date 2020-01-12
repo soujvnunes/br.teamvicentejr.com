@@ -29,7 +29,7 @@ const Label = styled.span`
 `;
 
 export default function Button(props) {
-  let { icon, id, label, onClick, variant, className, href } = props;
+  let { icon, id, label, onClick, variant, className, href, skew } = props;
 
   return (
     <Root
@@ -41,7 +41,7 @@ export default function Button(props) {
     >
       {icon && <IconStyled name={icon} />}
       {label && <Label>{label}</Label>}
-      <Skew variant={variant} />
+      {skew && <Skew variant={variant} />}
     </Root>
   );
 }
@@ -53,6 +53,10 @@ Button.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   href: PropTypes.string,
-  skew: PropTypes.bool,
-  variant: PropTypes.oneOf([true, "outlined", "contained"])
+  skew: PropTypes.bool.isRequired,
+  variant: PropTypes.oneOf(["text", "outlined", "contained"]).isRequired
+};
+
+Skew.defaultProps = {
+  variant: "text"
 };

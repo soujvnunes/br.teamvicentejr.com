@@ -33,11 +33,11 @@ export const DesignSystem = css`
     --color-black: #000;
     --color-white: #fff;
 
-    --border-width: 2px;
+    --border-width: calc(var(--spacing) * 0.25px);
     --border-style: solid;
     --border-color: currentColor;
     --border: var(--border-width) var(--border-style) var(--border-color);
     --radius: calc(var(--spacing) * 1px);
-    --skew-X: -16deg;
+    --skew-X: calc(var(--spacing) * -2deg);
   }
 `;
