@@ -26,7 +26,7 @@ export default function Typography(props) {
             {children}
           </a>
         );
-      else return <h6 className={classes}>{children}</h6>;
+      else return <h5 className={classes}>{children}</h5>;
     if (paragraph) return <p className={classes}>{children}</p>;
   } else {
     return null;

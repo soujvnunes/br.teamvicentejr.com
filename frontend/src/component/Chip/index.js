@@ -15,7 +15,7 @@ export default function Chip(props) {
 
   return (
     <div className={root}>
-      <Skew className={"Chip-skew"} outline={"bottom"} />
+      <Skew className={"Chip-skew"} variant={"outlined"} />
       <div className={content}>
         {icon && <Icon name={icon} className={"Chip-content-icon"} />}
         <span className={"Chip-content-primary"}>{primary}</span>

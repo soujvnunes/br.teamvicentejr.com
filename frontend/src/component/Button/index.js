@@ -1,25 +1,26 @@
 import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { InputBase } from "../../util/InputBase";
 import Icon from "../Icon";
 import Skew from "../Skew";
-import styled from "styled-components";
+import as from "../../util/as";
 
 const Root = styled.button`
-  position: relative;
+  ${InputBase};
   display: inline-flex;
+  position: relative;
   align-items: center;
   justify-content: center;
-  height: ${props => props.theme.spacing(6)};
-  min-width: ${props => props.theme.spacing(6)};
-  padding: 0 ${props => props.theme.spacing(2)};
-  color: ${props => props.theme.color("text")};
-
-  &:hover {
-    color: ${props => props.theme.color("text.light")};
-  }
+  height: calc(var(--spacing) * 6px);
+  min-width: calc(var(--spacing) * 6px);
+  padding: 0 calc(var(--spacing) * 2px);
 `;
 
 const IconStyled = styled(Icon)`
-  margin-right: ${props => props.theme.spacing(2)};
+  & ~ span {
+    margin-left: calc(var(--spacing) * 2px);
+  }
 `;
 
 const Label = styled.span`
@@ -28,14 +29,30 @@ const Label = styled.span`
 `;
 
 export default function Button(props) {
-  let { icon, id, label, onClick, skew } = props;
-  let { hover } = state;
+  let { icon, id, label, onClick, variant, className, href } = props;
 
   return (
-    <Root id={id} onClick={onClick}>
-      {icon && <IconStyled name={icon} active={hover} />}
+    <Root
+      id={id}
+      onClick={onClick}
+      className={className}
+      href={href}
+      {...as("a")}
+    >
+      {icon && <IconStyled name={icon} />}
       {label && <Label>{label}</Label>}
-      {skew && <Skew variant={"outlined"} />}
+      <Skew variant={variant} />
     </Root>
   );
 }
+
+Button.propTypes = {
+  icon: PropTypes.string,
+  id: PropTypes.string,
+  label: PropTypes.string,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  href: PropTypes.string,
+  skew: PropTypes.bool,
+  variant: PropTypes.oneOf([true, "outlined", "contained"])
+};

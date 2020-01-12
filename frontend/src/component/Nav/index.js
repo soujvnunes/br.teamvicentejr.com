@@ -27,17 +27,17 @@ export default props => {
         <aside className={"Nav-aside"}>
           <Button
             icon={"instagram"}
-            url={"https://instagr.am/vicentejrteambrasil"}
+            href={"https://instagr.am/vicentejrteambrasil"}
             className={"Nav-aside-link Nav-link"}
           />
           <Button
             icon={"phone"}
-            url={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
+            href={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
             className={"Nav-aside-link Nav-link"}
           />
           <Button
             icon={"youtube"}
-            url={"https://youtube.com"}
+            href={"https://youtube.com"}
             className={"Nav-aside-link Nav-link"}
           />
         </aside>

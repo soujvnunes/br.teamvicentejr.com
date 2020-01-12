@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 import reboot from "styled-reboot";
-import { theme } from "./theme";
+import reset from "styled-reset";
+import normalize from "styled-normalize";
+import { DesignSystem } from "./designSystem";
 import eot from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.eot";
 import woff2 from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.woff2";
 import woff from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.woff";
@@ -9,47 +11,29 @@ import svg from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.svg";
 
 const options = {
   black: "0, 0, 0",
-  fontFamilyBase: theme.get("type.fontFamilyBase"),
-  fontFamilyMonospace: theme.get("type.fontFamilyHeadings"),
-  fontSizeBase: "1rem",
-  fontWeightBase: 400,
-  lineHeightBase: 1.5,
-  bodyColor: theme.get("colors.colorPalette.text.base"),
-  bodyBg: theme.get("colors.colorPalette.background.base"),
-  headingsMarginBottom: "0.5rem",
-  paragraphMarginBottom: "1rem",
-  labelMarginBottom: "0.5rem",
-  dtFontWeight: 700,
+  fontFamilyBase: "var(--font-sans)",
+  fontFamilyMonospace: "var(--font-mono)",
+  bodyColor: "var(--color-tertiary-base)",
+  bodyBg: "var(--color-black)",
   linkColor: "inherit",
-  linkDecoration: "none",
+  linkDecoration: "inherit",
   linkHoverColor: "inherit",
-  linkHoverDecoration: "underline",
-  tableCellPadding: "0.75rem",
-  textMuted: "#6c757d"
+  linkHoverDecoration: "inherit"
 };
 
 const rebootCss = reboot(options);
 
 const GlobalStyle = createGlobalStyle`
-  ${rebootCss}
-  
   @font-face {
     font-family: "VLNL-Decks-W00-Bold";
-    src: url("${eot}"); /* IE9*/
-    src: url("${eot}?#iefix")
-        format("embedded-opentype"),
-      /* IE6-IE8 */ url("${woff2}")
-        format("woff2"),
-      /* chrome、firefox */
-        url("${woff}")
-        format("woff"),
-      /* chrome、firefox */
-        url("${ttf}")
-        format("truetype"),
-      /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-        url("${svg}#VLNL Decks W00 Bold")
-        format("svg"); /* iOS 4.1- */
+    src: url("${eot}");
+    src: url("${eot}?#iefix") format("embedded-opentype"), url("${woff2}") format("woff2"), url("${woff}") format("woff"), url("${ttf}") format("truetype"), url("${svg}#VLNL Decks W00 Bold") format("svg"); /* iOS 4.1- */
   }
+
+  ${reset}
+  ${normalize}
+  ${rebootCss}
+  ${DesignSystem}
 `;
 
 export default GlobalStyle;

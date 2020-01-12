@@ -1,6 +1,6 @@
 .Typography {
   &-title {
-    font-family: "VLNL-Decks-W00-Bold", sans-serif;
+    font-family: "VLNL-Decks-W00-Bold", monospace;
     font-size: $spacing-unit * 0.4rem;
     color: $tertiary-color--light;
     letter-spacing: $spacing-unit * 1px;
@@ -9,8 +9,6 @@
   &-subject {
     text-transform: uppercase;
     font-weight: 600;
-    @include transition(color);
-    font-size: $spacing-unit * 0.12rem;
   }
 
   &-paragraph {

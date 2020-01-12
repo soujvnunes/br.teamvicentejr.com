@@ -4,11 +4,11 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.6",
-    "design-system-utils": "^1.5.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.3",
     "node-sass": "^4.13.0",
     "prettier": "^1.19.1",
+    "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-responsive": "^8.0.1",
@@ -17,7 +17,9 @@
     "react-scripts": "^3.3.0",
     "styled-breakpoints": "^7.2.0",
     "styled-components": "^5.0.0-rc.3",
-    "styled-reboot": "^4.0.3"
+    "styled-normalize": "^8.0.6",
+    "styled-reboot": "^4.0.3",
+    "styled-reset": "^4.0.9"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [

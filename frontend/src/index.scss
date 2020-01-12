@@ -4,11 +4,9 @@
 @import "lib/variables";
 @import "lib/placeholder";
 @import "lib/mixin";
-@import "lib/config";
 
 // components
 @import "component/Icon/index";
-@import "component/Skew/index";
 @import "component/Wrapper/index";
 @import "component/Nav/index";
 @import "component/Header/index";
@@ -17,8 +15,6 @@
 @import "component/LineSet/index";
 @import "component/Line/index";
 @import "component/Main/index";
-@import "component/InputBase/index";
-@import "component/Card/index";
 @import "component/Panel/index";
 @import "component/History/index";
 @import "component/Section/index";
