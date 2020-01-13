@@ -28,16 +28,13 @@ const HomeHeader = styled(Header)`
 const HomeEventsFilter = styled(Wrapper)`
   z-index: 1;
   display: flex;
-  flex-direction: row;
   align-items: center;
   position: sticky;
   top: calc(var(--spacing) * 14px);
-    rgba(var(--color-tertiary-base), 1);
   margin-top: calc(var(--spacing) * 3px);
 
   ${down("md")} {
     top: calc(var(--spacing) * 11px);
-    max-height: calc(var(--spacing) * 5px)
   }
 `;
 
@@ -51,7 +48,7 @@ const HomeEventsFilterSkew = styled(Skew)`
 `;
 
 const HomeEventsFilterSelect = styled(Select)`
-  margin: 0 calc(var(--spacing) * 2px);
+  margin: 0 calc(var(--spacing) * 2px) 0 0;
 `;
 
 const HomeEventsListItem = styled(Line)`

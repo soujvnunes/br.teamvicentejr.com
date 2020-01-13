@@ -7,7 +7,6 @@ const MainRoot = styled.main`
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
 
   ${down("md")} {
     margin-bottom: calc(var(--spacing) * 9px);

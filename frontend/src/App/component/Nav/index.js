@@ -6,19 +6,20 @@ import Mark from "../../asset/mark.png";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
 import { NavLinkDefault } from "../../util/NavLinkDefault";
+import Wrapper from "../Wrapper";
 
-const NavRoot = styled.nav`
+const NavRoot = styled(Wrapper)`
+  z-index: 1;
   display: flex;
   align-items: center;
   position: fixed;
   justify-content: space-between;
   flex-direction: row;
   height: calc(var(--spacing) * 6px);
-  max-width: calc(var(--viewport) * 1px);
-  width: 100%;
-  margin: calc(var(--spacing) * 4px);
-  padding: 0 calc(var(--spacing) * 1px);
+  padding: 0 calc(var(--spacing) * 2px);
   align-self: center;
+  width: 100%;
+  margin: calc(var(--spacing) * 4px) 0;
 
   ${down("md")} {
     width: 100vw;
@@ -34,7 +35,7 @@ const NavSkew = styled(Skew)`
   color: rgba(var(--color-primary-base), 1);
 `;
 
-const NavLinks = styled.div`
+const NavLinks = styled.nav`
   position: relative;
   display: flex;
   flex-direction: row;
@@ -99,16 +100,16 @@ const NavLogo = styled.a`
   }
 `;
 
-const NavAside = styled.aside`
+const NavSocial = styled.aside`
   display: flex;
   flex-direction: row;
 `;
 
-const NavAsideButton = styled(Button)`
+const NavSocialButton = styled(Button)`
   ${NavLinkDefault};
 
   &:first-child {
-    margin-left: calc(var(--spacing) * 35px);
+    margin-left: calc(var(--spacing) * 27px);
 
     ${down("md")} {
       margin-left: 0;
@@ -116,7 +117,7 @@ const NavAsideButton = styled(Button)`
   }
 `;
 
-const NavSocial = styled(NavRoot)`
+const NavAside = styled(NavRoot)`
   top: 0;
   left: 0;
   background-color: rgba(var(--color-black), 0.75) !important;
@@ -126,50 +127,74 @@ export default function Nav(props) {
   const isTablet = useMediaQuery({ maxDeviceWidth: 960 });
   let { children, indicator } = props;
 
-  function Body() {
+  if (isTablet) {
     return (
       <>
+        <NavAside>
+          <NavLogo href={"/"}>
+            <img src={Mark} alt={"marca da aplicação"} />
+          </NavLogo>
+          <NavSocial>
+            <NavSocialButton
+              skew={false}
+              variant={"text"}
+              icon={"instagram"}
+              href={"https://instagr.am/vicentejrteambrasil"}
+            />
+            <NavSocialButton
+              skew={false}
+              variant={"text"}
+              icon={"phone"}
+              href={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
+            />
+            <NavSocialButton
+              skew={false}
+              variant={"text"}
+              icon={"youtube"}
+              href={"https://youtube.com"}
+            />
+          </NavSocial>
+        </NavAside>
+        <NavRoot>
+          <NavLinks>
+            <NavLinksRunner variant={"contained"} indicator={indicator} />
+            {children}
+          </NavLinks>
+        </NavRoot>
+      </>
+    );
+  } else {
+    return (
+      <NavRoot>
+        <NavSkew variant={"contained"} />
+        <NavLinks>
+          <NavLinksRunner variant={"contained"} indicator={indicator} />
+          {children}
+        </NavLinks>
         <NavLogo href={"/"}>
           <img src={Mark} alt={"marca da aplicação"} />
         </NavLogo>
-        <NavAside>
-          <NavAsideButton
+        <NavSocial>
+          <NavSocialButton
             skew={false}
             variant={"text"}
             icon={"instagram"}
             href={"https://instagr.am/vicentejrteambrasil"}
           />
-          <NavAsideButton
+          <NavSocialButton
             skew={false}
             variant={"text"}
             icon={"phone"}
             href={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
           />
-          <NavAsideButton
+          <NavSocialButton
             skew={false}
             variant={"text"}
             icon={"youtube"}
             href={"https://youtube.com"}
           />
-        </NavAside>
-      </>
+        </NavSocial>
+      </NavRoot>
     );
   }
-
-  return (
-    <NavRoot>
-      {!isTablet && <NavSkew variant={"contained"} />}
-      <NavLinks>
-        <NavLinksRunner variant={"contained"} indicator={indicator} />
-        {children}
-      </NavLinks>
-      {isTablet ? (
-        <NavSocial>
-          <Body />
-        </NavSocial>
-      ) : (
-        <Body />
-      )}
-    </NavRoot>
-  );
 }

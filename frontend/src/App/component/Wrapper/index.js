@@ -9,7 +9,7 @@ const WrapperRoot = styled.div`
 `;
 
 export default function Wrapper(props) {
-  let { children, className } = props;
+  let { children } = props;
 
-  return <WrapperRoot className={className}>{children}</WrapperRoot>;
+  return <WrapperRoot {...props}>{children}</WrapperRoot>;
 }
