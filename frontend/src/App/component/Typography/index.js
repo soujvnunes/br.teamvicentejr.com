@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
+import As from "../../util/As";
 
 const Label = styled.span`
   display: block;
@@ -64,42 +65,22 @@ const Label = styled.span`
 export default function Typography(props) {
   let { variant, children, className } = props;
 
-  if (variant === "title")
-    return (
-      <Label className={className} as={"h1"} variant={variant}>
-        {children}
-      </Label>
-    );
-  else if (variant === "subtitle")
-    return (
-      <Label className={className} as={"h3"} variant={variant}>
-        {children}
-      </Label>
-    );
-  else if (variant === "paragraph")
-    return (
-      <Label className={className} as={"p"} variant={variant}>
-        {children}
-      </Label>
-    );
-  else if (variant === "heading")
-    return (
-      <Label className={className} as={"h5"} variant={variant}>
-        {children}
-      </Label>
-    );
-  else if (variant === "subject")
-    return (
-      <Label className={className} variant={variant}>
-        {children}
-      </Label>
-    );
-  else if (variant === "action")
-    return (
-      <Label className={className} variant={variant}>
-        {children}
-      </Label>
-    );
+  return (
+    <Label
+      className={className}
+      as={"h1"}
+      variant={variant}
+      {...As(
+        `${(variant === "title" && "h1") ||
+          (variant === "subtitle" && "h3") ||
+          (variant === "heading" && "h5") ||
+          (variant === "paragraph" && "p") ||
+          "span"}`
+      )}
+    >
+      {children}
+    </Label>
+  );
 }
 
 Typography.propTypes = {
