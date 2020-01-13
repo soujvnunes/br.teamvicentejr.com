@@ -38,7 +38,7 @@ export const DesignSystem = css`
     --border-style: solid;
     --border-color: currentColor;
     --border: var(--border-width) var(--border-style) var(--border-color);
-    --radius: calc(var(--spacing) * 1px);
+    --radius: calc(var(--spacing) * 0.5px);
     --skew-X: calc(var(--spacing) * -2deg);
   }
 `;
