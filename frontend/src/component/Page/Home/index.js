@@ -37,6 +37,7 @@ const HomeEventsFilter = styled(Wrapper)`
 
   ${down("md")} {
     top: calc(var(--spacing) * 11px);
+    max-height: calc(var(--spacing) * 5px)
   }
 `;
 
@@ -55,6 +56,10 @@ const HomeEventsFilterSelect = styled(Select)`
 
 const HomeEventsListItem = styled(Line)`
   margin: calc(var(--spacing) * 1px) 0;
+`;
+
+const HomeEventsListItemParagraph = styled(Typography)`
+  margin-top: 1rem;
 `;
 
 export default props => {
@@ -130,9 +135,9 @@ export default props => {
                     secondary={data.local}
                     icon={"add"}
                   >
-                    <Typography variant={"paragraph"}>
+                    <HomeEventsListItemParagraph variant={"paragraph"}>
                       {data.description}
-                    </Typography>
+                    </HomeEventsListItemParagraph>
                     <div>
                       {data.day && (
                         <Chip icon={"calendar"} primary={data.day} />

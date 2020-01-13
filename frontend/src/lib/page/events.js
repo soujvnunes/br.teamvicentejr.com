@@ -10,12 +10,5 @@ export const events = [
     time: "08:30 as 11:30",
     teacher: "Kleyson",
     price: "R$ 30,00"
-  },
-  {
-    month: 3,
-    year: 2020,
-    title: "março",
-    local: "local",
-    description: "descrição"
   }
 ];
