@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 
 export const NavLinkDefault = css`
-  color: var(--color-tertiary-light);
+  color: rgba(var(--color-tertiary-light), 1);
   opacity: 1;
   transition: var(--transition);
 
@@ -10,6 +10,6 @@ export const NavLinkDefault = css`
   }
 
   &.active {
-    color: var(--color-secondary-base);
+    color: rgba(var(--color-secondary-base), 1);
   }
 `;

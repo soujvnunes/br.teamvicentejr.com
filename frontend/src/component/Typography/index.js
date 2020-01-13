@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
+import { down } from "styled-breakpoints";
 
 const Label = styled.span`
   display: block;
@@ -13,6 +14,10 @@ const Label = styled.span`
       letter-spacing: calc(var(--spacing) * 1px);
       font-size: calc(var(--spacing) * 5px);
       color: rgba(var(--color-tertiary-light), 1);
+
+      ${down("md")} {
+        font-size: calc(var(--spacing) * 2px);
+      }
     `}
 
   ${props =>
@@ -20,18 +25,29 @@ const Label = styled.span`
     css`
       font-weight: bold;
       text-transform: uppercase;
+
+      ${down("md")} {
+        font-size: calc(var(--spacing) * 1.75px);
+      }
     `}
   
   ${props =>
     props.variant === "subtitle" &&
     css`
       font-size: calc(var(--spacing) * 4px);
+
+      ${down("md")} {
+        font-size: calc(var(--spacing) * 2px);
+      }
     `}
   
   ${props =>
     (props.variant === "subject" || props.variant === "heading") &&
     css`
       font-size: calc(var(--spacing) * 2px);
+      ${down("md")} {
+        font-size: calc(var(--spacing) * 1.5px);
+      }
     `}
   
   
@@ -39,6 +55,9 @@ const Label = styled.span`
     props.variant === "action" &&
     css`
       font-size: calc(var(--spacing) * 1.5px);
+      ${down("md")} {
+        font-size: calc(var(--spacing) * 1.25px);
+      }
     `}
 `;
 

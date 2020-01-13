@@ -18,10 +18,10 @@ const HistoryImage = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-position-y: calc(var(--spacing) * -6px);
   min-width: 50%;
   min-height: calc(var(--spacing) * 25px);
   background-image: url(${props => props.image});
+  border-radius: var(--radius);
 `;
 
 const HistoryText = styled(Typography)`

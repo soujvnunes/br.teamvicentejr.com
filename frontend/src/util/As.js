@@ -1,7 +1,12 @@
 export default function As(element) {
-  return {
-    as: `${element}`,
-    target: `${element === "a" ? "_blank" : null}`,
-    rel: `${element === "a" ? "noopener noreferrer" : null}`
-  };
+  if (element === "a")
+    return {
+      as: `${element}`,
+      target: "_blank",
+      rel: "noopener noreferrer"
+    };
+  else
+    return {
+      as: `${element}`
+    };
 }

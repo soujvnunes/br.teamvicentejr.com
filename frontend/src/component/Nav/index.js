@@ -117,7 +117,7 @@ const NavAsideButton = styled(Button)`
 const NavSocial = styled(NavRoot)`
   top: 0;
   left: 0;
-  background-color: rgba(var(--color-black), 0.25) !important;
+  background-color: rgba(var(--color-black), 0.75) !important;
 `;
 
 export default function Nav(props) {

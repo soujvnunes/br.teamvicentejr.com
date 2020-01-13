@@ -28,10 +28,6 @@ const LineHeaderInfoHeading = styled(Typography)`
   margin-left: calc(var(--spacing) * 1px);
 `;
 
-const LineHeaderInfoSubject = styled(Typography)`
-  margin-top: 1rem;
-`;
-
 const LineHeaderButton = styled(Button)`
   margin-right: calc(var(--spacing) * 2px);
 `;
@@ -67,9 +63,7 @@ export default function Line(props) {
           <LineHeaderInfoHeading variant={"heading"}>
             {primary}
           </LineHeaderInfoHeading>
-          <LineHeaderInfoSubject variant={"subject"}>
-            {secondary}
-          </LineHeaderInfoSubject>
+          <Typography variant={"subject"}>{secondary}</Typography>
         </LineHeaderInfo>
         <Skew variant={"outlined"} />
         <LineHeaderButton

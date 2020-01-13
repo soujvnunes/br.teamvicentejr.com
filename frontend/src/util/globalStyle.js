@@ -3,18 +3,18 @@ import reboot from "styled-reboot";
 import reset from "styled-reset";
 import normalize from "styled-normalize";
 import { DesignSystem } from "./designSystem";
-import eot from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.eot";
-import woff2 from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.woff2";
-import woff from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.woff";
-import ttf from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.ttf";
-import svg from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.svg";
+import eot from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.eot";
+import woff2 from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.woff2";
+import woff from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.woff";
+import ttf from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.ttf";
+import svg from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.svg";
 
 const options = {
   black: "0, 0, 0",
   fontFamilyBase: "var(--font-sans)",
   fontFamilyMonospace: "var(--font-mono)",
   bodyColor: "rgba(var(--color-tertiary-base), 1)",
-  bodyBg: "rgba(var(--color-black), 1)",
+  bodyBg: "rgba(var(--color-secondary-base), 1)",
   linkColor: "inherit",
   linkDecoration: "inherit",
   linkHoverColor: "inherit",

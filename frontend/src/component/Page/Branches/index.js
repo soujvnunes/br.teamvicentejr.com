@@ -1,5 +1,5 @@
 import React from "react";
-import { data } from "../../../lib/branches";
+import { data } from "../../../lib/page/branches";
 import Main from "../../../component/Main";
 import Card from "../../Card";
 import Header from "../../Header";
@@ -15,7 +15,7 @@ export default props => {
         }
       />
       <Section>
-        {data.br.map((data, i) => {
+        {data.map((data, i) => {
           return (
             <Card
               key={i}

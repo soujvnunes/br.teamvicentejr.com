@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
-import { data } from "../../../lib/teachers";
+import { data } from "../../../lib/page/teachers";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Main from "../../Main";
 import Typography from "../../Typography";
@@ -8,9 +8,9 @@ import Wrapper from "../../Wrapper";
 import Chip from "../../Chip";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
-import "./_index.scss";
 
 const TeachersRoot = styled(Main)`
+  background-color: rgba(var(--color-black), 1);
   padding-top: calc(var(--spacing) * 14px);
   margin-bottom: 0;
 
@@ -21,6 +21,45 @@ const TeachersRoot = styled(Main)`
 
 const TeachersCarousel = styled(Carousel)`
   width: 100%;
+
+  .carousel {
+    &.carousel-slider {
+      & .slide {
+        background: transparent;
+      }
+    }
+
+    & .control-prev {
+      &.control-arrow {
+        left: calc(var(--spacing) * 1.5px);
+      }
+    }
+
+    & .control-next {
+      &.control-arrow {
+        right: calc(var(--spacing) * 1.5px);
+      }
+    }
+
+    & .control-dots {
+      position: inherit;
+      bottom: inherit;
+
+      & .dot {
+        outline: 0;
+        box-shadow: none;
+        transition: var(--transition);
+        background-color: rgba(var(--color-tertiary-base), 1);
+        opacity: 1;
+        transform: skewX(var(--skew-X)) skewY(0deg);
+        border-radius: calc(var(--spacing) * 0.25px);
+
+        &.selected {
+          background-color: rgba(var(--color-primary-base), 1);
+        }
+      }
+    }
+  }
 `;
 
 const TeachersCarouselItem = styled.div`
@@ -70,19 +109,15 @@ const TeachersCarouselItemInfo = styled(Wrapper)`
 
 export default props => {
   return (
-    <TeachersRoot className={"teachers"}>
-      <TeachersCarousel
-        showThumbs={false}
-        showStatus={false}
-        className={"teachers-carousel"}
-      >
-        {data.br.map((data, i) => {
+    <TeachersRoot>
+      <TeachersCarousel showThumbs={false} showStatus={false}>
+        {data.map((data, i) => {
           return (
             <TeachersCarouselItem key={i}>
               <TeachersCarouselItemImage src={data.url} alt={data.name} />
               <TeachersCarouselItemInfo>
                 {data.name && (
-                  <Typography variant={"heading"}>{data.name}</Typography>
+                  <Typography variant={"title"}>{data.name}</Typography>
                 )}
                 <div>
                   {data.titles.map((title, i) => (

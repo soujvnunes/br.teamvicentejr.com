@@ -7,15 +7,13 @@ import Header from "../../Header";
 import Section from "../../Section";
 import Select from "../../Select";
 import { data } from "../../../lib/data";
-import { events } from "../../../lib/events";
-import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
+import { events } from "../../../lib/page/events";
+import VicenteJuniorImage from "../../../asset/page/home/vicenteJunior.png";
 import Chip from "../../Chip";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
-
-const HomeRoot = styled(Main)`
-  background-color: rgba(var(--color-secondary-base), 1);
-`;
+import Skew from "../../Skew";
+import Wrapper from "../../Wrapper";
 
 const HomeHeader = styled(Header)`
   background-size: 40%;
@@ -27,26 +25,32 @@ const HomeHeader = styled(Header)`
   }
 `;
 
-const HomeEventsFilter = styled.div`
+const HomeEventsFilter = styled(Wrapper)`
+  z-index: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: sticky;
+  top: calc(var(--spacing) * 14px);
+    rgba(var(--color-tertiary-base), 1);
+  margin-top: calc(var(--spacing) * 3px);
 
   ${down("md")} {
-    flex-direction: column;
+    top: calc(var(--spacing) * 11px);
   }
 `;
 
 const HomeEventsFilterTitle = styled(Typography)`
-  flex: 1;
+  position: relative;
+  margin: 0 calc(var(--spacing) * 2px);
+`;
+
+const HomeEventsFilterSkew = styled(Skew)`
+  color: rgba(var(--color-tertiary-dark));
 `;
 
 const HomeEventsFilterSelect = styled(Select)`
-  margin: calc(var(--spacing) * 1px);
-
-  ${down("md")} {
-    width: 100%;
-  }
+  margin: 0 calc(var(--spacing) * 2px);
 `;
 
 const HomeEventsListItem = styled(Line)`
@@ -90,30 +94,31 @@ export default props => {
   }
 
   return (
-    <HomeRoot>
+    <Main>
       <HomeHeader
         title={"Vicente Júnior"}
         subject={"Brazilian Jiu-jítsu"}
         image={VicenteJuniorImage}
       />
-      <Section className={"home-events"}>
-        <HomeEventsFilter>
-          <HomeEventsFilterTitle variant={"subtitle"}>
-            Eventos
-          </HomeEventsFilterTitle>
-          <HomeEventsFilterSelect
-            id={"event-filter-byMonth"}
-            option={data.month}
-            onChange={filterMonth}
-            value={month}
-          />
-          <HomeEventsFilterSelect
-            id={"event-filter-byYear"}
-            option={data.year}
-            onChange={filterYear}
-            value={year}
-          />
-        </HomeEventsFilter>
+      <HomeEventsFilter>
+        <HomeEventsFilterSkew variant={"contained"} />
+        <HomeEventsFilterTitle variant={"heading"}>
+          Eventos
+        </HomeEventsFilterTitle>
+        <HomeEventsFilterSelect
+          id={"event-filter-byMonth"}
+          option={data.month}
+          onChange={filterMonth}
+          value={month}
+        />
+        <HomeEventsFilterSelect
+          id={"event-filter-byYear"}
+          option={data.year}
+          onChange={filterYear}
+          value={year}
+        />
+      </HomeEventsFilter>
+      <Section>
         <LineSet>
           {filteredEvents && filteredEvents.length > 0 ? (
             <>
@@ -151,6 +156,6 @@ export default props => {
           )}
         </LineSet>
       </Section>
-    </HomeRoot>
+    </Main>
   );
 };
