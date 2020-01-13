@@ -9,6 +9,14 @@ const HistoryRoot = styled.div`
   flex-direction: row;
   margin: calc(var(--spacing) * 2px) 0;
 
+  &:first-child {
+    margin: 0;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
   ${down("md")} {
     flex-direction: column;
   }
@@ -20,17 +28,17 @@ const HistoryImage = styled.div`
   background-repeat: no-repeat;
   background-position-x: center;
   min-width: 50%;
-  min-height: calc(var(--spacing) * 25px);
+  min-height: calc(var(--spacing) * 43px);
   background-image: url(${props => props.image});
   border-radius: var(--radius);
 `;
 
 const HistoryText = styled(Typography)`
   text-align: justify;
-  margin-left: calc(var(--spacing) * 2px);
+  margin: 0 0 0 calc(var(--spacing) * 2px);
 
   ${down("md")} {
-    margin-left: 0;
+    margin: calc(var(--spacing) * 2px) 0 0 0;
   }
 `;
 
@@ -47,6 +55,6 @@ export default function History(props) {
 
 History.propTypes = {
   image: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   text: PropTypes.string
 };
