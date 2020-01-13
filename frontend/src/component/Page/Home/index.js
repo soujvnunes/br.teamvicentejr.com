@@ -10,6 +10,48 @@ import { data } from "../../../lib/data";
 import { events } from "../../../lib/events";
 import VicenteJuniorImage from "../../../asset/br/teachers/vicenteJunior.png";
 import Chip from "../../Chip";
+import styled from "styled-components";
+import { down } from "styled-breakpoints";
+
+const HomeRoot = styled(Main)`
+  background-color: rgba(var(--color-secondary-base), 1);
+`;
+
+const HomeHeader = styled(Header)`
+  background-size: 40%;
+  background-position-y: calc(var(--spacing) * 14px);
+
+  ${down("md")} {
+    background-size: 100%;
+    background-position-y: calc(var(--spacing) * 10px);
+  }
+`;
+
+const HomeEventsFilter = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  ${down("md")} {
+    flex-direction: column;
+  }
+`;
+
+const HomeEventsFilterTitle = styled(Typography)`
+  flex: 1;
+`;
+
+const HomeEventsFilterSelect = styled(Select)`
+  margin: calc(var(--spacing) * 1px);
+
+  ${down("md")} {
+    width: 100%;
+  }
+`;
+
+const HomeEventsListItem = styled(Line)`
+  margin: calc(var(--spacing) * 1px) 0;
+`;
 
 export default props => {
   let newDate = new Date();
@@ -48,46 +90,40 @@ export default props => {
   }
 
   return (
-    <Main className={"home"}>
-      <Header
+    <HomeRoot>
+      <HomeHeader
         title={"Vicente Júnior"}
         subject={"Brazilian Jiu-jítsu"}
         image={VicenteJuniorImage}
-        className={"home-header"}
       />
       <Section className={"home-events"}>
-        <div className={"home-events-filter"}>
-          <Typography
-            variant={"subtitle"}
-            className={"home-events-filter-title"}
-          >
+        <HomeEventsFilter>
+          <HomeEventsFilterTitle variant={"subtitle"}>
             Eventos
-          </Typography>
-          <Select
+          </HomeEventsFilterTitle>
+          <HomeEventsFilterSelect
             id={"event-filter-byMonth"}
             option={data.month}
             onChange={filterMonth}
             value={month}
           />
-          <Select
+          <HomeEventsFilterSelect
             id={"event-filter-byYear"}
             option={data.year}
             onChange={filterYear}
             value={year}
-            className={"home-events-filter-select--year"}
           />
-        </div>
-        <LineSet className={"home-events-list"}>
+        </HomeEventsFilter>
+        <LineSet>
           {filteredEvents && filteredEvents.length > 0 ? (
             <>
               {filteredEvents.map((data, i) => {
                 return (
-                  <Line
+                  <HomeEventsListItem
                     key={i}
                     primary={data.title}
                     secondary={data.local}
                     icon={"add"}
-                    className={"home-events-list-item"}
                   >
                     <Typography variant={"paragraph"}>
                       {data.description}
@@ -104,7 +140,7 @@ export default props => {
                         <Chip icon={"cents"} primary={data.price} />
                       )}
                     </div>
-                  </Line>
+                  </HomeEventsListItem>
                 );
               })}
             </>
@@ -115,6 +151,6 @@ export default props => {
           )}
         </LineSet>
       </Section>
-    </Main>
+    </HomeRoot>
   );
 };

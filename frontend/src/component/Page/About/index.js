@@ -9,10 +9,15 @@ import Section from "../../Section";
 import Panel from "../../Panel";
 import Typography from "../../Typography";
 import Icon from "../../Icon";
+import styled from "styled-components";
+
+const AboutPanelSocialIcon = styled(Icon)`
+  margin: 0 calc(var(--spacing) * 1px);
+`;
 
 export default props => {
   return (
-    <Main className={"about"}>
+    <Main>
       <Header title={"Sobre"} image={headerImage} />
       <Section>
         {data.br.history.map((data, i) => {
@@ -22,27 +27,15 @@ export default props => {
               image={data.image}
               text={data.text}
               orientation={data.orientation}
-              className={"about-history"}
             />
           );
         })}
       </Section>
-      <Panel
-        image={panelImage}
-        href={"https://www.instagram.com/vicentebjj/"}
-        className={"about-panel"}
-      >
-        <Typography title className={"about-panel-title"}>
-          Acompanhe
-        </Typography>
+      <Panel image={panelImage} href={"https://www.instagram.com/vicentebjj/"}>
+        <Typography variant={"title"}>Acompanhe</Typography>
         <br />
-        <div className={"about-panel-content-text"}>
-          Vicente no{" "}
-          <Icon
-            name={"instagram"}
-            className={"about-panel-content-text-icon"}
-          />{" "}
-          Instagram
+        <div>
+          Vicente no <AboutPanelSocialIcon name={"instagram"} /> Instagram
         </div>
       </Panel>
     </Main>

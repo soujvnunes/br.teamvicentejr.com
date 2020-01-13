@@ -1,61 +1,9 @@
 .teachers {
-  padding-top: $spacing * 14;
-  margin-bottom: 0;
-
-  @include viewport(tablet) {
-    padding-top: $spacing * 9;
-  }
-
   &-carousel {
-    width: 100%;
-
     .carousel {
       &.carousel-slider {
         & .slide {
           background: transparent;
-
-          .teachers-carousel-item {
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            justify-content: center;
-
-            &-info {
-              height: calc(100vh - 150px - 50%);
-              position: absolute;
-              bottom: 0;
-              width: 100%;
-              margin: 0;
-              padding: $spacing * 16 $spacing * 2 0 $spacing * 2;
-              text-align: center;
-              background: -moz-linear-gradient(
-                top,
-                rgba(0, 0, 0, 0) 0%,
-                $common-color--black--light 50%
-              );
-              background: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0) 0%,
-                $common-color--black--light 50%
-              );
-
-              @include viewport(tablet) {
-                height: calc(100vh - 182px - 50%);
-              }
-
-              @include viewport(phone) {
-                padding-top: $spacing * 8;
-              }
-
-              &-title {
-                font-size: $spacing-unit * 0.16rem;
-                letter-spacing: 0;
-              }
-            }
-            img {
-              width: inherit;
-            }
-          }
         }
       }
 
@@ -87,16 +35,6 @@
           &.selected {
             background-color: $primary-color;
           }
-        }
-      }
-    }
-
-    &-item {
-      & > &-image {
-        height: calc(100vh - 150px);
-        width: auto;
-        @include viewport(tablet) {
-          height: calc(100vh - 182px);
         }
       }
     }

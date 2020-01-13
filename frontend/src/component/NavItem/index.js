@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import Icon from "../Icon";
 import Typography from "../Typography";
 import styled from "styled-components";
-import Button from "../Button";
 import { down } from "styled-breakpoints";
 import { NavLinkDefault } from "../../util/NavLinkDefault";
 

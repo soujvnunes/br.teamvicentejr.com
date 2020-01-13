@@ -28,7 +28,8 @@ const HeaderRoot = styled.header`
     `}
 
   ${down("md")} {
-    min-height: 50vh;
+    min-height: ${props =>
+      props.image ? "calc(var(--spacing) * 75px)" : "auto"};
     padding-top: calc(var(--spacing) * 9px);
   }
 `;

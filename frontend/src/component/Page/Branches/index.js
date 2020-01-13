@@ -7,7 +7,7 @@ import Section from "../../Section";
 
 export default props => {
   return (
-    <Main className={"branches"}>
+    <Main>
       <Header
         title={"Filiais"}
         subject={
@@ -19,7 +19,6 @@ export default props => {
           return (
             <Card
               key={i}
-              className={"branches-list"}
               primary={data.name}
               secondary={data.local}
               title={data.name}
