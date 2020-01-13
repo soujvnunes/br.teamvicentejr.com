@@ -3,6 +3,7 @@ import Wrapper from "../Wrapper";
 import Typography from "../Typography";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
+import PropTypes from "prop-types";
 
 const HeaderRoot = styled.header`
   display: flex;
@@ -37,10 +38,10 @@ const HeaderRoot = styled.header`
 `;
 
 export default function Header(props) {
-  let { className, image, title, subject } = props;
+  let { image, title, subject, ...other } = props;
 
   return (
-    <HeaderRoot image={image} className={className}>
+    <HeaderRoot image={image} {...other}>
       <Wrapper>
         <Typography variant={"title"}>{title}</Typography>
         <Typography variant={"subtitle"}>{subject}</Typography>
@@ -48,3 +49,9 @@ export default function Header(props) {
     </HeaderRoot>
   );
 }
+
+Header.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  subject: PropTypes.string
+};

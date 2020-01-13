@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const WrapperRoot = styled.div`
   flex: 1;
@@ -9,7 +10,10 @@ const WrapperRoot = styled.div`
 `;
 
 export default function Wrapper(props) {
-  let { children } = props;
-
-  return <WrapperRoot {...props}>{children}</WrapperRoot>;
+  let { children, ...other } = props;
+  return <WrapperRoot {...other}>{children}</WrapperRoot>;
 }
+
+Wrapper.propTypes = {
+  children: PropTypes.node.isRequired
+};

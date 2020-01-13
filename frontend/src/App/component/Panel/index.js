@@ -2,6 +2,7 @@ import React from "react";
 import Wrapper from "../Wrapper";
 import styled from "styled-components";
 import As from "../../util/As";
+import PropTypes from "prop-types";
 
 const PanelRoot = styled.div`
   display: flex;
@@ -32,12 +33,23 @@ const PanelBackdrop = styled.div`
 `;
 
 export default function Panel(props) {
-  let { className, image, children, href } = props;
+  let { image, children, href, ...other } = props;
 
   return (
-    <PanelRoot className={className} image={image} href={href} {...As("a")}>
+    <PanelRoot
+      {...other}
+      image={image}
+      href={href}
+      {...As(`${href ? "a" : "div"}`)}
+    >
       <PanelBackdrop />
       <Wrapper>{children}</Wrapper>
     </PanelRoot>
   );
 }
+
+Panel.propTypes = {
+  image: PropTypes.string.isRequired,
+  children: PropTypes.node,
+  href: PropTypes.string
+};

@@ -58,11 +58,15 @@ const SkewRoot = styled.div`
 `;
 
 export default function Skew(props) {
-  let { className, variant } = props;
-  return <SkewRoot className={className} variant={variant} />;
+  let { variant, ...other } = props;
+  return <SkewRoot {...other} variant={variant} />;
 }
 
 Skew.propTypes = {
-  className: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   variant: PropTypes.oneOf(["text", "outlined", "contained", "underlined"])
+    .isRequired
+};
+
+Skew.defaultProps = {
+  variant: "text"
 };

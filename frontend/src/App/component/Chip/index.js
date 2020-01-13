@@ -22,10 +22,10 @@ const ChipIcon = styled(Icon)`
 `;
 
 export default function Chip(props) {
-  let { icon, primary, className } = props;
+  let { icon, primary, ...other } = props;
 
   return (
-    <ChipRoot className={className}>
+    <ChipRoot {...other}>
       <Skew variant={"underlined"} />
       <ChipContent>
         {icon && <ChipIcon name={icon} />}
@@ -36,7 +36,6 @@ export default function Chip(props) {
 }
 
 Chip.propTypes = {
-  className: PropTypes.string,
   icon: PropTypes.string,
   primary: PropTypes.string.isRequired
 };

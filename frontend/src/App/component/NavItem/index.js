@@ -5,6 +5,7 @@ import Typography from "../Typography";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
 import { NavLinkDefault } from "../../util/NavLinkDefault";
+import PropTypes from "prop-types";
 
 const NavLinkRoot = styled(NavLink)`
   ${NavLinkDefault};
@@ -35,7 +36,7 @@ export default function NavItem(props) {
     hover: false
   });
 
-  let { icon, isActive, primary, to, iconActive, onClick } = props;
+  let { icon, primary, iconActive, ...other } = props;
   let { hover } = state;
 
   function handleHover() {
@@ -45,10 +46,7 @@ export default function NavItem(props) {
 
   return (
     <NavLinkRoot
-      to={to}
-      isActive={isActive}
-      className={"Nav-links-link Nav-link"}
-      onClick={onClick}
+      {...other}
       onMouseEnter={() => handleHover()}
       onMouseLeave={() => handleHover()}
     >
@@ -57,3 +55,9 @@ export default function NavItem(props) {
     </NavLinkRoot>
   );
 }
+
+NavItem.propTypes = {
+  icon: PropTypes.string.isRequired,
+  primary: PropTypes.string.isRequired,
+  iconActive: PropTypes.bool.isRequired
+};

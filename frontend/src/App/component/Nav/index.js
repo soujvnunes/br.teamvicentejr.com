@@ -7,6 +7,7 @@ import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
 import { NavLinkDefault } from "../../util/NavLinkDefault";
 import Wrapper from "../Wrapper";
+import PropTypes from "prop-types";
 
 const NavRoot = styled(Wrapper)`
   z-index: 1;
@@ -198,3 +199,8 @@ export default function Nav(props) {
     );
   }
 }
+
+Nav.propTypes = {
+  children: PropTypes.node,
+  indicator: PropTypes.string.isRequired
+};

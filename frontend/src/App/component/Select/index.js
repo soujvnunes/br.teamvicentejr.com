@@ -3,6 +3,7 @@ import Skew from "../Skew";
 import Icon from "../Icon";
 import styled from "styled-components";
 import { InputBase } from "../../util/InputBase";
+import PropTypes from "prop-types";
 
 const SelectRoot = styled.label`
   position: relative;
@@ -26,13 +27,13 @@ const SelectIcon = styled(Icon)`
 `;
 
 export default function Select(props) {
-  let { option, name, className, id, onChange, value } = props;
+  let { option, id, onChange, value, ...other } = props;
 
   return (
-    <SelectRoot className={className} htmlFor={id}>
+    <SelectRoot {...other} htmlFor={id}>
       <Skew variant={"underlined"} />
       <SelectIcon name={"chevronBottom"} />
-      <SelectInput name={name} id={id} onChange={onChange} value={value}>
+      <SelectInput id={id} onChange={onChange} value={value}>
         {option.map((option, i) => (
           <option key={i} label={option.label} value={option.value} />
         ))}
@@ -40,3 +41,10 @@ export default function Select(props) {
     </SelectRoot>
   );
 }
+
+Select.propTypes = {
+  id: PropTypes.string.isRequired,
+  option: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+};

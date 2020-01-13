@@ -30,16 +30,10 @@ const ButtonIcon = styled(Icon)`
 `;
 
 export default function Button(props) {
-  let { className, icon, id, label, onClick, variant, href, skew } = props;
+  let { icon, label, variant, href, skew, ...other } = props;
 
   return (
-    <ButtonRoot
-      className={className}
-      id={id}
-      onClick={onClick}
-      href={href}
-      {...As(`${href ? "a" : "button"}`)}
-    >
+    <ButtonRoot {...other} {...As(`${href ? "a" : "button"}`)}>
       {icon && <ButtonIcon name={icon} />}
       {label && <ButtonLabel>{label}</ButtonLabel>}
       {skew && <Skew variant={variant} />}
@@ -48,14 +42,11 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  icon: PropTypes.string,
-  id: PropTypes.string,
+  icon: PropTypes.string.isRequired,
   label: PropTypes.string,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
+  variant: PropTypes.oneOf(["text", "outlined", "contained"]).isRequired,
   href: PropTypes.string,
-  skew: PropTypes.bool.isRequired,
-  variant: PropTypes.oneOf(["text", "outlined", "contained"]).isRequired
+  skew: PropTypes.bool.isRequired
 };
 
 Button.defaultProps = {

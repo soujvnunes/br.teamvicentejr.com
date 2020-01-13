@@ -23,11 +23,11 @@ const IconRoot = styled.svg`
 `;
 
 export default function Icon(props) {
-  let { className, name, variant } = props;
+  let { name, variant, ...other } = props;
 
   return (
     <IconRoot
-      className={className}
+      {...other}
       variant={variant}
       viewBox={"0 0 24 24"}
       xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,6 @@ export default function Icon(props) {
 }
 
 Icon.propTypes = {
-  className: PropTypes.string,
   name: PropTypes.string.isRequired,
   variant: PropTypes.oneOf(["default", "active"]).isRequired
 };

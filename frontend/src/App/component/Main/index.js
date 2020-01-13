@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
+import PropTypes from "prop-types";
 
 const MainRoot = styled.main`
   width: 100%;
@@ -14,11 +15,15 @@ const MainRoot = styled.main`
 `;
 
 export default function Main(props) {
-  let { children, className } = props;
+  let { children, ...other } = props;
 
   return (
-    <MainRoot role={"main"} className={className}>
+    <MainRoot role={"main"} {...other}>
       {children}
     </MainRoot>
   );
 }
+
+Main.propTypes = {
+  children: PropTypes.node
+};

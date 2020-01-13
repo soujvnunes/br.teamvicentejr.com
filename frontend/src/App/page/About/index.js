@@ -25,7 +25,14 @@ export default function About() {
       />
       <Section>
         {data.history.map((data, i) => {
-          return <History key={i} image={data.image} text={data.text} />;
+          return (
+            <History
+              key={i}
+              image={data.image}
+              text={data.text}
+              title={data.title}
+            />
+          );
         })}
       </Section>
       <Panel image={panelImage} href={"https://www.instagram.com/vicentebjj/"}>

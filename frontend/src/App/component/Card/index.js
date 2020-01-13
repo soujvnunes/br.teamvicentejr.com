@@ -50,23 +50,28 @@ const CardAction = styled.div`
 
 export default function Card(props) {
   let {
-    className,
     children,
     primary,
     secondary,
     actions,
     image,
     title,
-    href
+    href,
+    ...other
   } = props;
 
   return (
-    <CardRoot className={className}>
+    <CardRoot {...other}>
       <CardHeader>
         <Typography variant={"heading"}>{primary}</Typography>
         <Typography variant={"subject"}>{secondary}</Typography>
       </CardHeader>
-      <CardContent href={href} {...As("a")} image={image} title={title}>
+      <CardContent
+        image={image}
+        title={title}
+        href={href}
+        {...As(`${href ? "a" : "div"}`)}
+      >
         {children}
       </CardContent>
       {actions && <CardAction>{actions}</CardAction>}
@@ -81,7 +86,5 @@ Card.propTypes = {
   children: PropTypes.element,
   title: PropTypes.string,
   image: PropTypes.string,
-  href: PropTypes.string,
-  className: PropTypes.string,
-  onClick: PropTypes.func
+  href: PropTypes.string
 };

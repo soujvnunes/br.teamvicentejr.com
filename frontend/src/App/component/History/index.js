@@ -2,6 +2,7 @@ import React from "react";
 import Typography from "../Typography";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
+import PropTypes from "prop-types";
 
 const HistoryRoot = styled.div`
   display: flex;
@@ -34,12 +35,18 @@ const HistoryText = styled(Typography)`
 `;
 
 export default function History(props) {
-  let { image, title, text, orientation } = props;
+  let { image, title, text, ...other } = props;
 
   return (
-    <HistoryRoot orientation={orientation}>
+    <HistoryRoot {...other}>
       {image && <HistoryImage image={image} title={title} />}
       <HistoryText variant={"paragraph"}>{text}</HistoryText>
     </HistoryRoot>
   );
 }
+
+History.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string
+};

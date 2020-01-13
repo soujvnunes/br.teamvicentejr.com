@@ -4,6 +4,7 @@ import Button from "../Button";
 import Typography from "../Typography";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
+import PropTypes from "prop-types";
 
 const LineRoot = styled.li``;
 
@@ -48,8 +49,9 @@ export default function Line(props) {
   const [state, setState] = useState({
     expand: false
   });
+
   let { expand } = state;
-  let { className, children, primary, secondary } = props;
+  let { children, primary, secondary, ...other } = props;
 
   const handleExpand = () => {
     if (expand) setState({ ...state, expand: false });
@@ -57,7 +59,7 @@ export default function Line(props) {
   };
 
   return (
-    <LineRoot className={className}>
+    <LineRoot {...other}>
       <LineHeader>
         <LineHeaderInfo>
           <LineHeaderInfoHeading variant={"heading"}>
@@ -77,3 +79,9 @@ export default function Line(props) {
     </LineRoot>
   );
 }
+
+Line.propTypes = {
+  children: PropTypes.node,
+  primary: PropTypes.string.isRequired,
+  secondary: PropTypes.string.isRequired
+};

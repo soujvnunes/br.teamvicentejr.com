@@ -63,12 +63,11 @@ const Label = styled.span`
 `;
 
 export default function Typography(props) {
-  let { variant, children, className } = props;
+  let { variant, children, ...other } = props;
 
   return (
     <Label
-      className={className}
-      as={"h1"}
+      {...other}
       variant={variant}
       {...As(
         `${(variant === "title" && "h1") ||
@@ -85,7 +84,6 @@ export default function Typography(props) {
 
 Typography.propTypes = {
   children: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
   variant: PropTypes.oneOf([
     "title",
     "subtitle",
