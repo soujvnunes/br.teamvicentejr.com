@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import LineSet from "../../component/LineSet";
 import Line from "../../component/Line";
 import Typography from "../../component/Typography";
 import Main from "../../component/Main";
@@ -123,7 +122,7 @@ export default function Home() {
         />
       </HomeEventsFilter>
       <Section>
-        <LineSet>
+        <ul>
           {filteredEvents && filteredEvents.length > 0 ? (
             <>
               {filteredEvents.map((data, i) => {
@@ -158,7 +157,7 @@ export default function Home() {
               Nenhum evento encontrado.
             </Typography>
           )}
-        </LineSet>
+        </ul>
       </Section>
     </Main>
   );
