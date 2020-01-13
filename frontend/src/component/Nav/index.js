@@ -14,9 +14,11 @@ const NavRoot = styled.nav`
   justify-content: space-between;
   flex-direction: row;
   height: calc(var(--spacing) * 6px);
-  width: calc(100% - var(--spacing) * 8px);
+  max-width: calc(var(--viewport) * 1px);
+  width: 100%;
   margin: calc(var(--spacing) * 4px);
   padding: 0 calc(var(--spacing) * 1px);
+  align-self: center;
 
   ${down("md")} {
     width: 100vw;
@@ -51,7 +53,7 @@ const NavLinksRunner = styled(Skew)`
   width: 25%;
   height: calc(100% + var(--spacing) * 2px);
   top: calc(var(--spacing) * -1px);
-      
+
   ${down("md")} {
     height: 100%;
     top: 0;
@@ -106,7 +108,7 @@ const NavAsideButton = styled(Button)`
   ${NavLinkDefault};
 
   &:first-child {
-    margin-left: calc(var(--spacing) * 43px);
+    margin-left: calc(var(--spacing) * 35px);
 
     ${down("md")} {
       margin-left: 0;

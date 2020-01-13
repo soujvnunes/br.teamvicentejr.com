@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const WrapperRoot = styled.div`
   flex: 1;
-  max-width: calc(var(--spacing) * 135px);
+  max-width: calc(var(--viewport) * 1px);
   margin: 0 calc(var(--spacing) * 2px);
   position: relative;
 `;

@@ -11,10 +11,8 @@ const NavLinkRoot = styled(NavLink)`
 
   position: relative;
   margin: 0 calc(var(--spacing) * 1px);
-  min-width: calc(var(--spacing) * 14px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-width: calc(var(--spacing) * 10px);
+  text-align: center;
 
   ${down("md")} {
     margin: 0;
@@ -24,10 +22,10 @@ const NavLinkRoot = styled(NavLink)`
 `;
 
 const NavLinkLabel = styled(Typography)`
-  margin-left: calc(var(--spacing) * 1px);
+  font-size: calc(var(--spacing) * 1.25px);
+  margin-top: calc(var(--spacing) * 0.5px);
 
   ${down("md")} {
-    margin-left: 0;
     margin-top: calc(var(--spacing) * 1px);
   }
 `;

@@ -7,6 +7,7 @@ import NavItem from "../NavItem";
 import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "../../util/globalStyle";
 import { theme } from "../../util/theme";
+import { ReactComponent as Icon } from "../../asset/icon.svg";
 
 const AppRoot = styled.section`
   display: flex;
@@ -27,6 +28,7 @@ export default function App() {
       <Router>
         <GlobalStyle />
         <AppRoot>
+          <Icon />
           <Route exact path="/" render={props => <Home />} />
           <Route exact path="/professores" render={props => <Teachers />} />
           <Route exact path="/filiais" render={props => <Branches />} />

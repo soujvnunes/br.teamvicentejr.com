@@ -31,7 +31,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ${reset}
-  ${normalize}
   ${rebootCss}
   ${DesignSystem}
 `;
