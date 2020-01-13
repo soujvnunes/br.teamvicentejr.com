@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { data } from "../../lib/data";
-import Nav from "../Nav";
-import { Home, Teachers, Branches, About } from "../Page";
-import NavItem from "../NavItem";
+import { data } from "./lib/data";
+import Nav from "./component/Nav";
+import NavItem from "./component/NavItem";
 import styled, { ThemeProvider } from "styled-components";
-import GlobalStyle from "../../util/globalStyle";
-import { theme } from "../../util/theme";
-import { ReactComponent as Icon } from "../../asset/icon.svg";
+import GlobalStyle from "./util/globalStyle";
+import { theme } from "./util/theme";
+import { ReactComponent as Icon } from "./asset/icon.svg";
+import Home from "./page/Home";
+import Teachers from "./page/Teachers";
+import Branches from "./page/Branches";
+import About from "./page/About";
 
 const AppRoot = styled.section`
   display: flex;

@@ -1,11 +1,11 @@
 import React from "react";
-import { data } from "../../../lib/page/branches";
-import Main from "../../../component/Main";
-import Card from "../../Card";
-import Header from "../../Header";
-import Section from "../../Section";
+import { data } from "../../lib/page/branches";
+import Main from "../../component/Main";
+import Card from "../../component/Card";
+import Header from "../../component/Header";
+import Section from "../../component/Section";
 
-export default props => {
+export default function Branches() {
   return (
     <Main>
       <Header
@@ -30,4 +30,4 @@ export default props => {
       </Section>
     </Main>
   );
-};
+}

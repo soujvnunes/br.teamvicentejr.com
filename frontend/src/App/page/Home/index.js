@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import LineSet from "../../LineSet";
-import Line from "../../Line";
-import Typography from "../../Typography";
-import Main from "../../../component/Main";
-import Header from "../../Header";
-import Section from "../../Section";
-import Select from "../../Select";
-import { data } from "../../../lib/data";
-import { events } from "../../../lib/page/events";
-import VicenteJuniorImage from "../../../asset/page/home/vicenteJunior.png";
-import Chip from "../../Chip";
+import LineSet from "../../component/LineSet";
+import Line from "../../component/Line";
+import Typography from "../../component/Typography";
+import Main from "../../component/Main";
+import Header from "../../component/Header";
+import Section from "../../component/Section";
+import Select from "../../component/Select";
+import { data } from "../../lib/data";
+import { events } from "../../lib/page/events";
+import VicenteJuniorImage from "../../asset/page/home/vicenteJunior.png";
+import Chip from "../../component/Chip";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
-import Skew from "../../Skew";
-import Wrapper from "../../Wrapper";
+import Skew from "../../component/Skew";
+import Wrapper from "../../component/Wrapper";
 
 const HomeHeader = styled(Header)`
   background-size: 40%;
@@ -62,7 +62,7 @@ const HomeEventsListItemParagraph = styled(Typography)`
   margin-top: 1rem;
 `;
 
-export default props => {
+export default function Home() {
   let newDate = new Date();
   let currentMonth = newDate.getMonth() + 1;
   let currentYear = newDate.getFullYear();
@@ -163,4 +163,4 @@ export default props => {
       </Section>
     </Main>
   );
-};
+}
