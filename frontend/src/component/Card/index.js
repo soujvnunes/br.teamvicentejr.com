@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import Typography from "../Typography";
 import PropTypes from "prop-types";
 import As from "../../util/As";
+import { down } from "styled-breakpoints";
 
 const CardRoot = styled.article`
   border: var(--border);
@@ -17,6 +18,10 @@ const CardRoot = styled.article`
 
 const CardHeader = styled.header`
   padding: calc(var(--spacing) * 2px);
+
+  ${down("md")} {
+    padding: calc(var(--spacing) * 1px);
+  }
 `;
 
 const CardContent = styled.div`
@@ -33,6 +38,10 @@ const CardContent = styled.div`
       height: calc(var(--spacing) * 30px);
       border-radius: var(--radius);
     `};
+
+  ${down("md")} {
+    margin: calc(var(--spacing) * 1px);
+  }
 `;
 
 const CardAction = styled.div`
