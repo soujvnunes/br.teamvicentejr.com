@@ -9,7 +9,6 @@ import PropTypes from "prop-types";
 
 const NavLinkRoot = styled(NavLink)`
   ${NavLinkDefault};
-
   position: relative;
   margin: 0 calc(var(--spacing) * 1px);
   min-width: calc(var(--spacing) * 10px);

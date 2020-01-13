@@ -33,7 +33,7 @@ export default function Button(props) {
   let { icon, label, variant, href, skew, ...other } = props;
 
   return (
-    <ButtonRoot {...other} {...As(`${href ? "a" : "button"}`)}>
+    <ButtonRoot {...other} href={href} {...As(`${href ? "a" : "button"}`)}>
       {icon && <ButtonIcon name={icon} />}
       {label && <ButtonLabel>{label}</ButtonLabel>}
       {skew && <Skew variant={variant} />}

@@ -31,6 +31,7 @@ const HomeEventsFilter = styled(Wrapper)`
   position: sticky;
   top: calc(var(--spacing) * 14px);
   margin-top: calc(var(--spacing) * 3px);
+  color: rgba(var(--color-secondary-base));
 
   ${down("md")} {
     top: calc(var(--spacing) * 11px);
