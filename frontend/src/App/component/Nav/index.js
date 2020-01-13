@@ -109,8 +109,10 @@ const NavSocial = styled.aside`
 const NavSocialButton = styled(Button)`
   ${NavLinkDefault};
 
+  margin: 0 calc(var(--spacing) * 1px);
+
   &:first-child {
-    margin-left: calc(var(--spacing) * 27px);
+    margin-left: calc(var(--spacing) * 22px);
 
     ${down("md")} {
       margin-left: 0;
