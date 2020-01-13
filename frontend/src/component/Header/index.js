@@ -18,8 +18,8 @@ const HeaderRoot = styled.header`
     props.image ? "calc(var(--spacing) * 100px)" : "auto"};
   text-align: center;
   position: relative;
-  box-shadow: inset 0 calc(var(--spacing) * -24px) calc(var(--spacing) * 8)
-    calc(var(--spacing) * -8px) rgba(var(--color-black), 1);
+  box-shadow: inset 0 calc(var(--spacing) * -24px) calc(var(--spacing) * 8px)
+    calc(var(--spacing) * -8px) rgba(var(--color-black), 0.75);
 
   ${props =>
     props.image &&

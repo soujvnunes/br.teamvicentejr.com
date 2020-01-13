@@ -12,6 +12,7 @@ const Label = styled.span`
       font-family: var(--font-mono);
       letter-spacing: calc(var(--spacing) * 1px);
       font-size: calc(var(--spacing) * 5px);
+      color: rgba(var(--color-tertiary-light), 1);
     `}
 
   ${props =>

@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./component/App";
-import "./index.scss";
 import * as serviceWorker from "./script/serviceWorker";
 import { ReactComponent as Icon } from "./asset/icon.svg";
 

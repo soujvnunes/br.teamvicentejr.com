@@ -8,6 +8,7 @@ import Wrapper from "../../Wrapper";
 import Chip from "../../Chip";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
+import "./_index.scss";
 
 const TeachersRoot = styled(Main)`
   padding-top: calc(var(--spacing) * 14px);

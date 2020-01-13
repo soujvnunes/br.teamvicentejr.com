@@ -9,13 +9,13 @@
 
       & .control-prev {
         &.control-arrow {
-          left: $spacing * 1.5;
+          left: calc(var(--spacing) * 1.5px);
         }
       }
 
       & .control-next {
         &.control-arrow {
-          right: $spacing * 1.5;
+          right: calc(var(--spacing) * 1.5px);
         }
       }
 
@@ -26,14 +26,14 @@
         & .dot {
           outline: 0;
           box-shadow: none;
-          @include transition(background-color);
-          background-color: $tertiary-color;
+          transition: var(--transition);
+          background-color: rgba(var(--color-tertiary-base), 1);
           opacity: 1;
-          transform: skewX($spacing-unit * 2 * -1deg) skewY(0deg);
-          border-radius: $spacing/4;
+          transform: skewX(var(--skew-X)) skewY(0deg);
+          border-radius: calc(var(--spacing) * 0.25px);
 
           &.selected {
-            background-color: $primary-color;
+            background-color: rgba(var(--color-primary-base), 1);
           }
         }
       }
