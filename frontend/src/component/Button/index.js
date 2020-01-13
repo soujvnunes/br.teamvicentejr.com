@@ -18,13 +18,13 @@ const ButtonRoot = styled.button`
   padding: 0 calc(var(--spacing) * 2px);
 `;
 
-const Label = styled.span`
+const ButtonLabel = styled.span`
   text-transform: uppercase;
   font-weight: bold;
 `;
 
-const IconStyled = styled(Icon)`
-  & ~ ${Label} {
+const ButtonIcon = styled(Icon)`
+  & ~ ${ButtonLabel} {
     margin-left: calc(var(--spacing) * 2px);
   }
 `;
@@ -38,10 +38,10 @@ export default function Button(props) {
       id={id}
       onClick={onClick}
       href={href}
-      {...As("a")}
+      {...As(`${href ? "a" : "button"}`)}
     >
-      {icon && <IconStyled name={icon} />}
-      {label && <Label>{label}</Label>}
+      {icon && <ButtonIcon name={icon} />}
+      {label && <ButtonLabel>{label}</ButtonLabel>}
       {skew && <Skew variant={variant} />}
     </ButtonRoot>
   );

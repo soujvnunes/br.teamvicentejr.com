@@ -4,7 +4,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
-const IconSvg = styled.svg`
+const IconRoot = styled.svg`
   transition: var(--transition);
   width: calc(var(--spacing) * 3px);
   height: calc(var(--spacing) * 3px);
@@ -26,7 +26,7 @@ export default function Icon(props) {
   let { className, name, variant } = props;
 
   return (
-    <IconSvg
+    <IconRoot
       className={className}
       variant={variant}
       viewBox={"0 0 24 24"}
@@ -35,7 +35,7 @@ export default function Icon(props) {
     >
       <title>{name}'s icon</title>
       <use xlinkHref={`#icon_${name}`} />
-    </IconSvg>
+    </IconRoot>
   );
 }
 
