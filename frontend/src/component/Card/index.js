@@ -11,7 +11,7 @@ const CardRoot = styled.article`
   transition: var(--transition);
 
   &:hover {
-    color: var(--color-primary-light);
+    color: rgba(var(--color-primary-light), 1);
   }
 `;
 

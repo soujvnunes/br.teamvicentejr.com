@@ -12,14 +12,15 @@ const HeaderRoot = styled.header`
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  background-color: var(--color-black);
+  background-color: rgba(var(--color-black), 1);
   padding: calc(var(--spacing) * 14px) 0 calc(var(--spacing) * 2px) 0;
   min-height: ${props =>
     props.image ? "calc(var(--spacing) * 100px)" : "auto"};
   text-align: center;
   position: relative;
   box-shadow: inset 0 calc(var(--spacing) * -24px) calc(var(--spacing) * 8)
-    calc(var(--spacing) * -8px) var(--color-black);
+    calc(var(--spacing) * -8px) rgba(var(--color-black), 1);
+
   ${props =>
     props.image &&
     css`

@@ -17,10 +17,19 @@ const NavRoot = styled.nav`
   width: calc(100% - var(--spacing) * 6px);
   margin: calc(var(--spacing) * 4px);
   padding: 0 calc(var(--spacing) * 1px);
+
+  ${down("md")} {
+    width: 100vw;
+    margin: 0;
+    background-color: rgba(var(--color-primary-base), 1);
+    height: calc(var(--spacing) * 9px);
+    padding: 0 calc(var(--spacing) * 2px);
+    bottom: 0;
+  }
 `;
 
 const NavSkew = styled(Skew)`
-  color: var(--color-primary-base);
+  color: rgba(var(--color-primary-base), 1);
 `;
 
 const NavLinks = styled.div`
@@ -30,13 +39,23 @@ const NavLinks = styled.div`
   height: inherit;
   align-items: center;
   justify-content: space-around;
+
+  ${down("md")} {
+    width: 100%;
+    height: calc(var(--spacing) * 7px);
+  }
 `;
 
 const NavLinksRunner = styled(Skew)`
-  color: var(--color-tertiary-light);
+  color: rgba(var(--color-tertiary-light), 1);
   width: 25%;
   height: calc(100% + var(--spacing) * 2px);
   top: calc(var(--spacing) * -1px);
+      
+  ${down("md")} {
+    height: 100%;
+    top: 0;
+  } 
 
   ${props =>
     props.indicator === "home" &&
@@ -95,6 +114,12 @@ const NavAsideButton = styled(Button)`
   }
 `;
 
+const NavSocial = styled(NavRoot)`
+  top: 0;
+  left: 0;
+  background-color: rgba(var(--color-black), 0.25) !important;
+`;
+
 export default function Nav(props) {
   const isTablet = useMediaQuery({ maxDeviceWidth: 960 });
   let { children, indicator } = props;
@@ -137,9 +162,9 @@ export default function Nav(props) {
         {children}
       </NavLinks>
       {isTablet ? (
-        <div className={"Nav-social"}>
+        <NavSocial>
           <Body />
-        </div>
+        </NavSocial>
       ) : (
         <Body />
       )}

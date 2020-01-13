@@ -11,7 +11,7 @@ export const DesignSystem = css`
       Consolas, "Liberation Mono", "Courier New", monospace;
 
     --transition-duration: 340ms;
-    --transition-timing-function: cubic-bezier(0.75, 0.02, 0.25, 1);
+    --transition-timing-function: cubic-bezier(0.75, 0.025, 0.25, 1);
     --transition: all var(--transition-duration)
       var(--transition-timing-function);
 
@@ -22,17 +22,17 @@ export const DesignSystem = css`
     --viewport-landscape: 960;
     --viewport-desktop: 1280;
 
-    --color-primary-light: #df4830;
-    --color-primary-base: #a60505;
-    --color-primary-dark: #700000;
-    --color-secondary-light: #5e5e5e;
-    --color-secondary-base: #343434;
-    --color-secondary-dark: #0d0d0d;
-    --color-tertiary-light: #d7d7d7;
-    --color-tertiary-base: #a6a6a6;
-    --color-tertiary-dark: #777777;
-    --color-black: #000;
-    --color-white: #fff;
+    --color-primary-light: 223, 72, 48;
+    --color-primary-base: 166, 5, 5;
+    --color-primary-dark: 112, 0, 0;
+    --color-secondary-light: 94, 94, 94;
+    --color-secondary-base: 52, 52, 52;
+    --color-secondary-dark: 13, 13, 13;
+    --color-tertiary-light: 215, 215, 215;
+    --color-tertiary-base: 166, 166, 166;
+    --color-tertiary-dark: 119, 119, 119;
+    --color-black: 0, 0, 0;
+    --color-white: 255, 255, 255;
 
     --border-width: calc(var(--spacing) * 0.25px);
     --border-style: solid;
