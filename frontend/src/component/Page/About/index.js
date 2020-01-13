@@ -29,7 +29,7 @@ export default props => {
       </Section>
       <Panel
         image={panelImage}
-        url={"https://www.instagram.com/vicentebjj/"}
+        href={"https://www.instagram.com/vicentebjj/"}
         className={"about-panel"}
       >
         <Typography title className={"about-panel-title"}>

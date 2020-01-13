@@ -1,42 +1,42 @@
 import React from "react";
-import classNames from "classnames";
 import Skew from "../Skew";
 import Icon from "../Icon";
+import styled from "styled-components";
+import { InputBase } from "../../util/InputBase";
+
+const SelectRoot = styled.section`
+  position: relative;
+  padding: calc(var(--spacing) * 1px) calc(var(--spacing) * 2px);
+  display: flex;
+  align-items: center;
+`;
+
+const SelectInput = styled.select`
+  ${InputBase};
+
+  position: inherit;
+  font-weight: bold;
+  width: 100%;
+  padding-right: calc(var(--spacing) * 5px);
+`;
+
+const SelectIcon = styled(Icon)`
+  position: absolute;
+  right: calc(var(--spacing) * 2px);
+`;
 
 export default function Select(props) {
   let { option, name, className, id, onChange, value } = props;
 
-  const classes = {
-    root: [
-      classNames("Select" /*, { [`IconButton--hover`]: !noHover }*/, className)
-    ],
-    select: [classNames("Select-select")],
-    options: [classNames("Select-option")],
-    adornment: [classNames("Select-adornment")]
-  };
-
-  let { options, root, select, adornment } = classes;
-
   return (
-    <label className={root} htmlFor={id}>
+    <SelectRoot className={className} htmlFor={id}>
       <Skew variant={"outlined"} />
-      <Icon name={"chevronBottom"} className={adornment} />
-      <select
-        name={name}
-        className={select}
-        id={id}
-        onChange={onChange}
-        value={value}
-      >
+      <SelectIcon name={"chevronBottom"} />
+      <SelectInput name={name} id={id} onChange={onChange} value={value}>
         {option.map((option, i) => (
-          <option
-            className={options}
-            key={i}
-            label={option.label}
-            value={option.value}
-          />
+          <option key={i} label={option.label} value={option.value} />
         ))}
-      </select>
-    </label>
+      </SelectInput>
+    </SelectRoot>
   );
 }

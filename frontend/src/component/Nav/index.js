@@ -14,7 +14,7 @@ const NavRoot = styled.nav`
   justify-content: space-between;
   flex-direction: row;
   height: calc(var(--spacing) * 6px);
-  width: calc(100% - var(--spacing) * 6px);
+  width: calc(100% - var(--spacing) * 8px);
   margin: calc(var(--spacing) * 4px);
   padding: 0 calc(var(--spacing) * 1px);
 

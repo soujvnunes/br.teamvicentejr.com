@@ -1,9 +1,15 @@
 import React from "react";
-import classNames from "classnames";
+import styled from "styled-components";
+
+const WrapperRoot = styled.div`
+  flex: 1;
+  max-width: calc(var(--spacing) * 135px);
+  margin: 0 calc(var(--spacing) * 2px);
+  position: relative;
+`;
 
 export default function Wrapper(props) {
   let { children, className } = props;
-  const classes = { root: [classNames("Wrapper", className)] };
-  let { root } = classes;
-  return <div className={root}>{children}</div>;
+
+  return <WrapperRoot className={className}>{children}</WrapperRoot>;
 }

@@ -1,14 +1,20 @@
 import React from "react";
 import Wrapper from "../Wrapper";
-import classNames from "classnames";
+import styled from "styled-components";
+
+const SectionRoot = styled.section`
+  width: 100%;
+  margin: calc(var(--spacing) * 2px) 0;
+  display: flex;
+  justify-content: center;
+`;
 
 export default function Section(props) {
   let { children, className } = props;
-  const classes = { root: [classNames("Section", className)] };
-  let { root } = classes;
+
   return (
-    <section className={root}>
+    <SectionRoot className={className}>
       <Wrapper>{children}</Wrapper>
-    </section>
+    </SectionRoot>
   );
 }
