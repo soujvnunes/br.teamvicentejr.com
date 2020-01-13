@@ -87,15 +87,10 @@ const TeachersCarouselItemInfo = styled(Wrapper)`
   padding: calc(var(--spacing) * 16px) calc(var(--spacing) * 2px) 0
     calc(var(--spacing) * 2px);
   text-align: center;
-  background: -moz-linear-gradient(
-    top,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(var(--color-black), 0.5) 50%
-  );
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    rgba(var(--color-black), 0.5) 50%
+    rgba(var(--color-black), 0.75) 50%
   );
 
   ${down("md")} {
