@@ -73,8 +73,10 @@ export default function Home() {
   let { month, year, filteredEvents } = state;
 
   useEffect(() => {
-    const matchYear = events.filter(data => data.year == year);
-    const matchMonth = matchYear.filter(data => data.month == month);
+    const matchYear = events.filter(data => Number(data.year) === Number(year));
+    const matchMonth = matchYear.filter(
+      data => Number(data.month) === Number(month)
+    );
     if (matchMonth) setState({ ...state, filteredEvents: matchMonth });
     else setState({ ...state, filteredEvents: [] });
   }, [month, year]);
