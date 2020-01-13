@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import reboot from "styled-reboot";
 import reset from "styled-reset";
-import normalize from "styled-normalize";
 import { DesignSystem } from "./designSystem";
 import eot from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.eot";
 import woff2 from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.woff2";
