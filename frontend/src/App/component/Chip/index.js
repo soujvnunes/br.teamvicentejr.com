@@ -8,7 +8,6 @@ import PropTypes from "prop-types";
 const ChipRoot = styled.div`
   position: relative;
   display: inline-block;
-  margin: calc(var(--spacing) * 1px);
   padding: calc(var(--spacing) * 1px);
 `;
 

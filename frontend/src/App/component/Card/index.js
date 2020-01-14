@@ -8,7 +8,6 @@ import { down } from "styled-breakpoints";
 const CardRoot = styled.article`
   border: var(--border);
   border-radius: var(--radius);
-  margin: calc(var(--spacing) * 2px) 0;
   transition: var(--transition);
 
   &:hover {

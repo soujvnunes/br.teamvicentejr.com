@@ -7,15 +7,6 @@ import PropTypes from "prop-types";
 const HistoryRoot = styled.div`
   display: flex;
   flex-direction: row;
-  margin: calc(var(--spacing) * 2px) 0;
-
-  &:first-child {
-    margin: 0;
-  }
-
-  &:last-child {
-    margin: 0;
-  }
 
   ${down("md")} {
     flex-direction: column;
