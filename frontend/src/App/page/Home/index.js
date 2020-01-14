@@ -59,15 +59,7 @@ const HomeEventsListItemParagraph = styled(Typography)`
 `;
 
 const HomeEventsListItemChip = styled(Chip)`
-  margin: 0 calc(var(--ds) * 1px);
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
+  margin-right: calc(var(--ds) * 1px);
 `;
 
 export default function Home() {
@@ -143,7 +135,9 @@ export default function Home() {
                     key={i}
                     primary={data.title}
                     secondary={data.local}
+                    /*id={data.description.replace(/\s/g, "")}*/
                     icon={"add"}
+                    image={data.image}
                   >
                     <HomeEventsListItemParagraph variant={"paragraph"}>
                       {data.description}

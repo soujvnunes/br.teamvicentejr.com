@@ -9,6 +9,7 @@ const ChipRoot = styled.div`
   position: relative;
   display: inline-block;
   padding: calc(var(--ds) * 1px);
+  color: hsla(var(--ctb), 1);
 `;
 
 const ChipContent = styled.div`

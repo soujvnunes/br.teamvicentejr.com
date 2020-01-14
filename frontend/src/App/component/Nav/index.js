@@ -160,7 +160,7 @@ export default function Nav(props) {
         </NavAside>
         <NavRoot>
           <NavLinks>
-            <NavLinksRunner variant={"contained"} indicator={indicator} />
+            <NavLinksRunner variant={"static"} indicator={indicator} />
             {children}
           </NavLinks>
         </NavRoot>
@@ -169,9 +169,9 @@ export default function Nav(props) {
   } else {
     return (
       <NavRoot>
-        <NavSkew variant={"contained"} />
+        <NavSkew variant={"static"} />
         <NavLinks>
-          <NavLinksRunner variant={"contained"} indicator={indicator} />
+          <NavLinksRunner variant={"static"} indicator={indicator} />
           {children}
         </NavLinks>
         <NavLogo href={"/"}>

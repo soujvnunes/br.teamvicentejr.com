@@ -30,14 +30,15 @@ const SkewRoot = styled.div`
   ${props =>
     props.variant === "outlined" &&
     css`
-      opacity: 0.5;
+      opacity: 0.25;
       border: var(--sb);
 
       &:hover {
-        opacity: 0.75;
+        opacity: 1;
       }
 
       &:active {
+        opacity: 0.5;
         background-color: currentColor;
       }
     `}
@@ -45,7 +46,16 @@ const SkewRoot = styled.div`
   ${props =>
     props.variant === "contained" &&
     css`
+      opacity: 0.25;
       background-color: currentColor;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &:active {
+        opacity: 0.75;
+      }
     `}
   
   ${props =>
@@ -55,6 +65,12 @@ const SkewRoot = styled.div`
       height: calc(var(--ds) * 0.25px);
       top: auto;
     `}
+  
+  ${props =>
+    props.variant === "static" &&
+    css`
+      background-color: currentColor;
+    `}
 `;
 
 export default function Skew(props) {
@@ -63,8 +79,13 @@ export default function Skew(props) {
 }
 
 Skew.propTypes = {
-  variant: PropTypes.oneOf(["text", "outlined", "contained", "underlined"])
-    .isRequired
+  variant: PropTypes.oneOf([
+    "text",
+    "outlined",
+    "contained",
+    "underlined",
+    "static"
+  ]).isRequired
 };
 
 Skew.defaultProps = {

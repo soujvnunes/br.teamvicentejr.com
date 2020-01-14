@@ -13,25 +13,43 @@ const LineHeader = styled.header`
   width: 100%;
   transition: var(--a);
   position: relative;
+  min-height: calc(var(--ds) * 10px);
   align-items: center;
+
+  ${props =>
+    props.image
+      ? css`
+          padding: 0 calc(var(--ds) * 2px) 0 0;
+        `
+      : css`
+          padding: 0 calc(var(--ds) * 2px);
+        `}
+`;
+
+const LineHeaderImage = styled.div`
+  width: 50%;
+  height: calc(var(--ds) * 20px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(${props => props.image});
+  clip-path: polygon(7% 10%, 100% 10%, 93% 90%, 0% 90%);
+
+  ${down("sm")} {
+    height: calc(var(--ds) * 10px);
+    clip-path: polygon(11% 10%, 100% 10%, 93% 90%, 0% 90%);
+  }
 `;
 
 const LineHeaderInfo = styled.div`
   flex: auto;
-  padding: calc(var(--ds) * 2px);
-
-  ${down("md")} {
-    padding: calc(var(--ds) * 1px);
-  }
 `;
 
 const LineHeaderInfoHeading = styled(Typography)`
   margin-left: calc(var(--ds) * 1px);
 `;
 
-const LineHeaderButton = styled(Button)`
-  margin-right: calc(var(--ds) * 2px);
-`;
+const LineHeaderButton = styled(Button)``;
 
 const LineContent = styled.div`
   overflow: hidden;
@@ -51,7 +69,7 @@ export default function Line(props) {
   });
 
   let { expand } = state;
-  let { children, primary, secondary, ...other } = props;
+  let { children, primary, secondary, image, ...other } = props;
 
   const handleExpand = () => {
     if (expand) setState({ ...state, expand: false });
@@ -60,7 +78,8 @@ export default function Line(props) {
 
   return (
     <LineRoot {...other}>
-      <LineHeader>
+      <LineHeader image={image} onClick={handleExpand}>
+        {image && <LineHeaderImage image={image} />}
         <LineHeaderInfo>
           <LineHeaderInfoHeading variant={"heading"}>
             {primary}
@@ -69,10 +88,10 @@ export default function Line(props) {
         </LineHeaderInfo>
         <Skew variant={"outlined"} />
         <LineHeaderButton
-          skew={false}
+          skew={true}
           icon={expand ? "remove" : "add"}
           onClick={handleExpand}
-          variant={"text"}
+          variant={"contained"}
         />
       </LineHeader>
       <LineContent expand={expand}>{children}</LineContent>
@@ -81,6 +100,7 @@ export default function Line(props) {
 }
 
 Line.propTypes = {
+  image: PropTypes.string,
   children: PropTypes.node,
   primary: PropTypes.string.isRequired,
   secondary: PropTypes.string.isRequired

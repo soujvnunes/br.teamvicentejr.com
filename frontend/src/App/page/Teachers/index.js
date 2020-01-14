@@ -79,34 +79,19 @@ const TeachersCarouselItemImage = styled.img`
 `;
 
 const TeachersCarouselItemInfo = styled(Wrapper)`
-  height: calc(100vh - 150px - 50%);
+  display: block;
   position: absolute;
   bottom: 0;
   width: 100%;
   margin: 0;
-  padding: calc(var(--ds) * 16px) calc(var(--ds) * 2px) 0 calc(var(--ds) * 2px);
-  text-align: center;
-  box-shadow: inset 0 calc(var(--ds) * -24px) calc(var(--ds) * 8px)
+  padding: calc(var(--ds) * 16px) calc(var(--ds) * 2px) calc(var(--ds) * 2px)
+    calc(var(--ds) * 2px);
+  box-shadow: inset 0 calc(var(--ds) * -30px) calc(var(--ds) * 8px)
     calc(var(--ds) * -8px) hsla(var(--ctd), 0.75);
 
   ${down("md")} {
-    height: calc(100vh - 182px - 50%);
-  }
-
-  ${down("sm")} {
-    padding-top: calc(var(--ds) * 8px);
-  }
-`;
-
-const TeachersCarouselItemInfoChip = styled(Chip)`
-  margin: 0 calc(var(--ds) * 1px);
-
-  &:first-child {
-    margin-left: 0;
-  }
-
-  &:last-child {
-    margin-right: 0;
+    box-shadow: inset 0 calc(var(--ds) * -24px) calc(var(--ds) * 8px)
+      calc(var(--ds) * -8px) hsla(var(--ctd), 0.75);
   }
 `;
 
@@ -117,19 +102,12 @@ export default function Teachers() {
         {data.map((data, i) => {
           return (
             <TeachersCarouselItem key={i}>
-              <TeachersCarouselItemImage src={data.url} alt={data.name} />
+              <TeachersCarouselItemImage src={data.image} alt={data.name} />
               <TeachersCarouselItemInfo>
-                {data.name && (
-                  <Typography variant={"title"}>{data.name}</Typography>
-                )}
+                <Typography variant={"title"}>{data.name}</Typography>
                 <div>
-                  {data.titles.map((title, i) => (
-                    <TeachersCarouselItemInfoChip key={i} primary={title} />
-                  ))}
+                  <Chip key={i} primary={data.social} icon={"instagram"} />
                 </div>
-                {data.description && (
-                  <Typography>{data.description}</Typography>
-                )}
               </TeachersCarouselItemInfo>
             </TeachersCarouselItem>
           );

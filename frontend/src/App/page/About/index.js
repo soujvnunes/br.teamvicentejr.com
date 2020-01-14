@@ -23,10 +23,6 @@ const AboutHistory = styled(History)`
   }
 `;
 
-const AboutPanelSocialIcon = styled(Icon)`
-  margin: 0 calc(var(--ds) * 1px);
-`;
-
 export default function About() {
   return (
     <Main>
@@ -50,7 +46,7 @@ export default function About() {
       <Panel image={panelImage} href={"https://www.instagram.com/vicentebjj/"}>
         <Typography variant={"title"}>Acompanhe</Typography>
         <div>
-          Vicente no <AboutPanelSocialIcon name={"instagram"} /> Instagram
+          Vicente no <Icon name={"instagram"} /> Instagram
         </div>
       </Panel>
     </Main>
