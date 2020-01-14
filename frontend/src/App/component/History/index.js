@@ -19,17 +19,17 @@ const HistoryImage = styled.div`
   background-repeat: no-repeat;
   background-position-x: center;
   min-width: 50%;
-  min-height: calc(var(--spacing) * 43px);
+  min-height: calc(var(--ds) * 43px);
   background-image: url(${props => props.image});
-  border-radius: var(--radius);
+  border-radius: var(--sr);
 `;
 
 const HistoryText = styled(Typography)`
   text-align: justify;
-  margin: 0 0 0 calc(var(--spacing) * 2px);
+  margin: 0 0 0 calc(var(--ds) * 2px);
 
   ${down("md")} {
-    margin: calc(var(--spacing) * 2px) 0 0 0;
+    margin: calc(var(--ds) * 2px) 0 0 0;
   }
 `;
 

@@ -10,12 +10,12 @@ import styled from "styled-components";
 import { down } from "styled-breakpoints";
 
 const TeachersRoot = styled(Main)`
-  background-color: rgba(var(--color-black), 1);
-  padding-top: calc(var(--spacing) * 14px);
+  background-color: rgba(var(--cqd), 1);
+  padding-top: calc(var(--ds) * 14px);
   margin-bottom: 0;
 
   ${down("md")} {
-    padding-top: calc(var(--spacing) * 9px);
+    padding-top: calc(var(--ds) * 9px);
   }
 `;
 
@@ -31,13 +31,13 @@ const TeachersCarousel = styled(Carousel)`
 
     & .control-prev {
       &.control-arrow {
-        left: calc(var(--spacing) * 1.5px);
+        left: calc(var(--ds) * 1.5px);
       }
     }
 
     & .control-next {
       &.control-arrow {
-        right: calc(var(--spacing) * 1.5px);
+        right: calc(var(--ds) * 1.5px);
       }
     }
 
@@ -48,14 +48,14 @@ const TeachersCarousel = styled(Carousel)`
       & .dot {
         outline: 0;
         box-shadow: none;
-        transition: var(--transition);
-        background-color: rgba(var(--color-tertiary-base), 1);
+        transition: var(--a);
+        background-color: rgba(var(--ctb), 1);
         opacity: 1;
-        transform: skewX(var(--skew-X)) skewY(0deg);
-        border-radius: calc(var(--spacing) * 0.25px);
+        transform: skewX(var(--stsX)) skewY(0deg);
+        border-radius: calc(var(--ds) * 0.25px);
 
         &.selected {
-          background-color: rgba(var(--color-primary-base), 1);
+          background-color: rgba(var(--cpb), 1);
         }
       }
     }
@@ -84,13 +84,12 @@ const TeachersCarouselItemInfo = styled(Wrapper)`
   bottom: 0;
   width: 100%;
   margin: 0;
-  padding: calc(var(--spacing) * 16px) calc(var(--spacing) * 2px) 0
-    calc(var(--spacing) * 2px);
+  padding: calc(var(--ds) * 16px) calc(var(--ds) * 2px) 0 calc(var(--ds) * 2px);
   text-align: center;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0) 0%,
-    rgba(var(--color-black), 0.75) 50%
+    rgba(var(--cqd), 0.75) 50%
   );
 
   ${down("md")} {
@@ -98,12 +97,12 @@ const TeachersCarouselItemInfo = styled(Wrapper)`
   }
 
   ${down("sm")} {
-    padding-top: calc(var(--spacing) * 8px);
+    padding-top: calc(var(--ds) * 8px);
   }
 `;
 
 const TeachersCarouselItemInfoChip = styled(Chip)`
-  margin: 0 calc(var(--spacing) * 1px);
+  margin: 0 calc(var(--ds) * 1px);
 
   &:first-child {
     margin-left: 0;

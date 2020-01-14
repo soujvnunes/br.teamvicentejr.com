@@ -14,15 +14,14 @@ const HeaderRoot = styled.header`
   background-repeat: no-repeat;
   width: 100%;
   background-color: ${props =>
-    props.image ? "rgba(var(--color-black), 1)" : "transparent"};
-  padding: calc(var(--spacing) * 14px) 0 calc(var(--spacing) * 2px) 0;
-  min-height: ${props =>
-    props.image ? "calc(var(--spacing) * 100px)" : "auto"};
+    props.image ? "rgba(var(--cqd), 1)" : "transparent"};
+  padding: calc(var(--ds) * 14px) 0 calc(var(--ds) * 2px) 0;
+  min-height: ${props => (props.image ? "calc(var(--ds) * 100px)" : "auto")};
   text-align: center;
   position: relative;
   box-shadow: ${props =>
     props.image
-      ? "inset 0 calc(var(--spacing) * -24px) calc(var(--spacing) * 8px) calc(var(--spacing) * -8px) rgba(var(--color-black), 0.75)"
+      ? "inset 0 calc(var(--ds) * -24px) calc(var(--ds) * 8px) calc(var(--ds) * -8px) rgba(var(--cqd), 0.75)"
       : "none"};
 
   ${props =>
@@ -33,7 +32,7 @@ const HeaderRoot = styled.header`
 
   ${down("md")} {
     min-height: ${props => (props.image ? "50vh" : "auto")};
-    padding-top: calc(var(--spacing) * 11px);
+    padding-top: calc(var(--ds) * 11px);
   }
 `;
 

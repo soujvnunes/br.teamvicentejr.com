@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import reboot from "styled-reboot";
 import reset from "styled-reset";
-import { DesignSystem } from "./designSystem";
+import { DesignSystem } from "./DesignSystem";
 import eot from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.eot";
 import woff2 from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.woff2";
 import woff from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.woff";
@@ -10,10 +10,10 @@ import svg from "../asset/misc/font/ccf21ebc0f90f99c5a63564d760f23aa.svg";
 
 const options = {
   black: "0, 0, 0",
-  fontFamilyBase: "var(--font-sans)",
-  fontFamilyMonospace: "var(--font-mono)",
-  bodyColor: "rgba(var(--color-tertiary-base), 1)",
-  bodyBg: "rgba(var(--color-secondary-base), 1)",
+  fontFamilyBase: "var(--ts)",
+  fontFamilyMonospace: "var(--tm)",
+  bodyColor: "rgba(var(--ctb), 1)",
+  bodyBg: "rgba(var(--csb), 1)",
   linkColor: "inherit",
   linkDecoration: "inherit",
   linkHoverColor: "inherit",

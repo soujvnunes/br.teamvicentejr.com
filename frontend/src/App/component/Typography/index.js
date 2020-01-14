@@ -11,13 +11,13 @@ const Label = styled.span`
   ${props =>
     props.variant === "title" &&
     css`
-      font-family: var(--font-mono);
-      letter-spacing: calc(var(--spacing) * 1px);
-      font-size: calc(var(--spacing) * 5px);
-      color: rgba(var(--color-tertiary-light), 1);
+      font-family: var(--tm);
+      letter-spacing: calc(var(--ds) * 1px);
+      font-size: calc(var(--ds) * 5px);
+      color: rgba(var(--ctl), 1);
 
       ${down("md")} {
-        font-size: calc(var(--spacing) * 2px);
+        font-size: calc(var(--ds) * 2px);
       }
     `}
 
@@ -28,26 +28,26 @@ const Label = styled.span`
       text-transform: uppercase;
 
       ${down("md")} {
-        font-size: calc(var(--spacing) * 1.75px);
+        font-size: calc(var(--ds) * 1.75px);
       }
     `}
   
   ${props =>
     props.variant === "subtitle" &&
     css`
-      font-size: calc(var(--spacing) * 4px);
+      font-size: calc(var(--ds) * 4px);
 
       ${down("md")} {
-        font-size: calc(var(--spacing) * 2px);
+        font-size: calc(var(--ds) * 2px);
       }
     `}
   
   ${props =>
     (props.variant === "subject" || props.variant === "heading") &&
     css`
-      font-size: calc(var(--spacing) * 2px);
+      font-size: calc(var(--ds) * 2px);
       ${down("md")} {
-        font-size: calc(var(--spacing) * 1.5px);
+        font-size: calc(var(--ds) * 1.5px);
       }
     `}
   
@@ -55,9 +55,9 @@ const Label = styled.span`
   ${props =>
     props.variant === "action" &&
     css`
-      font-size: calc(var(--spacing) * 1.5px);
+      font-size: calc(var(--ds) * 1.5px);
       ${down("md")} {
-        font-size: calc(var(--spacing) * 1.25px);
+        font-size: calc(var(--ds) * 1.25px);
       }
     `}
 `;

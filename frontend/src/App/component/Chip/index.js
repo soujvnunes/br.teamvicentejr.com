@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 const ChipRoot = styled.div`
   position: relative;
   display: inline-block;
-  padding: calc(var(--spacing) * 1px);
+  padding: calc(var(--ds) * 1px);
 `;
 
 const ChipContent = styled.div`
@@ -17,7 +17,7 @@ const ChipContent = styled.div`
 `;
 
 const ChipIcon = styled(Icon)`
-  margin-right: calc(var(--spacing) * 1px);
+  margin-right: calc(var(--ds) * 1px);
 `;
 
 export default function Chip(props) {

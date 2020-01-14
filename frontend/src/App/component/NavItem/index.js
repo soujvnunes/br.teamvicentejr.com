@@ -10,8 +10,8 @@ import PropTypes from "prop-types";
 const NavLinkRoot = styled(NavLink)`
   ${NavLinkDefault};
   position: relative;
-  margin: 0 calc(var(--spacing) * 1px);
-  min-width: calc(var(--spacing) * 10px);
+  margin: 0 calc(var(--ds) * 1px);
+  min-width: calc(var(--ds) * 10px);
   text-align: center;
 
   ${down("md")} {
@@ -22,11 +22,11 @@ const NavLinkRoot = styled(NavLink)`
 `;
 
 const NavLinkLabel = styled(Typography)`
-  font-size: calc(var(--spacing) * 1.25px);
-  margin-top: calc(var(--spacing) * 0.5px);
+  font-size: calc(var(--ds) * 1.25px);
+  margin-top: calc(var(--ds) * 0.5px);
 
   ${down("md")} {
-    margin-top: calc(var(--spacing) * 1px);
+    margin-top: calc(var(--ds) * 1px);
   }
 `;
 

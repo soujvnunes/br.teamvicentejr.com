@@ -11,37 +11,37 @@ const LineRoot = styled.li``;
 const LineHeader = styled.header`
   display: flex;
   width: 100%;
-  transition: var(--transition);
+  transition: var(--a);
   position: relative;
   align-items: center;
 `;
 
 const LineHeaderInfo = styled.div`
   flex: auto;
-  padding: calc(var(--spacing) * 2px);
+  padding: calc(var(--ds) * 2px);
 
   ${down("md")} {
-    padding: calc(var(--spacing) * 1px);
+    padding: calc(var(--ds) * 1px);
   }
 `;
 
 const LineHeaderInfoHeading = styled(Typography)`
-  margin-left: calc(var(--spacing) * 1px);
+  margin-left: calc(var(--ds) * 1px);
 `;
 
 const LineHeaderButton = styled(Button)`
-  margin-right: calc(var(--spacing) * 2px);
+  margin-right: calc(var(--ds) * 2px);
 `;
 
 const LineContent = styled.div`
   overflow: hidden;
   max-height: 0;
-  transition: var(--transition);
+  transition: var(--a);
 
   ${props =>
     props.expand &&
     css`
-      max-height: calc(var(--spacing) * 100px);
+      max-height: calc(var(--ds) * 100px);
     `}
 `;
 

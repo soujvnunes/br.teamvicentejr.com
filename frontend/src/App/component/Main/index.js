@@ -10,7 +10,7 @@ const MainRoot = styled.main`
   flex-direction: column;
 
   ${down("md")} {
-    margin-bottom: calc(var(--spacing) * 9px);
+    margin-bottom: calc(var(--ds) * 9px);
   }
 `;
 

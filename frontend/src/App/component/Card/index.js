@@ -6,20 +6,20 @@ import As from "../../util/As";
 import { down } from "styled-breakpoints";
 
 const CardRoot = styled.article`
-  border: var(--border);
-  border-radius: var(--radius);
-  transition: var(--transition);
+  border: var(--sb);
+  border-radius: var(--sr);
+  transition: var(--a);
 
   &:hover {
-    color: rgba(var(--color-primary-light), 1);
+    color: rgba(var(--cpl), 1);
   }
 `;
 
 const CardHeader = styled.header`
-  padding: calc(var(--spacing) * 2px);
+  padding: calc(var(--ds) * 2px);
 
   ${down("md")} {
-    padding: calc(var(--spacing) * 1px);
+    padding: calc(var(--ds) * 1px);
   }
 `;
 
@@ -27,24 +27,24 @@ const CardContent = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin: calc(var(--spacing) * 2px);
+  margin: calc(var(--ds) * 2px);
 
   ${props =>
     props.image &&
     css`
       background-image: url(${props.image});
       background-position: center;
-      height: calc(var(--spacing) * 30px);
-      border-radius: var(--radius);
+      height: calc(var(--ds) * 30px);
+      border-radius: var(--sr);
     `};
 
   ${down("md")} {
-    margin: calc(var(--spacing) * 1px);
+    margin: calc(var(--ds) * 1px);
   }
 `;
 
 const CardAction = styled.div`
-  padding: calc(var(--spacing) * 2px);
+  padding: calc(var(--ds) * 2px);
 `;
 
 export default function Card(props) {

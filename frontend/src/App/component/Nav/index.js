@@ -16,24 +16,24 @@ const NavRoot = styled(Wrapper)`
   position: fixed;
   justify-content: space-between;
   flex-direction: row;
-  height: calc(var(--spacing) * 6px);
-  padding: 0 calc(var(--spacing) * 2px);
+  height: calc(var(--ds) * 6px);
+  padding: 0 calc(var(--ds) * 2px);
   align-self: center;
   width: 100%;
-  margin: calc(var(--spacing) * 4px) 0;
+  margin: calc(var(--ds) * 4px) 0;
 
   ${down("md")} {
     width: 100vw;
     margin: 0;
-    background-color: rgba(var(--color-primary-base), 1);
-    height: calc(var(--spacing) * 9px);
-    padding: 0 calc(var(--spacing) * 2px);
+    background-color: rgba(var(--cpb), 1);
+    height: calc(var(--ds) * 9px);
+    padding: 0 calc(var(--ds) * 2px);
     bottom: 0;
   }
 `;
 
 const NavSkew = styled(Skew)`
-  color: rgba(var(--color-primary-base), 1);
+  color: rgba(var(--cpb), 1);
 `;
 
 const NavLinks = styled.nav`
@@ -46,15 +46,15 @@ const NavLinks = styled.nav`
 
   ${down("md")} {
     width: 100%;
-    height: calc(var(--spacing) * 7px);
+    height: calc(var(--ds) * 7px);
   }
 `;
 
 const NavLinksRunner = styled(Skew)`
-  color: rgba(var(--color-tertiary-light), 1);
+  color: rgba(var(--ctl), 1);
   width: 25%;
-  height: calc(100% + var(--spacing) * 2px);
-  top: calc(var(--spacing) * -1px);
+  height: calc(100% + var(--ds) * 2px);
+  top: calc(var(--ds) * -1px);
 
   ${down("md")} {
     height: 100%;
@@ -87,8 +87,8 @@ const NavLinksRunner = styled(Skew)`
 `;
 
 const NavLogo = styled.a`
-  width: calc(var(--spacing) * 6px);
-  height: calc(var(--spacing) * 6px);
+  width: calc(var(--ds) * 6px);
+  height: calc(var(--ds) * 6px);
 
   & > img {
     width: inherit;
@@ -109,10 +109,10 @@ const NavSocial = styled.aside`
 const NavSocialButton = styled(Button)`
   ${NavLinkDefault};
 
-  margin: 0 calc(var(--spacing) * 1px);
+  margin: 0 calc(var(--ds) * 1px);
 
   &:first-child {
-    margin-left: calc(var(--spacing) * 22px);
+    margin-left: calc(var(--ds) * 22px);
 
     ${down("md")} {
       margin-left: 0;
@@ -123,7 +123,7 @@ const NavSocialButton = styled(Button)`
 const NavAside = styled(NavRoot)`
   top: 0;
   left: 0;
-  background-color: rgba(var(--color-black), 0.75) !important;
+  background-color: rgba(var(--cqd), 0.75) !important;
 `;
 
 export default function Nav(props) {

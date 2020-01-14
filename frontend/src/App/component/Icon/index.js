@@ -5,9 +5,9 @@ import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
 const IconRoot = styled.svg`
-  transition: var(--transition);
-  width: calc(var(--spacing) * 3px);
-  height: calc(var(--spacing) * 3px);
+  transition: var(--a);
+  width: calc(var(--ds) * 3px);
+  height: calc(var(--ds) * 3px);
   fill: transparent;
   stroke: currentColor;
 

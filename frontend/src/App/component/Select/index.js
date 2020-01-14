@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 
 const SelectRoot = styled.label`
   position: relative;
-  padding: calc(var(--spacing) * 1px) 0;
+  padding: calc(var(--ds) * 1px) 0;
   display: flex;
   align-items: center;
 `;
@@ -18,7 +18,7 @@ const SelectInput = styled.select`
   position: inherit;
   font-weight: bold;
   width: 100%;
-  padding-right: calc(var(--spacing) * 5px);
+  padding-right: calc(var(--ds) * 5px);
 `;
 
 const SelectIcon = styled(Icon)`

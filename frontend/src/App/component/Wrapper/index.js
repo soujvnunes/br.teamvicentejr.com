@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 
 const WrapperRoot = styled.div`
   flex: 1;
-  max-width: calc(var(--viewport) * 1px);
-  margin: 0 calc(var(--spacing) * 2px);
+  max-width: calc(var(--dv) * 1px);
+  margin: 0 calc(var(--ds) * 2px);
   position: relative;
   display: grid;
 `;

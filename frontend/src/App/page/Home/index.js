@@ -16,11 +16,11 @@ import Wrapper from "../../component/Wrapper";
 
 const HomeHeader = styled(Header)`
   background-size: 40%;
-  background-position-y: calc(var(--spacing) * 14px);
+  background-position-y: calc(var(--ds) * 14px);
 
   ${down("md")} {
     background-size: 100%;
-    background-position-y: calc(var(--spacing) * 10px);
+    background-position-y: calc(var(--ds) * 10px);
   }
 `;
 
@@ -29,30 +29,30 @@ const HomeEventsFilter = styled(Wrapper)`
   display: flex;
   align-items: center;
   position: sticky;
-  top: calc(var(--spacing) * 14px);
-  margin-top: calc(var(--spacing) * 3px);
-  color: rgba(var(--color-secondary-base));
+  top: calc(var(--ds) * 14px);
+  margin-top: calc(var(--ds) * 3px);
+  color: rgba(var(--csb));
 
   ${down("md")} {
-    top: calc(var(--spacing) * 11px);
+    top: calc(var(--ds) * 11px);
   }
 `;
 
 const HomeEventsFilterTitle = styled(Typography)`
   position: relative;
-  margin: 0 calc(var(--spacing) * 2px);
+  margin: 0 calc(var(--ds) * 2px);
 `;
 
 const HomeEventsFilterSkew = styled(Skew)`
-  color: rgba(var(--color-tertiary-dark));
+  color: rgba(var(--ctd));
 `;
 
 const HomeEventsFilterSelect = styled(Select)`
-  margin: 0 calc(var(--spacing) * 2px) 0 0;
+  margin: 0 calc(var(--ds) * 2px) 0 0;
 `;
 
 const HomeEventsListItem = styled(Line)`
-  margin: calc(var(--spacing) * 1px) 0;
+  margin: calc(var(--ds) * 1px) 0;
 `;
 
 const HomeEventsListItemParagraph = styled(Typography)`
@@ -60,7 +60,7 @@ const HomeEventsListItemParagraph = styled(Typography)`
 `;
 
 const HomeEventsListItemChip = styled(Chip)`
-  margin: 0 calc(var(--spacing) * 1px);
+  margin: 0 calc(var(--ds) * 1px);
 
   &:first-child {
     margin-left: 0;

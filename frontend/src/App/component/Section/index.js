@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const SectionRoot = styled.section`
   width: 100%;
-  margin: calc(var(--spacing) * 2px) 0;
+  margin: calc(var(--ds) * 2px) 0;
   display: flex;
   justify-content: center;
 `;

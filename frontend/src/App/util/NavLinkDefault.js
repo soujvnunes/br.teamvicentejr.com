@@ -1,15 +1,15 @@
 import { css } from "styled-components";
 
 export const NavLinkDefault = css`
-  color: rgba(var(--color-tertiary-light), 1);
+  color: rgba(var(--ctl), 1);
   opacity: 1;
-  transition: var(--transition);
+  transition: var(--a);
 
   &:hover {
     opacity: 0.75;
   }
 
   &.active {
-    color: rgba(var(--color-secondary-base), 1);
+    color: rgba(var(--csb), 1);
   }
 `;

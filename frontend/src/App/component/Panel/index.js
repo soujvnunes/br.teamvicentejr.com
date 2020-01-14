@@ -12,8 +12,8 @@ const PanelRoot = styled.div`
   background-repeat: no-repeat;
   background-position: center 0;
   width: 100%;
-  min-height: calc(var(--spacing) * 24px);
-  padding: calc(var(--spacing) * 8px) 0;
+  min-height: calc(var(--ds) * 24px);
+  padding: calc(var(--ds) * 8px) 0;
   position: relative;
   background-image: url(${props => props.image});
 `;
@@ -24,11 +24,11 @@ const PanelBackdrop = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(var(--color-black), 0.5);
-  transition: var(--transition);
+  background-color: rgba(var(--cqd), 0.5);
+  transition: var(--a);
 
   ${PanelRoot}:hover & {
-    background-color: rgba(var(--color-black), 0.75);
+    background-color: rgba(var(--cqd), 0.75);
   }
 `;
 

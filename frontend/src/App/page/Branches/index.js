@@ -7,7 +7,7 @@ import Section from "../../component/Section";
 import styled from "styled-components";
 
 const BranchesCard = styled(Card)`
-  margin: calc(var(--spacing) * 1px) 0;
+  margin: calc(var(--ds) * 1px) 0;
 
   &:first-child {
     margin-top: 0;

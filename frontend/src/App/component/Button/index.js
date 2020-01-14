@@ -13,9 +13,9 @@ const ButtonRoot = styled.button`
   position: relative;
   align-items: center;
   justify-content: center;
-  height: calc(var(--spacing) * 6px);
-  min-width: calc(var(--spacing) * 6px);
-  padding: 0 calc(var(--spacing) * 2px);
+  height: calc(var(--ds) * 6px);
+  min-width: calc(var(--ds) * 6px);
+  padding: 0 calc(var(--ds) * 2px);
 `;
 
 const ButtonLabel = styled.span`
@@ -25,7 +25,7 @@ const ButtonLabel = styled.span`
 
 const ButtonIcon = styled(Icon)`
   & ~ ${ButtonLabel} {
-    margin-left: calc(var(--spacing) * 2px);
+    margin-left: calc(var(--ds) * 2px);
   }
 `;
 

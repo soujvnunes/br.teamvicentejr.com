@@ -8,9 +8,9 @@ const SkewRoot = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  transform: skewX(var(--skew-X)) skewY(0deg);
-  transition: var(--transition);
-  border-radius: var(--radius);
+  transform: skewX(var(--stsX)) skewY(0deg);
+  transition: var(--a);
+  border-radius: var(--sr);
 
   ${props =>
     props.variant === "text" &&
@@ -31,7 +31,7 @@ const SkewRoot = styled.div`
     props.variant === "outlined" &&
     css`
       opacity: 0.5;
-      border: var(--border);
+      border: var(--sb);
 
       &:hover {
         opacity: 0.75;
@@ -52,7 +52,7 @@ const SkewRoot = styled.div`
     props.variant === "underlined" &&
     css`
       background-color: currentColor;
-      height: calc(var(--spacing) * 0.25px);
+      height: calc(var(--ds) * 0.25px);
       top: auto;
     `}
 `;
