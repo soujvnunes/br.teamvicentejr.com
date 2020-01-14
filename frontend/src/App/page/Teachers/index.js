@@ -102,6 +102,18 @@ const TeachersCarouselItemInfo = styled(Wrapper)`
   }
 `;
 
+const TeachersCarouselItemInfoChip = styled(Chip)`
+  margin: 0 calc(var(--spacing) * 1px);
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
 export default function Teachers() {
   return (
     <TeachersRoot>
@@ -116,7 +128,7 @@ export default function Teachers() {
                 )}
                 <div>
                   {data.titles.map((title, i) => (
-                    <Chip key={i} primary={title} />
+                    <TeachersCarouselItemInfoChip key={i} primary={title} />
                   ))}
                 </div>
                 {data.description && (

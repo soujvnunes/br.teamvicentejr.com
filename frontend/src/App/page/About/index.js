@@ -11,6 +11,18 @@ import Typography from "../../component/Typography";
 import Icon from "../../component/Icon";
 import styled from "styled-components";
 
+const AboutHistory = styled(History)`
+  margin: calc(var(--spacing) * 1px) 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
 const AboutPanelSocialIcon = styled(Icon)`
   margin: 0 calc(var(--spacing) * 1px);
 `;
@@ -26,7 +38,7 @@ export default function About() {
       <Section>
         {data.history.map((data, i) => {
           return (
-            <History
+            <AboutHistory
               key={i}
               image={data.image}
               text={data.text}

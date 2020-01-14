@@ -4,6 +4,19 @@ import Main from "../../component/Main";
 import Card from "../../component/Card";
 import Header from "../../component/Header";
 import Section from "../../component/Section";
+import styled from "styled-components";
+
+const BranchesCard = styled(Card)`
+  margin: calc(var(--spacing) * 1px) 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
 
 export default function Branches() {
   return (
@@ -17,7 +30,7 @@ export default function Branches() {
       <Section>
         {data.map((data, i) => {
           return (
-            <Card
+            <BranchesCard
               key={i}
               primary={data.name}
               secondary={data.local}

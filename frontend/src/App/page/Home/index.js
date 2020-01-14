@@ -59,6 +59,18 @@ const HomeEventsListItemParagraph = styled(Typography)`
   margin-top: 1rem;
 `;
 
+const HomeEventsListItemChip = styled(Chip)`
+  margin: 0 calc(var(--spacing) * 1px);
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+`;
+
 export default function Home() {
   let newDate = new Date();
   let currentMonth = newDate.getMonth() + 1;
@@ -139,14 +151,28 @@ export default function Home() {
                     </HomeEventsListItemParagraph>
                     <div>
                       {data.day && (
-                        <Chip icon={"calendar"} primary={data.day} />
+                        <HomeEventsListItemChip
+                          icon={"calendar"}
+                          primary={data.day}
+                        />
                       )}
-                      {data.time && <Chip icon={"clock"} primary={data.time} />}
+                      {data.time && (
+                        <HomeEventsListItemChip
+                          icon={"clock"}
+                          primary={data.time}
+                        />
+                      )}
                       {data.teacher && (
-                        <Chip icon={"people"} primary={data.teacher} />
+                        <HomeEventsListItemChip
+                          icon={"people"}
+                          primary={data.teacher}
+                        />
                       )}
                       {data.price && (
-                        <Chip icon={"cents"} primary={data.price} />
+                        <HomeEventsListItemChip
+                          icon={"cents"}
+                          primary={data.price}
+                        />
                       )}
                     </div>
                   </HomeEventsListItem>
