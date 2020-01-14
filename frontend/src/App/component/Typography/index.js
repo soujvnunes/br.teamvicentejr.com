@@ -14,7 +14,7 @@ const Label = styled.span`
       font-family: var(--tm);
       letter-spacing: calc(var(--ds) * 1px);
       font-size: calc(var(--ds) * 5px);
-      color: rgba(var(--ctl), 1);
+      color: hsla(var(--ctl), 1);
 
       ${down("md")} {
         font-size: calc(var(--ds) * 2px);

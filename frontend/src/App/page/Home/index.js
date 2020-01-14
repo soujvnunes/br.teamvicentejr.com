@@ -31,7 +31,6 @@ const HomeEventsFilter = styled(Wrapper)`
   position: sticky;
   top: calc(var(--ds) * 14px);
   margin-top: calc(var(--ds) * 3px);
-  color: rgba(var(--csb));
 
   ${down("md")} {
     top: calc(var(--ds) * 11px);
@@ -44,7 +43,7 @@ const HomeEventsFilterTitle = styled(Typography)`
 `;
 
 const HomeEventsFilterSkew = styled(Skew)`
-  color: rgba(var(--ctd));
+  color: hsla(var(--csl), 1);
 `;
 
 const HomeEventsFilterSelect = styled(Select)`

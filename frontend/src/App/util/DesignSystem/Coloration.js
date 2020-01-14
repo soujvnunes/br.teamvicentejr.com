@@ -1,15 +1,40 @@
 import { css } from "styled-components";
 
 export const Coloration = css`
-  --cpl: 223, 72, 48; //coloration with primary light color
-  --cpb: 166, 5, 5; //coloration with primary base color
-  --cpd: 112, 0, 0; //coloration with primary dark color
-  --csl: 94, 94, 94; //coloration with secondary light color
-  --csb: 52, 52, 52; //coloration with secondary base color
-  --csd: 13, 13, 13; //coloration with secondary dark color
-  --ctl: 215, 215, 215; //coloration with tertiary light color
-  --ctb: 166, 166, 166; //coloration with tertiary base color
-  --ctd: 119, 119, 119; //coloration with tertiary dark color
-  --cqd: 0, 0, 0; //coloration with quaternary dark color
-  --cql: 255, 255, 255; //coloration with quaternary light color
+  // separation
+  --cpH: 0; //coloration with primary hue
+  --cpS: 94%; //coloration with primary saturation
+  --cpL: 34%; //coloration with primary lightness
+  --csH: 0; //coloration with secondary hue
+  --csS: 0%; //coloration with secondary saturation
+  --csL: 20%; //coloration with secondary lightness
+
+  // configuration
+  --ct: 50%; //coloration threshold
+  --cr: 25%; //coloration radius
+
+  // definition
+  --cpLl: calc(
+    var(--cpL) + var(--cr)
+  ); //coloration with primary lightness lighten
+  --cpLd: calc(
+    var(--cpL) - var(--cr)
+  ); //coloration with primary lightness darken
+  --csLl: calc(
+    var(--csL) + var(--cr)
+  ); //coloration with secondary lightness lighten
+  --csLd: calc(
+    var(--csL) - var(--cr)
+  ); //coloration with secondary lightness darken
+
+  // formalization
+  --cpl: var(--cpH), var(--cpS), var(--cpLl); //coloration with primary light
+  --cpb: var(--cpH), var(--cpS), var(--cpL); //coloration with primary base
+  --cpd: var(--cpH), var(--cpS), var(--cpLd); //coloration with primary dark
+  --csl: var(--csH), var(--csS), var(--csLl); //coloration with secondary light
+  --csb: var(--csH), var(--csS), var(--csL); //coloration with secondary base
+  --csd: var(--csH), var(--csS), var(--csLd); //coloration with secondary dark
+  --ctl: 0, 0%, 100%; //coloration with tertiary light
+  --ctb: 0, 0%, 50%; //coloration with tertiary base
+  --ctd: 0, 0%, 0%; //coloration with tertiary dark
 `;

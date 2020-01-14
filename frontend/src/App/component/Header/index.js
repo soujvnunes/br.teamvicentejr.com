@@ -14,14 +14,14 @@ const HeaderRoot = styled.header`
   background-repeat: no-repeat;
   width: 100%;
   background-color: ${props =>
-    props.image ? "rgba(var(--cqd), 1)" : "transparent"};
+    props.image ? "hsla(var(--ctd), 1)" : "transparent"};
   padding: calc(var(--ds) * 14px) 0 calc(var(--ds) * 2px) 0;
   min-height: ${props => (props.image ? "calc(var(--ds) * 100px)" : "auto")};
   text-align: center;
   position: relative;
   box-shadow: ${props =>
     props.image
-      ? "inset 0 calc(var(--ds) * -24px) calc(var(--ds) * 8px) calc(var(--ds) * -8px) rgba(var(--cqd), 0.75)"
+      ? "inset 0 calc(var(--ds) * -24px) calc(var(--ds) * 8px) calc(var(--ds) * -8px) hsla(var(--ctd), 0.75)"
       : "none"};
 
   ${props =>

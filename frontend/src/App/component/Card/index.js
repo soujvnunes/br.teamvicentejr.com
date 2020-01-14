@@ -11,7 +11,7 @@ const CardRoot = styled.article`
   transition: var(--a);
 
   &:hover {
-    color: rgba(var(--cpl), 1);
+    color: hsla(var(--cpl), 1);
   }
 `;
 

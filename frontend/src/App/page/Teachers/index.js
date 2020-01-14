@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { down } from "styled-breakpoints";
 
 const TeachersRoot = styled(Main)`
-  background-color: rgba(var(--cqd), 1);
+  background-color: hsla(var(--ctd), 1);
   padding-top: calc(var(--ds) * 14px);
   margin-bottom: 0;
 
@@ -49,13 +49,13 @@ const TeachersCarousel = styled(Carousel)`
         outline: 0;
         box-shadow: none;
         transition: var(--a);
-        background-color: rgba(var(--ctb), 1);
+        background-color: hsla(var(--ctb), 1);
         opacity: 1;
         transform: skewX(var(--stsX)) skewY(0deg);
         border-radius: calc(var(--ds) * 0.25px);
 
         &.selected {
-          background-color: rgba(var(--cpb), 1);
+          background-color: hsla(var(--cpb), 1);
         }
       }
     }
@@ -86,11 +86,8 @@ const TeachersCarouselItemInfo = styled(Wrapper)`
   margin: 0;
   padding: calc(var(--ds) * 16px) calc(var(--ds) * 2px) 0 calc(var(--ds) * 2px);
   text-align: center;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(var(--cqd), 0.75) 50%
-  );
+  box-shadow: inset 0 calc(var(--ds) * -24px) calc(var(--ds) * 8px)
+    calc(var(--ds) * -8px) hsla(var(--ctd), 0.75);
 
   ${down("md")} {
     height: calc(100vh - 182px - 50%);

@@ -25,7 +25,7 @@ const NavRoot = styled(Wrapper)`
   ${down("md")} {
     width: 100vw;
     margin: 0;
-    background-color: rgba(var(--cpb), 1);
+    background-color: hsla(var(--cpb), 1);
     height: calc(var(--ds) * 9px);
     padding: 0 calc(var(--ds) * 2px);
     bottom: 0;
@@ -33,7 +33,7 @@ const NavRoot = styled(Wrapper)`
 `;
 
 const NavSkew = styled(Skew)`
-  color: rgba(var(--cpb), 1);
+  color: hsla(var(--cpb), 1);
 `;
 
 const NavLinks = styled.nav`
@@ -51,7 +51,7 @@ const NavLinks = styled.nav`
 `;
 
 const NavLinksRunner = styled(Skew)`
-  color: rgba(var(--ctl), 1);
+  color: hsla(var(--ctl), 1);
   width: 25%;
   height: calc(100% + var(--ds) * 2px);
   top: calc(var(--ds) * -1px);
@@ -123,7 +123,7 @@ const NavSocialButton = styled(Button)`
 const NavAside = styled(NavRoot)`
   top: 0;
   left: 0;
-  background-color: rgba(var(--cqd), 0.75) !important;
+  background-color: hsla(var(--ctd), 0.75) !important;
 `;
 
 export default function Nav(props) {

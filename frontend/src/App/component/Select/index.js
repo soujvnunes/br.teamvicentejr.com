@@ -21,6 +21,10 @@ const SelectInput = styled.select`
   padding-right: calc(var(--ds) * 5px);
 `;
 
+const SelectInputOption = styled.option`
+  background-color: hsla(var(--csl), 1);
+`;
+
 const SelectIcon = styled(Icon)`
   position: absolute;
   right: 0;
@@ -35,7 +39,11 @@ export default function Select(props) {
       <SelectIcon name={"chevronBottom"} />
       <SelectInput id={id} onChange={onChange} value={value}>
         {option.map((option, i) => (
-          <option key={i} label={option.label} value={option.value} />
+          <SelectInputOption
+            key={i}
+            label={option.label}
+            value={option.value}
+          />
         ))}
       </SelectInput>
     </SelectRoot>
