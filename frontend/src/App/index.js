@@ -6,7 +6,7 @@ import NavItem from "./component/NavItem";
 import styled, { ThemeProvider } from "styled-components";
 import GlobalStyle from "./util/globalStyle";
 import { theme } from "./util/theme";
-import { ReactComponent as Icon } from "./asset/icon.svg";
+import { ReactComponent as Icon } from "./asset/misc/vis/icon.svg";
 import Home from "./page/Home";
 import Teachers from "./page/Teachers";
 import Branches from "./page/Branches";

@@ -6,7 +6,7 @@ export const NavLinkDefault = css`
   transition: var(--a);
 
   &:hover {
-    opacity: 0.75;
+    color: hsla(var(--ctl), 1);
   }
 
   &.active {
