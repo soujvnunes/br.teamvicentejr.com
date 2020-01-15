@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { down } from "styled-breakpoints";
 import PropTypes from "prop-types";
 
 const MainRoot = styled.main`
@@ -8,10 +7,6 @@ const MainRoot = styled.main`
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  ${down("md")} {
-    margin-bottom: calc(var(--ds) * 9px);
-  }
 `;
 
 export default function Main(props) {

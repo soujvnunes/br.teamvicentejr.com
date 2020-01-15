@@ -4,6 +4,7 @@ import Icon from "../Icon";
 import styled from "styled-components";
 import Typography from "../Typography";
 import PropTypes from "prop-types";
+import As from "../../util/Mixins/As";
 
 const ChipRoot = styled.div`
   position: relative;
@@ -22,10 +23,10 @@ const ChipIcon = styled(Icon)`
 `;
 
 export default function Chip(props) {
-  let { icon, primary, ...other } = props;
+  let { icon, primary, href, ...other } = props;
 
   return (
-    <ChipRoot {...other}>
+    <ChipRoot {...other} href={href} {...As(`${href ? "a" : "article"}`)}>
       <Skew variant={"underlined"} />
       <ChipContent>
         {icon && <ChipIcon name={icon} />}
@@ -36,6 +37,7 @@ export default function Chip(props) {
 }
 
 Chip.propTypes = {
+  href: PropTypes.string,
   icon: PropTypes.string,
   primary: PropTypes.string.isRequired
 };

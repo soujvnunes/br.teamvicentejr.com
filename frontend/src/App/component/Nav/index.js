@@ -5,7 +5,7 @@ import Skew from "../Skew";
 import Mark from "../../asset/misc/vis/mark.png";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
-import { NavLinkDefault } from "../../util/NavLinkDefault";
+import { NavLinkDefault } from "../../util/Mixins/NavLinkDefault";
 import Wrapper from "../Wrapper";
 import PropTypes from "prop-types";
 
@@ -112,7 +112,7 @@ const NavSocialButton = styled(Button)`
   margin: 0 calc(var(--ds) * 1px);
 
   &:first-child {
-    margin-left: calc(var(--ds) * 22px);
+    margin-left: calc(var(--ds) * 31px);
 
     ${down("md")} {
       margin-left: 0;
@@ -128,6 +128,7 @@ const NavAside = styled(NavRoot)`
 
 export default function Nav(props) {
   const isTablet = useMediaQuery({ maxDeviceWidth: 960 });
+  const isMobile = useMediaQuery({ maxDeviceWidth: 600 });
   let { children, indicator } = props;
 
   if (isTablet) {
@@ -144,12 +145,16 @@ export default function Nav(props) {
               icon={"instagram"}
               href={"https://instagr.am/vicentejrteambrasil"}
             />
-            <NavSocialButton
-              skew={false}
-              variant={"text"}
-              icon={"phone"}
-              href={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
-            />
+            {isMobile && (
+              <NavSocialButton
+                skew={false}
+                variant={"text"}
+                icon={"phone"}
+                href={
+                  "mailto:vicentejrteam@gmail.com?subject=Contato pelo site"
+                }
+              />
+            )}
             <NavSocialButton
               skew={false}
               variant={"text"}
@@ -183,12 +188,6 @@ export default function Nav(props) {
             variant={"text"}
             icon={"instagram"}
             href={"https://instagr.am/vicentejrteambrasil"}
-          />
-          <NavSocialButton
-            skew={false}
-            variant={"text"}
-            icon={"phone"}
-            href={"mailto:vicentejrteam@gmail.com?subject=Contato pelo site"}
           />
           <NavSocialButton
             skew={false}

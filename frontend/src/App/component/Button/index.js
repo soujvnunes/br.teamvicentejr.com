@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { InputBase } from "../../util/InputBase";
+import { InputBase } from "../../util/Mixins/InputBase";
 import Icon from "../Icon";
 import Skew from "../Skew";
-import As from "../../util/As";
+import As from "../../util/Mixins/As";
 
 const ButtonRoot = styled.button`
   ${InputBase};

@@ -3,14 +3,14 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
+import { transition } from "../../util/Mixins/Transition";
 
 const IconRoot = styled.svg`
-  transition: var(--a);
   width: calc(var(--ds) * 3px);
   height: calc(var(--ds) * 3px);
   fill: transparent;
   stroke: currentColor;
-  transition-property: fill;
+  ${transition("fill")}
 
   &:hover {
     fill: currentColor;

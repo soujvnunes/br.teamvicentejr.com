@@ -10,7 +10,7 @@ export const events = [
     time: "08:30 às 11:30",
     teacher: "Kleyson",
     price: "R$ 30,00",
-    image: require("../../asset/page/about/01001.jpg")
+    image: require("../../asset/page/home/events/20200111.jpeg")
   },
   {
     month: 2,

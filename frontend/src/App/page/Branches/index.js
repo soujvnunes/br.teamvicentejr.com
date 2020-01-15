@@ -9,16 +9,12 @@ import { down } from "styled-breakpoints";
 import CardSet from "../../component/CardSet";
 import CardHeader from "../../component/CardHeader";
 
+const BranchesCardSet = styled(CardSet)`
+  grid-template-columns: 50% 50%;
+`;
+
 const BranchesCard = styled(Card)`
   margin: calc(var(--ds) * 1px);
-
-  ${down("md")} {
-    margin: 0 0 calc(var(--ds) * 2px) 0;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 `;
 
 export default function Branches() {
@@ -31,17 +27,18 @@ export default function Branches() {
         }
       />
       <Section>
-        <CardSet>
+        <BranchesCardSet>
           {data.map((data, i) => {
             return (
               <BranchesCard
                 key={i}
                 title={data.name}
-                image={data.map}
                 href={data.href}
                 zoom={false}
+                image={data.map}
               >
                 <CardHeader
+                  backdrop={true}
                   primary={data.name}
                   secondary={data.local}
                   icon={"local"}
@@ -49,7 +46,7 @@ export default function Branches() {
               </BranchesCard>
             );
           })}
-        </CardSet>
+        </BranchesCardSet>
       </Section>
     </Main>
   );

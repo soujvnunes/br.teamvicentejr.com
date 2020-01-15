@@ -1,19 +1,12 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
-import As from "../../util/As";
+import As from "../../util/Mixins/As";
 
 const CardRoot = styled.article`
   transition: var(--a);
   border: var(--sb);
   border-radius: var(--sr);
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  &:hover {
-    color: hsla(var(--ctl), 1);
-  }
 
   ${props =>
     props.image &&
@@ -30,6 +23,10 @@ const CardRoot = styled.article`
             calc(var(--ds) * -8px) hsla(var(--ctd), 0.75);
         `}
     `};
+
+  &:hover {
+    color: hsla(var(--ctl), 1);
+  }
 `;
 
 export default function Card(props) {

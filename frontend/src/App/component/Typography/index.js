@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
-import As from "../../util/As";
+import As from "../../util/Mixins/As";
 
 const Label = styled.span`
   display: block;

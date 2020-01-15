@@ -71,10 +71,10 @@ const TeachersCarouselItem = styled.div`
 
 const TeachersCarouselItemImage = styled.img`
   width: inherit !important;
-  height: calc(100vh - 156px);
+  height: calc(100vh - 214px);
 
   ${down("md")} {
-    height: calc(100vh - 182px);
+    height: calc(100vh - 188px);
   }
 `;
 
@@ -86,7 +86,7 @@ const TeachersCarouselItemInfo = styled(Wrapper)`
   margin: 0;
   padding: calc(var(--ds) * 16px) calc(var(--ds) * 2px) calc(var(--ds) * 2px)
     calc(var(--ds) * 2px);
-  box-shadow: inset 0 calc(var(--ds) * -30px) calc(var(--ds) * 8px)
+  box-shadow: inset 0 calc(var(--ds) * -26px) calc(var(--ds) * 8px)
     calc(var(--ds) * -8px) hsla(var(--ctd), 0.75);
 
   ${down("md")} {
@@ -105,9 +105,16 @@ export default function Teachers() {
               <TeachersCarouselItemImage src={data.image} alt={data.name} />
               <TeachersCarouselItemInfo>
                 <Typography variant={"title"}>{data.name}</Typography>
-                <div>
-                  <Chip key={i} primary={data.social} icon={"instagram"} />
-                </div>
+                {data.url && (
+                  <div>
+                    <Chip
+                      key={i}
+                      primary={data.social}
+                      href={data.url}
+                      icon={"instagram"}
+                    />
+                  </div>
+                )}
               </TeachersCarouselItemInfo>
             </TeachersCarouselItem>
           );

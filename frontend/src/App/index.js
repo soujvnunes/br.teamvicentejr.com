@@ -11,10 +11,16 @@ import Home from "./page/Home";
 import Teachers from "./page/Teachers";
 import Branches from "./page/Branches";
 import About from "./page/About";
+import { down } from "styled-breakpoints";
+import Footer from "./component/Footer";
 
 const AppRoot = styled.section`
   display: flex;
   flex-direction: column;
+
+  ${down("md")} {
+    margin-bottom: calc(var(--ds) * 9px);
+  }
 `;
 
 export default function App() {
@@ -49,6 +55,7 @@ export default function App() {
           <Route exact path="/professores" render={props => <Teachers />} />
           <Route exact path="/filiais" render={props => <Branches />} />
           <Route exact path="/sobre" render={props => <About />} />
+          <Footer />
         </AppRoot>
       </Router>
     </ThemeProvider>

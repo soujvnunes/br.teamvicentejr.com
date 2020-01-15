@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import css from "styled-components";
 
-const Coloration = ({ ground, color }) => {
+export const coloration = (ground, color) => {
   const [state, setState] = useState({
     lightness: ""
   });
@@ -15,18 +14,16 @@ const Coloration = ({ ground, color }) => {
   if (color === "var(--csH)") return setState({ lightness: "var(--csLd)" });
 
   if (ground === "background") {
-    return css`
+    return `
       background: ${color};
       --cc: calc((${lightness} - var(--ct)) * -100);
       color: hsla(0, 0%, var(--cc), 1);
     `;
   } else if (ground === "color") {
-    return css`
+    return `
       color: ${color};
       --cc: calc((${lightness} - var(--ct)) * -100);
       background: hsla(0, 0%, var(--cc), 1);
     `;
   }
 };
-
-export default Coloration;

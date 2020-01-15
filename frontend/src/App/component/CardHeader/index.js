@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Typography from "../Typography";
 import PropTypes from "prop-types";
 import { down } from "styled-breakpoints";
@@ -7,11 +7,16 @@ import Icon from "../Icon";
 
 const CardHeaderRoot = styled.header`
   padding: calc(var(--ds) * 1px);
-  background-color: hsla(var(--ctd), 0.75);
+
+  ${props =>
+    props.backdrop &&
+    css`
+      background-color: hsla(var(--ctd), 0.8);
+    `};
 `;
 
 const CardHeaderSecondary = styled.div`
-  display: inline-flex;
+  display: flex;
 
   ${down("md")} {
     align-items: center;
@@ -23,10 +28,10 @@ const CardHeaderSecondaryIcon = styled(Icon)`
 `;
 
 export default function CardHeader(props) {
-  let { primary, secondary, icon, ...other } = props;
+  let { primary, secondary, icon, backdrop, ...other } = props;
 
   return (
-    <CardHeaderRoot {...other}>
+    <CardHeaderRoot backdrop={backdrop} {...other}>
       <Typography variant={"heading"}>{primary}</Typography>
       <CardHeaderSecondary>
         <CardHeaderSecondaryIcon name={icon} />

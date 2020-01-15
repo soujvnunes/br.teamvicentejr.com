@@ -4,7 +4,7 @@ import Icon from "../Icon";
 import Typography from "../Typography";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
-import { NavLinkDefault } from "../../util/NavLinkDefault";
+import { NavLinkDefault } from "../../util/Mixins/NavLinkDefault";
 import PropTypes from "prop-types";
 
 const NavLinkRoot = styled(NavLink)`

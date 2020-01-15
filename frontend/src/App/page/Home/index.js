@@ -16,6 +16,7 @@ import CardSet from "../../component/CardSet";
 import Card from "../../component/Card";
 import CardHeader from "../../component/CardHeader";
 import CardContent from "../../component/CardContent";
+import CardMedia from "../../component/CardMedia";
 
 const HomeHeader = styled(Header)`
   background-size: 40%;
@@ -34,6 +35,7 @@ const HomeFilter = styled(Wrapper)`
   position: sticky;
   top: calc(var(--ds) * 14px);
   margin-top: calc(var(--ds) * 2px);
+  color: hsla(var(--ctl), 1);
 
   ${down("md")} {
     top: calc(var(--ds) * 11px);
@@ -46,7 +48,7 @@ const HomeFilterTitle = styled(Typography)`
 `;
 
 const HomeFilterSkew = styled(Skew)`
-  color: hsla(var(--csl), 1);
+  color: hsla(var(--ctd), 0.75);
 `;
 
 const HomeFilterSelect = styled(Select)`
@@ -55,6 +57,18 @@ const HomeFilterSelect = styled(Select)`
 
 const HomeEventsCardContentChip = styled(Chip)`
   margin-right: calc(var(--ds) * 1px);
+`;
+
+const EventsCard = styled(Card)`
+  margin: calc(var(--ds) * 1px);
+
+  ${down("md")} {
+    margin: 0 0 calc(var(--ds) * 2px) 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export default function Home() {
@@ -103,7 +117,7 @@ export default function Home() {
         image={VicenteJuniorImage}
       />
       <HomeFilter>
-        <HomeFilterSkew variant={"contained"} />
+        <HomeFilterSkew variant={"static"} />
         <HomeFilterTitle variant={"heading"}>Eventos</HomeFilterTitle>
         <HomeFilterSelect
           id={"event-filter-byMonth"}
@@ -124,12 +138,13 @@ export default function Home() {
             <>
               {filteredEvents.map((data, i) => {
                 return (
-                  <Card key={i} image={data.image} zoom={true}>
+                  <EventsCard key={i} zoom={true}>
                     <CardHeader
                       primary={data.title}
                       secondary={data.local}
                       icon={"local"}
                     />
+                    <CardMedia image={data.image} />
                     <CardContent>
                       <Typography variant={"paragraph"}>
                         {data.description}
@@ -161,7 +176,7 @@ export default function Home() {
                         )}
                       </div>
                     </CardContent>
-                  </Card>
+                  </EventsCard>
                 );
               })}
             </>

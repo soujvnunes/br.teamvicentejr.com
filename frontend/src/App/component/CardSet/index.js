@@ -6,10 +6,10 @@ import PropTypes from "prop-types";
 
 const CardSetRoot = styled(Wrapper)`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 25% 25% 25% 25%;
 
   ${down("md")} {
-    grid-template-columns: 100%;
+    grid-template-columns: 100% !important;
   }
 `;
 
@@ -19,5 +19,5 @@ export default function CardSet(props) {
 }
 
 CardSet.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.array.isRequired
 };
