@@ -10,6 +10,7 @@ const IconRoot = styled.svg`
   height: calc(var(--ds) * 3px);
   fill: transparent;
   stroke: currentColor;
+  transition-property: fill;
 
   &:hover {
     fill: currentColor;

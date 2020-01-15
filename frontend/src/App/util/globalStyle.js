@@ -12,7 +12,7 @@ const options = {
   black: "0, 0, 0",
   fontFamilyBase: "var(--ts)",
   fontFamilyMonospace: "var(--tm)",
-  bodyColor: "hsla(var(--ctl), 1)",
+  bodyColor: "hsla(var(--ctb), 1)",
   bodyBg: "hsla(var(--csb), 1)",
   linkColor: "inherit",
   linkDecoration: "inherit",

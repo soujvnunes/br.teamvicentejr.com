@@ -5,16 +5,19 @@ import Card from "../../component/Card";
 import Header from "../../component/Header";
 import Section from "../../component/Section";
 import styled from "styled-components";
+import { down } from "styled-breakpoints";
+import CardSet from "../../component/CardSet";
+import CardHeader from "../../component/CardHeader";
 
 const BranchesCard = styled(Card)`
-  margin: calc(var(--ds) * 1px) 0;
+  margin: calc(var(--ds) * 1px);
 
-  &:first-child {
-    margin-top: 0;
-  }
+  ${down("md")} {
+    margin: 0 0 calc(var(--ds) * 2px) 0;
 
-  &:last-child {
-    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -28,18 +31,25 @@ export default function Branches() {
         }
       />
       <Section>
-        {data.map((data, i) => {
-          return (
-            <BranchesCard
-              key={i}
-              primary={data.name}
-              secondary={data.local}
-              title={data.name}
-              image={data.map}
-              href={data.href}
-            />
-          );
-        })}
+        <CardSet>
+          {data.map((data, i) => {
+            return (
+              <BranchesCard
+                key={i}
+                title={data.name}
+                image={data.map}
+                href={data.href}
+                zoom={false}
+              >
+                <CardHeader
+                  primary={data.name}
+                  secondary={data.local}
+                  icon={"local"}
+                />
+              </BranchesCard>
+            );
+          })}
+        </CardSet>
       </Section>
     </Main>
   );

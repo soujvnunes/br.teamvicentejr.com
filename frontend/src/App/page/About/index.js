@@ -10,6 +10,7 @@ import Panel from "../../component/Panel";
 import Typography from "../../component/Typography";
 import Icon from "../../component/Icon";
 import styled from "styled-components";
+import Wrapper from "../../component/Wrapper";
 
 const AboutHistory = styled(History)`
   margin: calc(var(--ds) * 1px) 0;
@@ -32,16 +33,18 @@ export default function About() {
         image={headerImage}
       />
       <Section>
-        {data.history.map((data, i) => {
-          return (
-            <AboutHistory
-              key={i}
-              image={data.image}
-              text={data.text}
-              title={data.title}
-            />
-          );
-        })}
+        <Wrapper>
+          {data.history.map((data, i) => {
+            return (
+              <AboutHistory
+                key={i}
+                image={data.image}
+                text={data.text}
+                title={data.title}
+              />
+            );
+          })}
+        </Wrapper>
       </Section>
       <Panel image={panelImage} href={"https://www.instagram.com/vicentebjj/"}>
         <Typography variant={"title"}>Acompanhe</Typography>

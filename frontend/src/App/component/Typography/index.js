@@ -60,6 +60,12 @@ const Label = styled.span`
         font-size: calc(var(--ds) * 1.25px);
       }
     `}
+  
+    ${props =>
+      props.variant === "paragraph" &&
+      css`
+        margin-bottom: 0;
+      `}
 `;
 
 export default function Typography(props) {

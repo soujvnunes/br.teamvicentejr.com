@@ -1,5 +1,4 @@
 import React from "react";
-import Wrapper from "../Wrapper";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -13,11 +12,7 @@ const SectionRoot = styled.section`
 export default function Section(props) {
   let { children, ...other } = props;
 
-  return (
-    <SectionRoot {...other}>
-      <Wrapper>{children}</Wrapper>
-    </SectionRoot>
-  );
+  return <SectionRoot {...other}>{children}</SectionRoot>;
 }
 
 Section.propTypes = {

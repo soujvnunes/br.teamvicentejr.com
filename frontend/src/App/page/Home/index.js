@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Line from "../../component/Line";
 import Typography from "../../component/Typography";
 import Main from "../../component/Main";
 import Header from "../../component/Header";
@@ -13,6 +12,10 @@ import styled from "styled-components";
 import { down } from "styled-breakpoints";
 import Skew from "../../component/Skew";
 import Wrapper from "../../component/Wrapper";
+import CardSet from "../../component/CardSet";
+import Card from "../../component/Card";
+import CardHeader from "../../component/CardHeader";
+import CardContent from "../../component/CardContent";
 
 const HomeHeader = styled(Header)`
   background-size: 40%;
@@ -24,41 +27,33 @@ const HomeHeader = styled(Header)`
   }
 `;
 
-const HomeEventsFilter = styled(Wrapper)`
+const HomeFilter = styled(Wrapper)`
   z-index: 1;
   display: flex;
   align-items: center;
   position: sticky;
   top: calc(var(--ds) * 14px);
-  margin-top: calc(var(--ds) * 3px);
+  margin-top: calc(var(--ds) * 2px);
 
   ${down("md")} {
     top: calc(var(--ds) * 11px);
   }
 `;
 
-const HomeEventsFilterTitle = styled(Typography)`
+const HomeFilterTitle = styled(Typography)`
   position: relative;
   margin: 0 calc(var(--ds) * 2px);
 `;
 
-const HomeEventsFilterSkew = styled(Skew)`
+const HomeFilterSkew = styled(Skew)`
   color: hsla(var(--csl), 1);
 `;
 
-const HomeEventsFilterSelect = styled(Select)`
+const HomeFilterSelect = styled(Select)`
   margin: 0 calc(var(--ds) * 2px) 0 0;
 `;
 
-const HomeEventsListItem = styled(Line)`
-  margin: calc(var(--ds) * 1px) 0;
-`;
-
-const HomeEventsListItemParagraph = styled(Typography)`
-  margin-top: 1rem;
-`;
-
-const HomeEventsListItemChip = styled(Chip)`
+const HomeEventsCardContentChip = styled(Chip)`
   margin-right: calc(var(--ds) * 1px);
 `;
 
@@ -107,68 +102,66 @@ export default function Home() {
         subject={"Brazilian Jiu-jítsu"}
         image={VicenteJuniorImage}
       />
-      <HomeEventsFilter>
-        <HomeEventsFilterSkew variant={"contained"} />
-        <HomeEventsFilterTitle variant={"heading"}>
-          Eventos
-        </HomeEventsFilterTitle>
-        <HomeEventsFilterSelect
+      <HomeFilter>
+        <HomeFilterSkew variant={"contained"} />
+        <HomeFilterTitle variant={"heading"}>Eventos</HomeFilterTitle>
+        <HomeFilterSelect
           id={"event-filter-byMonth"}
           option={data.month}
           onChange={filterMonth}
           value={month}
         />
-        <HomeEventsFilterSelect
+        <HomeFilterSelect
           id={"event-filter-byYear"}
           option={data.year}
           onChange={filterYear}
           value={year}
         />
-      </HomeEventsFilter>
+      </HomeFilter>
       <Section>
-        <ul>
+        <CardSet>
           {filteredEvents && filteredEvents.length > 0 ? (
             <>
               {filteredEvents.map((data, i) => {
                 return (
-                  <HomeEventsListItem
-                    key={i}
-                    primary={data.title}
-                    secondary={data.local}
-                    /*id={data.description.replace(/\s/g, "")}*/
-                    icon={"add"}
-                    image={data.image}
-                  >
-                    <HomeEventsListItemParagraph variant={"paragraph"}>
-                      {data.description}
-                    </HomeEventsListItemParagraph>
-                    <div>
-                      {data.day && (
-                        <HomeEventsListItemChip
-                          icon={"calendar"}
-                          primary={data.day}
-                        />
-                      )}
-                      {data.time && (
-                        <HomeEventsListItemChip
-                          icon={"clock"}
-                          primary={data.time}
-                        />
-                      )}
-                      {data.teacher && (
-                        <HomeEventsListItemChip
-                          icon={"people"}
-                          primary={data.teacher}
-                        />
-                      )}
-                      {data.price && (
-                        <HomeEventsListItemChip
-                          icon={"cents"}
-                          primary={data.price}
-                        />
-                      )}
-                    </div>
-                  </HomeEventsListItem>
+                  <Card key={i} image={data.image} zoom={true}>
+                    <CardHeader
+                      primary={data.title}
+                      secondary={data.local}
+                      icon={"local"}
+                    />
+                    <CardContent>
+                      <Typography variant={"paragraph"}>
+                        {data.description}
+                      </Typography>
+                      <div>
+                        {data.day && (
+                          <HomeEventsCardContentChip
+                            icon={"calendar"}
+                            primary={data.day}
+                          />
+                        )}
+                        {data.time && (
+                          <HomeEventsCardContentChip
+                            icon={"clock"}
+                            primary={data.time}
+                          />
+                        )}
+                        {data.teacher && (
+                          <HomeEventsCardContentChip
+                            icon={"people"}
+                            primary={data.teacher}
+                          />
+                        )}
+                        {data.price && (
+                          <HomeEventsCardContentChip
+                            icon={"cents"}
+                            primary={data.price}
+                          />
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
                 );
               })}
             </>
@@ -177,7 +170,7 @@ export default function Home() {
               Nenhum evento encontrado.
             </Typography>
           )}
-        </ul>
+        </CardSet>
       </Section>
     </Main>
   );

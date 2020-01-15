@@ -7,7 +7,6 @@ const WrapperRoot = styled.div`
   max-width: calc(var(--dv) * 1px);
   margin: 0 calc(var(--ds) * 2px);
   position: relative;
-  display: grid;
 `;
 
 export default function Wrapper(props) {

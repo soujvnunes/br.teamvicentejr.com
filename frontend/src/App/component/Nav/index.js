@@ -17,7 +17,7 @@ const NavRoot = styled(Wrapper)`
   justify-content: space-between;
   flex-direction: row;
   height: calc(var(--ds) * 6px);
-  padding: 0 calc(var(--ds) * 2px);
+  padding: 0 calc(var(--ds) * 1px);
   align-self: center;
   width: 100%;
   margin: calc(var(--ds) * 4px) 0;
@@ -123,7 +123,7 @@ const NavSocialButton = styled(Button)`
 const NavAside = styled(NavRoot)`
   top: 0;
   left: 0;
-  background-color: hsla(var(--ctd), 0.75) !important;
+  background-color: hsla(var(--ctd), 0.5) !important;
 `;
 
 export default function Nav(props) {
