@@ -19,5 +19,5 @@ export default function CardSet(props) {
 }
 
 CardSet.propTypes = {
-  children: PropTypes.array.isRequired
+  children: PropTypes.any.isRequired
 };

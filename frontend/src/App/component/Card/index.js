@@ -22,7 +22,7 @@ const CardRoot = styled.article`
           box-shadow: inset 0 calc(var(--ds) * -24px) calc(var(--ds) * 8px)
             calc(var(--ds) * -8px) hsla(var(--ctd), 0.75);
         `}
-    `};
+    `},
 
   &:hover {
     color: hsla(var(--ctl), 1);
@@ -47,7 +47,7 @@ export default function Card(props) {
 }
 
 Card.propTypes = {
-  children: PropTypes.array.isRequired,
+  children: PropTypes.any.isRequired,
   title: PropTypes.string,
   image: PropTypes.string,
   href: PropTypes.string,

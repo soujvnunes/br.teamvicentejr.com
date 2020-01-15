@@ -5,7 +5,6 @@ import Card from "../../component/Card";
 import Header from "../../component/Header";
 import Section from "../../component/Section";
 import styled from "styled-components";
-import { down } from "styled-breakpoints";
 import CardSet from "../../component/CardSet";
 import CardHeader from "../../component/CardHeader";
 
