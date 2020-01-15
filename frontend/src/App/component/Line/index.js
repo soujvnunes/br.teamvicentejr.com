@@ -3,10 +3,7 @@ import Skew from "../Skew";
 import Button from "../Button";
 import Typography from "../Typography";
 import styled, { css } from "styled-components";
-import { down } from "styled-breakpoints";
 import PropTypes from "prop-types";
-
-const LineRoot = styled.li``;
 
 const LineHeader = styled.header`
   display: flex;
@@ -15,30 +12,7 @@ const LineHeader = styled.header`
   position: relative;
   min-height: calc(var(--ds) * 10px);
   align-items: center;
-
-  ${props =>
-    props.image
-      ? css`
-          padding: 0 calc(var(--ds) * 2px) 0 0;
-        `
-      : css`
-          padding: 0 calc(var(--ds) * 2px);
-        `}
-`;
-
-const LineHeaderImage = styled.div`
-  width: 50%;
-  height: calc(var(--ds) * 20px);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(${props => props.image});
-  clip-path: polygon(7% 10%, 100% 10%, 93% 90%, 0% 90%);
-
-  ${down("sm")} {
-    height: calc(var(--ds) * 10px);
-    clip-path: polygon(11% 10%, 100% 10%, 93% 90%, 0% 90%);
-  }
+  padding: 0 calc(var(--ds) * 2px);
 `;
 
 const LineHeaderInfo = styled.div`
@@ -48,8 +22,6 @@ const LineHeaderInfo = styled.div`
 const LineHeaderInfoHeading = styled(Typography)`
   margin-left: calc(var(--ds) * 1px);
 `;
-
-const LineHeaderButton = styled(Button)``;
 
 const LineContent = styled.div`
   overflow: hidden;
@@ -77,9 +49,8 @@ export default function Line(props) {
   };
 
   return (
-    <LineRoot {...other}>
-      <LineHeader image={image} onClick={handleExpand}>
-        {image && <LineHeaderImage image={image} />}
+    <li {...other}>
+      <LineHeader onClick={handleExpand}>
         <LineHeaderInfo>
           <LineHeaderInfoHeading variant={"heading"}>
             {primary}
@@ -87,7 +58,7 @@ export default function Line(props) {
           <Typography variant={"subject"}>{secondary}</Typography>
         </LineHeaderInfo>
         <Skew variant={"outlined"} />
-        <LineHeaderButton
+        <Button
           skew={true}
           icon={expand ? "remove" : "add"}
           onClick={handleExpand}
@@ -95,12 +66,11 @@ export default function Line(props) {
         />
       </LineHeader>
       <LineContent expand={expand}>{children}</LineContent>
-    </LineRoot>
+    </li>
   );
 }
 
 Line.propTypes = {
-  image: PropTypes.string,
   children: PropTypes.node,
   primary: PropTypes.string.isRequired,
   secondary: PropTypes.string.isRequired
