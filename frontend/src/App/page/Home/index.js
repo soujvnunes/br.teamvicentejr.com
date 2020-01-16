@@ -94,7 +94,7 @@ export default function Home() {
   }, [month, year]);
 
   function filterMonth() {
-    const select = document.getElementById("event-filter-byMonth");
+    const select = document.getElementById("monthSelect");
     setState({
       ...state,
       month: select.options[select.selectedIndex].value
@@ -102,7 +102,7 @@ export default function Home() {
   }
 
   function filterYear() {
-    const select = document.getElementById("event-filter-byYear");
+    const select = document.getElementById("yearSelect");
     setState({
       ...state,
       year: select.options[select.selectedIndex].value
@@ -120,13 +120,13 @@ export default function Home() {
         <HomeFilterSkew variant={"static"} />
         <HomeFilterTitle variant={"heading"}>Eventos</HomeFilterTitle>
         <HomeFilterSelect
-          id={"event-filter-byMonth"}
+          id={"monthSelect"}
           option={data.month}
           onChange={filterMonth}
           value={month}
         />
         <HomeFilterSelect
-          id={"event-filter-byYear"}
+          id={"yearSelect"}
           option={data.year}
           onChange={filterYear}
           value={year}
@@ -144,7 +144,7 @@ export default function Home() {
                       secondary={data.local}
                       icon={"local"}
                     />
-                    <CardMedia image={data.image} />
+                    {data.image && <CardMedia image={data.image} />}
                     <CardContent>
                       <Typography variant={"paragraph"}>
                         {data.description}

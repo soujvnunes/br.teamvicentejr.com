@@ -12,10 +12,12 @@ import Branches from "./page/Branches";
 import About from "./page/About";
 import { down } from "styled-breakpoints";
 import Footer from "./component/Footer";
+import { coloration } from "./util/Mixins/Coloration";
 
 const AppRoot = styled.section`
   display: flex;
   flex-direction: column;
+  ${coloration("back", "var(--csb)")};
 
   ${down("tablet")} {
     margin-bottom: calc(var(--ds) * 9px);
