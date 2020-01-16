@@ -20,7 +20,7 @@ export const navigation = [
   {
     name: "about",
     to: "/sobre",
-    icon: "about",
+    icon: "info",
     primary: "Sobre"
   }
 ];

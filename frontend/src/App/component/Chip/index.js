@@ -24,7 +24,7 @@ export default function Chip(props) {
   return (
     <ChipRoot {...other} href={href} {...As(`${href ? "a" : "div"}`)}>
       <Skew variant={"underlined"} />
-      {icon && <ChipIcon name={icon} />}
+      {icon && <ChipIcon name={icon} variant={"active"} />}
       <Typography variant={"action"}>{primary}</Typography>
     </ChipRoot>
   );

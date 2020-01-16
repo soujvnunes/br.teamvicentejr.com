@@ -11,6 +11,22 @@ const IconRoot = styled.svg`
   height: calc(var(--ds) * 3px);
   fill: transparent;
   stroke: currentColor;
+  vertical-align: middle;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+
   ${transition("fill")}
 
   &:hover {
@@ -49,22 +65,26 @@ export default function Icon(props) {
 
 Icon.propTypes = {
   name: PropTypes.oneOf([
-    "calendar",
-    "cents",
-    "clock",
-    "about",
-    "phone",
-    "youtube",
-    "instagram",
-    "facebook",
-    "view",
-    "share",
-    "remove",
-    "add",
-    "user",
-    "local",
+    "home",
     "people",
-    "home"
+    "local",
+    "user",
+    "phone",
+    "calendar",
+    "chevron",
+    "chevrons",
+    "add",
+    "remove",
+    "share",
+    "maximize",
+    "search",
+    "locker",
+    "view",
+    "clock",
+    "info",
+    "cents",
+    "youtube",
+    "instagram"
   ]).isRequired,
   variant: PropTypes.oneOf(["default", "active"]).isRequired
 };

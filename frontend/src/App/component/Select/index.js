@@ -36,7 +36,7 @@ export default function Select(props) {
   return (
     <SelectRoot {...other} htmlFor={id}>
       <Skew variant={"underlined"} />
-      <SelectIcon name={"chevronBottom"} />
+      <SelectIcon name={"chevron"} />
       <SelectInput id={id} onChange={onChange} value={value}>
         {option.map((option, i) => (
           <SelectInputOption
