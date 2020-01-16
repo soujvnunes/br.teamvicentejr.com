@@ -16,6 +16,7 @@ import { coloration } from "./util/Mixins/Coloration";
 const AppRoot = styled.section`
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
