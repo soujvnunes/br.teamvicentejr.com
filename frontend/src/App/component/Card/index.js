@@ -19,8 +19,6 @@ const CardRoot = styled.article`
       ${props.zoom &&
         css`
           background-size: cover;
-          box-shadow: inset 0 calc(var(--ds) * -24px) calc(var(--ds) * 8px)
-            calc(var(--ds) * -8px) hsla(var(--ctd), 0.75);
         `}
     `}
 
