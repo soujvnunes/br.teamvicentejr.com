@@ -18,7 +18,7 @@ const CardHeaderRoot = styled.header`
 const CardHeaderSecondary = styled.div`
   display: flex;
 
-  ${down("md")} {
+  ${down("tablet")} {
     align-items: center;
   }
 `;

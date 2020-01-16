@@ -17,7 +17,7 @@ const FooterWrapper = styled(Wrapper)`
   display: flex;
   justify-content: space-between;
 
-  ${down("md")} {
+  ${down("tablet")} {
     flex-direction: column;
   }
 `;
@@ -28,7 +28,7 @@ const FooterWrapperCopyright = styled.div`
   flex-direction: row;
   align-items: center;
 
-  ${down("md")} {
+  ${down("tablet")} {
     margin-bottom: calc(var(--ds) * 2px);
   }
 `;
@@ -38,7 +38,7 @@ const FooterWrapperDev = styled.a`
   flex-direction: row;
   align-items: center;
 
-  ${down("md")} {
+  ${down("tablet")} {
     margin-bottom: calc(var(--ds) * 2px);
   }
 `;

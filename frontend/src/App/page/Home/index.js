@@ -22,7 +22,7 @@ const HomeHeader = styled(Header)`
   background-size: 40%;
   background-position-y: calc(var(--ds) * 14px);
 
-  ${down("md")} {
+  ${down("tablet")} {
     background-size: 100%;
     background-position-y: calc(var(--ds) * 10px);
   }
@@ -37,7 +37,7 @@ const HomeFilter = styled(Wrapper)`
   margin-top: calc(var(--ds) * 2px);
   color: hsla(var(--ctl), 1);
 
-  ${down("md")} {
+  ${down("tablet")} {
     top: calc(var(--ds) * 11px);
   }
 `;
@@ -48,7 +48,7 @@ const HomeFilterTitle = styled(Typography)`
 `;
 
 const HomeFilterSkew = styled(Skew)`
-  color: hsla(var(--ctd), 0.75);
+  color: hsla(var(--cpb), 1);
 `;
 
 const HomeFilterSelect = styled(Select)`
@@ -62,7 +62,7 @@ const HomeEventsCardContentChip = styled(Chip)`
 const EventsCard = styled(Card)`
   margin: calc(var(--ds) * 1px);
 
-  ${down("md")} {
+  ${down("tablet")} {
     margin: 0 0 calc(var(--ds) * 2px) 0;
 
     &:last-child {

@@ -16,7 +16,7 @@ const Label = styled.span`
       font-size: calc(var(--ds) * 5px);
       color: hsla(var(--ctl), 1);
 
-      ${down("md")} {
+      ${down("tablet")} {
         font-size: calc(var(--ds) * 2px);
       }
     `}
@@ -27,7 +27,7 @@ const Label = styled.span`
       font-weight: bold;
       text-transform: uppercase;
 
-      ${down("md")} {
+      ${down("tablet")} {
         font-size: calc(var(--ds) * 1.75px);
       }
     `}
@@ -37,7 +37,7 @@ const Label = styled.span`
     css`
       font-size: calc(var(--ds) * 4px);
 
-      ${down("md")} {
+      ${down("tablet")} {
         font-size: calc(var(--ds) * 2px);
       }
     `}
@@ -46,7 +46,8 @@ const Label = styled.span`
     (props.variant === "subject" || props.variant === "heading") &&
     css`
       font-size: calc(var(--ds) * 2px);
-      ${down("md")} {
+
+      ${down("tablet")} {
         font-size: calc(var(--ds) * 1.5px);
       }
     `}
@@ -56,7 +57,8 @@ const Label = styled.span`
     props.variant === "action" &&
     css`
       font-size: calc(var(--ds) * 1.5px);
-      ${down("md")} {
+
+      ${down("tablet")} {
         font-size: calc(var(--ds) * 1.25px);
       }
     `}

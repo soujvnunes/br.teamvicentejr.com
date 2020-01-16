@@ -9,7 +9,7 @@ const CardContentRoot = styled.div`
   transition-property: transform;
   padding: calc(var(--ds) * 1px);
 
-  ${down("md")} {
+  ${down("tablet")} {
     padding: calc(var(--ds) * 1px);
   }
 `;

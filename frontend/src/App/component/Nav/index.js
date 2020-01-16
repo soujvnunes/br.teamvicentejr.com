@@ -22,7 +22,7 @@ const NavRoot = styled(Wrapper)`
   width: 100%;
   margin: calc(var(--ds) * 4px) 0;
 
-  ${down("md")} {
+  ${down("tablet")} {
     width: 100vw;
     margin: 0;
     background-color: hsla(var(--cpb), 1);
@@ -44,7 +44,7 @@ const NavLinks = styled.nav`
   align-items: center;
   justify-content: space-around;
 
-  ${down("md")} {
+  ${down("tablet")} {
     width: 100%;
     height: calc(var(--ds) * 7px);
   }
@@ -56,7 +56,7 @@ const NavLinksRunner = styled(Skew)`
   height: calc(100% + var(--ds) * 2px);
   top: calc(var(--ds) * -1px);
 
-  ${down("md")} {
+  ${down("tablet")} {
     height: 100%;
     top: 0;
   } 
@@ -95,7 +95,7 @@ const NavLogo = styled.a`
     height: inherit;
     transform: scale(1.5);
 
-    ${down("md")} {
+    ${down("tablet")} {
       transform: scale(1);
     }
   }
@@ -114,7 +114,7 @@ const NavSocialButton = styled(Button)`
   &:first-child {
     margin-left: calc(var(--ds) * 31px);
 
-    ${down("md")} {
+    ${down("tablet")} {
       margin-left: 0;
     }
   }

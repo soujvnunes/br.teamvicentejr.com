@@ -14,7 +14,7 @@ const TeachersRoot = styled(Main)`
   padding-top: calc(var(--ds) * 14px);
   margin-bottom: 0;
 
-  ${down("md")} {
+  ${down("tablet")} {
     padding-top: calc(var(--ds) * 9px);
   }
 `;
@@ -73,7 +73,7 @@ const TeachersCarouselItemImage = styled.img`
   width: inherit !important;
   height: calc(100vh - 214px);
 
-  ${down("md")} {
+  ${down("tablet")} {
     height: calc(100vh - 188px);
   }
 `;
@@ -89,7 +89,7 @@ const TeachersCarouselItemInfo = styled(Wrapper)`
   box-shadow: inset 0 calc(var(--ds) * -26px) calc(var(--ds) * 8px)
     calc(var(--ds) * -8px) hsla(var(--ctd), 0.75);
 
-  ${down("md")} {
+  ${down("tablet")} {
     box-shadow: inset 0 calc(var(--ds) * -24px) calc(var(--ds) * 8px)
       calc(var(--ds) * -8px) hsla(var(--ctd), 0.75);
   }

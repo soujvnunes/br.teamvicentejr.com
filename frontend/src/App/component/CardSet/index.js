@@ -8,7 +8,7 @@ const CardSetRoot = styled(Wrapper)`
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
 
-  ${down("md")} {
+  ${down("tablet")} {
     grid-template-columns: 100% !important;
   }
 `;

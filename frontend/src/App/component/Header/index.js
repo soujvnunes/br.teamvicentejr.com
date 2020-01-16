@@ -30,7 +30,7 @@ const HeaderRoot = styled.header`
       background-image: url(${props.image});
     `}
 
-  ${down("md")} {
+  ${down("tablet")} {
     min-height: ${props => (props.image ? "50vh" : "auto")};
     padding-top: calc(var(--ds) * 11px);
   }

@@ -8,7 +8,7 @@ const HistoryRoot = styled.div`
   display: flex;
   flex-direction: row;
 
-  ${down("md")} {
+  ${down("tablet")} {
     flex-direction: column;
   }
 `;
@@ -28,7 +28,7 @@ const HistoryText = styled(Typography)`
   text-align: justify;
   margin: 0 0 0 calc(var(--ds) * 2px);
 
-  ${down("md")} {
+  ${down("tablet")} {
     margin: calc(var(--ds) * 2px) 0 0 0;
   }
 `;

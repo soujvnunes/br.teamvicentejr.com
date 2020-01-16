@@ -14,7 +14,7 @@ const NavLinkRoot = styled(NavLink)`
   min-width: calc(var(--ds) * 10px);
   text-align: center;
 
-  ${down("md")} {
+  ${down("tablet")} {
     margin: 0;
     min-width: 25%;
     flex-direction: column;
@@ -25,7 +25,7 @@ const NavLinkLabel = styled(Typography)`
   font-size: calc(var(--ds) * 1.25px);
   margin-top: calc(var(--ds) * 0.5px);
 
-  ${down("md")} {
+  ${down("tablet")} {
     margin-top: calc(var(--ds) * 1px);
   }
 `;

@@ -11,7 +11,7 @@ export const Coloration = css`
 
   // configuration
   --ct: 50%; //coloration threshold
-  --cr: 25%; //coloration radius
+  --cr: 15%; //coloration radius
 
   // definition
   --cpLl: calc(

@@ -29,7 +29,6 @@ const GlobalStyle = createGlobalStyle`
     src: url("${eot}?#iefix") format("embedded-opentype"), url("${woff2}") format("woff2"), url("${woff}") format("woff"), url("${ttf}") format("truetype"), url("${svg}#VLNL Decks W00 Bold") format("svg"); /* iOS 4.1- */
   }
   
-  
   ${reset}
   ${rebootCss}
   ${DesignSystem}
