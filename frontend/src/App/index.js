@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { data } from "./lib/data";
+import { navigation } from "./lib/navigation";
 import Nav from "./component/Nav";
 import NavItem from "./component/NavItem";
 import styled from "styled-components";
 import GlobalStyle from "./util/globalStyle";
-import { ReactComponent as Icon } from "./asset/misc/vis/icon.svg";
 import Home from "./page/Home";
 import Teachers from "./page/Teachers";
 import Branches from "./page/Branches";
@@ -37,9 +36,8 @@ export default function App() {
     <Router>
       <GlobalStyle />
       <AppRoot>
-        <Icon />
         <Nav indicator={active}>
-          {data.navigation.map((data, i) => (
+          {navigation.map((data, i) => (
             <NavItem
               key={i}
               to={data.to}

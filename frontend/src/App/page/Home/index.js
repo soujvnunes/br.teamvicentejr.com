@@ -4,8 +4,9 @@ import Main from "../../component/Main";
 import Header from "../../component/Header";
 import Section from "../../component/Section";
 import Select from "../../component/Select";
-import { data } from "../../lib/data";
-import { events } from "../../lib/page/events";
+import { month } from "../../lib/month";
+import { year } from "../../lib/year";
+import { events } from "../../lib/page/home";
 import VicenteJuniorImage from "../../asset/page/home/vicenteJunior.png";
 import Chip from "../../component/Chip";
 import styled from "styled-components";
@@ -77,27 +78,29 @@ export default function Home() {
   let currentYear = newDate.getFullYear();
 
   const [state, setState] = useState({
-    month: currentMonth,
-    year: currentYear,
+    eventMonth: currentMonth,
+    eventYear: currentYear,
     filteredEvents: []
   });
 
-  let { month, year, filteredEvents } = state;
+  let { eventMonth, eventYear, filteredEvents } = state;
 
   useEffect(() => {
-    const matchYear = events.filter(data => Number(data.year) === Number(year));
+    const matchYear = events.filter(
+      data => Number(data.year) === Number(eventYear)
+    );
     const matchMonth = matchYear.filter(
-      data => Number(data.month) === Number(month)
+      data => Number(data.month) === Number(eventMonth)
     );
     if (matchMonth) setState({ ...state, filteredEvents: matchMonth });
     else setState({ ...state, filteredEvents: [] });
-  }, [month, year]);
+  }, [eventMonth, eventYear]);
 
   function filterMonth() {
     const select = document.getElementById("monthSelect");
     setState({
       ...state,
-      month: select.options[select.selectedIndex].value
+      eventMonth: select.options[select.selectedIndex].value
     });
   }
 
@@ -105,7 +108,7 @@ export default function Home() {
     const select = document.getElementById("yearSelect");
     setState({
       ...state,
-      year: select.options[select.selectedIndex].value
+      eventYear: select.options[select.selectedIndex].value
     });
   }
 
@@ -121,15 +124,15 @@ export default function Home() {
         <HomeFilterTitle variant={"heading"}>Eventos</HomeFilterTitle>
         <HomeFilterSelect
           id={"monthSelect"}
-          option={data.month}
+          option={month}
           onChange={filterMonth}
-          value={month}
+          value={eventMonth}
         />
         <HomeFilterSelect
           id={"yearSelect"}
-          option={data.year}
+          option={year}
           onChange={filterYear}
-          value={year}
+          value={eventYear}
         />
       </HomeFilter>
       <Section>

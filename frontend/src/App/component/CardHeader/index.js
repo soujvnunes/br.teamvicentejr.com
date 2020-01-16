@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import Typography from "../Typography";
 import PropTypes from "prop-types";
-import { down } from "styled-breakpoints";
 import Icon from "../Icon";
 
 const CardHeaderRoot = styled.header`
@@ -17,10 +16,7 @@ const CardHeaderRoot = styled.header`
 
 const CardHeaderSecondary = styled.div`
   display: flex;
-
-  ${down("tablet")} {
-    align-items: center;
-  }
+  align-items: center;
 `;
 
 const CardHeaderSecondaryIcon = styled(Icon)`

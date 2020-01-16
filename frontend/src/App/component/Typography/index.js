@@ -43,7 +43,7 @@ const Label = styled.span`
     `}
   
   ${props =>
-    (props.variant === "subject" || props.variant === "heading") &&
+    props.variant === "heading" &&
     css`
       font-size: calc(var(--ds) * 2px);
 
@@ -52,15 +52,10 @@ const Label = styled.span`
       }
     `}
   
-  
   ${props =>
-    props.variant === "action" &&
+    (props.variant === "subject" || props.variant === "action") &&
     css`
       font-size: calc(var(--ds) * 1.5px);
-
-      ${down("tablet")} {
-        font-size: calc(var(--ds) * 1.25px);
-      }
     `}
   
     ${props =>

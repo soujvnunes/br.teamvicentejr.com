@@ -8,13 +8,9 @@ import As from "../../util/Mixins/As";
 
 const ChipRoot = styled.div`
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   padding: calc(var(--ds) * 1px);
   color: hsla(var(--ctb), 1);
-`;
-
-const ChipContent = styled.div`
-  display: flex;
   align-items: center;
 `;
 
@@ -26,12 +22,10 @@ export default function Chip(props) {
   let { icon, primary, href, ...other } = props;
 
   return (
-    <ChipRoot {...other} href={href} {...As(`${href ? "a" : "article"}`)}>
+    <ChipRoot {...other} href={href} {...As(`${href ? "a" : "div"}`)}>
       <Skew variant={"underlined"} />
-      <ChipContent>
-        {icon && <ChipIcon name={icon} />}
-        <Typography variant={"action"}>{primary}</Typography>
-      </ChipContent>
+      {icon && <ChipIcon name={icon} />}
+      <Typography variant={"action"}>{primary}</Typography>
     </ChipRoot>
   );
 }
