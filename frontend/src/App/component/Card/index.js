@@ -27,9 +27,7 @@ const CardRoot = styled.article`
   }
 `;
 
-export default function Card(props) {
-  let { children, image, zoom, title, href, ...other } = props;
-
+export default function Card({ children, image, zoom, title, href, ...other }) {
   return (
     <CardRoot
       zoom={zoom}

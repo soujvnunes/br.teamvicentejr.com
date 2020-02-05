@@ -74,17 +74,9 @@ const EventsCard = styled(Card)`
 `;
 
 export default function Home() {
-  let newDate = new Date();
-  let currentMonth = newDate.getMonth() + 1;
-  let currentYear = newDate.getFullYear();
-
-  const [state, setState] = useState({
-    eventMonth: currentMonth,
-    eventYear: currentYear,
-    filteredEvents: []
-  });
-
-  let { eventMonth, eventYear, filteredEvents } = state;
+  const [eventMonth, setEventMonth] = useState(new Date().getMonth() + 1);
+  const [eventYear, setEventYear] = useState(new Date().getFullYear());
+  const [filteredEvents, setFilteredEvents] = useState([]);
 
   useEffect(() => {
     const matchYear = events.filter(
@@ -93,25 +85,19 @@ export default function Home() {
     const matchMonth = matchYear.filter(
       data => Number(data.month) === Number(eventMonth)
     );
-    if (matchMonth) setState({ ...state, filteredEvents: matchMonth });
-    else setState({ ...state, filteredEvents: [] });
+    if (matchMonth) setFilteredEvents(matchMonth);
+    else setFilteredEvents([]);
   }, [eventMonth, eventYear]);
 
-  function filterMonth() {
+  const filterMonth = () => {
     const select = document.getElementById("monthSelect");
-    setState({
-      ...state,
-      eventMonth: select.options[select.selectedIndex].value
-    });
-  }
+    setEventMonth(select.options[select.selectedIndex].value);
+  };
 
-  function filterYear() {
+  const filterYear = () => {
     const select = document.getElementById("yearSelect");
-    setState({
-      ...state,
-      eventYear: select.options[select.selectedIndex].value
-    });
-  }
+    setEventYear(select.options[select.selectedIndex].value);
+  };
 
   return (
     <Main>

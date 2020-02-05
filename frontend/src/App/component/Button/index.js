@@ -29,9 +29,7 @@ const ButtonIcon = styled(Icon)`
   }
 `;
 
-export default function Button(props) {
-  let { icon, label, variant, href, skew, ...other } = props;
-
+export default function Button({ icon, label, variant, href, skew, ...other }) {
   return (
     <ButtonRoot {...other} href={href} {...As(`${href ? "a" : "button"}`)}>
       {icon && <ButtonIcon name={icon} />}

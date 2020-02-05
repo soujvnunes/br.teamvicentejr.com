@@ -9,8 +9,7 @@ const WrapperRoot = styled.div`
   position: relative;
 `;
 
-export default function Wrapper(props) {
-  let { children, ...other } = props;
+export default function Wrapper({ children, ...other }) {
   return <WrapperRoot {...other}>{children}</WrapperRoot>;
 }
 

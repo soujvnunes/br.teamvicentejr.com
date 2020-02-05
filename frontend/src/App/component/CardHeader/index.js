@@ -23,9 +23,13 @@ const CardHeaderSecondaryIcon = styled(Icon)`
   margin-right: calc(var(--ds) * 1px);
 `;
 
-export default function CardHeader(props) {
-  let { primary, secondary, icon, backdrop, ...other } = props;
-
+export default function CardHeader({
+  primary,
+  secondary,
+  icon,
+  backdrop,
+  ...other
+}) {
   return (
     <CardHeaderRoot backdrop={backdrop} {...other}>
       <Typography variant={"heading"}>{primary}</Typography>

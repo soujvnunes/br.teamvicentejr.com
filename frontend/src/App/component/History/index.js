@@ -33,9 +33,7 @@ const HistoryText = styled(Typography)`
   }
 `;
 
-export default function History(props) {
-  let { image, title, text, ...other } = props;
-
+export default function History({ image, title, text, ...other }) {
   return (
     <HistoryRoot {...other}>
       {image && <HistoryImage image={image} title={title} />}

@@ -57,7 +57,7 @@ const FooterWrapperCopyrightSymbol = styled(Typography)`
   margin: 0 calc(var(--ds) * 0.5px);
 `;
 
-export default function Footer(props) {
+export default function Footer() {
   return (
     <FooterRoot>
       <FooterWrapper>

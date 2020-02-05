@@ -32,9 +32,7 @@ const PanelBackdrop = styled.div`
   }
 `;
 
-export default function Panel(props) {
-  let { image, children, href, ...other } = props;
-
+export default function Panel({ image, children, href, ...other }) {
   return (
     <PanelRoot
       {...other}

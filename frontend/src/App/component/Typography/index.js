@@ -65,9 +65,7 @@ const Label = styled.span`
       `}
 `;
 
-export default function Typography(props) {
-  let { variant, children, ...other } = props;
-
+export default function Typography({ variant, children, ...other }) {
   return (
     <Label
       {...other}

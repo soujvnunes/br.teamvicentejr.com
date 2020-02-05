@@ -36,9 +36,7 @@ const HeaderRoot = styled.header`
   }
 `;
 
-export default function Header(props) {
-  let { image, title, subject, ...other } = props;
-
+export default function Header({ image, title, subject, ...other }) {
   return (
     <HeaderRoot image={image} {...other}>
       <Wrapper>

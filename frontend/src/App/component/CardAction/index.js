@@ -12,9 +12,7 @@ const CardActionRoot = styled.footer`
     `};
 `;
 
-export default function CardAction(props) {
-  let { children, ...other } = props;
-
+export default function CardAction({ children, ...other }) {
   return <CardActionRoot {...other}>{children}</CardActionRoot>;
 }
 

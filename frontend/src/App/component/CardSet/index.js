@@ -13,8 +13,7 @@ const CardSetRoot = styled(Wrapper)`
   }
 `;
 
-export default function CardSet(props) {
-  let { children, ...other } = props;
+export default function CardSet({ children, ...other }) {
   return <CardSetRoot {...other}>{children}</CardSetRoot>;
 }
 

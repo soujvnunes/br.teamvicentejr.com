@@ -7,9 +7,7 @@ const CardMediaRoot = styled.img`
   height: auto;
 `;
 
-export default function CardMedia(props) {
-  let { image, ...other } = props;
-
+export default function CardMedia({ image, ...other }) {
   return <CardMediaRoot src={image} {...other} />;
 }
 

@@ -18,9 +18,7 @@ const ChipIcon = styled(Icon)`
   margin-right: calc(var(--ds) * 1px);
 `;
 
-export default function Chip(props) {
-  let { icon, primary, href, ...other } = props;
-
+export default function Chip({ icon, primary, href, ...other }) {
   return (
     <ChipRoot {...other} href={href} {...As(`${href ? "a" : "div"}`)}>
       <Skew variant={"underlined"} />

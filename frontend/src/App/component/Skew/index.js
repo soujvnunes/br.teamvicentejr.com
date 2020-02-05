@@ -73,8 +73,7 @@ const SkewRoot = styled.div`
     `}
 `;
 
-export default function Skew(props) {
-  let { variant, ...other } = props;
+export default function Skew({ variant, ...other }) {
   return <SkewRoot {...other} variant={variant} />;
 }
 

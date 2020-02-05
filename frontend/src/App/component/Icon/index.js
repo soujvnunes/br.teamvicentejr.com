@@ -31,9 +31,7 @@ const IconPath = styled.path`
   stroke-width: calc(var(--ds) * 0.25px);
 `;
 
-export default function Icon(props) {
-  let { name, variant, ...other } = props;
-
+export default function Icon({ name, variant, ...other }) {
   return (
     <IconRoot
       {...other}

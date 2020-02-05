@@ -9,9 +9,7 @@ const MainRoot = styled.main`
   flex-direction: column;
 `;
 
-export default function Main(props) {
-  let { children, ...other } = props;
-
+export default function Main({ children, ...other }) {
   return (
     <MainRoot role={"main"} {...other}>
       {children}

@@ -35,17 +35,18 @@ const LineContent = styled.div`
     `}
 `;
 
-export default function Line(props) {
-  const [state, setState] = useState({
-    expand: false
-  });
-
-  let { expand } = state;
-  let { children, primary, secondary, image, ...other } = props;
+export default function Line({
+  children,
+  primary,
+  secondary,
+  image,
+  ...other
+}) {
+  const [expand, setExpand] = useState(false);
 
   const handleExpand = () => {
-    if (expand) setState({ ...state, expand: false });
-    else setState({ ...state, expand: true });
+    if (expand) setExpand(false);
+    else setExpand(true);
   };
 
   return (

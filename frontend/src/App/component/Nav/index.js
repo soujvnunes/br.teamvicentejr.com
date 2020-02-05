@@ -126,10 +126,9 @@ const NavAside = styled(NavRoot)`
   background-color: hsla(var(--ctd), 0.5) !important;
 `;
 
-export default function Nav(props) {
+export default function Nav({ children, indicator }) {
   const isTablet = useMediaQuery({ maxDeviceWidth: 960 });
   const isMobile = useMediaQuery({ maxDeviceWidth: 600 });
-  let { children, indicator } = props;
 
   if (isTablet) {
     return (

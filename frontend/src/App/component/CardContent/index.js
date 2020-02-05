@@ -14,12 +14,10 @@ const CardContentRoot = styled.div`
   }
 `;
 
-export default function CardContent(props) {
-  let { children, ...other } = props;
-
+export default function CardContent({ children, ...other }) {
   return <CardContentRoot {...other}>{children}</CardContentRoot>;
 }
 
 CardContent.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.any
 };

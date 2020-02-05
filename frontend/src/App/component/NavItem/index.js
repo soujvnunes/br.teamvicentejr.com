@@ -30,18 +30,12 @@ const NavLinkLabel = styled(Typography)`
   }
 `;
 
-export default function NavItem(props) {
-  const [state, setState] = useState({
-    hover: false
-  });
-
-  let { icon, primary, iconActive, ...other } = props;
-  let { hover } = state;
-
-  function handleHover() {
-    if (hover) setState({ ...state, hover: false });
-    else setState({ ...state, hover: true });
-  }
+export default function NavItem({ icon, primary, iconActive, ...other }) {
+  const [hover, setHover] = useState(false);
+  const handleHover = () => {
+    if (hover) setHover(false);
+    else setHover(true);
+  };
 
   return (
     <NavLinkRoot

@@ -9,9 +9,7 @@ const SectionRoot = styled.section`
   justify-content: center;
 `;
 
-export default function Section(props) {
-  let { children, ...other } = props;
-
+export default function Section({ children, ...other }) {
   return <SectionRoot {...other}>{children}</SectionRoot>;
 }
 

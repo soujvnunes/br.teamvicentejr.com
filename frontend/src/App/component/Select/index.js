@@ -30,9 +30,7 @@ const SelectIcon = styled(Icon)`
   right: 0;
 `;
 
-export default function Select(props) {
-  let { option, id, onChange, value, ...other } = props;
-
+export default function Select({ option, id, onChange, value, ...other }) {
   return (
     <SelectRoot {...other} htmlFor={id}>
       <Skew variant={"underlined"} />
