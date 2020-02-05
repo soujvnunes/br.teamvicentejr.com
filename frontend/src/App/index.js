@@ -11,7 +11,7 @@ import Branches from "./page/Branches";
 import About from "./page/About";
 import { down } from "styled-breakpoints";
 import Footer from "./component/Footer";
-import coloration from "./util/Mixins/Coloration";
+import Coloration from "./util/Mixins/Coloration";
 
 const AppRoot = styled.section`
   display: flex;
@@ -21,7 +21,7 @@ const AppRoot = styled.section`
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-feature-settings: "liga";
-  ${coloration("back", "var(--csb)")};
+  ${Coloration("back", "var(--csb)")};
 
   ${down("tablet")} {
     padding-bottom: calc(var(--ds) * 9px);
