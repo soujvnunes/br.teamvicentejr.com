@@ -5,8 +5,8 @@ import As from "../../util/Mixins/As";
 
 const CardRoot = styled.article`
   transition: var(--a);
-  border: var(--sb);
   border-radius: var(--sr);
+  background-color: hsla(var(--csl), 1);
 
   ${props =>
     props.image &&

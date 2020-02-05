@@ -62,7 +62,7 @@ const SkewRoot = styled.div`
     props.variant === "underlined" &&
     css`
       background-color: currentColor;
-      height: calc(var(--ds) * 0.25px);
+      height: calc(var(--ds) * 0.125px);
       top: auto;
     `}
   

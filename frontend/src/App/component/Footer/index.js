@@ -7,10 +7,10 @@ import Icon from "../Icon";
 
 const FooterRoot = styled.footer`
   padding: calc(var(--ds) * 2px) 0;
-  background-color: hsla(var(--csb), 1);
+  background-color: hsla(var(--csd), 0.2);
   display: flex;
   justify-content: center;
-  border-top: var(--sb);
+  /*border-top: var(--sb);*/
 `;
 
 const FooterWrapper = styled(Wrapper)`

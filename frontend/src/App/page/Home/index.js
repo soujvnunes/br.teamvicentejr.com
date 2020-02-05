@@ -18,6 +18,7 @@ import Card from "../../component/Card";
 import CardHeader from "../../component/CardHeader";
 import CardContent from "../../component/CardContent";
 import CardMedia from "../../component/CardMedia";
+import CardAction from "../../component/CardAction";
 
 const HomeHeader = styled(Header)`
   background-size: 40%;
@@ -152,33 +153,34 @@ export default function Home() {
                       <Typography variant={"paragraph"}>
                         {data.description}
                       </Typography>
-                      <div>
-                        {data.day && (
-                          <HomeEventsCardContentChip
-                            icon={"calendar"}
-                            primary={data.day}
-                          />
-                        )}
-                        {data.time && (
-                          <HomeEventsCardContentChip
-                            icon={"clock"}
-                            primary={data.time}
-                          />
-                        )}
-                        {data.teacher && (
-                          <HomeEventsCardContentChip
-                            icon={"people"}
-                            primary={data.teacher}
-                          />
-                        )}
-                        {data.price && (
-                          <HomeEventsCardContentChip
-                            icon={"cents"}
-                            primary={data.price}
-                          />
-                        )}
-                      </div>
                     </CardContent>
+                    <CardAction>
+                      {data.day && (
+                        <HomeEventsCardContentChip
+                          icon={"calendar"}
+                          primary={data.day}
+                          variant={"contained"}
+                        />
+                      )}
+                      {data.time && (
+                        <HomeEventsCardContentChip
+                          icon={"clock"}
+                          primary={data.time}
+                        />
+                      )}
+                      {data.teacher && (
+                        <HomeEventsCardContentChip
+                          icon={"people"}
+                          primary={data.teacher}
+                        />
+                      )}
+                      {data.price && (
+                        <HomeEventsCardContentChip
+                          icon={"cents"}
+                          primary={data.price}
+                        />
+                      )}
+                    </CardAction>
                   </EventsCard>
                 );
               })}
