@@ -1,4 +1,4 @@
-export default function As(element) {
+const As = element => {
   if (element === "a")
     return {
       as: `${element}`,
@@ -9,4 +9,6 @@ export default function As(element) {
     return {
       as: `${element}`
     };
-}
+};
+
+export default As;

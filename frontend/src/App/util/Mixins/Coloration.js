@@ -1,4 +1,4 @@
-export const coloration = (ground, color) => {
+const coloration = (ground, color) => {
   return `
       ${(ground === "back" && "background") ||
         (ground === "fore" && "color")}: hsla(${color}, 1);
@@ -14,3 +14,5 @@ export const coloration = (ground, color) => {
         (ground === "fore" && "background")}: hsla(0, 0%, var(--cc), 0.5);
     `;
 };
+
+export default coloration;

@@ -1,6 +1,6 @@
 import { css } from "styled-components";
 
-export const NavLinkDefault = css`
+const NavBase = css`
   color: hsla(var(--ctl), 1);
   opacity: 1;
   transition: var(--a);
@@ -13,3 +13,5 @@ export const NavLinkDefault = css`
     color: hsla(var(--csb), 1);
   }
 `;
+
+export default NavBase;

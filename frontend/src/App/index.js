@@ -11,7 +11,7 @@ import Branches from "./page/Branches";
 import About from "./page/About";
 import { down } from "styled-breakpoints";
 import Footer from "./component/Footer";
-import { coloration } from "./util/Mixins/Coloration";
+import coloration from "./util/Mixins/Coloration";
 
 const AppRoot = styled.section`
   display: flex;
@@ -29,28 +29,25 @@ const AppRoot = styled.section`
 `;
 
 export default function App() {
-  const [state, setState] = useState({
-    active: window.location.pathname.substring(1)
-  });
-
-  let { active } = state;
-
-  useEffect(() => setState({ active: "home" }), []);
+  const [isActive, setIsActive] = useState(
+    window.location.pathname.substring(1)
+  );
+  useEffect(() => setIsActive("home"), []);
 
   return (
     <Router>
       <GlobalStyle />
       <AppRoot>
-        <Nav indicator={active}>
+        <Nav indicator={isActive}>
           {navigation.map((data, i) => (
             <NavItem
               key={i}
               to={data.to}
-              isActive={() => active === data.name}
-              onClick={() => setState({ ...state, active: `${data.name}` })}
+              isActive={() => isActive === data.name}
+              onClick={() => setIsActive(data.name)}
               primary={data.primary}
               icon={data.icon}
-              iconActive={active === data.name}
+              iconActive={isActive === data.name}
             />
           ))}
         </Nav>

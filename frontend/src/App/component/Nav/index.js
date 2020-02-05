@@ -5,7 +5,7 @@ import Skew from "../Skew";
 import Mark from "../../asset/vis/mark.png";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
-import { NavLinkDefault } from "../../util/Mixins/NavLinkDefault";
+import NavBase from "../../util/Mixins/NavBase";
 import Wrapper from "../Wrapper";
 import PropTypes from "prop-types";
 
@@ -107,7 +107,7 @@ const NavSocial = styled.aside`
 `;
 
 const NavSocialButton = styled(Button)`
-  ${NavLinkDefault};
+  ${NavBase};
 
   margin: 0 calc(var(--ds) * 1px);
 

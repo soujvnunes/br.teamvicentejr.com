@@ -3,7 +3,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
-import { transition } from "../../util/Mixins/Transition";
+import Transition from "../../util/Mixins/Transition";
 import { icon } from "../../lib/icon";
 
 const IconRoot = styled.svg`
@@ -12,7 +12,7 @@ const IconRoot = styled.svg`
   fill: transparent;
   stroke: currentColor;
   display: inline-block;
-  ${transition("fill")}
+  ${Transition("fill")}
 
   &:hover {
     fill: currentColor;

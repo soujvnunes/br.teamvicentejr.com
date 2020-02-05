@@ -4,11 +4,11 @@ import Icon from "../Icon";
 import Typography from "../Typography";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
-import { NavLinkDefault } from "../../util/Mixins/NavLinkDefault";
+import NavBase from "../../util/Mixins/NavBase";
 import PropTypes from "prop-types";
 
 const NavLinkRoot = styled(NavLink)`
-  ${NavLinkDefault};
+  ${NavBase};
   position: relative;
   margin: 0 calc(var(--ds) * 1px);
   min-width: calc(var(--ds) * 10px);
