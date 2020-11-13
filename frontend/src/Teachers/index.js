@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
-import { data } from "../lib/page/teachers";
+import { data } from "./feed";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Main from "../Main";
 import Typography from "../Typography";

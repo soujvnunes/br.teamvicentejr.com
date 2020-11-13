@@ -1,5 +1,5 @@
 import React from "react";
-import { data } from "../lib/page/branches";
+import { data } from "./feed";
 import Main from "../Main";
 import Card from "../Card";
 import Header from "../Header";

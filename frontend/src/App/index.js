@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { navigation } from "../lib/navigation";
+import { navigation } from "./feed";
 import Nav from "../Nav";
 import NavItem from "../NavItem";
 import styled from "styled-components";

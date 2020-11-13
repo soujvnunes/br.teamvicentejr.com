@@ -4,7 +4,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 import Transition from "../util/Mixins/Transition";
-import { icon } from "../lib/icon";
+import { icon } from "./feed";
 
 const IconRoot = styled.svg`
   width: calc(var(--ds) * 3px);
