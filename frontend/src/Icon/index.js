@@ -3,7 +3,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
-import Transition from "../util/Mixins/Transition";
+import { Transition } from "../helpers";
 import { icon } from "./feed";
 
 const IconRoot = styled.svg`

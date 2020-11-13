@@ -4,7 +4,7 @@ import Icon from "../Icon";
 import styled from "styled-components";
 import Typography from "../Typography";
 import PropTypes from "prop-types";
-import As from "../util/Mixins/As";
+import { As } from "../helpers";
 
 const ChipRoot = styled.div`
   position: relative;

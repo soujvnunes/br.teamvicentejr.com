@@ -4,14 +4,14 @@ import { navigation } from "./feed";
 import Nav from "../Nav";
 import NavItem from "../NavItem";
 import styled from "styled-components";
-import GlobalStyle from "../util/globalStyle";
+import GlobalStyle from "../GlobalStyle";
 import Home from "../Home";
 import Teachers from "../Teachers";
 import Branches from "../Branches";
 import About from "../About";
 import { down } from "styled-breakpoints";
 import Footer from "../Footer";
-import Coloration from "../util/Mixins/Coloration";
+import { Coloration } from "../helpers";
 
 const AppRoot = styled.section`
   display: flex;

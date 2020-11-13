@@ -5,7 +5,7 @@ import Skew from "../Skew";
 import Mark from "../asset/vis/mark.png";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
-import NavBase from "../util/Mixins/NavBase";
+import NavBase from "../GlobalStyle/Mixins/NavBase";
 import Wrapper from "../Wrapper";
 import PropTypes from "prop-types";
 
