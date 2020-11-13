@@ -1,7 +1,7 @@
 import React from "react";
 import Wrapper from "../Wrapper";
 import styled from "styled-components";
-import As from "../../util/Mixins/As";
+import As from "../util/Mixins/As";
 import PropTypes from "prop-types";
 
 const PanelRoot = styled.div`

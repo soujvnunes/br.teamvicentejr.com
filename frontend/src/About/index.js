@@ -1,16 +1,16 @@
 import React from "react";
-import Main from "../../component/Main";
-import panelImage from "../../asset/page/about/01001.jpg";
-import headerImage from "../../asset/page/about/01002.jpg";
-import History from "../../component/History";
-import { data } from "../../lib/page/about";
-import Header from "../../component/Header";
-import Section from "../../component/Section";
-import Panel from "../../component/Panel";
-import Typography from "../../component/Typography";
-import Icon from "../../component/Icon";
+import Main from "../Main";
+import panelImage from "../asset/page/about/01001.jpg";
+import headerImage from "../asset/page/about/01002.jpg";
+import History from "../History";
+import { data } from "../lib/page/about";
+import Header from "../Header";
+import Section from "../Section";
+import Panel from "../Panel";
+import Typography from "../Typography";
+import Icon from "../Icon";
 import styled from "styled-components";
-import Wrapper from "../../component/Wrapper";
+import Wrapper from "../Wrapper";
 
 const AboutHistory = styled(History)`
   margin: calc(var(--ds) * 1px) 0;

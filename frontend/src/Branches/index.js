@@ -1,12 +1,12 @@
 import React from "react";
-import { data } from "../../lib/page/branches";
-import Main from "../../component/Main";
-import Card from "../../component/Card";
-import Header from "../../component/Header";
-import Section from "../../component/Section";
+import { data } from "../lib/page/branches";
+import Main from "../Main";
+import Card from "../Card";
+import Header from "../Header";
+import Section from "../Section";
 import styled from "styled-components";
-import CardSet from "../../component/CardSet";
-import CardHeader from "../../component/CardHeader";
+import CardSet from "../CardSet";
+import CardHeader from "../CardHeader";
 
 const BranchesCardSet = styled(CardSet)`
   grid-template-columns: 50% 50%;

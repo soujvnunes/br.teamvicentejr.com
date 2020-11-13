@@ -1,11 +1,11 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
-import { data } from "../../lib/page/teachers";
+import { data } from "../lib/page/teachers";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Main from "../../component/Main";
-import Typography from "../../component/Typography";
-import Wrapper from "../../component/Wrapper";
-import Chip from "../../component/Chip";
+import Main from "../Main";
+import Typography from "../Typography";
+import Wrapper from "../Wrapper";
+import Chip from "../Chip";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";
 

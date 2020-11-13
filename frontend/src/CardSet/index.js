@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Wrapper from "../../component/Wrapper";
+import Wrapper from "../Wrapper";
 import { down } from "styled-breakpoints";
 import PropTypes from "prop-types";
 

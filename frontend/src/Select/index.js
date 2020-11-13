@@ -2,7 +2,7 @@ import React from "react";
 import Skew from "../Skew";
 import Icon from "../Icon";
 import styled from "styled-components";
-import InputBase from "../../util/Mixins/InputBase";
+import InputBase from "../util/Mixins/InputBase";
 import PropTypes from "prop-types";
 
 const SelectRoot = styled.label`
