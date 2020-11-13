@@ -2,11 +2,11 @@ import { createGlobalStyle } from "styled-components";
 import reboot from "styled-reboot";
 import reset from "styled-reset";
 import { DesignSystem } from "./DesignSystem";
-import eot from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.eot";
-import woff2 from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.woff2";
-import woff from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.woff";
-import ttf from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.ttf";
-import svg from "../asset/font/ccf21ebc0f90f99c5a63564d760f23aa.svg";
+import eot from "./font/ccf21ebc0f90f99c5a63564d760f23aa.eot";
+import woff2 from "./font/ccf21ebc0f90f99c5a63564d760f23aa.woff2";
+import woff from "./font/ccf21ebc0f90f99c5a63564d760f23aa.woff";
+import ttf from "./font/ccf21ebc0f90f99c5a63564d760f23aa.ttf";
+import svg from "./font/ccf21ebc0f90f99c5a63564d760f23aa.svg";
 
 const options = {
   black: "0, 0, 0",

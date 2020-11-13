@@ -5,7 +5,7 @@ import Header from "../Header";
 import Section from "../Section";
 import Select from "../Select";
 import { month, year, events } from "./feed";
-import VicenteJuniorImage from "../asset/page/home/vicenteJunior.png";
+import VicenteJuniorImage from "./asset/vicenteJunior.png";
 import Chip from "../Chip";
 import styled from "styled-components";
 import { down } from "styled-breakpoints";

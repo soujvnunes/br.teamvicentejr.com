@@ -2,7 +2,7 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 import Button from "../Button";
 import Skew from "../Skew";
-import Mark from "../asset/vis/mark.png";
+import Mark from "./asset/mark.png";
 import styled, { css } from "styled-components";
 import { down } from "styled-breakpoints";
 import NavBase from "../GlobalStyle/Mixins/NavBase";
